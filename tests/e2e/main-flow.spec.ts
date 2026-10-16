@@ -61,7 +61,9 @@ test("no match shows a relax option", async ({ page }) => {
     "/rezultate/?bmin=3000&bmax=12000&u=mixt&f=oricare&c=hatchback&m=bmw&s=5&km=12000",
   );
   await expect(page.getByText("Niciun model nu se potrivește")).toBeVisible();
-  await page.getByRole("link", { name: /Relaxează: orice marcă/ }).click();
+  await page
+    .getByRole("link", { name: /Arată orice marcă, nu doar BMW/ })
+    .click();
   await expect(page.getByRole("meter").first()).toBeVisible();
 });
 

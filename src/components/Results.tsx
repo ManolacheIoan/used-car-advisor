@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FUEL_PRICES } from "@/config/fuelPrices";
-import { models } from "@/lib/data";
+import { BRANDS, models } from "@/lib/data";
 import {
   BODY_LABEL,
   consumptionRange,
@@ -19,9 +19,11 @@ import {
   hasPrice,
   rank,
   relaxOptions,
+  type Prefs,
   type RelaxKey,
   type Result,
 } from "@/lib/scoring";
+import type { Body, Energy } from "@/lib/types";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
 import { BrandBadge } from "./BrandBadge";
@@ -38,12 +40,19 @@ import { useUrlAssumptions } from "./useUrlAssumptions";
 
 export const MAX_COMPARE = 4;
 
-const RELAX_LABEL: Record<RelaxKey, string> = {
-  fuel: "Orice combustibil",
-  body: "Orice caroserie",
-  brand: "Orice marcă",
-  seats: "Orice număr de locuri",
-};
+/** Plain-language button text: which filter is dropped, and what it was. */
+function widenLabel(key: RelaxKey, p: Prefs): string {
+  switch (key) {
+    case "fuel":
+      return `Arată orice combustibil, nu doar ${ENERGY_LABEL[p.fuel as Energy].toLowerCase()}`;
+    case "body":
+      return `Arată orice caroserie, nu doar ${BODY_LABEL[p.body as Body]}`;
+    case "brand":
+      return `Arată orice marcă, nu doar ${BRANDS.find(([id]) => id === p.brand)?.[1] ?? p.brand}`;
+    case "seats":
+      return `Arată și mașini cu mai puțin de ${p.seats} locuri`;
+  }
+}
 
 export function Results() {
   const [assumptions, setAssumptions, query] = useUrlAssumptions();
@@ -82,8 +91,8 @@ export function Results() {
           Combustibilul, caroseria, marca și numărul de locuri sunt filtre
           stricte.
           {options.length > 0
-            ? " Relaxează un criteriu:"
-            : " Nici relaxarea unui singur criteriu nu aduce rezultate; modifică mai multe criterii."}
+            ? " Poți renunța la unul dintre ele ca să vezi modele:"
+            : " Chiar și fără unul dintre ele nu apare niciun model; modifică mai multe criterii."}
         </p>
         <div className="flex flex-wrap justify-center gap-2">
           {options.map(({ key, count }) => (
@@ -92,7 +101,8 @@ export function Results() {
               className={btnPrimary}
               href={`/rezultate/?${prefsToQuery({ ...prefs, [key]: key === "seats" ? 2 : "oricare" }, new URLSearchParams(query))}`}
             >
-              Relaxează: {RELAX_LABEL[key].toLowerCase()} ({count})
+              {widenLabel(key, prefs)} ({count}{" "}
+              {count === 1 ? "model" : "modele"})
             </Link>
           ))}
         </div>
