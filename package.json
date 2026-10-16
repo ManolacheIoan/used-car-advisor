@@ -19,7 +19,8 @@
     "build:demo": "DATA_MODE=demo next build",
     "serve:demo": "serve out-demo -l 3000",
     "fetch:wikidata": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/fetch-wikidata.ts",
-    "build:demo-identities": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-demo-identities.ts"
+    "build:demo-identities": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-demo-identities.ts",
+    "audit:public": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/audit-public.ts"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",

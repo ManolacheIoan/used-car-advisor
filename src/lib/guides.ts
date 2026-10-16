@@ -5,7 +5,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { marked } from "marked";
-import { IS_DEMO } from "./mode";
+import { IS_DEMO } from "./mode.ts";
 
 export interface Guide {
   slug: string;

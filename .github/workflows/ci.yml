@@ -22,6 +22,8 @@ jobs:
         run: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-config-dates.ts
       - run: npm test
       - run: npm run build
+      - name: Public gate (fails on demo, draft, unverified, unlicensed or listing-site content)
+        run: npm run audit:public
       - run: npm run build:demo
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
