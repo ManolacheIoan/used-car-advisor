@@ -25,6 +25,7 @@ src/
   lib/cost.ts           costul lunar și ipotezele implicite
   lib/validation.ts     validarea formularului și citirea/scrierea URL-ului
   lib/seo.ts            JSON-LD, ce pagini se indexează
+  lib/importCsv.ts      CSV → catalog, cu raport de erori pe rând (folosit de scripts/import-cars.ts)
   lib/site.ts           numele site-ului, URL-ul, emailul de contact (o singură constantă)
 tests/unit/             schema datelor, scor, cost, validare, SEO
 tests/e2e/              fluxul principal: formular → rezultate → comparație → detalii
@@ -37,10 +38,13 @@ npm run dev          server de dezvoltare
 npm test             teste unitare (Vitest)
 npm run build        export static în out/
 npm run test:e2e     Playwright (servește out/, deci rulează mai întâi build)
+npm run import:cars -- fisier.csv   importă catalogul din CSV
 npm run lint | typecheck | format
 ```
 
 ## Cum adaugi un model
+
+Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 
 1. Adaugă un obiect în `models` din `src/data/cars.json`. Câmpurile obligatorii sunt în `cars.schema.json`: `id`
    (kebab-case, unic), `brand`, `model`, `generation`, `years`, `body`, `engines[]` (`energy`, `cc`, `hp`,
@@ -51,6 +55,25 @@ npm run lint | typecheck | format
 4. Rulează `npm test`. Testul pică dacă lipsesc câmpuri sau surse, dacă intervalele sunt inversate, dacă un id se
    repetă sau dacă folosești un tip de energie care nu e activ în V1 (`hibrid`, `electric`).
 5. Șterge cele 5 modele `example: true` când ai date reale. Paginile lor nu se indexează și nu apar în sitemap.
+
+## Import din Google Sheets (recomandat)
+
+1. Importă `data/cars.template.csv` într-un Google Sheet. Coloanele sunt fixe: nu le redenumi și nu le șterge.
+2. **Un rând pentru fiecare motorizare.** Rândurile aceluiași model stau unul după altul, cu același `id`. Pe rândurile
+   următoare, coloanele de model pot fi repetate sau lăsate goale.
+3. Fiecare grup de câmpuri are sursa (URL) și data lui (`AAAA-LL-ZZ`):
+   - `years_*` pentru ani;
+   - `body_*`, `seats_*`, `trunk_*` pentru caroserie, locuri și portbagaj;
+   - `engine_*` pentru motorizare;
+   - `price_*` pentru preț (`price_date` devine data prețului).
+4. `energy` poate fi `benzina`, `motorina` sau `gpl`. Consumul se scrie în l/100 km și acceptă virgulă zecimală.
+   `example` este `true` doar pentru modelele fictive.
+5. Exportă din Sheets cu File → Download → CSV, apoi rulează `npm run import:cars -- ~/Downloads/fisier.csv`.
+6. Scriptul verifică fiecare rând și afișează erorile cu numărul liniei și id-ul: câmpuri lipsă, surse lipsă sau
+   invalide, date invalide, intervale inversate, id-uri duplicate, valori care se contrazic în același model. Dacă
+   există o singură eroare, `cars.json` nu se modifică.
+7. `pros`, `cons` și `known_issues` (V2) nu sunt în CSV și se păstrează din `cars.json` existent.
+8. Rulează `npm test` și fă commit.
 
 ## Cum funcționează scorul (`src/lib/scoring.ts`)
 

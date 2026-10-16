@@ -11,7 +11,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "serve": "serve out -l 3000"
+    "serve": "serve out -l 3000",
+    "import:cars": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/import-cars.ts"
   },
   "dependencies": {
     "next": "16.4.2",

@@ -3,7 +3,7 @@ import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import schema from "@/data/cars.schema.json";
 import catalog from "@/data/cars.json";
-import { V1_ENERGIES } from "@/lib/data";
+import { semanticErrors } from "@/lib/dataChecks";
 import type { Catalog } from "@/lib/types";
 
 function validate(data: unknown) {
@@ -11,29 +11,6 @@ function validate(data: unknown) {
   addFormats(ajv);
   const ok = ajv.validate(schema, data);
   return { ok, errors: ajv.errorsText(ajv.errors) };
-}
-
-/** Checks the schema cannot express. Returns a list of problems. */
-function semanticErrors(c: Catalog): string[] {
-  const errs: string[] = [];
-  const seen = new Set<string>();
-  for (const m of c.models) {
-    if (seen.has(m.id)) errs.push(`${m.id}: duplicate id`);
-    seen.add(m.id);
-    if (m.years.from > m.years.to) errs.push(`${m.id}: years.from > years.to`);
-    if (m.price_ron.min > m.price_ron.max)
-      errs.push(`${m.id}: price min > max`);
-    for (const e of m.engines) {
-      if (!(V1_ENERGIES as readonly string[]).includes(e.energy))
-        errs.push(`${m.id}: energy ${e.energy} not enabled in V1`);
-      const expected = e.energy === "electric" ? "kWh/100km" : "l/100km";
-      if (e.consumption.unit !== expected)
-        errs.push(`${m.id}: wrong unit for ${e.energy}`);
-      if (e.energy !== "electric" && e.cc === undefined)
-        errs.push(`${m.id}: missing cc`);
-    }
-  }
-  return errs;
 }
 
 const good = catalog as Catalog;
