@@ -31,6 +31,12 @@ tests/unit/             schema datelor, scor, cost, validare, SEO
 tests/e2e/              fluxul principal: formular → rezultate → comparație → detalii
 ```
 
+## Curs EUR/RON
+
+`src/config/exchangeRate.ts`: 5,33 lei/€ din 2026-10-16 („curs de referință BNR (verificat de utilizator)”). Cursul
+apare oriunde se face o conversie; CI avertizează dacă e mai vechi de 30 de zile. **Înainte de hostare înlocuiește-l
+cu cursul oficial BNR din ziua respectivă, de pe bnr.ro.**
+
 ## Moduri de date (`DATA_MODE`)
 
 | Mod                                    | Catalog                                                                        | Folosire                                                      |

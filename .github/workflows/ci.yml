@@ -18,8 +18,8 @@ jobs:
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck
-      - name: Fuel prices freshness (warning only)
-        run: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-fuel-prices.ts
+      - name: "Config freshness - fuel prices, EUR/RON (warning only)"
+        run: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-config-dates.ts
       - run: npm test
       - run: npm run build
       - run: npm run build:demo
