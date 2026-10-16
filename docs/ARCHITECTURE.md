@@ -1,101 +1,102 @@
 # Arhitectură — AlegeMasina
 
 Site static (Next.js App Router cu `output: "export"`). Nu are server, bază de date, conturi sau cookies. Totul se
-calculează în browser din `cars.json`, care este inclus în build.
+calculează în browser din `cars.json`, care este inclus în build. Tema și favoritele stau doar în `localStorage`.
 
 ## Structura folderelor
 
 ```
-data/cars.template.csv     modelul de CSV pentru Google Sheets (un rând pe motorizare)
-scripts/import-cars.ts     CLI: CSV → src/data/cars.json, cu raport de erori pe rând
+data/cars.template.csv     30 de modele reale (un rând pe motorizare), toate marcate „needs verification”
+data/examples.csv          modelele EXEMPLU (fictive, neindexate)
+data/SOURCES.md            metoda de colectare, regula de alegere a motorizărilor, valorile negăsite
+data/import-report.md      generat la import: modele incomplete sau neverificate
+scripts/import-cars.ts     CSV → src/data/cars.json (doar modele complete și verificate)
+scripts/brand-assets.ts    listează siglele oficiale din public/brands → src/data/brandAssets.json
+scripts/check-fuel-prices.ts  avertisment în CI când prețurile carburanților sunt vechi
 src/
-  app/                     rute: / · /rezultate · /compara · /masini/[id] · /despre-date · sitemap · robots
-  components/              UI: StepForm, Results, Compare, CostEditor, ScoreBar, ReasonChips, DetailCost
-  config/usageRules.ts     regulile de utilizare, fiecare cu punctaj și motiv
-  config/fuelPrices.ts     prețurile implicite ale carburanților și data actualizării
-  data/                    cars.json (catalogul) și cars.schema.json (schema JSON)
-  lib/scoring.ts           filtre stricte, scor, clasament, opțiuni de relaxare
-  lib/cost.ts              costul lunar și ipotezele implicite
-  lib/validation.ts        validarea formularului; citire/scriere URL (criterii și ipoteze)
-  lib/importCsv.ts         parser CSV, grupare pe model, verificări pe rând
-  lib/dataChecks.ts        verificări pe care schema nu le poate exprima (id unic, intervale)
-  lib/seo.ts               JSON-LD, ce pagini se indexează
-tests/unit/                Vitest: date, import, scor, reguli, cost, prețuri, validare, SEO
-tests/e2e/                 Playwright: formular → rezultate → comparație → detalii
+  app/                     / · /rezultate · /compara · /masini/[id] · /favorite · /despre-date · sitemap · robots
+  components/              StepForm, Results, Compare, Favorites, Scenarios, CostEditor, CountUp, BrandBadge, BodyIcon
+  config/                  usageRules (reguli + motiv), fuelPrices (preț, dată, sursă), scenarios (3 exemple)
+  lib/                     scoring, cost, validation, importCsv, dataChecks, favorites, scenarios, seo, brand
+tests/unit/                Vitest: date, import, scor, reguli, cost, prețuri, validare, scenarii, favorite, SEO
+tests/e2e/                 Playwright: flux principal, relaxare criteriu, favorite/comparație/resetare
 ```
 
-## Fluxul datelor
+## Fluxul datelor (CSV → pagini)
 
-1. Datele se completează în Google Sheets, după `data/cars.template.csv`. Fiecare grup de câmpuri are sursa și data
-   lui.
-2. `npm run import:cars -- fisier.csv`:
-   - parsează CSV-ul;
-   - grupează rândurile pe `id`;
-   - verifică fiecare rând (câmpuri lipsă, surse și date, intervale, id-uri duplicate, conflicte în același model);
-   - validează rezultatul cu schema JSON.
-     La orice eroare, nu scrie nimic. Câmpurile V2 (`pros`, `cons`, `known_issues`) se păstrează din fișierul vechi.
-3. `npm test` revalidează `cars.json` cu schema și cu `dataChecks`. CI pică dacă datele sunt invalide.
-4. `next build` generează:
-   - câte o pagină statică pentru fiecare model (`generateStaticParams`, `dynamicParams = false`);
-   - sitemap-ul, fără modelele `example`;
-   - `robots.txt`.
-5. În browser, formularul scrie criteriile în URL (`/rezultate/?bmin=…`). `Results` le citește, le validează și
-   rulează `rank()`. Ipotezele de cost modificate se adaugă tot în URL, așa că linkul se poate distribui.
+1. **Colectare.** Valorile vin din pagini publice descărcate efectiv: anii din Wikipedia (revizie fixă), restul din
+   ADAC Autokatalog. Fiecare grup de câmpuri are titlul sursei, URL-ul și data. Prețurile second-hand se completează
+   manual, din anunțuri reale.
+2. **Import.** `npm run import:cars` citește `cars.template.csv` și `examples.csv`. Pentru fiecare model:
+   - valoare invalidă (număr, URL, dată, interval inversat, id duplicat, conflict) → eroare, nu se scrie nimic;
+   - valoare sau sursă lipsă → incomplet, nu se publică, apare în raport;
+   - complet, dar `needs verification` → nu se publică, apare în raport;
+   - complet și `verified` (sau exemplu) → intră în `cars.json`.
+3. **Teste.** Schema JSON și `dataChecks` validează `cars.json`. Un test verifică și că acesta corespunde exact
+   CSV-urilor, așa că nu poate fi editat manual pe ascuns.
+4. **Build.** Se generează câte o pagină statică pe model, cu JSON-LD și Open Graph. Exemplele primesc `noindex` și
+   nu apar în sitemap. Scenariile de pe prima pagină se calculează tot la build, doar din modelele reale publicate.
+5. **Browser.** Formularul scrie criteriile în URL. `Results` le validează și rulează `rank()`. Ipotezele de cost
+   modificate intră tot în URL, deci linkul copiat reproduce exact rezultatul.
 
-**Monede:** prețul de achiziție și bugetul sunt în euro, cum apar în anunțurile din România. Costurile lunare sunt
-în lei. Nu se face conversie între ele.
+**Monede:** bugetul și prețul mașinii sunt în euro, ca în anunțuri. Costurile lunare sunt în lei. Nu se face
+conversie între ele.
 
 ## Scorul (`lib/scoring.ts`)
 
-1. **Filtre stricte:** combustibil, caroserie, locuri ≥ cerute. Un model nepotrivit este eliminat. Dacă nu rămâne
-   niciunul, `relaxOptions()` arată câte modele ar apărea dacă ar fi relaxat câte un singur criteriu.
+1. **Filtre stricte:** combustibil, caroserie, locuri ≥ cerute. Dacă nu rămâne niciun model, `relaxOptions()` arată
+   ce criteriu, relaxat singur, aduce rezultate și câte.
 2. **Scor** = 100 × (0,40·B + 0,30·C + 0,30·U), rotunjit. Fiecare componentă e între 0 și 1:
-   - **B (buget):** dacă intervalul de preț se suprapune cu bugetul, 0,5 + 0,5 × suprapunere / intervalul mai
-     îngust. Altfel, 0,5 × (1 − distanța / 20% din bugetul maxim), dar nu sub 0. Funcția e continuă la margine.
-   - **C (cost):** normalizare min–max între candidați. Cel mai ieftin primește 1, cel mai scump 0.
-   - **U (utilizare):** baza plus punctele regulilor îndeplinite (`config/usageRules.ts`). Maximul este exact 1.
-3. Fiecare componentă produce chip-uri „de ce”, pozitive sau negative.
-4. Departajarea la egalitate: prețul minim, apoi id-ul. Se afișează maximum 10 rezultate.
-5. V1 nu are scor de fiabilitate sau calitate.
+   - **B (buget):** dacă prețul se suprapune cu bugetul, 0,5 + 0,5 × suprapunere / intervalul mai îngust. Altfel,
+     0,5 × (1 − distanța / 20% din bugetul maxim), dar nu sub 0.
+   - **C (cost):** normalizare min–max între candidați (cel mai ieftin = 1).
+   - **U (utilizare):** baza plus punctele regulilor din `config/usageRules.ts`. Fiecare regulă are un motiv scris;
+     maximul este exact 1. Regulile nu elimină modele.
+3. Fiecare componentă produce chip-uri „de ce”. Se afișează maximum 10 rezultate. Nu există scor de fiabilitate.
 
 ## Costul lunar (`lib/cost.ts`)
 
-`carburant = km/an ÷ 12 × consum declarat ÷ 100 × preț/l`, la care se adaugă `(RCA + impozit + întreținere) ÷ 12`.
+`carburant = km/an ÷ 12 × consum declarat ÷ 100 × preț/l`, plus `(RCA + impozit + întreținere) ÷ 12`.
 
-- Se folosește motorizarea modelului care e cea mai ieftină la utilizare pentru combustibilul ales.
-- Valorile negative sau nefinite aruncă `RangeError`.
+- Se alege motorizarea cea mai ieftină la utilizare pentru combustibilul ales.
+- Prețurile implicite ale carburanților sunt medii naționale, cu dată și sursă afișate. Toate ipotezele se pot
+  modifica.
 - Lângă fiecare cifră apare nota „orientativ, de obicei mai mare decât consumul declarat”.
-- Un test pică dacă prețurile carburanților au mai mult de 60 de zile.
+- Prețuri mai vechi de 60 de zile → avertisment vizibil în CI. Build-ul nu pică.
+
+## Interfață și animații
+
+- Temă întunecată implicit. Un script inline aplică tema luminoasă înainte de randare, ca să nu apară un flash.
+- Titlurile folosesc fontul Barlow Semi Condensed (OFL). Fundalul are linii de viteză animate doar prin `transform`.
+- Cardurile au adâncime și se ridică la hover. Bara de scor crește până la valoare, iar costul are count-up.
+  Pașii formularului alunecă în direcția navigării.
+- Între rezultate, comparație și detalii, titlul și silueta modelului se mută cu `<ViewTransition>` din React, fără
+  bibliotecă externă.
+- Cu `prefers-reduced-motion` sunt oprite toate animațiile neesențiale, inclusiv fundalul și tranzițiile.
+- Layout shift zero: formularul este randat static, iar count-up-ul își rezervă lățimea finală.
+- Siglele nu sunt desenate. `BrandBadge` afișează fișierul oficial din `public/brands/` doar dacă îl adaugă
+  proprietarul site-ului; altfel, o etichetă text. Siluetele de caroserie sunt originale și generice.
+- Comparația are o variantă de print fără elemente de navigare, cu ipotezele de cost tipărite.
 
 ## Calitate
 
-- CI: Prettier, ESLint, typecheck, Vitest, build, Playwright, Lighthouse CI.
+- CI: Prettier, ESLint, typecheck, verificarea prețurilor carburanților (doar avertisment), Vitest, build,
+  Playwright, Lighthouse CI.
 - Lighthouse cere minimum 0,9 la performanță și accesibilitate pe toate paginile, plus SEO pe paginile indexabile.
-- Temă întunecată implicit. Un script inline aplică tema luminoasă înainte de randare, ca să nu apară un flash.
-- Animațiile respectă `prefers-reduced-motion`.
 
 ## Întrebări probabile la interviu
 
-1. **De ce site static și nu un server?**
-   Datele se schimbă rar și sunt mici. Static înseamnă găzduire gratuită, fără costuri de operare, viteză mare și
-   nicio dată personală stocată.
-2. **Cum garantezi că datele sunt corecte?**
-   Trei niveluri: raportul pe rând la import, schema JSON și verificările semantice din teste, apoi CI care
-   blochează un build cu date invalide. Fiecare câmp are sursă și dată.
-3. **De ce sunt combustibilul, caroseria și locurile filtre, iar bugetul nu?**
-   Primele trei sunt cerințe ferme ale utilizatorului. Bugetul e flexibil: un model puțin peste buget este încă
-   relevant, doar cu scor mai mic.
-4. **Cum explici scorul utilizatorului?**
-   Funcția este una singură, cu ponderi documentate. Fiecare regulă produce un chip „de ce”, iar pagina „Despre
-   date” afișează ponderile direct din cod.
-5. **De ce stau criteriile în URL și nu în state sau `localStorage`?**
-   Linkul se poate distribui, butonul Back funcționează și nu e nevoie de cookies. Paginile rămân statice.
-6. **Cum ai testat?**
-   Teste unitare pe funcții pure (scor, cost, import, validare), cu cazuri limită: praguri inclusive, intervale de
-   lățime zero, valori invalide. Un test E2E acoperă fluxul principal, iar Lighthouse CI verifică performanța.
-7. **Ce ai face diferit la scară mare?**
-   Datele ar trece într-un CMS sau într-o bază de date cu revizie editorială, prețurile ar fi actualizate automat
-   din surse cu API, iar paginile s-ar regenera incremental.
-8. **Ce limitări are?**
-   Consumul este cel declarat, deci optimist. Prețurile sunt intervale aproximative. Impozitul e o sumă fixă.
-   Lipsesc fiabilitatea, care e planificată pentru V2 cu minimum 2 surse, și mașinile hibride și electrice.
+1. **De ce site static?** Datele sunt mici și se schimbă rar. Static înseamnă găzduire gratuită, viteză mare și
+   nicio dată personală pe server.
+2. **Cum garantezi datele?** Fiecare câmp are sursă și dată. Importul refuză valorile invalide și nu publică
+   modelele incomplete sau neverificate. Testele leagă `cars.json` de CSV.
+3. **De ce filtre stricte doar la combustibil, caroserie și locuri?** Acestea sunt cerințe ferme. Bugetul și
+   utilizarea sunt flexibile, așa că influențează doar scorul.
+4. **Cum explici scorul?** O singură funcție, cu ponderi documentate. Fiecare regulă are motiv și chip „de ce”.
+5. **De ce criteriile în URL?** Linkul se poate distribui, Back funcționează și nu e nevoie de cookies.
+6. **Cum ai făcut animațiile fără să strici performanța?** Doar `transform` și `opacity`, View Transitions native,
+   lățime rezervată pentru count-up. Rezultatul: CLS 0 și Lighthouse ≥ 96.
+7. **Cum ai testat?** Funcții pure cu cazuri limită (praguri inclusive, intervale de lățime zero, date corupte în
+   `localStorage`), scenarii fixate pe un catalog de test, E2E pe fluxurile principale și Lighthouse în CI.
+8. **Limitări?** Consumul e cel declarat (NEDC; WLTP la câteva motoare). Prețurile second-hand sunt introduse
+   manual. Impozitul e o sumă fixă. Lipsesc fiabilitatea (V2) și mașinile hibride și electrice.
