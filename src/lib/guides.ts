@@ -78,8 +78,12 @@ export function visibleGuides(category?: Guide["category"]): Guide[] {
   );
 }
 
+/** Markdown → HTML. Task-list checkboxes get a <label> (accessible) and stay usable on screen and in print. */
 export const renderMarkdown = (md: string) =>
-  marked.parse(md, { async: false }) as string;
+  (marked.parse(md, { async: false }) as string).replace(
+    /<li><input (?:disabled="" )?type="checkbox"(?: disabled="")?>\s*([\s\S]*?)<\/li>/g,
+    '<li><label><input type="checkbox"> $1</label></li>',
+  );
 
 /** "## Question" + following paragraph(s) → FAQ pairs (plain text, links reduced to their label). */
 export function faqPairs(md: string): { q: string; a: string }[] {

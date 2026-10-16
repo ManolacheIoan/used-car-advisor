@@ -213,7 +213,12 @@ export function Compare() {
           {MIXED_CYCLES_NOTE}
         </p>
       )}
-      <div className={`${card} print-table overflow-x-auto p-0`}>
+      <div
+        className={`${card} print-table overflow-x-auto p-0`}
+        tabIndex={0}
+        role="region"
+        aria-label="Tabel comparație"
+      >
         <table className="w-full min-w-[32rem] text-left text-sm">
           <caption className="sr-only">Comparație modele</caption>
           <thead>

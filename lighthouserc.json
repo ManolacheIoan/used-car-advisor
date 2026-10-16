@@ -5,7 +5,10 @@
       "numberOfRuns": 3,
       "url": [
         "/",
+        "/catalog/",
         "/despre-date/",
+        "/metodologie/",
+        "/calculator-cost/",
         "/rezultate/?bmin=20000&bmax=60000&u=familie&f=oricare&c=oricare&s=5&km=12000"
       ]
     },
@@ -25,11 +28,17 @@
               {
                 "minScore": 0.9
               }
+            ],
+            "categories:best-practices": [
+              "error",
+              {
+                "minScore": 0.9
+              }
             ]
           }
         },
         {
-          "matchingUrlPattern": "^http://[^/]+/(despre-date/)?$",
+          "matchingUrlPattern": "^http://[^/]+/(catalog/|despre-date/|metodologie/|calculator-cost/)?$",
           "assertions": {
             "categories:seo": [
               "error",

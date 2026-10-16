@@ -290,7 +290,12 @@ export function TcoCalculator() {
               title={`Pe categorii, ${VIEW_LABEL[view].toLowerCase()}`}
               data={chartData}
             />
-            <div className="overflow-x-auto">
+            <div
+              className="overflow-x-auto"
+              tabIndex={0}
+              role="region"
+              aria-label="Tabel costuri pe categorii"
+            >
               <table className="w-full text-left text-sm">
                 <caption className="sr-only">Costuri pe categorii</caption>
                 <thead>

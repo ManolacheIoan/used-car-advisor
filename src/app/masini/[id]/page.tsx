@@ -171,7 +171,12 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         <h2 id="eng-h" className="text-lg font-semibold">
           Motorizări
         </h2>
-        <div className={`${card} overflow-x-auto p-0`}>
+        <div
+          className={`${card} overflow-x-auto p-0`}
+          tabIndex={0}
+          role="region"
+          aria-label="Tabel motorizări"
+        >
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-line text-muted border-b">

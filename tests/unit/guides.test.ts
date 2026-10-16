@@ -73,3 +73,12 @@ describe("faqPairs", () => {
     ).toEqual([{ q: "Ce e X?", a: "E un test." }]);
   });
 });
+
+describe("renderMarkdown", () => {
+  it("labels task-list checkboxes", async () => {
+    const { renderMarkdown } = await import("@/lib/guides");
+    expect(renderMarkdown("- [ ] Unu")).toContain(
+      '<li><label><input type="checkbox"> Unu</label></li>',
+    );
+  });
+});

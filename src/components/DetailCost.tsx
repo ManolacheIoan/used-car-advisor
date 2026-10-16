@@ -22,7 +22,12 @@ export function DetailCost({ engines }: { engines: Engine[] }) {
         Pentru {km.toLocaleString("ro-RO")} km/an, cu consumul declarat.{" "}
         {COST_NOTE}.
       </p>
-      <div className="card overflow-x-auto p-0">
+      <div
+        className="card overflow-x-auto p-0"
+        tabIndex={0}
+        role="region"
+        aria-label="Tabel cost de utilizare"
+      >
         <table className="w-full text-left text-sm">
           <caption className="sr-only">
             Cost lunar și anual pe motorizare
