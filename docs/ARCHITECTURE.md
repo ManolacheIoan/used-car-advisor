@@ -43,7 +43,7 @@ conversie între ele.
 
 ## Scorul (`lib/scoring.ts`)
 
-1. **Filtre stricte:** combustibil, caroserie, locuri ≥ cerute. Dacă nu rămâne niciun model, `relaxOptions()` arată
+1. **Filtre stricte:** combustibil, caroserie, marcă (implicit „Oricare”), locuri ≥ cerute. Dacă nu rămâne niciun model, `relaxOptions()` arată
    ce criteriu, relaxat singur, aduce rezultate și câte.
 2. **Scor** = 100 × (0,40·B + 0,30·C + 0,30·U), rotunjit. Fiecare componentă e între 0 și 1:
    - **B (buget):** dacă prețul se suprapune cu bugetul, 0,5 + 0,5 × suprapunere / intervalul mai îngust. Altfel,

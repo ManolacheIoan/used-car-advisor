@@ -18,6 +18,7 @@ const prefs: Prefs = {
   usage: "mixt",
   fuel: "oricare",
   body: "oricare",
+  brand: "oricare",
   seats: 5,
   kmYear: 15000,
 };
@@ -101,20 +102,57 @@ describe("usageFit", () => {
 });
 
 describe("hard filters", () => {
-  it("filter fuel, body and seats", () => {
+  it("filter fuel, body, brand and seats", () => {
     const m = car({ body: "sedan", seats: 5 });
     expect(
-      matchesHard(m, { fuel: "motorina", body: "oricare", seats: 5 }),
+      matchesHard(m, {
+        fuel: "motorina",
+        body: "oricare",
+        brand: "oricare",
+        seats: 5,
+      }),
     ).toBe(false);
-    expect(matchesHard(m, { fuel: "benzina", body: "suv", seats: 5 })).toBe(
-      false,
-    );
-    expect(matchesHard(m, { fuel: "oricare", body: "oricare", seats: 7 })).toBe(
-      false,
-    );
-    expect(matchesHard(m, { fuel: "benzina", body: "sedan", seats: 4 })).toBe(
-      true,
-    );
+    expect(
+      matchesHard(m, {
+        fuel: "benzina",
+        body: "suv",
+        brand: "oricare",
+        seats: 5,
+      }),
+    ).toBe(false);
+    expect(
+      matchesHard(m, {
+        fuel: "oricare",
+        body: "oricare",
+        brand: "oricare",
+        seats: 7,
+      }),
+    ).toBe(false);
+    expect(
+      matchesHard(m, {
+        fuel: "benzina",
+        body: "sedan",
+        brand: "oricare",
+        seats: 4,
+      }),
+    ).toBe(true);
+    // brand: fixture brand "Test" → id "test"
+    expect(
+      matchesHard(m, {
+        fuel: "oricare",
+        body: "oricare",
+        brand: "test",
+        seats: 2,
+      }),
+    ).toBe(true);
+    expect(
+      matchesHard(m, {
+        fuel: "oricare",
+        body: "oricare",
+        brand: "dacia",
+        seats: 2,
+      }),
+    ).toBe(false);
   });
 });
 
@@ -198,6 +236,12 @@ describe("relaxOptions", () => {
       { key: "body", count: 1 },
     ]);
   });
+  it("offers relaxing the brand", () => {
+    expect(
+      relaxOptions([car({ brand: "Skoda" })], { ...prefs, brand: "dacia" }),
+    ).toEqual([{ key: "brand", count: 1 }]);
+  });
+
   it("skips criteria already relaxed", () => {
     expect(relaxOptions([car({ seats: 5 })], { ...prefs, seats: 7 })).toEqual([
       { key: "seats", count: 1 },

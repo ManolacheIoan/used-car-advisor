@@ -59,6 +59,7 @@ describe("usage never filters", () => {
     usage: "oras",
     fuel: "oricare",
     body: "oricare",
+    brand: "oricare",
     seats: 5,
     kmYear: 12000,
   };

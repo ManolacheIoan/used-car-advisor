@@ -15,6 +15,7 @@ const ok: PrefsInput = {
   usage: "oras",
   fuel: "benzina",
   body: "oricare",
+  brand: "oricare",
   seats: "5",
   kmYear: "12000",
 };
@@ -34,6 +35,7 @@ describe("validatePrefs", () => {
     ["usage", "zbor"],
     ["fuel", "electric"],
     ["body", "cabrio"],
+    ["brand", "lada"],
     ["seats", "3"],
     ["kmYear", "0"],
     ["kmYear", ""],
@@ -46,6 +48,11 @@ describe("validatePrefs", () => {
   it("rejects min > max", () => {
     const r = validatePrefs({ ...ok, budgetMin: "60000" });
     expect(r.errors.budgetMax).toMatch(/cel puțin egal/);
+  });
+
+  it("accepts a known brand and treats a missing brand as any", () => {
+    expect(validatePrefs({ ...ok, brand: "dacia" }).prefs?.brand).toBe("dacia");
+    expect(validatePrefs({ ...ok, brand: "" }).prefs?.brand).toBe("oricare");
   });
 
   it("accepts min = max", () => {

@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
+import { BRANDS } from "@/lib/data";
 import { BODY_LABEL, ENERGY_LABEL, USAGE_LABEL } from "@/lib/labels";
 import type { Prefs } from "@/lib/scoring";
 import {
@@ -20,6 +21,7 @@ const DEFAULTS: PrefsInput = {
   usage: "mixt",
   fuel: "oricare",
   body: "oricare",
+  brand: "oricare",
   seats: "5",
   kmYear: "12000",
 };
@@ -27,7 +29,10 @@ const DEFAULTS: PrefsInput = {
 const STEPS: { title: string; fields: (keyof Prefs)[] }[] = [
   { title: "Buget", fields: ["budgetMin", "budgetMax"] },
   { title: "Utilizare", fields: ["usage"] },
-  { title: "Combustibil și caroserie", fields: ["fuel", "body"] },
+  {
+    title: "Combustibil, caroserie și marcă",
+    fields: ["fuel", "body", "brand"],
+  },
   { title: "Locuri și kilometri", fields: ["seats", "kmYear"] },
 ];
 
@@ -161,6 +166,15 @@ export function StepForm({ initial = DEFAULTS }: { initial?: PrefsInput }) {
               onChange={set("body")}
               error={errors.body}
             />
+            <Choice
+              id="brand"
+              legend="Marcă"
+              compact
+              options={{ ...ANY, ...Object.fromEntries(BRANDS) }}
+              value={values.brand}
+              onChange={set("brand")}
+              error={errors.brand}
+            />
           </>
         )}
         {step === 3 && (
@@ -266,6 +280,7 @@ function NumberField(p: {
 }
 
 function Choice(p: {
+  compact?: boolean;
   id: string;
   legend: string;
   options: Record<string, string>;
@@ -277,7 +292,9 @@ function Choice(p: {
   return (
     <fieldset aria-describedby={p.error ? `${p.id}-err` : undefined}>
       <legend className="text-sm font-medium">{p.legend}</legend>
-      <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
+      <div
+        className={`mt-2 grid gap-2 ${p.compact ? "grid-cols-3 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3"}`}
+      >
         {Object.entries(p.options).map(([v, label], i) => (
           <label
             key={v}

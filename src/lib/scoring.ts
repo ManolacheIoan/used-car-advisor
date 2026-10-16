@@ -1,7 +1,7 @@
 /**
  * Fit score — the only place where ranking is decided.
  *
- * 1. Hard filters (a mismatch removes the model): fuel, body type, seats (>= requested).
+ * 1. Hard filters (a mismatch removes the model): fuel, body type, brand, seats (>= requested).
  * 2. Score 0–100 = 100 × (W.budget·B + W.cost·C + W.usage·U), each part in [0, 1]:
  *    B  budget fit: if the price range overlaps the budget, 0.5 + 0.5 × overlap / (narrower range);
  *       otherwise 0.5 × max(0, 1 − gap / (20% of budget max)). Continuous at the edge.
@@ -11,6 +11,7 @@
  */
 import { monthlyCost, type CostAssumptions, type MonthlyCost } from "./cost";
 import { USAGE_RULES } from "@/config/usageRules";
+import { brandId } from "./brand";
 import type { Body, CarModel, Engine, Usage } from "./types";
 
 export const WEIGHTS = { budget: 0.4, cost: 0.3, usage: 0.3 } as const;
@@ -26,6 +27,8 @@ export interface Prefs {
   usage: Usage;
   fuel: Fuel | "oricare";
   body: Body | "oricare";
+  /** Brand id (see lib/brand.ts) or "oricare". */
+  brand: string;
   seats: number;
   kmYear: number;
 }
@@ -96,11 +99,12 @@ export function usageFit(
 
 export function matchesHard(
   m: CarModel,
-  p: Pick<Prefs, "fuel" | "body" | "seats">,
+  p: Pick<Prefs, "fuel" | "body" | "seats" | "brand">,
 ): boolean {
   return (
     (p.fuel === "oricare" || m.engines.some((e) => e.energy === p.fuel)) &&
     (p.body === "oricare" || m.body === p.body) &&
+    (p.brand === "oricare" || brandId(m.brand) === p.brand) &&
     m.seats >= p.seats
   );
 }
@@ -171,7 +175,7 @@ export function rank(
     .slice(0, MAX_RESULTS);
 }
 
-export type RelaxKey = "fuel" | "body" | "seats";
+export type RelaxKey = "fuel" | "body" | "brand" | "seats";
 
 /** For an empty result: how many models each single relaxation would bring back. */
 export function relaxOptions(
@@ -181,6 +185,7 @@ export function relaxOptions(
   const variants: Record<RelaxKey, Prefs> = {
     fuel: { ...p, fuel: "oricare" },
     body: { ...p, body: "oricare" },
+    brand: { ...p, brand: "oricare" },
     seats: { ...p, seats: 2 },
   };
   return (Object.keys(variants) as RelaxKey[])

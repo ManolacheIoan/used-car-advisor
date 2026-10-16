@@ -31,6 +31,7 @@ export const MAX_COMPARE = 3;
 const RELAX_LABEL: Record<RelaxKey, string> = {
   fuel: "Orice combustibil",
   body: "Orice caroserie",
+  brand: "Orice marcă",
   seats: "Orice număr de locuri",
 };
 
@@ -56,7 +57,8 @@ export function Results() {
     return (
       <Notice title="Niciun model nu se potrivește tuturor criteriilor">
         <p className="text-muted">
-          Combustibilul, caroseria și numărul de locuri sunt filtre stricte.
+          Combustibilul, caroseria, marca și numărul de locuri sunt filtre
+          stricte.
           {options.length > 0
             ? " Relaxează un criteriu:"
             : " Nici relaxarea unui singur criteriu nu aduce rezultate; modifică mai multe criterii."}

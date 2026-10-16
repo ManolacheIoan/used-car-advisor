@@ -12,7 +12,8 @@ test("form → results → compare → detail", async ({ page }) => {
 
   await page.getByText("Familie", { exact: true }).click();
   await page.getByRole("button", { name: "Continuă" }).click();
-  await page.getByRole("button", { name: "Continuă" }).click(); // any fuel, any body
+  await page.getByText("Dacia", { exact: true }).click(); // any fuel, any body, brand Dacia
+  await page.getByRole("button", { name: "Continuă" }).click();
   await page.getByRole("button", { name: "Vezi recomandările" }).click();
 
   await expect(page).toHaveURL(/\/rezultate\//);
@@ -21,6 +22,10 @@ test("form → results → compare → detail", async ({ page }) => {
     .filter({ has: page.getByRole("meter") });
   await expect(cards.first()).toBeVisible();
   expect(await cards.count()).toBeGreaterThanOrEqual(2);
+  for (const title of await cards
+    .getByRole("heading", { level: 2 })
+    .allInnerTexts())
+    expect(title).toContain("Dacia");
   await expect(page.getByText("orientativ").first()).toBeVisible();
 
   await cards.nth(0).getByLabel("Compară").check();

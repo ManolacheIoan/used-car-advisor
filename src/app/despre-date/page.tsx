@@ -35,7 +35,7 @@ export default function Page() {
       <h2>Cum se calculează scorul</h2>
       <ul>
         <li>
-          Combustibilul, caroseria și numărul minim de locuri sunt filtre
+          Combustibilul, caroseria, marca și numărul minim de locuri sunt filtre
           stricte: modelele care nu se potrivesc nu apar.
         </li>
         <li>

@@ -82,7 +82,7 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 
 ## Cum funcționează scorul (`src/lib/scoring.ts`)
 
-1. **Filtre stricte:** combustibilul, caroseria și numărul minim de locuri. Un model care nu se potrivește este
+1. **Filtre stricte:** combustibilul, caroseria, marca (opțional) și numărul minim de locuri. Un model care nu se potrivește este
    eliminat. Dacă nu rămâne niciun model, pagina oferă un buton care relaxează un singur criteriu.
 2. **Scor 0–100** = 100 × (0,40·Buget + 0,30·Cost + 0,30·Utilizare):
    - **Buget:** dacă intervalul de preț se suprapune cu bugetul, 0,5 + 0,5 × suprapunere / intervalul mai îngust.

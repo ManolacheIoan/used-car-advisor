@@ -1,4 +1,5 @@
 import { DEFAULT_ASSUMPTIONS, type CostAssumptions } from "./cost";
+import { BRANDS } from "./data";
 import type { Prefs } from "./scoring";
 
 export const LIMITS = {
@@ -49,6 +50,10 @@ export function validatePrefs(raw: Partial<PrefsInput>): {
     errors.usage = "Alege cum folosești mașina.";
   if (!oneOf(FUELS, raw.fuel ?? "")) errors.fuel = "Alege combustibilul.";
   if (!oneOf(BODIES, raw.body ?? "")) errors.body = "Alege tipul de caroserie.";
+  // Older links have no brand: treat as "oricare".
+  const brand = raw.brand || "oricare";
+  if (brand !== "oricare" && !BRANDS.some(([id]) => id === brand))
+    errors.brand = "Alege o marcă din listă.";
   if (!(LIMITS.seats as readonly number[]).includes(seats))
     errors.seats = "Alege numărul de locuri.";
   if (!(km >= LIMITS.km.min && km <= LIMITS.km.max))
@@ -63,6 +68,7 @@ export function validatePrefs(raw: Partial<PrefsInput>): {
       usage: raw.usage as Prefs["usage"],
       fuel: raw.fuel as Prefs["fuel"],
       body: raw.body as Prefs["body"],
+      brand,
       seats,
       kmYear: km,
     },
@@ -76,6 +82,7 @@ export const PREF_KEYS: Record<keyof Prefs, string> = {
   usage: "u",
   fuel: "f",
   body: "c",
+  brand: "m",
   seats: "s",
   kmYear: "km",
 };
