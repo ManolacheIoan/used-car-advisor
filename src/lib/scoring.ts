@@ -6,17 +6,18 @@
  *    B  budget fit: if the price range overlaps the budget, 0.5 + 0.5 × overlap / (narrower range);
  *       otherwise 0.5 × max(0, 1 − gap / (20% of budget max)). Continuous at the edge.
  *    C  monthly cost: min–max across the filtered candidates; cheapest = 1, dearest = 0.
- *    U  usage fit: additive rules per usage (see USAGE_RULES), capped at 1.
+ *    U  usage fit: additive rules per usage (see src/config/usageRules.ts), capped at 1.
  * No reliability or quality signal is used in V1.
  */
 import { monthlyCost, type CostAssumptions, type MonthlyCost } from "./cost";
-import type { Body, CarModel, Engine } from "./types";
+import { USAGE_RULES } from "@/config/usageRules";
+import type { Body, CarModel, Engine, Usage } from "./types";
 
 export const WEIGHTS = { budget: 0.4, cost: 0.3, usage: 0.3 } as const;
 export const BUDGET_TOLERANCE = 0.2;
 export const MAX_RESULTS = 10;
 
-export type Usage = "oras" | "autostrada" | "familie" | "mixt";
+export type { Usage };
 export type Fuel = "benzina" | "motorina" | "gpl";
 
 export interface Prefs {
@@ -68,82 +69,6 @@ function budgetReason(price: { min: number; max: number }, p: Prefs): Reason {
   if (price.min > p.budgetMax) return { text: "Peste buget", positive: false };
   return { text: "Sub bugetul ales", positive: true };
 }
-
-interface Rule {
-  test: (m: CarModel, e: Engine) => boolean;
-  points: number;
-  yes: string;
-  no?: string;
-}
-
-/** Usage rules: base score + points for each rule met. Unmet rules with `no` add a negative chip. */
-export const USAGE_RULES: Record<Usage, { base: number; rules: Rule[] }> = {
-  oras: {
-    base: 0.3,
-    rules: [
-      {
-        test: (m) => m.body === "hatchback",
-        points: 0.4,
-        yes: "Compactă, ușor de parcat",
-        no: "Mai mare decât e nevoie în oraș",
-      },
-      {
-        test: (_, e) => e.consumption.value <= 6,
-        points: 0.3,
-        yes: "Consum declarat mic",
-        no: "Consum declarat peste 6 l/100 km",
-      },
-    ],
-  },
-  autostrada: {
-    base: 0.3,
-    rules: [
-      {
-        test: (_, e) => e.energy === "motorina",
-        points: 0.3,
-        yes: "Motorină, potrivită pe distanțe lungi",
-      },
-      {
-        test: (_, e) => e.hp >= 100,
-        points: 0.4,
-        yes: "Putere de cel puțin 100 CP",
-        no: "Sub 100 CP pentru autostradă",
-      },
-    ],
-  },
-  familie: {
-    base: 0.2,
-    rules: [
-      {
-        test: (m) => m.trunk_l >= 400,
-        points: 0.4,
-        yes: "Portbagaj de cel puțin 400 l",
-        no: "Portbagaj sub 400 l",
-      },
-      {
-        test: (m) => ["break", "suv", "mpv"].includes(m.body),
-        points: 0.2,
-        yes: "Caroserie spațioasă",
-      },
-      { test: (m) => m.seats >= 5, points: 0.2, yes: "Cel puțin 5 locuri" },
-    ],
-  },
-  mixt: {
-    base: 0.5,
-    rules: [
-      {
-        test: (_, e) => e.consumption.value <= 6.5,
-        points: 0.25,
-        yes: "Consum declarat moderat",
-      },
-      {
-        test: (_, e) => e.hp >= 90,
-        points: 0.25,
-        yes: "Putere suficientă pentru drum",
-      },
-    ],
-  },
-};
 
 export function usageFit(
   m: CarModel,

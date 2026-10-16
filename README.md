@@ -83,7 +83,7 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
    - **Buget:** dacă intervalul de preț se suprapune cu bugetul, 0,5 + 0,5 × suprapunere / intervalul mai îngust.
      Altfel scade de la 0,5 la 0 pe o distanță de 20% din bugetul maxim.
    - **Cost:** costul lunar comparat cu ceilalți candidați (cel mai ieftin = 1, cel mai scump = 0).
-   - **Utilizare:** reguli aditive per tip de folosire (caroserie, consum, putere, portbagaj), plafonate la 1.
+   - **Utilizare:** reguli aditive per tip de folosire, în `src/config/usageRules.ts`, fiecare cu motivul ei; maximul este exact 1.
 3. Fiecare regulă îndeplinită sau ratată devine un chip „de ce”. V1 nu are scor de fiabilitate sau calitate.
 4. Pentru fiecare model se folosește motorizarea cea mai ieftină la utilizare care se potrivește combustibilului ales.
 

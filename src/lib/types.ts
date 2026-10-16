@@ -1,4 +1,5 @@
 export type Energy = "benzina" | "motorina" | "gpl" | "hibrid" | "electric";
+export type Usage = "oras" | "autostrada" | "familie" | "mixt";
 export type Body = "hatchback" | "sedan" | "break" | "suv" | "mpv";
 
 export interface Source {

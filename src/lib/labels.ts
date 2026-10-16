@@ -1,5 +1,4 @@
-import type { Body, Energy } from "./types";
-import type { Usage } from "./scoring";
+import type { Body, Energy, Usage } from "./types";
 
 export const ENERGY_LABEL: Record<Energy, string> = {
   benzina: "Benzină",
