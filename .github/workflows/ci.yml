@@ -26,6 +26,7 @@ jobs:
         run: npm run audit:public
       - run: npm run build:demo
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e
+      - name: E2E (demo flows, accessibility, PWA; public exclusion)
+        run: npm run test:e2e
       - name: Lighthouse CI
         run: npx @lhci/cli@0.15.1 autorun
