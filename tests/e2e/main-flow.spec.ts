@@ -39,7 +39,10 @@ test("form → results → compare → detail", async ({ page }) => {
   ).toBeVisible();
 
   await cards.nth(0).getByLabel("Compară").check();
-  await cards.nth(1).getByLabel("Compară").check();
+  // Keyboard selection (also checks accessibility); the sticky compare bar can cover the pointer target.
+  await cards.nth(1).getByLabel("Compară").focus();
+  await page.keyboard.press("Space");
+  await expect(cards.nth(1).getByLabel("Compară")).toBeChecked();
   await page.getByRole("link", { name: "Compară", exact: true }).click();
 
   await expect(page).toHaveURL(/\/compara\/.*ids=/);

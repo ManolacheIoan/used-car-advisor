@@ -314,7 +314,7 @@ export function Catalog({
 function CatalogCard({ m, index }: { m: CarModel; index: number }) {
   return (
     <li
-      className={`${card} card-hover animate-rise flex flex-col gap-2`}
+      className={`${card} animate-rise flex flex-col gap-2`}
       style={{ animationDelay: `${index * 30}ms` }}
     >
       <div className="flex items-start justify-between gap-2">

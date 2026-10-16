@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CompareButton } from "@/components/CompareButton";
+import { RecentTracker } from "@/components/RecentTracker";
 import { FaqBlock } from "@/components/FaqBlock";
 import { V2Sections } from "@/components/V2Sections";
 import { brandId } from "@/lib/brand";
@@ -126,6 +127,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         </div>
       </header>
       <CompareButton id={m.id} />
+      <RecentTracker id={m.id} />
 
       <p className="text-muted">{modelOverview(m)}</p>
 

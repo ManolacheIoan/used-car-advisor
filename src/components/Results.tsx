@@ -209,7 +209,7 @@ function ResultCard(p: {
   const { model: m, engine: e } = p.r;
   return (
     <li
-      className={`${card} card-hover animate-rise space-y-3`}
+      className={`${card} animate-rise space-y-3`}
       style={{ animationDelay: `${p.position * 40}ms` }}
     >
       <div className="flex items-start justify-between gap-3">

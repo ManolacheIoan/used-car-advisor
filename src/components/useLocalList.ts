@@ -65,3 +65,7 @@ export function useLocalList(
 export const COMPARE_KEY = "alegemasina:compara";
 export const MAX_COMPARE_LIST = 4;
 export const useCompareList = () => useLocalList(COMPARE_KEY, MAX_COMPARE_LIST);
+
+export const RECENT_KEY = "alegemasina:recente";
+export const MAX_RECENT = 12;
+export const useRecentList = () => useLocalList(RECENT_KEY, MAX_RECENT);

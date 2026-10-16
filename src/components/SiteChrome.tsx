@@ -19,6 +19,12 @@ export function SiteHeader() {
             Catalog
           </Link>
           <Link
+            href="/instrumente/"
+            className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
+          >
+            Instrumente
+          </Link>
+          <Link
             href="/favorite/"
             className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
           >

@@ -8,3 +8,4 @@
 - 2026-10-16 · Modelele electrice/hibride excluse din demo — alternative: includere cu energie hibrid/electric — V1 acoperă doar benzină/motorină/GPL; schema rămâne pregătită (ROADMAP V2).
 - 2026-10-16 · „Mărci populare” pe prima pagină = mărcile cu cele mai multe generații în catalog — alternative: statistici de înmatriculări (nu am sursă importată), ordine alfabetică — nu inventăm popularitatea; regula e transparentă.
 - 2026-10-16 · Valorile implicite RCA 1200 / impozit 300 / întreținere 2000 lei/an eliminate (golite) — alternative: păstrarea lor ca „aproximative” — nu aveau sursă; regula interzice sume inventate. Scorul nu se schimbă (cost fix egal la toate modelele nu modifică ordinea).
+- 2026-10-16 · Efectul de ridicare la hover scos de pe cardurile care conțin controale (rezultate, catalog) — alternative: păstrarea lui — mutarea cardului sub cursor deplasa ținta clicului; rămâne pe cardurile care sunt doar link.
