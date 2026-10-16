@@ -1,45 +1,46 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { COLUMNS, csvToCatalog, parseCsv } from "@/lib/importCsv";
+import { COLUMNS, csvToCatalog, formatReport, parseCsv } from "@/lib/importCsv";
 
 const header = COLUMNS.join(",");
 const U = "https://example.com/a";
 const D = "2026-10-01";
+const src = (g: string, url = U) => ({
+  [`${g}_source_title`]: "Sursa A",
+  [`${g}_source_url`]: url,
+  [`${g}_date`]: D,
+});
 const base: Record<string, string> = {
   id: "m-1",
   brand: "B",
   model: "M",
   generation: "I",
   example: "",
+  verification: "verified",
   year_from: "2015",
   year_to: "2020",
-  years_source: U,
-  years_date: D,
+  ...src("years"),
   body: "hatchback",
-  body_source: U,
-  body_date: D,
+  ...src("body"),
   seats: "5",
-  seats_source: U,
-  seats_date: D,
+  ...src("seats"),
   trunk_l: "300",
-  trunk_source: U,
-  trunk_date: D,
+  ...src("trunk"),
   energy: "benzina",
   cc: "1200",
   hp: "75",
-  consumption_l100km: "5,5",
-  engine_source: U,
-  engine_date: D,
-  price_min_eur: "20000",
-  price_max_eur: "30000",
-  price_source: "https://example.com/p",
-  price_date: D,
+  consumption_l100km: "5.5",
+  ...src("engine"),
+  price_min_eur: "4000",
+  price_max_eur: "6000",
+  ...src("price", "https://example.com/p"),
 };
 const quote = (v: string) => (v.includes(",") ? `"${v}"` : v);
 const row = (over: Record<string, string> = {}) =>
-  COLUMNS.map((c) => quote({ ...base, ...over }[c])).join(",");
+  COLUMNS.map((c) => quote({ ...base, ...over }[c] ?? "")).join(",");
 const csv = (...rows: string[]) => [header, ...rows].join("\n");
-const run = (text: string) => csvToCatalog(text, { updated: "2026-10-16" });
+const run = (text: string) =>
+  csvToCatalog([{ name: "t.csv", text }], { updated: "2026-10-16" });
 const messages = (text: string) =>
   run(text).errors.map((e) => `${e.line}: ${e.message}`);
 
@@ -58,11 +59,11 @@ describe("parseCsv", () => {
   });
 });
 
-describe("csvToCatalog", () => {
-  it("builds a model with grouped engines, decimal comma and deduped sources", () => {
-    const { catalog, errors } = run(
+describe("csvToCatalog: publishing", () => {
+  it("publishes a complete, verified model with grouped engines and titled sources", () => {
+    const r = run(
       csv(
-        row(),
+        row({ consumption_l100km: "5,5" }),
         row({
           brand: "",
           energy: "motorina",
@@ -72,12 +73,26 @@ describe("csvToCatalog", () => {
         }),
       ),
     );
-    expect(errors).toEqual([]);
-    const m = catalog!.models[0];
+    expect(r.errors).toEqual([]);
+    const m = r.catalog!.models[0];
     expect(m.engines.map((e) => e.consumption.value)).toEqual([5.5, 4.2]);
-    expect(m.sources.map((s) => s.url)).toEqual([U, "https://example.com/p"]);
-    expect(m.price_eur.set_on).toBe(D);
-    expect(m.known_issues).toEqual([]);
+    expect(m.sources).toEqual([
+      { title: "Sursa A", url: U, accessed: D },
+      { title: "Sursa A", url: "https://example.com/p", accessed: D },
+    ]);
+    expect(m.price_eur).toEqual({ min: 4000, max: 6000, set_on: D });
+  });
+
+  it("does not publish models that need verification", () => {
+    const r = run(csv(row({ verification: "needs verification" })));
+    expect(r.errors).toEqual([]);
+    expect(r.catalog!.models).toEqual([]);
+    expect(r.unverified).toEqual(["m-1"]);
+  });
+
+  it("publishes example models without verification", () => {
+    const r = run(csv(row({ example: "true", verification: "" })));
+    expect(r.catalog!.models[0].example).toBe(true);
   });
 
   it("keeps existing V2 fields from the previous catalog", () => {
@@ -86,60 +101,126 @@ describe("csvToCatalog", () => {
       updated: D,
       models: [{ id: "m-1", known_issues: [issue] }],
     } as never;
-    const { catalog } = csvToCatalog(csv(row()), { updated: D, previous });
-    expect(catalog!.models[0].known_issues).toEqual([issue]);
+    const r = csvToCatalog([{ name: "t.csv", text: csv(row()) }], {
+      updated: D,
+      previous,
+    });
+    expect(r.catalog!.models[0].known_issues).toEqual([issue]);
+  });
+});
+
+describe("csvToCatalog: incomplete models are skipped and reported", () => {
+  it("lists missing values and missing sources", () => {
+    const r = run(
+      csv(
+        row({ price_min_eur: "", price_max_eur: "", price_source_url: "" }),
+        row({ id: "m-2", seats: "4", seats_source_title: "" }),
+      ),
+    );
+    expect(r.errors).toEqual([]);
+    expect(r.catalog!.models).toEqual([]);
+    expect(r.incomplete).toEqual([
+      {
+        id: "m-1",
+        file: "t.csv",
+        line: 2,
+        missing: ["price_min_eur", "price_max_eur"],
+      },
+      { id: "m-2", file: "t.csv", line: 3, missing: ["seats_source_title"] },
+    ]);
   });
 
+  it("names the line of an incomplete engine row", () => {
+    const r = run(
+      csv(row(), row({ brand: "", consumption_l100km: "", hp: "90" })),
+    );
+    expect(r.incomplete[0].missing).toEqual(["consumption_l100km (line 3)"]);
+  });
+
+  it("writes a readable report", () => {
+    const r = run(csv(row({ price_min_eur: "" })));
+    const md = formatReport(r, "2026-10-16");
+    expect(md).toContain("Incomplete (nepublicate): 1");
+    expect(md).toContain("`m-1` (t.csv:2): price_min_eur");
+  });
+});
+
+describe("csvToCatalog: invalid values are errors", () => {
   it("reports missing columns", () => {
     expect(messages("id,brand\nx,y")[0]).toMatch(/^1: missing columns: model/);
   });
 
-  it("reports missing fields and sources per line", () => {
-    const m = messages(
-      csv(row(), row({ id: "m-2", seats: "", price_source: "" })),
-    );
-    expect(m).toContain("3: missing seats");
-    expect(m).toContain(
-      "3: missing price_source (source for price_min_eur, price_max_eur)",
-    );
-  });
-
   it("reports invalid URLs and dates", () => {
     const m = messages(
-      csv(row({ body_source: "www.x.ro", trunk_date: "16.10.2026" })),
+      csv(row({ body_source_url: "www.x.ro", trunk_date: "16.10.2026" })),
     );
-    expect(m).toContain("2: body_source is not a valid http(s) URL");
+    expect(m).toContain("2: body_source_url is not a valid http(s) URL");
     expect(m).toContain('2: trunk_date must be YYYY-MM-DD, got "16.10.2026"');
   });
 
   it("reports invalid ranges", () => {
-    const m = messages(csv(row({ year_from: "2021", price_min_eur: "40000" })));
+    const m = messages(csv(row({ year_from: "2021", price_min_eur: "9000" })));
     expect(m).toContain("2: year_from 2021 > year_to 2020");
-    expect(m).toContain("2: price_min_eur 40000 > price_max_eur 30000");
+    expect(m).toContain("2: price_min_eur 9000 > price_max_eur 6000");
   });
 
-  it("reports duplicate ids and conflicting model columns", () => {
+  it("reports duplicate ids, also across files, and conflicting model columns", () => {
     const m = messages(
       csv(row(), row({ id: "m-2" }), row(), row({ id: "m-2", seats: "7" })),
     );
-    expect(m).toContain("4: duplicate id (first used on line 2)");
+    expect(m).toContain("4: duplicate id (first used on t.csv line 2)");
     expect(m).toContain('5: seats "7" conflicts with line 3 ("5")');
+    const r = csvToCatalog(
+      [
+        { name: "a.csv", text: csv(row()) },
+        { name: "b.csv", text: csv(row()) },
+      ],
+      { updated: D },
+    );
+    expect(r.errors[0].message).toBe(
+      "duplicate id (first used on a.csv line 2)",
+    );
   });
 
-  it("rejects energies and values outside V1", () => {
+  it("rejects values outside V1 and unknown verification states", () => {
     const m = messages(
-      csv(row({ energy: "electric", hp: "abc", consumption_l100km: "0" })),
+      csv(
+        row({
+          energy: "electric",
+          hp: "abc",
+          consumption_l100km: "0",
+          verification: "ok",
+        }),
+      ),
     );
     expect(m.some((x) => x.startsWith("2: energy must be one of"))).toBe(true);
     expect(m).toContain('2: hp must be a positive whole number, got "abc"');
     expect(m.some((x) => x.startsWith("2: consumption_l100km"))).toBe(true);
+    expect(m.some((x) => x.startsWith("2: verification must be"))).toBe(true);
+  });
+});
+
+describe("repository data", () => {
+  const files = ["data/cars.template.csv", "data/examples.csv"].map((name) => ({
+    name,
+    text: readFileSync(name, "utf8"),
+  }));
+  const r = csvToCatalog(files, { updated: "2026-10-16" });
+
+  it("imports without errors", () => {
+    expect(r.errors).toEqual([]);
   });
 
-  it("imports the template without errors", () => {
-    const { catalog, errors } = run(
-      readFileSync("data/cars.template.csv", "utf8"),
+  it("never publishes a real model that is incomplete or unverified", () => {
+    const published = new Set(r.catalog!.models.map((m) => m.id));
+    for (const m of r.incomplete) expect(published.has(m.id)).toBe(false);
+    for (const id of r.unverified) expect(published.has(id)).toBe(false);
+  });
+
+  it("matches the committed cars.json", () => {
+    const committed = JSON.parse(readFileSync("src/data/cars.json", "utf8"));
+    expect(r.catalog!.models.map((m) => m.id)).toEqual(
+      committed.models.map((m: { id: string }) => m.id),
     );
-    expect(errors).toEqual([]);
-    expect(catalog!.models).toHaveLength(5);
   });
 });

@@ -58,22 +58,26 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 
 ## Import din Google Sheets (recomandat)
 
+- `data/cars.template.csv` conține cele 30 de modele reale, colectate din surse publice. Metoda și ce lipsește sunt
+  în `data/SOURCES.md`.
+- `data/examples.csv` conține modelele EXEMPLU.
+
 1. Importă `data/cars.template.csv` într-un Google Sheet. Coloanele sunt fixe: nu le redenumi și nu le șterge.
 2. **Un rând pentru fiecare motorizare.** Rândurile aceluiași model stau unul după altul, cu același `id`. Pe rândurile
-   următoare, coloanele de model pot fi repetate sau lăsate goale.
-3. Fiecare grup de câmpuri are sursa (URL) și data lui (`AAAA-LL-ZZ`):
-   - `years_*` pentru ani;
-   - `body_*`, `seats_*`, `trunk_*` pentru caroserie, locuri și portbagaj;
-   - `engine_*` pentru motorizare;
-   - `price_*` pentru preț, în euro (`price_date` devine data prețului).
-4. `energy` poate fi `benzina`, `motorina` sau `gpl`. Consumul se scrie în l/100 km și acceptă virgulă zecimală.
-   `example` este `true` doar pentru modelele fictive.
-5. Exportă din Sheets cu File → Download → CSV, apoi rulează `npm run import:cars -- ~/Downloads/fisier.csv`.
-6. Scriptul verifică fiecare rând și afișează erorile cu numărul liniei și id-ul: câmpuri lipsă, surse lipsă sau
-   invalide, date invalide, intervale inversate, id-uri duplicate, valori care se contrazic în același model. Dacă
-   există o singură eroare, `cars.json` nu se modifică.
-7. `pros`, `cons` și `known_issues` (V2) nu sunt în CSV și se păstrează din `cars.json` existent.
-8. Rulează `npm test` și fă commit.
+   următoare, coloanele de model pot rămâne goale.
+3. Fiecare grup de câmpuri are trei coloane de sursă: `<grup>_source_title`, `<grup>_source_url` și `<grup>_date`
+   (`AAAA-LL-ZZ`). Grupurile sunt `years`, `body`, `seats`, `trunk`, `engine` și `price`.
+4. Completează `price_min_eur`, `price_max_eur` și sursa prețului din anunțuri reale.
+5. După ce verifici un model, schimbă `verification` din `needs verification` în `verified`.
+6. Exportă din Sheets cu File → Download → CSV, salvează fișierul peste `data/cars.template.csv` și rulează
+   `npm run import:cars`.
+7. Ce se publică:
+   - se publică doar modelele **complete și verificate**, plus exemplele;
+   - modelele incomplete sau neverificate sunt sărite și listate în `data/import-report.md`;
+   - o valoare invalidă (număr, URL, dată, interval inversat, id duplicat, conflict) oprește importul și nu se
+     scrie nimic.
+8. `pros`, `cons` și `known_issues` (V2) se păstrează din `cars.json` existent.
+9. Rulează `npm test` și fă commit. Testul verifică și că `cars.json` corespunde exact CSV-urilor.
 
 ## Cum funcționează scorul (`src/lib/scoring.ts`)
 

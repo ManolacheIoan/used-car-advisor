@@ -1,29 +1,36 @@
 /**
- * Usage: npm run import:cars -- path/to/export.csv
- * Converts the Google Sheets CSV to src/data/cars.json. Writes nothing if any row has an error.
+ * Usage: npm run import:cars [-- file.csv ...]
+ * Default inputs: data/cars.template.csv (real models) and data/examples.csv (EXAMPLE models).
+ * Writes src/data/cars.json with publishable models only, plus data/import-report.md.
+ * Writes nothing if any row has an invalid value.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import { csvToCatalog, formatErrors } from "../src/lib/importCsv.ts";
+import {
+  csvToCatalog,
+  formatErrors,
+  formatReport,
+} from "../src/lib/importCsv.ts";
 
-const [csvPath] = process.argv.slice(2);
-if (!csvPath) {
-  console.error("Usage: npm run import:cars -- path/to/export.csv");
-  process.exit(2);
-}
-
+const inputs = process.argv.slice(2);
+const paths = inputs.length
+  ? inputs
+  : ["data/cars.template.csv", "data/examples.csv"];
 const OUT = "src/data/cars.json";
-const previous = JSON.parse(readFileSync(OUT, "utf8"));
+const REPORT = "data/import-report.md";
 const today = new Date().toISOString().slice(0, 10);
-const { catalog, errors } = csvToCatalog(readFileSync(csvPath, "utf8"), {
-  updated: today,
-  previous,
-});
 
-if (!catalog) {
+const previous = JSON.parse(readFileSync(OUT, "utf8"));
+const result = csvToCatalog(
+  paths.map((p) => ({ name: p, text: readFileSync(p, "utf8") })),
+  { updated: today, previous },
+);
+writeFileSync(REPORT, formatReport(result, today));
+
+if (!result.catalog) {
   console.error(
-    `✗ ${errors.length} error(s) in ${csvPath}:\n${formatErrors(errors)}`,
+    `✗ ${result.errors.length} error(s), nothing written:\n${formatErrors(result.errors)}`,
   );
   process.exit(1);
 }
@@ -33,7 +40,7 @@ addFormats(ajv);
 if (
   !ajv.validate(
     JSON.parse(readFileSync("src/data/cars.schema.json", "utf8")),
-    catalog,
+    result.catalog,
   )
 ) {
   console.error(
@@ -42,7 +49,9 @@ if (
   process.exit(1);
 }
 
-writeFileSync(OUT, JSON.stringify(catalog, null, 2) + "\n");
+writeFileSync(OUT, JSON.stringify(result.catalog, null, 2) + "\n");
+const real = result.catalog.models.filter((m) => !m.example).length;
 console.log(
-  `✓ ${catalog.models.length} models written to ${OUT} (updated ${today})`,
+  `✓ ${OUT}: ${real} real + ${result.catalog.models.length - real} example models published.` +
+    ` ${result.incomplete.length} incomplete, ${result.unverified.length} awaiting verification. See ${REPORT}.`,
 );

@@ -1,10 +1,29 @@
 /**
  * CSV (Google Sheets export) → catalog. One row per engine variant; rows of the same model are contiguous
  * and share model-level columns (repeat them or leave them blank on follow-up rows).
+ *
+ * Every group of fields has its own source title, URL and retrieval date. Outcome per model:
+ * - invalid value (bad number, URL, date, enum, inverted range, duplicate id, conflict) → error, nothing is written;
+ * - missing value or missing source → "incomplete", not published, listed in the report;
+ * - complete but `verification` is not "verified" → not published, listed in the report;
+ * - complete and verified (or an `example` model) → published.
  * Runs in Node via type stripping, so runtime imports use explicit .ts extensions.
  */
 import { semanticErrors, V1_ENERGIES } from "./dataChecks.ts";
 import type { Body, CarModel, Catalog, Engine, Source } from "./types";
+
+/** [group, value columns]. Each group has <group>_source_title, <group>_source_url and <group>_date columns. */
+const GROUPS = [
+  ["years", ["year_from", "year_to"]],
+  ["body", ["body"]],
+  ["seats", ["seats"]],
+  ["trunk", ["trunk_l"]],
+  ["engine", ["energy", "cc", "hp", "consumption_l100km"]],
+  ["price", ["price_min_eur", "price_max_eur"]],
+] as const;
+
+const sourceCols = (g: string) =>
+  [`${g}_source_title`, `${g}_source_url`, `${g}_date`] as const;
 
 export const COLUMNS = [
   "id",
@@ -12,62 +31,40 @@ export const COLUMNS = [
   "model",
   "generation",
   "example",
-  "year_from",
-  "year_to",
-  "years_source",
-  "years_date",
-  "body",
-  "body_source",
-  "body_date",
-  "seats",
-  "seats_source",
-  "seats_date",
-  "trunk_l",
-  "trunk_source",
-  "trunk_date",
-  "energy",
-  "cc",
-  "hp",
-  "consumption_l100km",
-  "engine_source",
-  "engine_date",
-  "price_min_eur",
-  "price_max_eur",
-  "price_source",
-  "price_date",
+  "verification",
+  ...GROUPS.flatMap(([g, cols]) => [...cols, ...sourceCols(g)]),
 ] as const;
 
 type Col = (typeof COLUMNS)[number];
-type Row = Record<Col, string> & { line: number };
-export interface RowError {
+type Row = Record<Col, string> & { line: number; file: string };
+
+export interface RowIssue {
+  file: string;
   line: number;
   id: string;
   message: string;
 }
+
+export interface ImportResult {
+  /** Present when there are no errors. Contains only publishable models. */
+  catalog?: Catalog;
+  errors: RowIssue[];
+  incomplete: { id: string; file: string; line: number; missing: string[] }[];
+  unverified: string[];
+}
+
+export const VERIFIED = "verified";
+export const NEEDS_VERIFICATION = "needs verification";
 
 const ENGINE_COLS: Col[] = [
   "energy",
   "cc",
   "hp",
   "consumption_l100km",
-  "engine_source",
-  "engine_date",
+  ...sourceCols("engine"),
 ];
 const MODEL_COLS = COLUMNS.filter((c) => !ENGINE_COLS.includes(c));
 const BODIES: Body[] = ["hatchback", "sedan", "break", "suv", "mpv"];
-/** [source column, date column, fields it covers] */
-const SOURCED: [Col, Col, Col[]][] = [
-  ["years_source", "years_date", ["year_from", "year_to"]],
-  ["body_source", "body_date", ["body"]],
-  ["seats_source", "seats_date", ["seats"]],
-  ["trunk_source", "trunk_date", ["trunk_l"]],
-  [
-    "engine_source",
-    "engine_date",
-    ["energy", "cc", "hp", "consumption_l100km"],
-  ],
-  ["price_source", "price_date", ["price_min_eur", "price_max_eur"]],
-];
 
 /** Minimal RFC 4180 parser: quoted fields, escaped quotes, commas and newlines inside quotes. */
 export function parseCsv(text: string): string[][] {
@@ -114,58 +111,66 @@ const isUrl = (s: string) => {
   }
 };
 
-export function csvToCatalog(
-  text: string,
-  opts: { updated: string; previous?: Catalog },
-): { catalog?: Catalog; errors: RowError[] } {
-  const errors: RowError[] = [];
+function readRows(file: string, text: string, errors: RowIssue[]): Row[] {
   const table = parseCsv(text);
-  if (table.length === 0)
-    return { errors: [{ line: 1, id: "", message: "empty file" }] };
-
+  if (table.length === 0) {
+    errors.push({ file, line: 1, id: "", message: "empty file" });
+    return [];
+  }
   const header = table[0].map((h) => h.trim());
   const missingCols = COLUMNS.filter((c) => !header.includes(c));
-  if (missingCols.length)
-    return {
-      errors: [
-        {
-          line: 1,
-          id: "",
-          message: `missing columns: ${missingCols.join(", ")}`,
-        },
-      ],
-    };
-
-  const rows: Row[] = table.slice(1).map((cells, i) => {
-    const r = { line: i + 2 } as Row;
+  if (missingCols.length) {
+    errors.push({
+      file,
+      line: 1,
+      id: "",
+      message: `missing columns: ${missingCols.join(", ")}`,
+    });
+    return [];
+  }
+  return table.slice(1).map((cells, i) => {
+    const r = { line: i + 2, file } as Row;
     for (const c of COLUMNS) r[c] = (cells[header.indexOf(c)] ?? "").trim();
     return r;
   });
+}
 
-  // Group contiguous rows by id; a non-contiguous repeat is a duplicate id.
+export function csvToCatalog(
+  files: { name: string; text: string }[],
+  opts: { updated: string; previous?: Catalog },
+): ImportResult {
+  const errors: RowIssue[] = [];
+  const incomplete: ImportResult["incomplete"] = [];
+  const unverified: string[] = [];
+
+  // Group contiguous rows by id; a non-contiguous repeat (also across files) is a duplicate id.
   const groups: Row[][] = [];
-  const firstLine = new Map<string, number>();
-  for (const r of rows) {
-    const err = (message: string) =>
-      errors.push({ line: r.line, id: r.id, message });
-    if (!r.id) {
-      err("missing id");
-      continue;
-    }
-    const last = groups.at(-1);
-    if (last && last[0].id === r.id) {
-      for (const c of MODEL_COLS)
-        if (r[c] === "") r[c] = last[0][c];
-        else if (r[c] !== last[0][c])
-          err(
-            `${c} "${r[c]}" conflicts with line ${last[0].line} ("${last[0][c]}")`,
-          );
-      last.push(r);
-    } else if (firstLine.has(r.id)) {
-      err(`duplicate id (first used on line ${firstLine.get(r.id)})`);
-    } else {
-      firstLine.set(r.id, r.line);
-      groups.push([r]);
+  const first = new Map<string, Row>();
+  for (const { name, text } of files) {
+    let last: Row[] | undefined;
+    for (const r of readRows(name, text, errors)) {
+      const err = (message: string) =>
+        errors.push({ file: r.file, line: r.line, id: r.id, message });
+      if (!r.id) {
+        err("missing id");
+        continue;
+      }
+      if (last && last[0].id === r.id) {
+        for (const c of MODEL_COLS)
+          if (r[c] === "") r[c] = last[0][c];
+          else if (r[c] !== last[0][c])
+            err(
+              `${c} "${r[c]}" conflicts with line ${last[0].line} ("${last[0][c]}")`,
+            );
+        last.push(r);
+      } else if (first.has(r.id)) {
+        const f = first.get(r.id)!;
+        err(`duplicate id (first used on ${f.file} line ${f.line})`);
+      } else {
+        first.set(r.id, r);
+        last = [r];
+        groups.push(last);
+      }
     }
   }
 
@@ -174,44 +179,61 @@ export function csvToCatalog(
 
   for (const group of groups) {
     const head = group[0];
-    const before = errors.length;
-    const err = (line: number, message: string) =>
-      errors.push({ line, id: head.id, message });
+    const errBefore = errors.length;
+    const missing: string[] = [];
+    const err = (r: Row, message: string) =>
+      errors.push({ file: r.file, line: r.line, id: head.id, message });
+    /** Positive whole number, or NaN (recorded as missing / invalid). */
     const int = (r: Row, c: Col) => {
       if (r[c] === "") {
-        err(r.line, `missing ${c}`);
+        missing.push(
+          group.length > 1 && ENGINE_COLS.includes(c)
+            ? `${c} (line ${r.line})`
+            : c,
+        );
         return NaN;
       }
       const n = Number(r[c]);
       if (!Number.isInteger(n) || n <= 0)
-        err(r.line, `${c} must be a positive whole number, got "${r[c]}"`);
+        err(r, `${c} must be a positive whole number, got "${r[c]}"`);
       return n;
     };
 
-    for (const r of group) {
-      for (const [srcCol, dateCol, fields] of SOURCED) {
-        if (!fields.some((f) => r[f] !== "")) continue;
-        if (!r[srcCol])
-          err(r.line, `missing ${srcCol} (source for ${fields.join(", ")})`);
-        else if (!isUrl(r[srcCol]))
-          err(r.line, `${srcCol} is not a valid http(s) URL`);
-        if (!r[dateCol]) err(r.line, `missing ${dateCol}`);
-        else if (!isDate(r[dateCol]))
-          err(r.line, `${dateCol} must be YYYY-MM-DD, got "${r[dateCol]}"`);
-      }
-    }
     for (const c of ["brand", "model", "generation"] as const)
-      if (!head[c]) err(head.line, `missing ${c}`);
+      if (!head[c]) missing.push(c);
     if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(head.id))
-      err(head.line, "id must be lowercase kebab-case");
-    if (!(BODIES as string[]).includes(head.body))
-      err(head.line, `body must be one of ${BODIES.join("/")}`);
+      err(head, "id must be lowercase kebab-case");
     if (!["", "true", "false"].includes(head.example))
-      err(head.line, "example must be true, false or empty");
+      err(head, "example must be true, false or empty");
+    if (![VERIFIED, NEEDS_VERIFICATION, ""].includes(head.verification))
+      err(
+        head,
+        `verification must be "${VERIFIED}" or "${NEEDS_VERIFICATION}"`,
+      );
+
+    // Sources: a value needs title + URL + date; format errors are always reported.
+    for (const r of group)
+      for (const [g, cols] of GROUPS) {
+        if (r !== head && g !== "engine") continue;
+        const [t, u, d] = sourceCols(g) as unknown as Col[];
+        if (r[u] && !isUrl(r[u])) err(r, `${u} is not a valid http(s) URL`);
+        if (r[d] && !isDate(r[d]))
+          err(r, `${d} must be YYYY-MM-DD, got "${r[d]}"`);
+        if (!cols.some((c) => r[c] !== "")) continue;
+        for (const c of [t, u, d])
+          if (!r[c])
+            missing.push(
+              group.length > 1 && g === "engine" ? `${c} (line ${r.line})` : c,
+            );
+      }
+
+    if (head.body && !(BODIES as string[]).includes(head.body))
+      err(head, `body must be one of ${BODIES.join("/")}`);
+    else if (!head.body) missing.push("body");
 
     const years = { from: int(head, "year_from"), to: int(head, "year_to") };
     if (years.from > years.to)
-      err(head.line, `year_from ${years.from} > year_to ${years.to}`);
+      err(head, `year_from ${years.from} > year_to ${years.to}`);
     const seats = int(head, "seats");
     const trunk = int(head, "trunk_l");
     const price = {
@@ -219,20 +241,31 @@ export function csvToCatalog(
       max: int(head, "price_max_eur"),
     };
     if (price.min > price.max)
-      err(head.line, `price_min_eur ${price.min} > price_max_eur ${price.max}`);
+      err(head, `price_min_eur ${price.min} > price_max_eur ${price.max}`);
 
     const engines: Engine[] = group.map((r) => {
-      if (!(V1_ENERGIES as readonly string[]).includes(r.energy))
+      if (!r.energy)
+        missing.push(group.length > 1 ? `energy (line ${r.line})` : "energy");
+      else if (!(V1_ENERGIES as readonly string[]).includes(r.energy))
         err(
-          r.line,
+          r,
           `energy must be one of ${V1_ENERGIES.join("/")}, got "${r.energy}"`,
         );
-      const consumption = Number(r.consumption_l100km.replace(",", "."));
-      if (!(consumption > 0 && consumption <= 40))
-        err(
-          r.line,
-          `consumption_l100km must be a number in (0, 40], got "${r.consumption_l100km}"`,
+      let consumption = NaN;
+      if (!r.consumption_l100km)
+        missing.push(
+          group.length > 1
+            ? `consumption_l100km (line ${r.line})`
+            : "consumption_l100km",
         );
+      else {
+        consumption = Number(r.consumption_l100km.replace(",", "."));
+        if (!(consumption > 0 && consumption <= 40))
+          err(
+            r,
+            `consumption_l100km must be a number in (0, 40], got "${r.consumption_l100km}"`,
+          );
+      }
       return {
         energy: r.energy as Engine["energy"],
         cc: int(r, "cc"),
@@ -241,27 +274,37 @@ export function csvToCatalog(
       };
     });
 
-    if (errors.length > before) continue;
+    if (errors.length > errBefore) continue;
+    if (missing.length) {
+      incomplete.push({
+        id: head.id,
+        file: head.file,
+        line: head.line,
+        missing: [...new Set(missing)],
+      });
+      continue;
+    }
+    const example = head.example === "true";
+    if (!example && head.verification !== VERIFIED) {
+      unverified.push(head.id);
+      continue;
+    }
 
-    // One source entry per URL, with the most recent access date.
+    // One source entry per URL, with the most recent retrieval date.
     const sources = new Map<string, Source>();
     for (const r of group)
-      for (const [srcCol, dateCol] of SOURCED) {
-        const url = r[srcCol];
-        if (!url) continue;
-        const prev = sources.get(url);
-        if (!prev || prev.accessed < r[dateCol])
-          sources.set(url, {
-            title: new URL(url).hostname,
-            url,
-            accessed: r[dateCol],
-          });
+      for (const [g] of GROUPS) {
+        const [t, u, d] = sourceCols(g) as unknown as Col[];
+        if (!r[u]) continue;
+        const prev = sources.get(r[u]);
+        if (!prev || prev.accessed < r[d])
+          sources.set(r[u], { title: r[t], url: r[u], accessed: r[d] });
       }
 
     const old = previous.get(head.id);
     models.push({
       id: head.id,
-      ...(head.example === "true" ? { example: true } : {}),
+      ...(example ? { example: true } : {}),
       brand: head.brand,
       model: head.model,
       generation: head.generation,
@@ -279,20 +322,52 @@ export function csvToCatalog(
     });
   }
 
-  if (errors.length) return { errors };
+  if (errors.length) return { errors, incomplete, unverified };
   const catalog: Catalog = { updated: opts.updated, models };
-  for (const message of semanticErrors(catalog))
-    errors.push({
-      line: firstLine.get(message.split(":")[0]) ?? 0,
-      id: message.split(":")[0],
-      message,
-    });
-  return errors.length ? { errors } : { catalog, errors };
+  for (const message of semanticErrors(catalog)) {
+    const id = message.split(":")[0];
+    const r = first.get(id);
+    errors.push({ file: r?.file ?? "", line: r?.line ?? 0, id, message });
+  }
+  return errors.length
+    ? { errors, incomplete, unverified }
+    : { catalog, errors, incomplete, unverified };
 }
 
-export function formatErrors(errors: RowError[]): string {
-  return errors
-    .sort((a, b) => a.line - b.line)
-    .map((e) => `  line ${e.line}${e.id ? ` [${e.id}]` : ""}: ${e.message}`)
+export function formatErrors(errors: RowIssue[]): string {
+  return [...errors]
+    .sort((a, b) => a.file.localeCompare(b.file) || a.line - b.line)
+    .map(
+      (e) => `  ${e.file}:${e.line}${e.id ? ` [${e.id}]` : ""}: ${e.message}`,
+    )
     .join("\n");
+}
+
+/** Markdown report written next to the data after each import. */
+export function formatReport(r: ImportResult, date: string): string {
+  const published = r.catalog?.models ?? [];
+  const lines = [
+    `# Raport import date (${date})`,
+    "",
+    `Publicate: ${published.filter((m) => !m.example).length} modele reale, ${published.filter((m) => m.example).length} exemple.`,
+    `Incomplete (nepublicate): ${r.incomplete.length}. De verificat (complete, nepublicate): ${r.unverified.length}.`,
+    "",
+    "## Incomplete — câmpuri lipsă",
+    "",
+    ...(r.incomplete.length
+      ? r.incomplete.map(
+          (m) => `- \`${m.id}\` (${m.file}:${m.line}): ${m.missing.join(", ")}`,
+        )
+      : ["- niciunul"]),
+    "",
+    "## Complete, dar marcate „needs verification”",
+    "",
+    ...(r.unverified.length
+      ? r.unverified.map((id) => `- \`${id}\``)
+      : ["- niciunul"]),
+    "",
+  ];
+  if (r.errors.length)
+    lines.push("## Erori", "", "```", formatErrors(r.errors), "```", "");
+  return lines.join("\n");
 }
