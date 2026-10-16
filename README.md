@@ -97,6 +97,15 @@ obicei mai mare decât consumul declarat”. Prețurile implicite ale carburanț
 împreună cu data actualizării, afișată pe pagina de rezultate. Dacă data e mai veche de 60 de zile, CI afișează un
 **avertisment** (nu pică). Actualizează prețurile, data și sursa împreună.
 
+## Sigle și ilustrații
+
+- Aplicația **nu desenează și nu imită sigle**. `BrandBadge` afișează o etichetă text originală cu numele mărcii.
+- Dacă ai dreptul să folosești sigla oficială (verifică întâi termenii de utilizare ai producătorului), pune
+  fișierul în `public/brands/<brand-id>.svg` sau `.png`. Exemple de nume: `dacia`, `volkswagen`, `skoda`,
+  `mercedes-benz`.
+- `npm run dev` și `npm run build` actualizează automat `src/data/brandAssets.json`.
+- Siluetele de caroserie din `BodyIcon` sunt originale și generice, nu reprezintă niciun model anume.
+
 ## Politica privind sursele de date
 
 - Doar date din surse publice, cu link și dată de accesare pentru fiecare model.

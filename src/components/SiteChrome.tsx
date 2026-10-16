@@ -36,6 +36,10 @@ export function SiteFooter() {
             Corecturi: {SITE.contactEmail}
           </a>
         </p>
+        <p className="text-xs">
+          Numele și siglele mărcilor aparțin proprietarilor lor. Acest site nu
+          este afiliat cu niciun producător auto.
+        </p>
       </div>
     </footer>
   );

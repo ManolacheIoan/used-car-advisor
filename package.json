@@ -12,7 +12,9 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "serve": "serve out -l 3000",
-    "import:cars": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/import-cars.ts"
+    "import:cars": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/import-cars.ts",
+    "predev": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/brand-assets.ts",
+    "prebuild": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/brand-assets.ts"
   },
   "dependencies": {
     "next": "16.4.2",

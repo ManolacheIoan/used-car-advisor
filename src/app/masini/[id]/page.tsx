@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { BodyIcon } from "@/components/BodyIcon";
+import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
 import { card } from "@/components/ui";
 import { getModel, models } from "@/lib/data";
@@ -62,13 +64,20 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           descriu o mașină reală.
         </p>
       )}
-      <header className="space-y-1">
-        <h1 className="text-2xl font-bold tracking-tight">
-          {m.brand} {m.model}
-        </h1>
-        <p className="text-muted">
-          {m.generation} · {m.years.from}–{m.years.to}
-        </p>
+      <header className="flex items-start justify-between gap-4">
+        <div className="space-y-1">
+          <BrandBadge brand={m.brand} size="lg" />
+          <h1 className="text-2xl font-bold tracking-tight">
+            {m.brand} {m.model}
+          </h1>
+          <p className="text-muted">
+            {m.generation} · {m.years.from}–{m.years.to}
+          </p>
+        </div>
+        <BodyIcon
+          body={m.body}
+          className="text-accent-text h-14 w-36 shrink-0"
+        />
       </header>
 
       <dl className={`${card} grid grid-cols-2 gap-3 text-sm sm:grid-cols-4`}>

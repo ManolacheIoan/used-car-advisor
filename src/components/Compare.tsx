@@ -8,6 +8,7 @@ import { BODY_LABEL, ENERGY_LABEL, eur, lei } from "@/lib/labels";
 import { pickEngine, rank } from "@/lib/scoring";
 import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
+import { BodyIcon } from "./BodyIcon";
 import { CostEditor } from "./CostEditor";
 import { MAX_COMPARE } from "./Results";
 import { BackToForm, card, Notice } from "./ui";
@@ -110,6 +111,10 @@ export function Compare() {
               </th>
               {cols.map((c) => (
                 <th key={c.m.id} scope="col" className="p-3 align-top">
+                  <BodyIcon
+                    body={c.m.body}
+                    className="text-muted mb-1 h-7 w-16"
+                  />
                   <Link
                     href={`/masini/${c.m.id}/?${query}`}
                     className="text-accent-text font-semibold underline"

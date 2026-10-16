@@ -7,6 +7,8 @@ import { models } from "@/lib/data";
 import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
 import { rank, relaxOptions, type RelaxKey, type Result } from "@/lib/scoring";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
+import { BodyIcon } from "./BodyIcon";
+import { BrandBadge } from "./BrandBadge";
 import { CostEditor } from "./CostEditor";
 import { CostLine } from "./CostLine";
 import { ReasonChips } from "./ReasonChips";
@@ -148,6 +150,9 @@ function ResultCard(p: {
     >
       <div className="flex items-start justify-between gap-3">
         <div>
+          <div className="mb-1 flex items-center gap-2">
+            <BrandBadge brand={m.brand} />
+          </div>
           <h2 className="text-lg font-semibold">
             <span className="text-muted">{p.position}. </span>
             {m.brand} {m.model}
@@ -157,11 +162,14 @@ function ResultCard(p: {
             · {m.seats} locuri
           </p>
         </div>
-        {m.example && (
-          <span className="border-line text-muted rounded border px-1.5 py-0.5 text-xs">
-            EXEMPLU
-          </span>
-        )}
+        <div className="flex flex-col items-end gap-1">
+          <BodyIcon body={m.body} className="text-muted h-8 w-20" />
+          {m.example && (
+            <span className="border-line text-muted rounded border px-1.5 py-0.5 text-xs">
+              EXEMPLU
+            </span>
+          )}
+        </div>
       </div>
       <ScoreBar score={p.r.score} />
       <ReasonChips reasons={p.r.reasons} />
