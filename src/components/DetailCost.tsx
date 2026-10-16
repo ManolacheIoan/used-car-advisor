@@ -1,6 +1,6 @@
 "use client";
 
-import { COST_NOTE, monthlyCost } from "@/lib/cost";
+import { COST_NOTE, monthlyCost, unsetNote } from "@/lib/cost";
 import { consumptionText, ENERGY_LABEL, lei } from "@/lib/labels";
 import type { Engine } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
@@ -73,6 +73,12 @@ export function DetailCost({ engines }: { engines: Engine[] }) {
           </tbody>
         </table>
       </div>
+      {engines[0] && unsetNote(monthlyCost(engines[0], km, assumptions)) && (
+        <p className="text-muted text-sm">
+          Costuri fixe: {unsetNote(monthlyCost(engines[0], km, assumptions))}.
+          Completează-le în ipotezele de mai jos.
+        </p>
+      )}
       <CostEditor value={assumptions} onChange={setAssumptions} />
     </section>
   );

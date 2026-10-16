@@ -76,6 +76,17 @@ describe("query round-trips", () => {
     expect(assumptionsFromQuery(q)).toEqual(a);
   });
 
+  it("a filled fixed cost round-trips, an empty one means not set", () => {
+    const a = { ...DEFAULT_ASSUMPTIONS, roadTaxYear: 250 };
+    expect(assumptionsFromQuery(assumptionsToQuery(a))).toEqual(a);
+    expect(
+      assumptionsFromQuery(new URLSearchParams("tax=")).roadTaxYear,
+    ).toBeNull();
+    expect(
+      assumptionsFromQuery(new URLSearchParams("pb=")).fuelPrice.benzina,
+    ).toBe(DEFAULT_ASSUMPTIONS.fuelPrice.benzina);
+  });
+
   it("invalid assumptions fall back to defaults", () => {
     const q = new URLSearchParams("pb=-1&rca=abc");
     expect(assumptionsFromQuery(q)).toEqual(DEFAULT_ASSUMPTIONS);

@@ -1,8 +1,9 @@
 import { lei } from "@/lib/labels";
+import { COST_NOTE, unsetNote, type MonthlyCost } from "@/lib/cost";
 import { CountUp } from "./CountUp";
-import { COST_NOTE, type MonthlyCost } from "@/lib/cost";
 
 export function CostLine({ cost }: { cost: MonthlyCost }) {
+  const unset = unsetNote(cost);
   return (
     <p className="text-sm">
       <span className="font-semibold">
@@ -10,8 +11,15 @@ export function CostLine({ cost }: { cost: MonthlyCost }) {
         /lună
       </span>{" "}
       <span className="text-muted">
-        {COST_NOTE} (carburant {lei(cost.fuel)}, RCA {lei(cost.insurance)},
-        impozit {lei(cost.tax)}, întreținere {lei(cost.maintenance)})
+        {COST_NOTE} (carburant {lei(cost.fuel)}
+        {cost.unset.includes("insuranceYear")
+          ? ""
+          : `, RCA ${lei(cost.insurance)}`}
+        {cost.unset.includes("roadTaxYear") ? "" : `, impozit ${lei(cost.tax)}`}
+        {cost.unset.includes("maintenanceYear")
+          ? ""
+          : `, întreținere ${lei(cost.maintenance)}`}
+        ){unset && `; ${unset}`}
       </span>
     </p>
   );

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   DEFAULT_ASSUMPTIONS,
   monthlyCost,
+  unsetNote,
   type CostAssumptions,
 } from "@/lib/cost";
 import { engine } from "./fixtures";
@@ -76,5 +77,26 @@ describe("monthlyCost", () => {
     expect(
       monthlyCost(engine(), 15000, DEFAULT_ASSUMPTIONS).total,
     ).toBeGreaterThan(0);
+  });
+});
+
+describe("unset fixed costs", () => {
+  it("count as 0 and are reported", () => {
+    const c = monthlyCost(engine(), 12000, {
+      ...a,
+      insuranceYear: null,
+      maintenanceYear: null,
+    });
+    expect(c.insurance).toBe(0);
+    expect(c.unset).toEqual(["insuranceYear", "maintenanceYear"]);
+    expect(unsetNote(c)).toBe("RCA, întreținere necompletate (calculat cu 0)");
+  });
+
+  it("defaults have no invented fixed costs", () => {
+    expect([
+      DEFAULT_ASSUMPTIONS.insuranceYear,
+      DEFAULT_ASSUMPTIONS.roadTaxYear,
+      DEFAULT_ASSUMPTIONS.maintenanceYear,
+    ]).toEqual([null, null, null]);
   });
 });

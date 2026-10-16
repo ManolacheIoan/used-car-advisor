@@ -128,7 +128,8 @@ export function assumptionsToQuery(
   const def = flat(DEFAULT_ASSUMPTIONS);
   for (const [k, short] of Object.entries(ASSUMPTION_KEYS)) {
     const key = k as keyof typeof cur;
-    if (cur[key] !== def[key]) q.set(short, String(cur[key]));
+    if (cur[key] !== def[key])
+      q.set(short, cur[key] === null ? "" : String(cur[key]));
     else q.delete(short);
   }
   return q;
@@ -137,14 +138,24 @@ export function assumptionsToQuery(
 /** Reads assumptions from the URL; invalid or missing values fall back to defaults. */
 export function assumptionsFromQuery(q: URLSearchParams): CostAssumptions {
   const def = flat(DEFAULT_ASSUMPTIONS);
-  const v = { ...def };
+  const v: Record<string, number | null> = { ...def };
   for (const [k, short] of Object.entries(ASSUMPTION_KEYS)) {
-    const n = Number(q.get(short));
-    if (q.has(short) && Number.isFinite(n) && n >= 0)
-      v[k as keyof typeof v] = n;
+    const raw = q.get(short);
+    if (raw === null) continue;
+    // An empty fixed cost means "necompletat"; fuel prices always need a number.
+    if (raw.trim() === "") {
+      if (!["benzina", "motorina", "gpl"].includes(k)) v[k] = null;
+      continue;
+    }
+    const n = Number(raw);
+    if (Number.isFinite(n) && n >= 0) v[k] = n;
   }
   return {
-    fuelPrice: { benzina: v.benzina, motorina: v.motorina, gpl: v.gpl },
+    fuelPrice: {
+      benzina: v.benzina as number,
+      motorina: v.motorina as number,
+      gpl: v.gpl as number,
+    },
     insuranceYear: v.insuranceYear,
     roadTaxYear: v.roadTaxYear,
     maintenanceYear: v.maintenanceYear,
