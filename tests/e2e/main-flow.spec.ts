@@ -1,3 +1,4 @@
+// Runs against the fictional test catalog (tests/fixtures/cars.e2e.json): npm run build:e2e && npm run test:e2e
 import { expect, test } from "@playwright/test";
 
 test("form → results → compare → detail", async ({ page }) => {
@@ -12,7 +13,7 @@ test("form → results → compare → detail", async ({ page }) => {
 
   await page.getByText("Familie", { exact: true }).click();
   await page.getByRole("button", { name: "Continuă" }).click();
-  await page.getByText("Dacia", { exact: true }).click(); // any fuel, any body, brand Dacia
+  await page.getByText("Testmarca", { exact: true }).click(); // any fuel, any body, one brand
   await page.getByRole("button", { name: "Continuă" }).click();
   await page.getByRole("button", { name: "Vezi recomandările" }).click();
 
@@ -25,7 +26,7 @@ test("form → results → compare → detail", async ({ page }) => {
   for (const title of await cards
     .getByRole("heading", { level: 2 })
     .allInnerTexts())
-    expect(title).toContain("Dacia");
+    expect(title).toContain("Testmarca");
   await expect(page.getByText("orientativ").first()).toBeVisible();
 
   await cards.nth(0).getByLabel("Compară").check();

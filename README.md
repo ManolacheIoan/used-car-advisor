@@ -37,7 +37,8 @@ tests/e2e/              fluxul principal: formular → rezultate → comparație
 npm run dev          server de dezvoltare
 npm test             teste unitare (Vitest)
 npm run build        export static în out/
-npm run test:e2e     Playwright (servește out/, deci rulează mai întâi build)
+npm run build:e2e    build cu catalogul de test fictiv (tests/fixtures/cars.e2e.json) în out-e2e/
+npm run test:e2e     Playwright pe out-e2e/ (rulează mai întâi build:e2e)
 npm run import:cars -- fisier.csv   importă catalogul din CSV
 npm run lint | typecheck | format
 ```
@@ -66,7 +67,8 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
    următoare, coloanele de model pot rămâne goale.
 3. Fiecare grup de câmpuri are trei coloane de sursă: `<grup>_source_title`, `<grup>_source_url` și `<grup>_date`
    (`AAAA-LL-ZZ`). Grupurile sunt `years`, `body`, `seats`, `trunk`, `engine` și `price`.
-4. Prețurile (`price_min_eur`, `price_max_eur`) sunt goale; le completezi manual.
+4. Prețurile (`price_min_eur`, `price_max_eur`) sunt goale; le completezi manual. Modelele fără preț verificat
+   rămân publicate (au pagina lor), dar sunt excluse din rezultate, din sitemap și din scenarii.
 5. După ce verifici un model, schimbă `verification` din `needs verification` în `verified`.
 6. Exportă din Sheets cu File → Download → CSV, salvează fișierul peste `data/cars.template.csv` și rulează
    `npm run import:cars`.

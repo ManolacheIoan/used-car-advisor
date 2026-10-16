@@ -46,6 +46,8 @@ export interface RowIssue {
 }
 
 export interface ImportResult {
+  /** Published models that have no price: excluded from results, sitemap and scenarios. */
+  unpriced?: string[];
   /** Present when there are no errors. Contains only complete models. */
   catalog?: Catalog;
   errors: RowIssue[];
@@ -215,6 +217,7 @@ export function csvToCatalog(
     for (const r of group)
       for (const [g, cols] of GROUPS) {
         if (r !== head && g !== "engine") continue;
+        if (g === "price") continue; // checked with the optional price above
         const [t, u, d] = sourceCols(g) as unknown as Col[];
         if (r[u] && !isUrl(r[u])) err(r, `${u} is not a valid http(s) URL`);
         if (r[d] && !isDate(r[d]))
@@ -236,12 +239,21 @@ export function csvToCatalog(
       err(head, `year_from ${years.from} > year_to ${years.to}`);
     const seats = int(head, "seats");
     const trunk = int(head, "trunk_l");
-    const price = {
-      min: int(head, "price_min_eur"),
-      max: int(head, "price_max_eur"),
-    };
-    if (price.min > price.max)
+    // Price is optional: a model without a price is published but excluded from results, sitemap and scenarios.
+    const priceCols: Col[] = [
+      "price_min_eur",
+      "price_max_eur",
+      ...sourceCols("price"),
+    ];
+    const hasPrice = priceCols.some((c) => head[c] !== "");
+    const price = hasPrice
+      ? { min: int(head, "price_min_eur"), max: int(head, "price_max_eur") }
+      : undefined;
+    if (price && price.min > price.max)
       err(head, `price_min_eur ${price.min} > price_max_eur ${price.max}`);
+    if (hasPrice)
+      for (const c of sourceCols("price") as unknown as Col[])
+        if (!head[c]) missing.push(c);
 
     const engines: Engine[] = group.map((r) => {
       if (!r.energy)
@@ -312,7 +324,7 @@ export function csvToCatalog(
       engines,
       seats,
       trunk_l: trunk,
-      price_eur: { ...price, set_on: head.price_date },
+      ...(price ? { price_eur: { ...price, set_on: head.price_date } } : {}),
       sources: [...sources.values()],
       // V2 fields are not in the CSV; keep what already exists.
       pros: old?.pros ?? [],
@@ -322,6 +334,7 @@ export function csvToCatalog(
   }
 
   if (errors.length) return { errors, incomplete, unverified };
+  const unpriced = models.filter((m) => !m.price_eur).map((m) => m.id);
   const catalog: Catalog = { updated: opts.updated, models };
   for (const message of semanticErrors(catalog)) {
     const id = message.split(":")[0];
@@ -330,7 +343,7 @@ export function csvToCatalog(
   }
   return errors.length
     ? { errors, incomplete, unverified }
-    : { catalog, errors, incomplete, unverified };
+    : { catalog, errors, incomplete, unverified, unpriced };
 }
 
 export function formatErrors(errors: RowIssue[]): string {
@@ -349,7 +362,7 @@ export function formatReport(r: ImportResult, date: string): string {
     `# Raport import date (${date})`,
     "",
     `Publicate: ${published.filter((m) => !m.example).length} modele reale, ${published.filter((m) => m.example).length} exemple.`,
-    `Incomplete (nepublicate): ${r.incomplete.length}. Publicate, încă neverificate: ${r.unverified.length}.`,
+    `Incomplete (nepublicate): ${r.incomplete.length}. Publicate, încă neverificate: ${r.unverified.length}. Fără preț verificat: ${r.unpriced?.length ?? 0}.`,
     "",
     "## Incomplete — câmpuri lipsă",
     "",
@@ -357,6 +370,12 @@ export function formatReport(r: ImportResult, date: string): string {
       ? r.incomplete.map(
           (m) => `- \`${m.id}\` (${m.file}:${m.line}): ${m.missing.join(", ")}`,
         )
+      : ["- niciunul"]),
+    "",
+    "## Fără preț verificat — excluse din rezultate, sitemap și scenarii",
+    "",
+    ...(r.unpriced?.length
+      ? r.unpriced.map((id) => `- \`${id}\``)
       : ["- niciunul"]),
     "",
     "## Publicate, dar marcate „needs verification” (afișate ca „în curs de verificare”, neindexate)",

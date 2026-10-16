@@ -125,10 +125,24 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
         id: "m-1",
         file: "t.csv",
         line: 2,
-        missing: ["price_min_eur", "price_max_eur"],
+        missing: ["price_min_eur", "price_max_eur", "price_source_url"],
       },
       { id: "m-2", file: "t.csv", line: 3, missing: ["seats_source_title"] },
     ]);
+  });
+
+  it("publishes a model without any price, but lists it as unpriced", () => {
+    const empty = {
+      price_min_eur: "",
+      price_max_eur: "",
+      price_source_title: "",
+      price_source_url: "",
+      price_date: "",
+    };
+    const r = run(csv(row(empty)));
+    expect(r.catalog!.models[0].price_eur).toBeUndefined();
+    expect(r.unpriced).toEqual(["m-1"]);
+    expect(formatReport(r, "2026-10-16")).toContain("Fără preț verificat");
   });
 
   it("names the line of an incomplete engine row", () => {

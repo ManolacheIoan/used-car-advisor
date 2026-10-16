@@ -33,13 +33,19 @@ export interface Prefs {
   kmYear: number;
 }
 
+/** Models with a verified price; only these are ranked. */
+export type PricedModel = CarModel & {
+  price_eur: NonNullable<CarModel["price_eur"]>;
+};
+export const hasPrice = (m: CarModel): m is PricedModel => !!m.price_eur;
+
 export interface Reason {
   text: string;
   positive: boolean;
 }
 
 export interface Result {
-  model: CarModel;
+  model: PricedModel;
   engine: Engine;
   cost: MonthlyCost;
   parts: { budget: number; cost: number; usage: number };
@@ -132,6 +138,7 @@ export function rank(
   a: CostAssumptions,
 ): Result[] {
   const candidates = models
+    .filter(hasPrice)
     .filter((m) => matchesHard(m, p))
     .map((m) => ({ m, ...pickEngine(m, p.fuel, p.kmYear, a) }));
   if (candidates.length === 0) return [];
@@ -192,7 +199,8 @@ export function relaxOptions(
     .filter((k) => p[k] !== variants[k][k])
     .map((key) => ({
       key,
-      count: models.filter((m) => matchesHard(m, variants[key])).length,
+      count: models.filter((m) => hasPrice(m) && matchesHard(m, variants[key]))
+        .length,
     }))
     .filter((o) => o.count > 0);
 }

@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: "tests/e2e",
   use: { baseURL: "http://localhost:3000", ...devices["Pixel 7"] },
   webServer: {
-    command: "npm run serve",
+    command: "npm run serve:e2e",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
   },

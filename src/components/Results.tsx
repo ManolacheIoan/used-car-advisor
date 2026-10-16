@@ -12,7 +12,13 @@ import {
   eur,
   generationLabel,
 } from "@/lib/labels";
-import { rank, relaxOptions, type RelaxKey, type Result } from "@/lib/scoring";
+import {
+  hasPrice,
+  rank,
+  relaxOptions,
+  type RelaxKey,
+  type Result,
+} from "@/lib/scoring";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
 import { BrandBadge } from "./BrandBadge";
@@ -49,6 +55,18 @@ export function Results() {
       <Notice title="Criteriile din link nu sunt valide" tone="error">
         <p className="text-muted">Completează din nou formularul.</p>
         <BackToForm />
+      </Notice>
+    );
+
+  if (results.length === 0 && !models.some(hasPrice))
+    return (
+      <Notice title="Încă nu avem prețuri verificate">
+        <p className="text-muted">
+          Recomandările țin cont de buget, așa că includ doar modelele cu preț
+          verificat. Momentan niciun model nu are preț verificat. Poți consulta
+          între timp fișele tehnice ale modelelor.
+        </p>
+        <BackToForm query={query.toString()} />
       </Notice>
     );
 

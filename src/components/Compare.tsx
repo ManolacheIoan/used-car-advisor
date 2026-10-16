@@ -8,9 +8,9 @@ import {
   BODY_LABEL,
   ENERGY_LABEL,
   engineSummary,
-  eur,
   generationLabel,
   lei,
+  priceRange,
 } from "@/lib/labels";
 import { pickEngine, rank } from "@/lib/scoring";
 import type { CarModel } from "@/lib/types";
@@ -72,10 +72,7 @@ export function Compare() {
     ["Motorizări", (c) => engineSummary(c.m)],
     ["Locuri", (c) => c.m.seats],
     ["Portbagaj", (c) => `${c.m.trunk_l} l`],
-    [
-      "Preț orientativ",
-      (c) => `${eur(c.m.price_eur.min)} – ${eur(c.m.price_eur.max)}`,
-    ],
+    ["Preț orientativ", (c) => priceRange(c.m)],
     [
       "Motor estimat",
       (c) => `${ENERGY_LABEL[c.engine.energy]}, ${c.engine.hp} CP`,

@@ -59,3 +59,9 @@ export function consumptionRange(m: CarModel): string {
   const hi = Math.max(...v);
   return `${lo === hi ? num1(lo) : `${num1(lo)}–${num1(hi)}`} l/100 km`;
 }
+
+export const NO_PRICE = "fără preț verificat";
+
+/** "4.000 € – 6.000 €", or a clear placeholder when no verified price exists. */
+export const priceRange = (m: CarModel) =>
+  m.price_eur ? `${eur(m.price_eur.min)} – ${eur(m.price_eur.max)}` : NO_PRICE;

@@ -9,9 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE.url}/`, lastModified: dataUpdated },
     { url: `${SITE.url}/despre-date/`, lastModified: dataUpdated },
-    ...models.filter(isIndexable).map((m) => ({
-      url: `${SITE.url}/masini/${m.id}/`,
-      lastModified: m.price_eur.set_on,
-    })),
+    ...models
+      .filter((m) => isIndexable(m) && m.price_eur)
+      .map((m) => ({
+        url: `${SITE.url}/masini/${m.id}/`,
+        lastModified: m.price_eur!.set_on,
+      })),
   ];
 }

@@ -51,3 +51,5 @@ next-env.d.ts
 /test-results/
 /.lighthouseci/
 /.netlify/
+
+/out-e2e/

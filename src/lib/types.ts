@@ -28,7 +28,8 @@ export interface CarModel {
   engines: Engine[];
   seats: number;
   trunk_l: number;
-  price_eur: { min: number; max: number; set_on: string };
+  /** Absent until a verified price is entered; such models are excluded from results. */
+  price_eur?: { min: number; max: number; set_on: string };
   sources: Source[];
   // V2 fields: kept in data, not rendered in V1.
   pros?: unknown[];

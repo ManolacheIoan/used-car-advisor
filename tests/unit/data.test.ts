@@ -67,7 +67,7 @@ describe("validators reject bad data", () => {
   it("inverted ranges", () => {
     const c = clone();
     c.models[0].years = { from: 2020, to: 2010 };
-    c.models[1].price_eur.min = c.models[1].price_eur.max + 1;
+    c.models[1].price_eur = { min: 9000, max: 8000, set_on: "2026-10-01" };
     expect(semanticErrors(c)).toHaveLength(2);
   });
 

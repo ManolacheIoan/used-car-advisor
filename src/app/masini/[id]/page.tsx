@@ -13,8 +13,8 @@ import {
   BODY_LABEL,
   consumptionRange,
   ENERGY_LABEL,
-  eur,
   generationLabel,
+  priceRange,
 } from "@/lib/labels";
 import {
   isIndexable,
@@ -105,10 +105,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           ["Portbagaj", `${m.trunk_l} l`],
           ["Consum declarat", consumptionRange(m)],
           ["Motorizări în date", m.engines.length],
-          [
-            "Preț orientativ",
-            `${eur(m.price_eur.min)} – ${eur(m.price_eur.max)}`,
-          ],
+          ["Preț orientativ", priceRange(m)],
         ].map(([k, v]) => (
           <div key={k}>
             <dt className="text-muted">{k}</dt>
@@ -117,10 +114,15 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         ))}
       </dl>
       <p className="text-muted text-sm">
-        Prețul este un interval aproximativ pentru piața second-hand (percentila
-        10–90 a anunțurilor active), stabilit la{" "}
-        <time dateTime={m.price_eur.set_on}>{m.price_eur.set_on}</time>. Sursa
-        este listată mai jos. Verifică întotdeauna cu vânzătorul.
+        {m.price_eur ? (
+          <>
+            Prețul este un interval aproximativ, stabilit la{" "}
+            <time dateTime={m.price_eur.set_on}>{m.price_eur.set_on}</time>.
+            Verifică întotdeauna cu vânzătorul.
+          </>
+        ) : (
+          "Pentru acest model nu avem încă un preț verificat, așa că nu apare în recomandări."
+        )}
       </p>
 
       <section aria-labelledby="eng-h" className="space-y-2">

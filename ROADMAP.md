@@ -2,7 +2,7 @@
 
 ## Înainte de lansare
 
-- Verifică fiecare rând față de sursa lui, apoi marchează-l `verified` și
+- Completează prețurile manual. Verifică fiecare rând față de sursa lui, apoi marchează-l `verified` și
   rulează `npm run import:cars`. Abia atunci modelul e indexat și apare în scenarii.
 - Adaugă sigle oficiale în `public/brands/` doar după ce verifici termenii de utilizare. Opțional.
 - Pune domeniul final în `SITE.url` și conectează repo-ul la Netlify.

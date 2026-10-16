@@ -248,3 +248,15 @@ describe("relaxOptions", () => {
     ]);
   });
 });
+
+describe("models without a verified price", () => {
+  it("are never ranked", () => {
+    const { price_eur: _drop, ...noPrice } = car({ id: "no-price" });
+    void _drop;
+    expect(
+      rank([noPrice, car({ id: "priced" })], prefs, DEFAULT_ASSUMPTIONS).map(
+        (r) => r.model.id,
+      ),
+    ).toEqual(["priced"]);
+  });
+});

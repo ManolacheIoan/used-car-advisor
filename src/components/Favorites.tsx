@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { getModel } from "@/lib/data";
-import { BODY_LABEL, eur, generationLabel } from "@/lib/labels";
+import { BODY_LABEL, generationLabel, priceRange } from "@/lib/labels";
 import type { CarModel } from "@/lib/types";
 import { BodyIcon } from "./BodyIcon";
 import { BrandBadge } from "./BrandBadge";
@@ -51,8 +51,7 @@ export function Favorites() {
                 {m.brand} {m.model}
               </Link>
               <p className="text-muted text-sm">
-                {generationLabel(m)} · {BODY_LABEL[m.body]} ·{" "}
-                {eur(m.price_eur.min)} – {eur(m.price_eur.max)}
+                {generationLabel(m)} · {BODY_LABEL[m.body]} · {priceRange(m)}
               </p>
             </div>
             <div className="flex shrink-0 flex-col items-end gap-2">
