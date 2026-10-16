@@ -63,6 +63,27 @@ export default function Page() {
         Rezultatul este orientativ.
       </p>
 
+      <h2>Consum: cicluri de test (NEDC, WLTP)</h2>
+      <p>
+        Consumul afișat este valoarea declarată de producător, exact cum apare
+        în sursă, împreună cu ciclul de test: NEDC (vechi, folosit până în jurul
+        anului 2018) sau WLTP (mai nou, de obicei cu valori mai mari pentru
+        aceeași mașină). Când ciclul nu e cunoscut, scrie „ciclu necunoscut”.
+      </p>
+      <ul>
+        <li>
+          Nu convertim valorile între cicluri și nu le „normalizăm” cu factori
+          estimați.
+        </li>
+        <li>
+          Scorul și costul lunar folosesc valoarea declarată, așa cum este.
+        </li>
+        <li>
+          Când modelele afișate sau comparate au consumuri din cicluri diferite,
+          pagina afișează o notă: valorile nu sunt direct comparabile.
+        </li>
+      </ul>
+
       <h2>Limitări</h2>
       <ul>
         <li>

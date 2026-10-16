@@ -6,7 +6,11 @@ import type { Usage } from "@/lib/types";
 import { car, engine } from "./fixtures";
 
 const usages = Object.keys(USAGE_RULES) as Usage[];
-const l = (value: number) => ({ value, unit: "l/100km" as const });
+const l = (value: number) => ({
+  value,
+  unit: "l/100km" as const,
+  cycle: "NEDC" as const,
+});
 
 describe("usage rules config", () => {
   it.each(usages)("%s: base + all points = 1, every rule has a reason", (u) => {

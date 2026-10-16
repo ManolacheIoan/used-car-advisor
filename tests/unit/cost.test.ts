@@ -26,7 +26,10 @@ describe("monthlyCost", () => {
 
   it("uses the price for the engine energy", () => {
     const c = monthlyCost(
-      engine({ energy: "gpl", consumption: { value: 10, unit: "l/100km" } }),
+      engine({
+        energy: "gpl",
+        consumption: { value: 10, unit: "l/100km", cycle: "NEDC" },
+      }),
       12000,
       a,
     );

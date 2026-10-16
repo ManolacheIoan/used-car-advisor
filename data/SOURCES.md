@@ -28,8 +28,8 @@ primei variante alese. Puterea de pe pagina variantei a fost verificată automat
 - **Logan II** apare ca **Logan MCV (break)**, pentru că ADAC listează doar versiunea MCV pentru generația a doua.
 - **Passat B7/B8** sunt înregistrate ca **Variant (break)**.
 - **Octavia și Superb** apar ca „sedan”: ADAC le clasifică „Stufenheck”, deși sunt liftback.
-- Consumul este cel declarat după ciclul **NEDC** (NEFZ). Unde ADAC nu are NEDC s-a folosit WLTP, iar rândurile
-  sunt listate mai jos. Valorile NEDC și WLTP nu sunt direct comparabile.
+- Consumul este cel declarat, cu ciclul de test în coloana `consumption_cycle`: **NEDC** (valoarea NEFZ din
+  ADAC) sau **WLTP**, acolo unde ADAC nu are NEDC (6 rânduri, listate mai jos). Valorile nu se convertesc între cicluri.
 - Anii vin de pe Wikipedia (toată generația, inclusiv facelift-ul). Motorizările pot acoperi doar o parte din acești
   ani.
 

@@ -74,7 +74,7 @@ describe("usageFit", () => {
   it("rewards hatchback + low consumption in the city", () => {
     const u = usageFit(
       car(),
-      engine({ consumption: { value: 5, unit: "l/100km" } }),
+      engine({ consumption: { value: 5, unit: "l/100km", cycle: "NEDC" } }),
       "oras",
     );
     expect(u.score).toBeCloseTo(1);
@@ -83,7 +83,7 @@ describe("usageFit", () => {
   it("adds negative chips for unmet rules", () => {
     const u = usageFit(
       car({ body: "suv" }),
-      engine({ consumption: { value: 8, unit: "l/100km" } }),
+      engine({ consumption: { value: 8, unit: "l/100km", cycle: "NEDC" } }),
       "oras",
     );
     expect(u.score).toBeCloseTo(0.3);
@@ -94,7 +94,7 @@ describe("usageFit", () => {
     const e = engine({
       energy: "motorina",
       hp: 150,
-      consumption: { value: 4, unit: "l/100km" },
+      consumption: { value: 4, unit: "l/100km", cycle: "NEDC" },
     });
     for (const u of ["oras", "autostrada", "familie", "mixt"] as const)
       expect(usageFit(m, e, u).score).toBeLessThanOrEqual(1);
@@ -190,15 +190,15 @@ describe("rank", () => {
       engines: [
         engine({
           energy: "benzina",
-          consumption: { value: 7, unit: "l/100km" },
+          consumption: { value: 7, unit: "l/100km", cycle: "NEDC" },
         }),
         engine({
           energy: "benzina",
-          consumption: { value: 5, unit: "l/100km" },
+          consumption: { value: 5, unit: "l/100km", cycle: "NEDC" },
         }),
         engine({
           energy: "motorina",
-          consumption: { value: 3, unit: "l/100km" },
+          consumption: { value: 3, unit: "l/100km", cycle: "NEDC" },
         }),
       ],
     });

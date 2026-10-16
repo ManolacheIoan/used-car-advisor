@@ -1,4 +1,7 @@
 export type Energy = "benzina" | "motorina" | "gpl" | "hibrid" | "electric";
+/** Homologation test cycle of a declared consumption figure. */
+export type TestCycle = "NEDC" | "WLTP" | "unknown";
+
 export type Usage = "oras" | "autostrada" | "familie" | "mixt";
 export type Body = "hatchback" | "sedan" | "break" | "suv" | "mpv";
 
@@ -12,7 +15,12 @@ export interface Engine {
   energy: Energy;
   cc?: number;
   hp: number;
-  consumption: { value: number; unit: "l/100km" | "kWh/100km" };
+  /** Declared consumption as published; `cycle` is the test cycle. Never converted between cycles. */
+  consumption: {
+    value: number;
+    unit: "l/100km" | "kWh/100km";
+    cycle: TestCycle;
+  };
 }
 
 export interface CarModel {

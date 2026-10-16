@@ -52,11 +52,12 @@
         "hp": { "type": "integer", "minimum": 30, "maximum": 1000 },
         "consumption": {
           "type": "object",
-          "required": ["value", "unit"],
+          "required": ["value", "unit", "cycle"],
           "additionalProperties": false,
           "properties": {
             "value": { "type": "number", "exclusiveMinimum": 0, "maximum": 40 },
-            "unit": { "enum": ["l/100km", "kWh/100km"] }
+            "unit": { "enum": ["l/100km", "kWh/100km"] },
+            "cycle": { "enum": ["NEDC", "WLTP", "unknown"] }
           }
         }
       }

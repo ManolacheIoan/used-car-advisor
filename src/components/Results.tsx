@@ -7,10 +7,13 @@ import { models } from "@/lib/data";
 import {
   BODY_LABEL,
   consumptionRange,
+  consumptionText,
   ENERGY_LABEL,
   engineSummary,
   eur,
   generationLabel,
+  MIXED_CYCLES_NOTE,
+  mixedCycles,
 } from "@/lib/labels";
 import {
   hasPrice,
@@ -149,6 +152,14 @@ export function Results() {
         .
       </p>
       <CostEditor value={assumptions} onChange={setAssumptions} />
+      {mixedCycles(results.map((r) => r.engine)) && (
+        <p
+          role="note"
+          className="border-accent/50 rounded-lg border p-3 text-sm"
+        >
+          {MIXED_CYCLES_NOTE}
+        </p>
+      )}
       <ol className="space-y-3">
         {results.map((r, i) => (
           <ResultCard
@@ -239,7 +250,7 @@ function ResultCard(p: {
       </p>
       <p className="text-muted text-sm">
         Estimare pentru {ENERGY_LABEL[e.energy]} {e.cc ? `${e.cc} cm³, ` : ""}
-        {e.hp} CP, {e.consumption.value} l/100 km (declarat)
+        {e.hp} CP, {consumptionText(e)}, declarat
       </p>
       <CostLine cost={p.r.cost} />
       <div className="flex items-center justify-between gap-3">

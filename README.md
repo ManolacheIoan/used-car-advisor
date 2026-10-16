@@ -55,7 +55,6 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 3. Actualizează `updated` la data de azi.
 4. Rulează `npm test`. Testul pică dacă lipsesc câmpuri sau surse, dacă intervalele sunt inversate, dacă un id se
    repetă sau dacă folosești un tip de energie care nu e activ în V1 (`hibrid`, `electric`).
-5. Șterge cele 5 modele `example: true` când ai date reale. Paginile lor nu se indexează și nu apar în sitemap.
 
 ## Import din Google Sheets (recomandat)
 
@@ -65,22 +64,24 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 1. Importă `data/cars.template.csv` într-un Google Sheet. Coloanele sunt fixe: nu le redenumi și nu le șterge.
 2. **Un rând pentru fiecare motorizare.** Rândurile aceluiași model stau unul după altul, cu același `id`. Pe rândurile
    următoare, coloanele de model pot rămâne goale.
-3. Fiecare grup de câmpuri are trei coloane de sursă: `<grup>_source_title`, `<grup>_source_url` și `<grup>_date`
+3. `consumption_cycle` este `NEDC`, `WLTP` sau `unknown`, adică ciclul de test al consumului declarat. Nu converti
+   valorile între cicluri.
+4. Fiecare grup de câmpuri are trei coloane de sursă: `<grup>_source_title`, `<grup>_source_url` și `<grup>_date`
    (`AAAA-LL-ZZ`). Grupurile sunt `years`, `body`, `seats`, `trunk`, `engine` și `price`.
-4. Prețurile (`price_min_eur`, `price_max_eur`) sunt goale; le completezi manual. Modelele fără preț verificat
+5. Prețurile (`price_min_eur`, `price_max_eur`) sunt goale; le completezi manual. Modelele fără preț verificat
    rămân publicate (au pagina lor), dar sunt excluse din rezultate, din sitemap și din scenarii.
-5. După ce verifici un model, schimbă `verification` din `needs verification` în `verified`.
-6. Exportă din Sheets cu File → Download → CSV, salvează fișierul peste `data/cars.template.csv` și rulează
+6. După ce verifici un model, schimbă `verification` din `needs verification` în `verified`.
+7. Exportă din Sheets cu File → Download → CSV, salvează fișierul peste `data/cars.template.csv` și rulează
    `npm run import:cars`.
-7. Ce se publică:
+8. Ce se publică:
    - se publică toate modelele **complete**;
    - cele încă `needs verification` apar cu eticheta „Date în curs de verificare”, nu sunt indexate și nu apar în
      scenariile de pe prima pagină;
    - modelele incomplete sunt sărite și listate în `data/import-report.md`;
    - o valoare invalidă (număr, URL, dată, interval inversat, id duplicat, conflict) oprește importul și nu se
      scrie nimic.
-8. `pros`, `cons` și `known_issues` (V2) se păstrează din `cars.json` existent.
-9. Rulează `npm test` și fă commit. Testul verifică și că `cars.json` corespunde exact CSV-urilor.
+9. `pros`, `cons` și `known_issues` (V2) se păstrează din `cars.json` existent.
+10. Rulează `npm test` și fă commit. Testul verifică și că `cars.json` corespunde exact CSV-urilor.
 
 ## Cum funcționează scorul (`src/lib/scoring.ts`)
 

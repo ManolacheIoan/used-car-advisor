@@ -6,10 +6,13 @@ import { COST_NOTE } from "@/lib/cost";
 import { getModel, models } from "@/lib/data";
 import {
   BODY_LABEL,
+  consumptionText,
   ENERGY_LABEL,
   engineSummary,
   generationLabel,
   lei,
+  MIXED_CYCLES_NOTE,
+  mixedCycles,
   priceRange,
 } from "@/lib/labels";
 import { pickEngine, rank } from "@/lib/scoring";
@@ -77,10 +80,7 @@ export function Compare() {
       "Motor estimat",
       (c) => `${ENERGY_LABEL[c.engine.energy]}, ${c.engine.hp} CP`,
     ],
-    [
-      "Consum declarat",
-      (c) => `${c.engine.consumption.value} ${c.engine.consumption.unit}`,
-    ],
+    ["Consum declarat", (c) => consumptionText(c.engine)],
     [
       "Cost lunar",
       (c) => (
@@ -120,6 +120,14 @@ export function Compare() {
         întreținere {assumptions.maintenanceYear} lei/an. Toate valorile sunt
         orientative; verifică întotdeauna cu vânzătorul.
       </p>
+      {mixedCycles(cols.map((c) => c.engine)) && (
+        <p
+          role="note"
+          className="border-accent/50 rounded-lg border p-3 text-sm"
+        >
+          {MIXED_CYCLES_NOTE}
+        </p>
+      )}
       <div className={`${card} print-table overflow-x-auto p-0`}>
         <table className="w-full min-w-[32rem] text-left text-sm">
           <caption className="sr-only">Comparație modele</caption>

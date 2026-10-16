@@ -5,7 +5,11 @@ import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import type { CarModel } from "@/lib/types";
 import { car, engine } from "./fixtures";
 
-const l = (value: number) => ({ value, unit: "l/100km" as const });
+const l = (value: number) => ({
+  value,
+  unit: "l/100km" as const,
+  cycle: "NEDC" as const,
+});
 const price = (min: number, max: number) => ({
   min,
   max,

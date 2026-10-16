@@ -10,7 +10,14 @@
  * Runs in Node via type stripping, so runtime imports use explicit .ts extensions.
  */
 import { semanticErrors, V1_ENERGIES } from "./dataChecks.ts";
-import type { Body, CarModel, Catalog, Engine, Source } from "./types";
+import type {
+  Body,
+  CarModel,
+  Catalog,
+  Engine,
+  Source,
+  TestCycle,
+} from "./types";
 
 /** [group, value columns]. Each group has <group>_source_title, <group>_source_url and <group>_date columns. */
 const GROUPS = [
@@ -18,7 +25,7 @@ const GROUPS = [
   ["body", ["body"]],
   ["seats", ["seats"]],
   ["trunk", ["trunk_l"]],
-  ["engine", ["energy", "cc", "hp", "consumption_l100km"]],
+  ["engine", ["energy", "cc", "hp", "consumption_l100km", "consumption_cycle"]],
   ["price", ["price_min_eur", "price_max_eur"]],
 ] as const;
 
@@ -63,10 +70,12 @@ const ENGINE_COLS: Col[] = [
   "cc",
   "hp",
   "consumption_l100km",
+  "consumption_cycle",
   ...sourceCols("engine"),
 ];
 const MODEL_COLS = COLUMNS.filter((c) => !ENGINE_COLS.includes(c));
 const BODIES: Body[] = ["hatchback", "sedan", "break", "suv", "mpv"];
+const CYCLES = ["NEDC", "WLTP", "unknown"] as const;
 
 /** Minimal RFC 4180 parser: quoted fields, escaped quotes, commas and newlines inside quotes. */
 export function parseCsv(text: string): string[][] {
@@ -278,11 +287,26 @@ export function csvToCatalog(
             `consumption_l100km must be a number in (0, 40], got "${r.consumption_l100km}"`,
           );
       }
+      if (!r.consumption_cycle)
+        missing.push(
+          group.length > 1
+            ? `consumption_cycle (line ${r.line})`
+            : "consumption_cycle",
+        );
+      else if (!(CYCLES as readonly string[]).includes(r.consumption_cycle))
+        err(
+          r,
+          `consumption_cycle must be one of ${CYCLES.join("/")}, got "${r.consumption_cycle}"`,
+        );
       return {
         energy: r.energy as Engine["energy"],
         cc: int(r, "cc"),
         hp: int(r, "hp"),
-        consumption: { value: consumption, unit: "l/100km" },
+        consumption: {
+          value: consumption,
+          unit: "l/100km",
+          cycle: r.consumption_cycle as TestCycle,
+        },
       };
     });
 

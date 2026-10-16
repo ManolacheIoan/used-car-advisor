@@ -30,6 +30,7 @@ const base: Record<string, string> = {
   cc: "1200",
   hp: "75",
   consumption_l100km: "5.5",
+  consumption_cycle: "NEDC",
   ...src("engine"),
   price_min_eur: "4000",
   price_max_eur: "6000",
@@ -212,6 +213,9 @@ describe("csvToCatalog: invalid values are errors", () => {
     expect(m).toContain('2: hp must be a positive whole number, got "abc"');
     expect(m.some((x) => x.startsWith("2: consumption_l100km"))).toBe(true);
     expect(m.some((x) => x.startsWith("2: verification must be"))).toBe(true);
+    expect(messages(csv(row({ consumption_cycle: "EPA" })))).toContain(
+      '2: consumption_cycle must be one of NEDC/WLTP/unknown, got "EPA"',
+    );
   });
 });
 

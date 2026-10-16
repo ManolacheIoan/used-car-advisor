@@ -20,7 +20,8 @@
           "hp": 115,
           "consumption": {
             "value": 4.6,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         },
         {
@@ -29,7 +30,8 @@
           "hp": 125,
           "consumption": {
             "value": 6.0,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         }
       ],
@@ -70,7 +72,8 @@
           "hp": 115,
           "consumption": {
             "value": 6.5,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         },
         {
@@ -79,7 +82,8 @@
           "hp": 100,
           "consumption": {
             "value": 7.8,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "WLTP"
           }
         }
       ],
@@ -120,7 +124,8 @@
           "hp": 75,
           "consumption": {
             "value": 5.5,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         },
         {
@@ -129,7 +134,8 @@
           "hp": 90,
           "consumption": {
             "value": 4.2,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         }
       ],
@@ -170,7 +176,8 @@
           "hp": 150,
           "consumption": {
             "value": 5.0,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         }
       ],
@@ -211,7 +218,8 @@
           "hp": 120,
           "consumption": {
             "value": 5.2,
-            "unit": "l/100km"
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         }
       ],

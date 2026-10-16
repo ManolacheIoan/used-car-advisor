@@ -4,7 +4,7 @@ export const engine = (over: Partial<Engine> = {}): Engine => ({
   energy: "benzina",
   cc: 1400,
   hp: 100,
-  consumption: { value: 6, unit: "l/100km" },
+  consumption: { value: 6, unit: "l/100km", cycle: "NEDC" },
   ...over,
 });
 

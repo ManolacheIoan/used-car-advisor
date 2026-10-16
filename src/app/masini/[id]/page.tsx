@@ -12,8 +12,11 @@ import { getModel, models } from "@/lib/data";
 import {
   BODY_LABEL,
   consumptionRange,
+  consumptionText,
   ENERGY_LABEL,
   generationLabel,
+  MIXED_CYCLES_NOTE,
+  mixedCycles,
   priceRange,
 } from "@/lib/labels";
 import {
@@ -125,6 +128,14 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         )}
       </p>
 
+      {mixedCycles(m.engines) && (
+        <p
+          role="note"
+          className="border-accent/50 rounded-lg border p-3 text-sm"
+        >
+          {MIXED_CYCLES_NOTE}
+        </p>
+      )}
       <section aria-labelledby="eng-h" className="space-y-2">
         <h2 id="eng-h" className="text-lg font-semibold">
           Motorizări
@@ -153,9 +164,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
                   <td className="p-3">{ENERGY_LABEL[e.energy]}</td>
                   <td className="p-3">{e.cc ? `${e.cc} cm³` : "—"}</td>
                   <td className="p-3">{e.hp} CP</td>
-                  <td className="p-3">
-                    {e.consumption.value} {e.consumption.unit}
-                  </td>
+                  <td className="p-3">{consumptionText(e)}</td>
                 </tr>
               ))}
             </tbody>
