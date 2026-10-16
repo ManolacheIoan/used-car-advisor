@@ -10,10 +10,12 @@ const l = (value: number) => ({
   unit: "l/100km" as const,
   cycle: "NEDC" as const,
 });
-const price = (min: number, max: number) => ({
-  min,
-  max,
-  set_on: "2026-10-01",
+const price = (low: number, high: number) => ({
+  low,
+  high,
+  n_listings: 12,
+  collected_on: "2026-10-01",
+  kind: "asking_price" as const,
 });
 
 /** Fixed catalog so the expected rankings below never drift with real data. */

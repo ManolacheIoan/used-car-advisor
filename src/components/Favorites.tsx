@@ -7,6 +7,7 @@ import type { CarModel } from "@/lib/types";
 import { BodyIcon } from "./BodyIcon";
 import { BrandBadge } from "./BrandBadge";
 import { FavoriteButton } from "./FavoriteButton";
+import { priceNote } from "./PriceNote";
 import { btnPrimary, card, Notice } from "./ui";
 import { useFavorites } from "./useFavorites";
 
@@ -52,6 +53,7 @@ export function Favorites() {
               </Link>
               <p className="text-muted text-sm">
                 {generationLabel(m)} · {BODY_LABEL[m.body]} · {priceRange(m)}
+                {m.price_eur && ` (${priceNote(m.price_eur)})`}
               </p>
             </div>
             <div className="flex shrink-0 flex-col items-end gap-2">

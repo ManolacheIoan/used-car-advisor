@@ -32,9 +32,12 @@ const base: Record<string, string> = {
   consumption_l100km: "5.5",
   consumption_cycle: "NEDC",
   ...src("engine"),
-  price_min_eur: "4000",
-  price_max_eur: "6000",
-  ...src("price", "https://example.com/p"),
+  price_low_eur: "4000",
+  price_high_eur: "6000",
+  n_listings: "12",
+  collected_on: D,
+  kind: "asking_price",
+  notes: "",
 };
 const quote = (v: string) => (v.includes(",") ? `"${v}"` : v);
 const row = (over: Record<string, string> = {}) =>
@@ -77,11 +80,14 @@ describe("csvToCatalog: publishing", () => {
     expect(r.errors).toEqual([]);
     const m = r.catalog!.models[0];
     expect(m.engines.map((e) => e.consumption.value)).toEqual([5.5, 4.2]);
-    expect(m.sources).toEqual([
-      { title: "Sursa A", url: U, accessed: D },
-      { title: "Sursa A", url: "https://example.com/p", accessed: D },
-    ]);
-    expect(m.price_eur).toEqual({ min: 4000, max: 6000, set_on: D });
+    expect(m.sources).toEqual([{ title: "Sursa A", url: U, accessed: D }]);
+    expect(m.price_eur).toEqual({
+      low: 4000,
+      high: 6000,
+      n_listings: 12,
+      collected_on: D,
+      kind: "asking_price",
+    });
   });
 
   it("publishes complete models that need verification, flagged verified: false", () => {
@@ -115,7 +121,7 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
   it("lists missing values and missing sources", () => {
     const r = run(
       csv(
-        row({ price_min_eur: "", price_max_eur: "", price_source_url: "" }),
+        row({ price_low_eur: "", price_high_eur: "" }),
         row({ id: "m-2", seats: "4", seats_source_title: "" }),
       ),
     );
@@ -126,7 +132,7 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
         id: "m-1",
         file: "t.csv",
         line: 2,
-        missing: ["price_min_eur", "price_max_eur", "price_source_url"],
+        missing: ["price_low_eur", "price_high_eur"],
       },
       { id: "m-2", file: "t.csv", line: 3, missing: ["seats_source_title"] },
     ]);
@@ -134,11 +140,12 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
 
   it("publishes a model without any price, but lists it as unpriced", () => {
     const empty = {
-      price_min_eur: "",
-      price_max_eur: "",
-      price_source_title: "",
-      price_source_url: "",
-      price_date: "",
+      price_low_eur: "",
+      price_high_eur: "",
+      n_listings: "",
+      collected_on: "",
+      kind: "",
+      notes: "",
     };
     const r = run(csv(row(empty)));
     expect(r.catalog!.models[0].price_eur).toBeUndefined();
@@ -154,10 +161,41 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
   });
 
   it("writes a readable report", () => {
-    const r = run(csv(row({ price_min_eur: "" })));
+    const r = run(csv(row({ price_low_eur: "" })));
     const md = formatReport(r, "2026-10-16");
     expect(md).toContain("Incomplete (nepublicate): 1");
-    expect(md).toContain("`m-1` (t.csv:2): price_min_eur");
+    expect(md).toContain("`m-1` (t.csv:2): price_low_eur");
+  });
+});
+
+describe("csvToCatalog: manual price entry", () => {
+  it("requires at least 10 listings", () => {
+    expect(messages(csv(row({ n_listings: "9" })))).toContain(
+      "2: n_listings must be at least 10, got 9",
+    );
+  });
+
+  it("rejects prices collected more than 60 days before the import, or in the future", () => {
+    expect(messages(csv(row({ collected_on: "2026-08-01" })))).toContain(
+      "2: collected_on 2026-08-01 is older than 60 days; collect prices again",
+    );
+    expect(messages(csv(row({ collected_on: "2026-08-17" })))).toEqual([]);
+    expect(messages(csv(row({ collected_on: "2026-10-20" })))).toContain(
+      "2: collected_on 2026-10-20 is in the future",
+    );
+  });
+
+  it("only accepts asking prices", () => {
+    expect(messages(csv(row({ kind: "sold_price" })))).toContain(
+      '2: kind must be "asking_price", got "sold_price"',
+    );
+  });
+
+  it("keeps notes", () => {
+    expect(
+      run(csv(row({ notes: "doar anunțuri din București" }))).catalog!.models[0]
+        .price_eur?.notes,
+    ).toBe("doar anunțuri din București");
   });
 });
 
@@ -175,9 +213,9 @@ describe("csvToCatalog: invalid values are errors", () => {
   });
 
   it("reports invalid ranges", () => {
-    const m = messages(csv(row({ year_from: "2021", price_min_eur: "9000" })));
+    const m = messages(csv(row({ year_from: "2021", price_low_eur: "9000" })));
     expect(m).toContain("2: year_from 2021 > year_to 2020");
-    expect(m).toContain("2: price_min_eur 9000 > price_max_eur 6000");
+    expect(m).toContain("2: price_low_eur 9000 > price_high_eur 6000");
   });
 
   it("reports duplicate ids, also across files, and conflicting model columns", () => {

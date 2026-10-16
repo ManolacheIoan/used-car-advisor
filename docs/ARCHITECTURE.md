@@ -24,7 +24,8 @@ tests/e2e/                 Playwright: flux principal, relaxare criteriu, favori
 ## Fluxul datelor (CSV → pagini)
 
 1. **Colectare.** Valorile vin din pagini publice descărcate efectiv: anii din Wikipedia (revizie fixă), datele
-   tehnice din ADAC Autokatalog. Prețurile second-hand se completează manual. Fiecare grup de câmpuri are titlul
+   tehnice din ADAC Autokatalog. Prețurile second-hand se introduc manual, ca prețuri cerute în anunțuri
+   (interval, număr de anunțuri ≥ 10, dată de culegere de cel mult 60 de zile, `kind` = `asking_price`). Fiecare grup de câmpuri are titlul
    sursei, URL-ul și data. Modelele fără preț verificat sunt excluse din rezultate, din sitemap și din scenarii.
 2. **Import.** `npm run import:cars` citește `cars.template.csv`. Pentru fiecare model:
    - valoare invalidă (număr, URL, dată, interval inversat, id duplicat, conflict) → eroare, nu se scrie nimic;

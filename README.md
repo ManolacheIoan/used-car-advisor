@@ -68,8 +68,16 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
    valorile între cicluri.
 4. Fiecare grup de câmpuri are trei coloane de sursă: `<grup>_source_title`, `<grup>_source_url` și `<grup>_date`
    (`AAAA-LL-ZZ`). Grupurile sunt `years`, `body`, `seats`, `trunk`, `engine` și `price`.
-5. Prețurile (`price_min_eur`, `price_max_eur`) sunt goale; le completezi manual. Modelele fără preț verificat
-   rămân publicate (au pagina lor), dar sunt excluse din rezultate, din sitemap și din scenarii.
+5. **Prețurile se introduc manual**, ca prețuri cerute în anunțuri (nu prețuri de vânzare):
+   - `price_low_eur` și `price_high_eur`, cu `price_low_eur ≤ price_high_eur`;
+   - `n_listings`: numărul de anunțuri pe care l-ai consultat, minimum 10;
+   - `collected_on`: data culegerii, `AAAA-LL-ZZ`, cel mult 60 de zile înainte de import;
+   - `kind`: `asking_price`;
+   - `notes`: opțional, de exemplu ce anunțuri ai inclus.
+
+   Lasă toate coloanele goale dacă nu ai preț. Modelul rămâne publicat, cu pagina lui, dar e exclus din rezultate,
+   din sitemap și din scenarii. Cursul EUR/RON afișat vine din `src/config/exchangeRate.ts` (curs, dată, sursă).
+
 6. După ce verifici un model, schimbă `verification` din `needs verification` în `verified`.
 7. Exportă din Sheets cu File → Download → CSV, salvează fișierul peste `data/cars.template.csv` și rulează
    `npm run import:cars`.

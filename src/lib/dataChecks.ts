@@ -11,7 +11,7 @@ export function semanticErrors(c: Catalog): string[] {
     if (seen.has(m.id)) errs.push(`${m.id}: duplicate id`);
     seen.add(m.id);
     if (m.years.from > m.years.to) errs.push(`${m.id}: years.from > years.to`);
-    if (m.price_eur && m.price_eur.min > m.price_eur.max)
+    if (m.price_eur && m.price_eur.low > m.price_eur.high)
       errs.push(`${m.id}: price min > max`);
     for (const e of m.engines) {
       if (!(V1_ENERGIES as readonly string[]).includes(e.energy))

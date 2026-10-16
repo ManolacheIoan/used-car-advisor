@@ -63,6 +63,16 @@ export default function Page() {
         Rezultatul este orientativ.
       </p>
 
+      <h2>Prețuri</h2>
+      <p>
+        Prețurile sunt prețuri cerute în anunțuri (nu prețuri de vânzare),
+        culese manual, orientative, în EUR. Pentru fiecare model afișăm
+        intervalul, numărul de anunțuri consultate (minimum 10) și data
+        culegerii (cel mult 60 de zile în urmă la import). Modelele fără preț
+        verificat nu apar în recomandări. Cursul EUR/RON, când este afișat, are
+        data și sursa lui; nu convertim prețurile.
+      </p>
+
       <h2>Consum: cicluri de test (NEDC, WLTP)</h2>
       <p>
         Consumul afișat este valoarea declarată de producător, exact cum apare

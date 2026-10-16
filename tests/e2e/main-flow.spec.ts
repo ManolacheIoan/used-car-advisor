@@ -28,6 +28,13 @@ test("form → results → compare → detail", async ({ page }) => {
     .allInnerTexts())
     expect(title).toContain("Testmarca");
   await expect(page.getByText("orientativ").first()).toBeVisible();
+  await expect(
+    page
+      .getByText(
+        "prețuri cerute în anunțuri, orientativ, în EUR, culese la 2026-10-01",
+      )
+      .first(),
+  ).toBeVisible();
 
   await cards.nth(0).getByLabel("Compară").check();
   await cards.nth(1).getByLabel("Compară").check();

@@ -2,7 +2,8 @@
  * CSV (Google Sheets export) → catalog. One row per engine variant; rows of the same model are contiguous
  * and share model-level columns (repeat them or leave them blank on follow-up rows).
  *
- * Every group of fields has its own source title, URL and retrieval date. Outcome per model:
+ * Every spec group has its own source title, URL and retrieval date. Prices are entered manually as asking-price
+ * ranges (price_low_eur, price_high_eur, n_listings, collected_on, kind, notes). Outcome per model:
  * - invalid value (bad number, URL, date, enum, inverted range, duplicate id, conflict) → error, nothing is written;
  * - missing value or missing source → "incomplete", not published, listed in the report;
  * - complete → published; if `verification` is not "verified" it is published with `verified: false`
@@ -26,8 +27,20 @@ const GROUPS = [
   ["seats", ["seats"]],
   ["trunk", ["trunk_l"]],
   ["engine", ["energy", "cc", "hp", "consumption_l100km", "consumption_cycle"]],
-  ["price", ["price_min_eur", "price_max_eur"]],
 ] as const;
+
+/** Manual price entry: asking prices seen in listings, collected by hand. All empty = no price. */
+export const PRICE_COLS = [
+  "price_low_eur",
+  "price_high_eur",
+  "n_listings",
+  "collected_on",
+  "kind",
+  "notes",
+] as const;
+export const PRICE_MIN_LISTINGS = 10;
+export const PRICE_MAX_AGE_DAYS = 60;
+export const PRICE_KIND = "asking_price";
 
 const sourceCols = (g: string) =>
   [`${g}_source_title`, `${g}_source_url`, `${g}_date`] as const;
@@ -40,6 +53,7 @@ export const COLUMNS = [
   "example",
   "verification",
   ...GROUPS.flatMap(([g, cols]) => [...cols, ...sourceCols(g)]),
+  ...PRICE_COLS,
 ] as const;
 
 type Col = (typeof COLUMNS)[number];
@@ -226,7 +240,6 @@ export function csvToCatalog(
     for (const r of group)
       for (const [g, cols] of GROUPS) {
         if (r !== head && g !== "engine") continue;
-        if (g === "price") continue; // checked with the optional price above
         const [t, u, d] = sourceCols(g) as unknown as Col[];
         if (r[u] && !isUrl(r[u])) err(r, `${u} is not a valid http(s) URL`);
         if (r[d] && !isDate(r[d]))
@@ -249,20 +262,48 @@ export function csvToCatalog(
     const seats = int(head, "seats");
     const trunk = int(head, "trunk_l");
     // Price is optional: a model without a price is published but excluded from results, sitemap and scenarios.
-    const priceCols: Col[] = [
-      "price_min_eur",
-      "price_max_eur",
-      ...sourceCols("price"),
-    ];
-    const hasPrice = priceCols.some((c) => head[c] !== "");
-    const price = hasPrice
-      ? { min: int(head, "price_min_eur"), max: int(head, "price_max_eur") }
-      : undefined;
-    if (price && price.min > price.max)
-      err(head, `price_min_eur ${price.min} > price_max_eur ${price.max}`);
-    if (hasPrice)
-      for (const c of sourceCols("price") as unknown as Col[])
-        if (!head[c]) missing.push(c);
+    let price: CarModel["price_eur"];
+    if (PRICE_COLS.some((c) => head[c] !== "")) {
+      const low = int(head, "price_low_eur");
+      const high = int(head, "price_high_eur");
+      const n = int(head, "n_listings");
+      if (low > high)
+        err(head, `price_low_eur ${low} > price_high_eur ${high}`);
+      if (n < PRICE_MIN_LISTINGS)
+        err(
+          head,
+          `n_listings must be at least ${PRICE_MIN_LISTINGS}, got ${n}`,
+        );
+      if (!head.collected_on) missing.push("collected_on");
+      else if (!isDate(head.collected_on))
+        err(
+          head,
+          `collected_on must be YYYY-MM-DD, got "${head.collected_on}"`,
+        );
+      else {
+        const age =
+          (Date.parse(opts.updated) - Date.parse(head.collected_on)) /
+          86_400_000;
+        if (age < 0)
+          err(head, `collected_on ${head.collected_on} is in the future`);
+        else if (age > PRICE_MAX_AGE_DAYS)
+          err(
+            head,
+            `collected_on ${head.collected_on} is older than ${PRICE_MAX_AGE_DAYS} days; collect prices again`,
+          );
+      }
+      if (!head.kind) missing.push("kind");
+      else if (head.kind !== PRICE_KIND)
+        err(head, `kind must be "${PRICE_KIND}", got "${head.kind}"`);
+      price = {
+        low,
+        high,
+        n_listings: n,
+        collected_on: head.collected_on,
+        kind: PRICE_KIND,
+        ...(head.notes ? { notes: head.notes } : {}),
+      };
+    }
 
     const engines: Engine[] = group.map((r) => {
       if (!r.energy)
@@ -348,7 +389,7 @@ export function csvToCatalog(
       engines,
       seats,
       trunk_l: trunk,
-      ...(price ? { price_eur: { ...price, set_on: head.price_date } } : {}),
+      ...(price ? { price_eur: price } : {}),
       sources: [...sources.values()],
       // V2 fields are not in the CSV; keep what already exists.
       pros: old?.pros ?? [],

@@ -37,7 +37,15 @@ export interface CarModel {
   seats: number;
   trunk_l: number;
   /** Absent until a verified price is entered; such models are excluded from results. */
-  price_eur?: { min: number; max: number; set_on: string };
+  price_eur?: {
+    low: number;
+    high: number;
+    /** Number of listings the range is based on (≥ 10). */
+    n_listings: number;
+    collected_on: string;
+    kind: "asking_price";
+    notes?: string;
+  };
   sources: Source[];
   // V2 fields: kept in data, not rendered in V1.
   pros?: unknown[];

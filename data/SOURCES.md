@@ -10,7 +10,8 @@ URL-ul complet și data accesării. Toate rândurile sunt marcate `needs verific
   indică revizia exactă (`oldid`) folosită.
 - **Caroserie, locuri, portbagaj, motorizări** (cilindree, putere, consum mixt): ADAC Autokatalog. Pentru fiecare
   câmp este folosită pagina variantei respective.
-- **Prețuri second-hand:** goale. Se completează manual; până atunci modelele sunt excluse din rezultate.
+- **Prețuri second-hand:** goale. Se introduc manual ca prețuri cerute în anunțuri (`price_low_eur`, `price_high_eur`,
+  `n_listings` ≥ 10, `collected_on`, `kind` = `asking_price`, `notes`). Fără preț, modelul e exclus din rezultate.
 
 ## Regula de alegere a motorizărilor (fixă, nu după memorie)
 

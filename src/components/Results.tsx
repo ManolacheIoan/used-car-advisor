@@ -10,10 +10,10 @@ import {
   consumptionText,
   ENERGY_LABEL,
   engineSummary,
-  eur,
   generationLabel,
   MIXED_CYCLES_NOTE,
   mixedCycles,
+  priceRange,
 } from "@/lib/labels";
 import {
   hasPrice,
@@ -30,6 +30,7 @@ import { FavoriteButton } from "./FavoriteButton";
 import { CostLine } from "./CostLine";
 import { ReasonChips } from "./ReasonChips";
 import { ScoreBar } from "./ScoreBar";
+import { ExchangeRateNote, priceNote } from "./PriceNote";
 import { ShareButton } from "./ShareButton";
 import { VerificationBadge } from "./VerificationBadge";
 import { BackToForm, btnGhost, btnPrimary, card, Morph, Notice } from "./ui";
@@ -151,6 +152,10 @@ export function Results() {
         </a>
         .
       </p>
+      <p className="text-muted text-sm">
+        Prețurile mașinilor sunt prețuri cerute în anunțuri, orientativ, în EUR.{" "}
+        <ExchangeRateNote />
+      </p>
       <CostEditor value={assumptions} onChange={setAssumptions} />
       {mixedCycles(results.map((r) => r.engine)) && (
         <p
@@ -243,10 +248,8 @@ function ResultCard(p: {
         Motorizări: {engineSummary(m)}. Consum declarat {consumptionRange(m)}.
       </p>
       <p className="text-sm">
-        Preț orientativ:{" "}
-        <span className="font-semibold">
-          {eur(m.price_eur.min)} – {eur(m.price_eur.max)}
-        </span>
+        Preț: <span className="font-semibold">{priceRange(m)}</span>{" "}
+        <span className="text-muted">({priceNote(m.price_eur)})</span>
       </p>
       <p className="text-muted text-sm">
         Estimare pentru {ENERGY_LABEL[e.energy]} {e.cc ? `${e.cc} cm³, ` : ""}

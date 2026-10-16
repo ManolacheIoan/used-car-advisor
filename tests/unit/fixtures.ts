@@ -18,7 +18,13 @@ export const car = (over: Partial<CarModel> = {}): CarModel => ({
   engines: [engine()],
   seats: 5,
   trunk_l: 350,
-  price_eur: { min: 30000, max: 40000, set_on: "2026-01-01" },
+  price_eur: {
+    low: 30000,
+    high: 40000,
+    n_listings: 12,
+    collected_on: "2026-01-01",
+    kind: "asking_price",
+  },
   sources: [{ title: "s", url: "https://example.com", accessed: "2026-01-01" }],
   ...over,
 });

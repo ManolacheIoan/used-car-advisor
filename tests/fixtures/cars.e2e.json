@@ -38,9 +38,12 @@
       "seats": 5,
       "trunk_l": 520,
       "price_eur": {
-        "min": 8000,
-        "max": 13000,
-        "set_on": "2026-10-01"
+        "low": 8000,
+        "high": 13000,
+        "n_listings": 12,
+        "collected_on": "2026-10-01",
+        "kind": "asking_price",
+        "notes": "date de test fictive"
       },
       "sources": [
         {
@@ -90,9 +93,12 @@
       "seats": 5,
       "trunk_l": 450,
       "price_eur": {
-        "min": 9000,
-        "max": 15000,
-        "set_on": "2026-10-01"
+        "low": 9000,
+        "high": 15000,
+        "n_listings": 12,
+        "collected_on": "2026-10-01",
+        "kind": "asking_price",
+        "notes": "date de test fictive"
       },
       "sources": [
         {
@@ -142,9 +148,12 @@
       "seats": 5,
       "trunk_l": 300,
       "price_eur": {
-        "min": 5000,
-        "max": 8000,
-        "set_on": "2026-10-01"
+        "low": 5000,
+        "high": 8000,
+        "n_listings": 12,
+        "collected_on": "2026-10-01",
+        "kind": "asking_price",
+        "notes": "date de test fictive"
       },
       "sources": [
         {
@@ -184,9 +193,12 @@
       "seats": 5,
       "trunk_l": 480,
       "price_eur": {
-        "min": 11000,
-        "max": 18000,
-        "set_on": "2026-10-01"
+        "low": 11000,
+        "high": 18000,
+        "n_listings": 12,
+        "collected_on": "2026-10-01",
+        "kind": "asking_price",
+        "notes": "date de test fictive"
       },
       "sources": [
         {
@@ -226,9 +238,12 @@
       "seats": 7,
       "trunk_l": 650,
       "price_eur": {
-        "min": 10000,
-        "max": 16000,
-        "set_on": "2026-10-01"
+        "low": 10000,
+        "high": 16000,
+        "n_listings": 12,
+        "collected_on": "2026-10-01",
+        "kind": "asking_price",
+        "notes": "date de test fictive"
       },
       "sources": [
         {

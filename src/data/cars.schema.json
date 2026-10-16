@@ -100,12 +100,15 @@
           "trunk_l": { "type": "integer", "minimum": 50, "maximum": 3000 },
           "price_eur": {
             "type": "object",
-            "required": ["min", "max", "set_on"],
+            "required": ["low", "high", "n_listings", "collected_on", "kind"],
             "additionalProperties": false,
             "properties": {
-              "min": { "type": "integer", "minimum": 100 },
-              "max": { "type": "integer", "minimum": 100 },
-              "set_on": { "$ref": "#/definitions/date" }
+              "low": { "type": "integer", "minimum": 100 },
+              "high": { "type": "integer", "minimum": 100 },
+              "n_listings": { "type": "integer", "minimum": 10 },
+              "collected_on": { "$ref": "#/definitions/date" },
+              "kind": { "enum": ["asking_price"] },
+              "notes": { "type": "string" }
             }
           },
           "sources": {

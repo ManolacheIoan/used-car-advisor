@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .filter((m) => isIndexable(m) && m.price_eur)
       .map((m) => ({
         url: `${SITE.url}/masini/${m.id}/`,
-        lastModified: m.price_eur!.set_on,
+        lastModified: m.price_eur!.collected_on,
       })),
   ];
 }

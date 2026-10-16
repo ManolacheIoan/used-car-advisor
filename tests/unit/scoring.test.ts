@@ -166,11 +166,23 @@ describe("rank", () => {
   it("orders by score and keeps scores in 0–100", () => {
     const cheap = car({
       id: "cheap",
-      price_eur: { min: 30000, max: 40000, set_on: "2026-01-01" },
+      price_eur: {
+        low: 30000,
+        high: 40000,
+        n_listings: 12,
+        collected_on: "2026-01-01",
+        kind: "asking_price",
+      },
     });
     const pricey = car({
       id: "pricey",
-      price_eur: { min: 70000, max: 90000, set_on: "2026-01-01" },
+      price_eur: {
+        low: 70000,
+        high: 90000,
+        n_listings: 12,
+        collected_on: "2026-01-01",
+        kind: "asking_price",
+      },
     });
     const r = rank([pricey, cheap], prefs, DEFAULT_ASSUMPTIONS);
     expect(r.map((x) => x.model.id)).toEqual(["cheap", "pricey"]);

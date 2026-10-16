@@ -20,6 +20,7 @@ import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
 import { CostEditor } from "./CostEditor";
+import { priceNote } from "./PriceNote";
 import { PrintButton } from "./PrintButton";
 import { ShareButton } from "./ShareButton";
 import { CountUp } from "./CountUp";
@@ -75,7 +76,19 @@ export function Compare() {
     ["Motorizări", (c) => engineSummary(c.m)],
     ["Locuri", (c) => c.m.seats],
     ["Portbagaj", (c) => `${c.m.trunk_l} l`],
-    ["Preț orientativ", (c) => priceRange(c.m)],
+    [
+      "Preț",
+      (c) => (
+        <>
+          {priceRange(c.m)}
+          {c.m.price_eur && (
+            <span className="text-muted block text-xs">
+              {priceNote(c.m.price_eur)}
+            </span>
+          )}
+        </>
+      ),
+    ],
     [
       "Motor estimat",
       (c) => `${ENERGY_LABEL[c.engine.energy]}, ${c.engine.hp} CP`,

@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { BodyIcon } from "@/components/BodyIcon";
 import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
+import { ExchangeRateNote, priceNote } from "@/components/PriceNote";
 import { VerificationBadge } from "@/components/VerificationBadge";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { card, Morph } from "@/components/ui";
@@ -119,9 +120,9 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
       <p className="text-muted text-sm">
         {m.price_eur ? (
           <>
-            Prețul este un interval aproximativ, stabilit la{" "}
-            <time dateTime={m.price_eur.set_on}>{m.price_eur.set_on}</time>.
-            Verifică întotdeauna cu vânzătorul.
+            Preț: {priceNote(m.price_eur)}.
+            {m.price_eur.notes ? ` Notă: ${m.price_eur.notes}.` : ""} Verifică
+            întotdeauna cu vânzătorul. <ExchangeRateNote />
           </>
         ) : (
           "Pentru acest model nu avem încă un preț verificat, așa că nu apare în recomandări."
