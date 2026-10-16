@@ -30,7 +30,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Sari la conținut
         </a>
         <SiteHeader />
-        <main id="main" className="mx-auto w-full max-w-3xl flex-1 px-4 py-6">
+        <main
+          id="main"
+          className="mx-auto min-h-svh w-full max-w-3xl flex-1 px-4 py-6"
+        >
           {children}
         </main>
         <SiteFooter />

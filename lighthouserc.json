@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "staticDistDir": "./out",
-      "numberOfRuns": 1,
+      "numberOfRuns": 3,
       "url": [
         "/",
         "/despre-date/",
