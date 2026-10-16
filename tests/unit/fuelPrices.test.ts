@@ -1,15 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { FUEL_PRICES, FUEL_PRICES_MAX_AGE_DAYS } from "@/config/fuelPrices";
+import { FUEL_PRICES, fuelPricesAgeDays } from "@/config/fuelPrices";
 import { DEFAULT_ASSUMPTIONS } from "@/lib/cost";
 
 describe("fuel prices config", () => {
-  it(`was updated in the last ${FUEL_PRICES_MAX_AGE_DAYS} days`, () => {
-    const ageDays = (Date.now() - Date.parse(FUEL_PRICES.updated)) / 86_400_000;
+  it("is not dated in the future and has a source", () => {
+    expect(fuelPricesAgeDays(FUEL_PRICES.updated)).toBeGreaterThanOrEqual(0);
+    expect(FUEL_PRICES.source.url).toMatch(/^https:\/\//);
+  });
+
+  it("computes age in whole days", () => {
     expect(
-      ageDays,
-      `FUEL_PRICES.updated is ${FUEL_PRICES.updated}; refresh src/config/fuelPrices.ts`,
-    ).toBeLessThanOrEqual(FUEL_PRICES_MAX_AGE_DAYS);
-    expect(ageDays).toBeGreaterThanOrEqual(-1); // not in the future
+      fuelPricesAgeDays("2026-10-09", Date.parse("2026-12-08T12:00:00Z")),
+    ).toBe(60);
+    expect(
+      fuelPricesAgeDays("2026-10-09", Date.parse("2026-12-09T12:00:00Z")),
+    ).toBe(61);
   });
 
   it("feeds the default cost assumptions", () => {

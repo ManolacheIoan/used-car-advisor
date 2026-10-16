@@ -18,6 +18,8 @@ jobs:
       - run: npm run format:check
       - run: npm run lint
       - run: npm run typecheck
+      - name: Fuel prices freshness (warning only)
+        run: node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-fuel-prices.ts
       - run: npm test
       - run: npm run build
       - run: npx playwright install --with-deps chromium

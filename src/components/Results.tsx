@@ -84,10 +84,19 @@ export function Results() {
         <BackToForm query={query.toString()} />
       </div>
       <p className="text-muted text-sm">
-        Prețuri implicite carburant: benzină {FUEL_PRICES.prices.benzina},
-        motorină {FUEL_PRICES.prices.motorina}, GPL {FUEL_PRICES.prices.gpl}{" "}
-        lei/l, actualizate la{" "}
+        Prețuri medii carburant: benzină {FUEL_PRICES.prices.benzina}, motorină{" "}
+        {FUEL_PRICES.prices.motorina}, GPL {FUEL_PRICES.prices.gpl} lei/l,
+        actualizate la{" "}
         <time dateTime={FUEL_PRICES.updated}>{FUEL_PRICES.updated}</time>.
+        Sursa:{" "}
+        <a
+          href={FUEL_PRICES.source.url}
+          rel="noopener nofollow"
+          className="underline"
+        >
+          {FUEL_PRICES.source.title}
+        </a>
+        .
       </p>
       <CostEditor value={assumptions} onChange={setAssumptions} />
       <ol className="space-y-3">

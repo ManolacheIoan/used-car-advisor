@@ -90,8 +90,8 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 **Costul lunar** (`src/lib/cost.ts`) = km/12 × consum declarat/100 × preț carburant + (RCA + impozit + întreținere)/12.
 Valorile implicite sunt aproximative și pot fi modificate de utilizator. Lângă fiecare cost apare nota „orientativ, de
 obicei mai mare decât consumul declarat”. Prețurile implicite ale carburanților sunt în `src/config/fuelPrices.ts`,
-împreună cu data actualizării, afișată pe pagina de rezultate. **Un test pică dacă data este mai veche de 60 de zile**:
-actualizează prețurile și data, apoi fă commit.
+împreună cu data actualizării, afișată pe pagina de rezultate. Dacă data e mai veche de 60 de zile, CI afișează un
+**avertisment** (nu pică). Actualizează prețurile, data și sursa împreună.
 
 ## Politica privind sursele de date
 
