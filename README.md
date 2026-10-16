@@ -1,155 +1,119 @@
 # AlegeMasina — „Alege mașina potrivită”
 
-Aplicație web statică, în română, mobile-first. Utilizatorul completează un formular scurt și primește 5–10 modele
-second-hand populare în România, cu un scor de potrivire, motivele scorului și un cost lunar orientativ, calculat pe
-baza unor ipoteze pe care le poate modifica.
+Platformă statică, în română, pentru alegerea unei mașini second-hand în România. Ce conține:
 
-Nu are backend, bază de date, conturi, cookies sau trackere. Criteriile se păstrează în URL. Tema aleasă se păstrează
-în `localStorage`.
+- un formular de recomandări cu scor transparent;
+- un catalog cu filtre;
+- pagini pentru fiecare marcă, model și generație;
+- comparație pentru până la 4 modele;
+- calculatoare: cost total, rată, buget lunar;
+- favorite și modele văzute recent;
+- ghiduri și pagini despre date și surse.
+
+Nu are backend, conturi, cookies sau trackere. Proiect de portofoliu: încă nu e găzduit.
 
 ## Stack
 
-Next.js (App Router, `output: "export"`), TypeScript, Tailwind CSS v4, Vitest, Playwright, ESLint, Prettier,
-Lighthouse CI, GitHub Actions. Găzduire: Netlify (`netlify.toml`). Aplicația nu conține cod specific Netlify, așa că
-folderul `out/` poate fi publicat pe orice host static (de exemplu Cloudflare Pages).
-
-## Structură
-
-```
-src/
-  app/                  rute: / (formular), /rezultate, /compara, /masini/[id], /despre-date, sitemap, robots
-  components/           StepForm, Results, Compare, CostEditor, ScoreBar, ReasonChips, DetailCost, SiteChrome, ui
-  data/cars.json        catalogul (model + generație)
-  data/cars.schema.json schema JSON a catalogului
-  lib/scoring.ts        scorul (o singură funcție, ponderi documentate)
-  lib/cost.ts           costul lunar și ipotezele implicite
-  lib/validation.ts     validarea formularului și citirea/scrierea URL-ului
-  lib/seo.ts            JSON-LD, ce pagini se indexează
-  lib/importCsv.ts      CSV → catalog, cu raport de erori pe rând (folosit de scripts/import-cars.ts)
-  lib/site.ts           numele site-ului, URL-ul, emailul de contact (o singură constantă)
-tests/unit/             schema datelor, scor, cost, validare, SEO
-tests/e2e/              fluxul principal: formular → rezultate → comparație → detalii
-```
-
-## Curs EUR/RON
-
-`src/config/exchangeRate.ts`: 5,33 lei/€ din 2026-10-16 („curs de referință BNR (verificat de utilizator)”). Cursul
-apare oriunde se face o conversie; CI avertizează dacă e mai vechi de 30 de zile. **Înainte de hostare înlocuiește-l
-cu cursul oficial BNR din ziua respectivă, de pe bnr.ro.**
-
-## Notă pentru dezvoltare
-
-După orice `npm install <pachet>` pe macOS, regenerează lockfile-ul (`rm -rf node_modules package-lock.json && npm
-install`). Altfel `npm ci` din CI (Linux) pică, pentru că lipsesc dependențele opționale pentru Linux.
+Next.js 16 (App Router, `output: "export"`), TypeScript, Tailwind CSS v4, Vitest, Playwright (cu axe), ESLint,
+Prettier, Lighthouse CI, GitHub Actions. Biblioteci: `fuse.js` (căutare) și `marked` (Markdown, folosit doar la build).
+Găzduire țintă: Netlify (`netlify.toml`); folderul `out/` merge pe orice host static.
 
 ## Moduri de date (`DATA_MODE`)
 
-| Mod                                    | Catalog                                                                        | Folosire                                                      |
-| -------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| `public` (implicit la `npm run build`) | `src/data/cars.public.json`: doar rânduri verificate, cu surse și licențe      | singurul publicat (`out/`)                                    |
-| `demo` (implicit la `npm run dev`)     | `src/data/cars.demo.json`: identitate reală din sursă, restul valori sintetice | doar local (`out-demo/`); banner DEMO, `noindex`, sitemap gol |
+| Mod                                    | Catalog                                                                               | Folosire                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `public` (implicit la `npm run build`) | `src/data/cars.public.json`: doar rânduri complete, verificate, cu licențe confirmate | singurul publicat (`out/`)                                    |
+| `demo` (implicit la `npm run dev`)     | `src/data/cars.demo.json`: identitate din Wikidata/Wikipedia, restul valori sintetice | doar local (`out-demo/`): banner DEMO, `noindex`, sitemap gol |
 
-Formula valorilor demo e descrisă în `docs/DEMO_DATA.md`.
+Formula valorilor demo e în `docs/DEMO_DATA.md`. Ghidurile cu `status: draft` apar doar în demo.
 
 ## Comenzi
 
 ```
-npm run dev          server de dezvoltare
-npm test             teste unitare (Vitest)
-npm run build        export static în out/
-npm run build:demo   build DEMO în out-demo/ (doar local)
-npm run build:demo-data   regenerează src/data/cars.demo.json din data/demo-models.json
-npm run test:e2e     Playwright pe out-demo/ (rulează mai întâi build:demo)
-npm run import:cars -- fisier.csv   importă catalogul din CSV
+npm run dev                 dezvoltare (demo)
+npm run build               build public în out/
+npm run build:demo          build DEMO în out-demo/ (doar local)
+npm test                    teste unitare (Vitest)
+npm run test:e2e            Playwright: demo (fluxuri, axe, PWA) + public (excluderi); necesită ambele build-uri
+npm run audit:public        poarta publică: pică la date demo/neverificate/fără licență, ciorne, site-uri de anunțuri
+npm run import:cars         CSV → src/data/cars.public.json + data/import-report.md
+npm run report:coverage     acoperirea datelor pe model → data/coverage-report.md
+npm run check:links [-- --strict]   verifică linkurile (robots.txt, ≤ 1 cerere/s) → data/link-report.md
+npm run fetch:wikidata && npm run build:demo-identities && npm run build:demo-data   reface catalogul demo
 npm run lint | typecheck | format
 ```
 
-## Cum adaugi un model
+**Notă:** după orice `npm install <pachet>` pe macOS, regenerează lockfile-ul
+(`rm -rf node_modules package-lock.json && npm install`). Altfel `npm ci` din CI (Linux) pică.
 
-Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
+## Datele publice: din CSV în catalog
 
-1. Adaugă un obiect în `models` din `src/data/cars.json`. Câmpurile obligatorii sunt în `cars.schema.json`: `id`
-   (kebab-case, unic), `brand`, `model`, `generation`, `years`, `body`, `engines[]` (`energy`, `cc`, `hp`,
-   `consumption{value, unit}`), `seats`, `trunk_l`, `price_eur{min, max, set_on}` (în euro) și `sources[]` (cel puțin una, cu
-   `title`, `url`, `accessed`).
-2. Lasă `pros`, `cons` și `known_issues` ca liste goale. Sunt pentru V2 și nu se afișează încă.
-3. Actualizează `updated` la data de azi.
-4. Rulează `npm test`. Testul pică dacă lipsesc câmpuri sau surse, dacă intervalele sunt inversate, dacă un id se
-   repetă sau dacă folosești un tip de energie care nu e activ în V1 (`hibrid`, `electric`).
+1. `data/cars.template.csv` are un rând pe motorizare.
+2. Fiecare grup de câmpuri (`years`, `body`, `seats`, `trunk`, `engine`) are
+   `<grup>_source_title`, `_source_url`, `_date` și `_license`.
+3. `consumption_cycle` este `NEDC`, `WLTP` sau `unknown`; valorile nu se convertesc între cicluri.
+4. Prețul se introduce manual, ca preț cerut în anunțuri:
+   - `price_low_eur` și `price_high_eur`;
+   - `n_listings` (cel puțin 10);
+   - `collected_on` (cel mult 60 de zile înainte de import);
+   - `kind` = `asking_price`;
+   - `notes`, `price_source_title`, `price_source_url`, `price_license`, `price_verification`.
+5. Schimbă `verification` în `verified` doar după ce verifici rândul față de surse.
+6. Rulează `npm run import:cars`. Ce intră în `cars.public.json`:
+   - doar modelele complete, verificate și cu licență confirmată;
+   - prețul, doar dacă e verificat;
+   - restul apar în `data/import-report.md`, cu câmpurile fără sursă.
+7. `npm test` leagă `cars.public.json` de CSV, iar `npm run audit:public` verifică build-ul.
 
-## Import din Google Sheets (recomandat)
+Sursele și metoda pentru cele 30 de modele din CSV sunt în `data/SOURCES.md`.
 
-- `data/cars.template.csv` conține cele 30 de modele reale, colectate din surse publice. Metoda și ce lipsește sunt
-  în `data/SOURCES.md`.
+## Scorul și costurile
 
-1. Importă `data/cars.template.csv` într-un Google Sheet. Coloanele sunt fixe: nu le redenumi și nu le șterge.
-2. **Un rând pentru fiecare motorizare.** Rândurile aceluiași model stau unul după altul, cu același `id`. Pe rândurile
-   următoare, coloanele de model pot rămâne goale.
-3. `consumption_cycle` este `NEDC`, `WLTP` sau `unknown`, adică ciclul de test al consumului declarat. Nu converti
-   valorile între cicluri.
-4. Fiecare grup de câmpuri are trei coloane de sursă: `<grup>_source_title`, `<grup>_source_url` și `<grup>_date`
-   (`AAAA-LL-ZZ`). Grupurile sunt `years`, `body`, `seats`, `trunk`, `engine` și `price`.
-5. **Prețurile se introduc manual**, ca prețuri cerute în anunțuri (nu prețuri de vânzare):
-   - `price_low_eur` și `price_high_eur`, cu `price_low_eur ≤ price_high_eur`;
-   - `n_listings`: numărul de anunțuri pe care l-ai consultat, minimum 10;
-   - `collected_on`: data culegerii, `AAAA-LL-ZZ`, cel mult 60 de zile înainte de import;
-   - `kind`: `asking_price`;
-   - `notes`: opțional, de exemplu ce anunțuri ai inclus.
-
-   Lasă toate coloanele goale dacă nu ai preț. Modelul rămâne publicat, cu pagina lui, dar e exclus din rezultate,
-   din sitemap și din scenarii. Cursul EUR/RON afișat vine din `src/config/exchangeRate.ts` (curs, dată, sursă).
-
-6. După ce verifici un model, schimbă `verification` din `needs verification` în `verified`.
-7. Exportă din Sheets cu File → Download → CSV, salvează fișierul peste `data/cars.template.csv` și rulează
-   `npm run import:cars`.
-8. Ce se publică:
-   - se publică toate modelele **complete**;
-   - cele încă `needs verification` apar cu eticheta „Date în curs de verificare”, nu sunt indexate și nu apar în
-     scenariile de pe prima pagină;
-   - modelele incomplete sunt sărite și listate în `data/import-report.md`;
-   - o valoare invalidă (număr, URL, dată, interval inversat, id duplicat, conflict) oprește importul și nu se
-     scrie nimic.
-9. `pros`, `cons` și `known_issues` (V2) se păstrează din `cars.json` existent.
-10. Rulează `npm test` și fă commit. Testul verifică și că `cars.json` corespunde exact CSV-urilor.
-
-## Cum funcționează scorul (`src/lib/scoring.ts`)
-
-1. **Filtre stricte:** combustibilul, caroseria, marca (opțional) și numărul minim de locuri. Un model care nu se potrivește este
-   eliminat. Dacă nu rămâne niciun model, pagina oferă un buton care relaxează un singur criteriu.
-2. **Scor 0–100** = 100 × (0,40·Buget + 0,30·Cost + 0,30·Utilizare):
-   - **Buget:** dacă intervalul de preț se suprapune cu bugetul, 0,5 + 0,5 × suprapunere / intervalul mai îngust.
-     Altfel scade de la 0,5 la 0 pe o distanță de 20% din bugetul maxim.
-   - **Cost:** costul lunar comparat cu ceilalți candidați (cel mai ieftin = 1, cel mai scump = 0).
-   - **Utilizare:** reguli aditive per tip de folosire, în `src/config/usageRules.ts`, fiecare cu motivul ei; maximul este exact 1.
-3. Fiecare regulă îndeplinită sau ratată devine un chip „de ce”. V1 nu are scor de fiabilitate sau calitate.
-4. Pentru fiecare model se folosește motorizarea cea mai ieftină la utilizare care se potrivește combustibilului ales.
-
-**Costul lunar** (`src/lib/cost.ts`) = km/12 × consum declarat/100 × preț carburant + (RCA + impozit + întreținere)/12.
-Valorile implicite sunt aproximative și pot fi modificate de utilizator. Lângă fiecare cost apare nota „orientativ, de
-obicei mai mare decât consumul declarat”. Prețurile implicite ale carburanților sunt în `src/config/fuelPrices.ts`,
-împreună cu data actualizării, afișată pe pagina de rezultate. Dacă data e mai veche de 60 de zile, CI afișează un
-**avertisment** (nu pică). Actualizează prețurile, data și sursa împreună.
+- **Filtre stricte:** combustibil, caroserie, marcă, locuri.
+- **Scor** = 40% buget + 30% cost lunar + 30% utilizare. Regulile de utilizare, fiecare cu motivul ei, sunt în
+  `src/config/usageRules.ts`. Detalii în pagina Metodologie.
+- **Cost lunar:** km × consum declarat × preț carburant, plus costurile fixe pe care le introduci tu.
+- **Valori implicite** (`src/config/costDefaults.ts`):
+  - au valoare doar dacă există o sursă oficială citită;
+  - RCA, impozitul, ITP, rovinieta, întreținerea și deprecierea sunt goale, iar utilizatorul le completează.
+- **Prețuri carburanți:** `src/config/fuelPrices.ts`, medii din 2026-10-09.
+- **Curs EUR/RON:** `src/config/exchangeRate.ts`, 5,33 din 2026-10-16. Apare oriunde există o conversie.
+- **Vechimea datelor:** CI avertizează (fără să pice) la prețuri de carburant mai vechi de 60 de zile și la un curs
+  mai vechi de 30 de zile.
 
 ## Sigle și ilustrații
 
-- Aplicația **nu desenează și nu imită sigle**. `BrandBadge` afișează o etichetă text originală cu numele mărcii.
-- Dacă ai dreptul să folosești sigla oficială (verifică întâi termenii de utilizare ai producătorului), pune
-  fișierul în `public/brands/<brand-id>.svg` sau `.png` **și, lângă el, `<brand-id>.LICENSE.txt`** cu termenii sau
-  permisiunea. Fără fișierul de licență, sigla nu se afișează. Exemple de nume: `dacia`, `volkswagen`, `skoda`,
-  `mercedes-benz`.
-- `npm run dev` și `npm run build` actualizează automat `src/data/brandAssets.json`.
-- Siluetele de caroserie din `BodyIcon` sunt originale și generice, nu reprezintă niciun model anume.
+- Nu desenăm și nu imităm sigle. `BrandBadge` afișează o etichetă text originală.
+- Un fișier oficial `public/brands/<brand-id>.svg|png` se folosește doar dacă lângă el există
+  `<brand-id>.LICENSE.txt`, cu termenii sau permisiunea. Auditul pică pe orice siglă fără licență.
+- Siluetele de caroserie și iconițele PWA sunt originale.
+- Imaginile Open Graph se generează la build, doar cu text. Fontul este Barlow Semi Condensed (OFL,
+  `assets/fonts/OFL.txt`).
 
-## Politica privind sursele de date
+## Politica privind sursele
 
-- Doar date din surse publice, cu link și dată de accesare pentru fiecare model.
-- Nu inventăm specificații. Nu copiem texte sau imagini de pe alte site-uri.
-- Prețurile sunt intervale aproximative, cu data la care au fost stabilite.
-- Corecturile se trimit la emailul din `src/lib/site.ts` (`contact@manotek.ro`).
+- Doar surse publice, cu URL, dată și licență.
+- Nimic completat din memorie: o valoare fără sursă rămâne goală și apare în rapoarte.
+- Nu preluăm date de pe site-uri de anunțuri și nu copiem texte sau imagini.
+- Respectăm `robots.txt` și facem cereri rare.
+- Deciziile luate sunt în `DECISIONS.md`. Ce trebuie făcut de proprietar este în `NEEDS_FROM_ME.md`.
 
-## Deploy (Netlify)
+## Înainte de hostare
 
-1. Pe Netlify: „Add new site” → „Import from Git” → alege repo-ul. `netlify.toml` setează comanda de build
-   (`npm run build`), folderul publicat (`out`) și Node 24.
-2. Pune domainul final în `SITE.url` din `src/lib/site.ts`. Este folosit pentru canonical, Open Graph și sitemap.
-3. Pentru alt host: rulează `npm run build` și publică folderul `out/`.
+- [ ] Termenii de utilizare ai fiecărei surse sunt citiți (ADAC, Wikipedia/Wikidata, EEA dacă se importă).
+- [ ] Sursele sunt verificate, iar rândurile sunt marcate `verified`.
+- [ ] Cel puțin 3 modele sunt comparate manual cu pagini oficiale ale producătorilor.
+- [ ] Cursul din `src/config/exchangeRate.ts` este cursul oficial BNR din ziua respectivă, de pe bnr.ro.
+- [ ] În `cars.public.json` nu există rânduri demo.
+- [ ] Nu se publică ghiduri `draft`; doar cele revizuite au `status: published`.
+- [ ] `npm run audit:public` și `npm run check:links -- --strict` trec.
+- [ ] Siglele din `public/brands/` au fișier de licență.
+- [ ] Istoricul git e curat: datele de preț din anunțuri au fost eliminate (comenzile sunt în `NEEDS_FROM_ME.md`,
+      punctul 10).
+- [ ] Domeniul real e setat în `SITE.url`. Textele de confidențialitate și termeni au trecut printr-o revizuire
+      juridică.
+
+## Deploy (Netlify) — nu este făcut
+
+`netlify.toml` construiește în modul `public`, publică `out/` și setează antetele de securitate și de cache. Pe
+Netlify: „Import from Git”, apoi alegi repo-ul. Pentru alt host: `npm run build` și publici `out/`.
