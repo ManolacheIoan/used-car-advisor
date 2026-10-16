@@ -71,3 +71,9 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}

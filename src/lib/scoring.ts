@@ -176,14 +176,19 @@ export function matchesHard(
 }
 
 /** Engine used for the estimate: cheapest to run among those matching the chosen fuel. */
-function pickEngine(
+export function pickEngine(
   m: CarModel,
-  p: Prefs,
+  fuel: Prefs["fuel"],
+  kmYear: number,
   a: CostAssumptions,
 ): { engine: Engine; cost: MonthlyCost } {
   return m.engines
-    .filter((e) => p.fuel === "oricare" || e.energy === p.fuel)
-    .map((engine) => ({ engine, cost: monthlyCost(engine, p.kmYear, a) }))
+    .filter((e) =>
+      fuel === "oricare"
+        ? e.energy !== "hibrid" && e.energy !== "electric"
+        : e.energy === fuel,
+    )
+    .map((engine) => ({ engine, cost: monthlyCost(engine, kmYear, a) }))
     .reduce((best, x) => (x.cost.total < best.cost.total ? x : best));
 }
 
@@ -194,7 +199,7 @@ export function rank(
 ): Result[] {
   const candidates = models
     .filter((m) => matchesHard(m, p))
-    .map((m) => ({ m, ...pickEngine(m, p, a) }));
+    .map((m) => ({ m, ...pickEngine(m, p.fuel, p.kmYear, a) }));
   if (candidates.length === 0) return [];
 
   const totals = candidates.map((c) => c.cost.total);
