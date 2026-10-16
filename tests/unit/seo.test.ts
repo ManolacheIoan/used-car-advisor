@@ -24,3 +24,14 @@ describe("seo", () => {
     expect(ld).not.toHaveProperty("offers");
   });
 });
+
+describe("sitemap pages", () => {
+  it("lists the trust pages and no draft guide", () => {
+    const urls = sitemap().map((e) => e.url);
+    expect(urls.some((u) => u.endsWith("/metodologie/"))).toBe(true);
+    expect(
+      urls.some((u) => u.includes("/ghiduri/") && !u.endsWith("/ghiduri/")),
+    ).toBe(false); // all guides are drafts
+    expect(new Set(urls).size).toBe(urls.length);
+  });
+});

@@ -8,6 +8,8 @@ const SLUG = "glosar";
 
 export const metadata: Metadata = {
   title: "Glosar",
+  description:
+    "Termenii tehnici folosiți pe site (CP, Nm, NEDC, WLTP, normă Euro și alții), explicați pe scurt.",
   alternates: { canonical: "/glosar/" },
 };
 

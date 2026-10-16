@@ -5,6 +5,8 @@ import { Loading } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Recomandări",
+  description:
+    "Recomandări ordonate după un scor transparent, cu motivele lui și costul lunar orientativ.",
   robots: { index: false },
 };
 

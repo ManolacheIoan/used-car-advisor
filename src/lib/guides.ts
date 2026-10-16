@@ -80,3 +80,20 @@ export function visibleGuides(category?: Guide["category"]): Guide[] {
 
 export const renderMarkdown = (md: string) =>
   marked.parse(md, { async: false }) as string;
+
+/** "## Question" + following paragraph(s) → FAQ pairs (plain text, links reduced to their label). */
+export function faqPairs(md: string): { q: string; a: string }[] {
+  return md
+    .split(/^## /m)
+    .slice(1)
+    .map((block) => {
+      const [q, ...rest] = block.split("\n");
+      const a = rest
+        .join(" ")
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+        .replace(/\s+/g, " ")
+        .trim();
+      return { q: q.trim(), a };
+    })
+    .filter((x) => x.q && x.a);
+}

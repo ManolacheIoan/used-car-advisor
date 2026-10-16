@@ -5,6 +5,8 @@ import { Loading } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Comparație",
+  description:
+    "Compară până la 4 modele: specificații, consum declarat cu ciclul de test și cost lunar orientativ.",
   robots: { index: false },
 };
 

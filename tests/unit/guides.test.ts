@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { OFFICIAL_LINKS } from "@/config/officialLinks";
-import { allGuides, parseGuide, visibleGuides } from "@/lib/guides";
+import { allGuides, faqPairs, parseGuide, visibleGuides } from "@/lib/guides";
 
 const OFFICIAL = new Set(
   Object.values(OFFICIAL_LINKS).map((l) => new URL(l.url).host),
@@ -63,5 +63,13 @@ describe("parseGuide", () => {
       "---\ntitle: A: B\ndescription: C\nstatus: draft\nreviewed: 2026-10-16\n---\nbody",
     );
     expect(g.title).toBe("A: B");
+  });
+});
+
+describe("faqPairs", () => {
+  it("extracts questions and plain-text answers", () => {
+    expect(
+      faqPairs("intro\n\n## Ce e X?\n\nE [un test](/a/).\n\n## Gol?\n"),
+    ).toEqual([{ q: "Ce e X?", a: "E un test." }]);
   });
 });

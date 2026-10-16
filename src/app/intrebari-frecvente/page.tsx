@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GuideBody, GuideMeta } from "@/components/GuideBody";
 import { Notice } from "@/components/ui";
-import { visibleGuides } from "@/lib/guides";
+import { faqPairs, visibleGuides } from "@/lib/guides";
 
 const SLUG = "intrebari-frecvente";
 
 export const metadata: Metadata = {
   title: "Întrebări frecvente",
+  description:
+    "Răspunsuri despre date, scor, prețuri cerute și confidențialitate.",
   alternates: { canonical: "/intrebari-frecvente/" },
 };
 
@@ -21,6 +23,22 @@ export default function Page() {
       <h1 className="text-3xl font-bold tracking-tight">Întrebări frecvente</h1>
       {g ? (
         <>
+          {g.status === "published" && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: faqPairs(g.body).map((x) => ({
+                    "@type": "Question",
+                    name: x.q,
+                    acceptedAnswer: { "@type": "Answer", text: x.a },
+                  })),
+                }).replace(/</g, "\\u003c"),
+              }}
+            />
+          )}
           <GuideMeta guide={g} />
           <GuideBody guide={g} />
         </>
