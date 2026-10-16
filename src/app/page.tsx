@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Scenarios } from "@/components/Scenarios";
 import { StepForm } from "@/components/StepForm";
 import { Loading } from "@/components/ui";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <StepForm />
       </Suspense>
+      <Scenarios />
     </div>
   );
 }
