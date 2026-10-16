@@ -7,3 +7,11 @@ export const SITE = {
   url: "https://alegemasina.netlify.app",
   contactEmail: "contact@manotek.ro",
 } as const;
+
+/** Text-only image rendered from HTML (Inter font, OFL). public/og.png, 1200×630. */
+export const OG_IMAGE = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "AlegeMasina — Alege mașina potrivită",
+};

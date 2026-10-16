@@ -12,7 +12,7 @@ import {
   modelJsonLd,
   modelTitle,
 } from "@/lib/seo";
-import { SITE } from "@/lib/site";
+import { OG_IMAGE, SITE } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -37,6 +37,7 @@ export async function generateMetadata({
       description: modelDescription(m),
       locale: "ro_RO",
       siteName: SITE.name,
+      images: [OG_IMAGE],
     },
     robots: isIndexable(m) ? undefined : { index: false },
   };
