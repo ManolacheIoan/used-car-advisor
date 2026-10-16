@@ -199,6 +199,35 @@ describe("csvToCatalog: manual price entry", () => {
   });
 });
 
+describe("report: fields without source", () => {
+  it("lists only identity fields when everything is sourced", () => {
+    expect(run(csv(row())).unsourced).toEqual([
+      {
+        id: "m-1",
+        fields: ["brand, model, generation (fără coloană de sursă)"],
+      },
+    ]);
+  });
+
+  it("lists spec groups missing a value or a source, per engine line, and a missing price", () => {
+    const r = run(
+      csv(
+        row({ trunk_source_url: "", price_low_eur: "" }),
+        row({ brand: "", hp: "" }),
+      ),
+    );
+    expect(r.unsourced![0].fields).toEqual([
+      "brand, model, generation (fără coloană de sursă)",
+      "trunk_l",
+      "energy, cc, hp, consumption_l100km, consumption_cycle (linia 3)",
+      "preț (price_low_eur, price_high_eur, n_listings, collected_on, kind)",
+    ]);
+    expect(formatReport(r, "2026-10-16")).toContain(
+      "## Câmpuri fără sursă, pe model",
+    );
+  });
+});
+
 describe("csvToCatalog: invalid values are errors", () => {
   it("reports missing columns", () => {
     expect(messages("id,brand\nx,y")[0]).toMatch(/^1: missing columns: model/);

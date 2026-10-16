@@ -74,6 +74,8 @@ export interface ImportResult {
   errors: RowIssue[];
   incomplete: { id: string; file: string; line: number; missing: string[] }[];
   unverified: string[];
+  /** For every model in the CSV (published or not): fields that have no source yet. */
+  unsourced?: { id: string; fields: string[] }[];
 }
 
 export const VERIFIED = "verified";
@@ -202,8 +204,10 @@ export function csvToCatalog(
   const previous = new Map(opts.previous?.models.map((m) => [m.id, m]));
   const models: CarModel[] = [];
 
+  const unsourced: NonNullable<ImportResult["unsourced"]> = [];
   for (const group of groups) {
     const head = group[0];
+    unsourced.push({ id: head.id, fields: fieldsWithoutSource(group) });
     const errBefore = errors.length;
     const missing: string[] = [];
     const err = (r: Row, message: string) =>
@@ -398,7 +402,7 @@ export function csvToCatalog(
     });
   }
 
-  if (errors.length) return { errors, incomplete, unverified };
+  if (errors.length) return { errors, incomplete, unverified, unsourced };
   const unpriced = models.filter((m) => !m.price_eur).map((m) => m.id);
   const catalog: Catalog = { updated: opts.updated, models };
   for (const message of semanticErrors(catalog)) {
@@ -407,8 +411,40 @@ export function csvToCatalog(
     errors.push({ file: r?.file ?? "", line: r?.line ?? 0, id, message });
   }
   return errors.length
-    ? { errors, incomplete, unverified }
-    : { catalog, errors, incomplete, unverified, unpriced };
+    ? { errors, incomplete, unverified, unsourced }
+    : { catalog, errors, incomplete, unverified, unpriced, unsourced };
+}
+
+/**
+ * Fields of a model that have no source. Identity fields (brand, model, generation) have no source column;
+ * a spec group counts as unsourced if its value or its source title/URL/date is missing;
+ * the price counts as unsourced until the manual price entry (low, high, n_listings, collected_on, kind) is complete.
+ */
+export function fieldsWithoutSource(group: Row[]): string[] {
+  const head = group[0];
+  const out = ["brand, model, generation (fără coloană de sursă)"];
+  for (const [g, cols] of GROUPS) {
+    const rows = g === "engine" ? group : [head];
+    for (const r of rows) {
+      const [t, u, d] = sourceCols(g) as unknown as Col[];
+      const where =
+        g === "engine" && group.length > 1 ? ` (linia ${r.line})` : "";
+      if (cols.some((c) => r[c] === "") || !r[t] || !r[u] || !r[d])
+        out.push(`${cols.join(", ")}${where}`);
+    }
+  }
+  const price: Col[] = [
+    "price_low_eur",
+    "price_high_eur",
+    "n_listings",
+    "collected_on",
+    "kind",
+  ];
+  if (price.some((c) => head[c] === ""))
+    out.push(
+      "preț (price_low_eur, price_high_eur, n_listings, collected_on, kind)",
+    );
+  return out;
 }
 
 export function formatErrors(errors: RowIssue[]): string {
@@ -450,6 +486,14 @@ export function formatReport(r: ImportResult, date: string): string {
       : ["- niciunul"]),
     "",
   ];
+  lines.push(
+    "## Câmpuri fără sursă, pe model",
+    "",
+    "Nimic nu a fost completat din memorie. Câmpurile de mai jos nu au încă o valoare cu sursă (titlu, URL, dată).",
+    "",
+    ...(r.unsourced ?? []).map((m) => `- \`${m.id}\`: ${m.fields.join("; ")}`),
+    "",
+  );
   if (r.errors.length)
     lines.push("## Erori", "", "```", formatErrors(r.errors), "```", "");
   return lines.join("\n");
