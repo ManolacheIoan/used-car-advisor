@@ -1,0 +1,374 @@
+{
+  "Q758806": {
+    "title": "Audi allroad quattro",
+    "revid": 1372047878,
+    "production": null,
+    "body_style": null
+  },
+  "Q758751": {
+    "title": "Audi A6",
+    "revid": 1378501947,
+    "production": "1994–present; 2000–present (China)",
+    "body_style": "4-door saloon/sedan; 5-door Avant (estate)"
+  },
+  "Q60849762": {
+    "title": "Audi Q3",
+    "revid": 1372588562,
+    "production": "2011–present",
+    "body_style": null
+  },
+  "Q100326648": {
+    "title": "Audi Q5",
+    "revid": 1373497931,
+    "production": "2008–present",
+    "body_style": "Unbulleted list 5-door SUV 5-door coupé SUV (Sportback) (2020–present)"
+  },
+  "Q4311136": {
+    "title": "BMW 3 Series (F30)",
+    "revid": 1378800940,
+    "production": "October 2011 – October 2018",
+    "body_style": "ubl 4-door sedan (F30/F35) 5-door wagon (F31) 5-door fastback (F34)"
+  },
+  "Q387566": {
+    "title": "BMW 5 Series (F10)",
+    "revid": 1379943137,
+    "production": "September 2009–2016",
+    "body_style": "unbulleted list 4-door saloon (F10) 4-door LWB saloon (F18) 5-door estate (F11) 5-door fastback (F07)"
+  },
+  "Q5122855": {
+    "title": "Citroën Berlingo électrique",
+    "revid": 1375505092,
+    "production": "1998–2005",
+    "body_style": ""
+  },
+  "Q5122860": {
+    "title": "Citroën C3 Aircross",
+    "revid": 1378432869,
+    "production": "2010–2020 (Latin America); 2017–present (Europe)",
+    "body_style": "5-door crossover SUV"
+  },
+  "Q1630402": {
+    "title": "Citroën C3 Picasso",
+    "revid": 1362918984,
+    "production": "2008–2017",
+    "body_style": "5-door hatchback"
+  },
+  "Q2140125": {
+    "title": "Citroën C3",
+    "revid": 1380202046,
+    "production": "April 2002 – present",
+    "body_style": "5-door hatchback; 2-door coupé-cabriolet (2003–2010)"
+  },
+  "Q1637418": {
+    "title": "Citroën C4 Aircross",
+    "revid": 1368009358,
+    "production": "2012–2017",
+    "body_style": "5-door SUV"
+  },
+  "Q2443038": {
+    "title": "Citroën C4 Cactus",
+    "revid": 1373885895,
+    "production": "April 2014 – May 2020 (Spain); 2018–2024 (Brazil)",
+    "body_style": "5-door SUV"
+  },
+  "Q1141318": {
+    "title": "Citroën C4 Picasso",
+    "revid": 1372405678,
+    "production": "2006–2022",
+    "body_style": null
+  },
+  "Q29402168": {
+    "title": "Citroën C5 Aircross",
+    "revid": 1379938130,
+    "production": "2017–present",
+    "body_style": "5-door SUV"
+  },
+  "Q30750112": {
+    "title": "Citroën C5 X",
+    "revid": 1377989982,
+    "production": "ubl June 2021 – present (China) 2022–2025 (United Kingdom and Ireland) 2022–2026 (Europe)",
+    "body_style": "5-door estate"
+  },
+  "Q3011626": {
+    "title": "Dacia Logan",
+    "revid": 1377310873,
+    "production": "2004–present",
+    "body_style": null
+  },
+  "Q81656534": {
+    "title": "Dacia Sandero",
+    "revid": 1378575680,
+    "production": "2008–present",
+    "body_style": "5-door hatchback"
+  },
+  "Q3071164": {
+    "title": "Fiat 500 Moretti Coupe",
+    "revid": 1336864667,
+    "production": "1961-1969",
+    "body_style": "2-door coupé"
+  },
+  "Q636082": {
+    "title": "Fiat 500 \"Topolino\"",
+    "revid": 1375197024,
+    "production": "1936–1955; 520,000 made",
+    "body_style": "unbulleted list 2-door saloon 2-door convertible saloon 2-door van 3-door estate"
+  },
+  "Q967959": {
+    "title": "Ford C-Max",
+    "revid": 1374263961,
+    "production": "2003–2019",
+    "body_style": "5-door MPV"
+  },
+  "Q2554248": {
+    "title": "Ford Fiesta S2000",
+    "revid": 1174352339,
+    "production": "2009–",
+    "body_style": ""
+  },
+  "Q106576911": {
+    "title": "Ford Mondeo Sport",
+    "revid": 1336010544,
+    "production": "2021–present",
+    "body_style": "5-door coupe SUV"
+  },
+  "Q5892415": {
+    "title": "Honda Civic GX",
+    "revid": 1355970224,
+    "production": "1998–2015",
+    "body_style": "4-door sedan"
+  },
+  "Q8214024": {
+    "title": "Honda Civic",
+    "revid": 1379510030,
+    "production": "1972–present",
+    "body_style": "2-door fastback sedan/saloon (1972–1979); 4-door fastback sedan (1973–1978); 3-door hatchback (1972–2011); 5-door hatchback (1977–1983, 2000–2021); 5-door station wagon (1974–2006, efn The station wagon variant of the third and fourth generation Civics was called the '''Civic Shuttle''' ('''Wagovan''' in the United States for the third generation, '''Civic Pro''' for a basic commercial version in Japan) from 1983 until 1996, when it was replaced by the '''Orthia''', which was based on the sixth generation Civic and produced from 1996 until 2002. A basic commercial version of the Orthia, called the '''Partner''', was produced until 2006. Both Orthia and Partner were sold only in Japan. 2014–2017); 4-door sedan (1980–present); 2-door coupé (1993–2020); 5-door liftback (1995–2001, 2021–present)"
+  },
+  "Q7095661": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q898479": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q1333038": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q1777731": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q2068639": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q21387421": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q108273102": {
+    "title": "Opel Astra",
+    "revid": 1378928314,
+    "production": "1991–present",
+    "body_style": null
+  },
+  "Q107481355": {
+    "title": "Opel Corsa",
+    "revid": 1380262570,
+    "production": "plainlist *1982–present (Europe) *1993–present (Vauxhall brand)",
+    "body_style": null
+  },
+  "Q2006832": {
+    "title": "Peugeot 207 S2000",
+    "revid": 1368415605,
+    "production": "2007-",
+    "body_style": ""
+  },
+  "Q15993852": {
+    "title": "Peugeot 208 T16",
+    "revid": 1359509777,
+    "production": "2014",
+    "body_style": ""
+  },
+  "Q3503489": {
+    "title": "Renault Clio V6 RS",
+    "revid": 1339662764,
+    "production": "2001–2005",
+    "body_style": "3-door hatchback"
+  },
+  "Q122167780": {
+    "title": "Renault Scenic E-Tech",
+    "revid": 1377406284,
+    "production": "2024–present",
+    "body_style": "5-door SUV"
+  },
+  "Q20354830": {
+    "title": "Škoda Fabia R5",
+    "revid": 1376618486,
+    "production": null,
+    "body_style": null
+  },
+  "Q65042038": {
+    "title": "Škoda Fabia R5/Rally2 evo",
+    "revid": 1376618491,
+    "production": null,
+    "body_style": null
+  },
+  "Q392047": {
+    "title": "Škoda Rapid Six",
+    "revid": 1314342458,
+    "production": null,
+    "body_style": null
+  },
+  "Q14552566": {
+    "title": "Toyota Ipsum",
+    "revid": 1363378737,
+    "production": "1995–2010",
+    "body_style": null
+  },
+  "Q97094785": {
+    "title": "Toyota Corolla Cross",
+    "revid": 1377994559,
+    "production": "July 2020 – present",
+    "body_style": "5-door SUV"
+  },
+  "Q11321636": {
+    "title": "Toyota Sprinter Trueno",
+    "revid": 1374478254,
+    "production": "March 1972 – August 2000",
+    "body_style": "unbulleted list 2-door coupé (1972–1979 and 1983–2000) 2-door hardtop coupé (1974–1975) 3-door liftback (1979–1987)"
+  },
+  "Q1538045": {
+    "title": "Toyota Corolla Rumion",
+    "revid": 1370052928,
+    "production": "2007–2015",
+    "body_style": "5-door hatchback"
+  },
+  "Q4051648": {
+    "title": "Toyota Corolla Spacio",
+    "revid": 1369111480,
+    "production": "January 1997 – June 2007",
+    "body_style": "5-door wagon"
+  },
+  "Q91621558": {
+    "title": "Toyota Yaris Cross",
+    "revid": 1377659374,
+    "production": "unbulleted list 2020–present (XP210) 2023–present (AC200)",
+    "body_style": "5-door crossover SUV"
+  },
+  "Q2064620": {
+    "title": "Toyota Yaris Verso",
+    "revid": 1349298662,
+    "production": "August 1999 – October 2005",
+    "body_style": "5-door estate"
+  },
+  "Q1428988": {
+    "title": "Volkswagen Golf Mk5",
+    "revid": 1378442369,
+    "production": "August 2003 – 2009; April 2007–2009 (wagon)",
+    "body_style": "ubl 3-door hatchback 5-door hatchback 5-door estate/wagon"
+  },
+  "Q1417956": {
+    "title": "Volkswagen Golf Mk6",
+    "revid": 1379181775,
+    "production": "2008–2013; 2009–2013 (wagon); 2011–2016 (cabriolet)",
+    "body_style": "3/5-door hatchback; 5-door estate/wagon; 2-door cabriolet"
+  },
+  "Q62362": {
+    "title": "Volkswagen Golf Mk7",
+    "revid": 1375182280,
+    "production": "2012–2020 (Europe); 2013–2020 (China); 2015–2020 (Brazil); 2014–2021 (Mexico)",
+    "body_style": "ubl 3/5-door hatchback 5-door estate"
+  },
+  "Q56403002": {
+    "title": "Volkswagen Golf Mk8",
+    "revid": 1379442061,
+    "production": "2019–present",
+    "body_style": "ubl 5-door hatchback 5-door estate"
+  },
+  "Q1886304": {
+    "title": "Volkswagen Golf Plus",
+    "revid": 1340501661,
+    "production": "2004–2014",
+    "body_style": "5-door hatchback"
+  },
+  "Q15305557": {
+    "title": "Volkswagen Golf Sportsvan",
+    "revid": 1347884516,
+    "production": "2014–2020 (Europe); 2016–2020 (China)",
+    "body_style": "5-door MPV"
+  },
+  "Q13386136": {
+    "title": "Volkswagen Jetta (China)",
+    "revid": 1375993162,
+    "production": null,
+    "body_style": null
+  },
+  "Q13389960": {
+    "title": "Volkswagen Jetta (China)",
+    "revid": 1375993162,
+    "production": null,
+    "body_style": null
+  },
+  "Q6164698": {
+    "title": "Volkswagen Passat Lingyu",
+    "revid": 1380538776,
+    "production": "2005–2011",
+    "body_style": "4-door sedan"
+  },
+  "Q13415255": {
+    "title": "Volkswagen Passat",
+    "revid": 1380100872,
+    "production": "1973–present",
+    "body_style": null
+  },
+  "Q7221174": {
+    "title": "Volkswagen Polo G40",
+    "revid": 1308537780,
+    "production": "1987 – 1994",
+    "body_style": "3-door coupé/hatchback"
+  },
+  "Q60748228": {
+    "title": "Volkswagen Polo GTI R5",
+    "revid": 1333754426,
+    "production": "",
+    "body_style": ""
+  },
+  "Q1468621": {
+    "title": "Volkswagen Polo Mk4",
+    "revid": 1362922193,
+    "production": "2001–April 2010 (Germany); 2002–2015 (Brazil); 2002–2017 (South Africa)",
+    "body_style": "3-door hatchback; 5-door hatchback; 4-door sedan"
+  },
+  "Q2063072": {
+    "title": "Volkswagen Polo Mk5",
+    "revid": 1378439593,
+    "production": "indented plainlist * 2009–2017 * 2010–2020 (Russia) * 2010–2022 (India) * 2018–present (Polo Vivo, South Africa and Kenya)",
+    "body_style": "indented plainlist * 3-door hatchback * 5-door hatchback * 4-door sedan"
+  },
+  "Q7940332": {
+    "title": "Volkswagen Polo Playa",
+    "revid": 1363765902,
+    "production": "1998–2002",
+    "body_style": "5-door hatchback (Polo Playa) ; 4-door sedan (Polo Classic)"
+  },
+  "Q30349121": {
+    "title": "Volkswagen Polo Mk6",
+    "revid": 1377291965,
+    "production": "July 2017– 2026",
+    "body_style": "5-door hatchback; 4-door sedan (Virtus / Polo Sedan)"
+  }
+}

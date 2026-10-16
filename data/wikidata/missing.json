@@ -1,0 +1,2565 @@
+[
+  {
+    "id": "Q933825",
+    "label": "Dacia Dokker",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q668565",
+    "label": "Dacia Logan",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1156868",
+    "label": "Dacia Lodgy",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q48746437",
+    "label": "Dacia Logan II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q20965598",
+    "label": "Dacia Sandero I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q85980648",
+    "label": "Dacia Logan Pick-Up",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q82263266",
+    "label": "Dacia Dokker I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q20965597",
+    "label": "Dacia Sandero II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q48746330",
+    "label": "Dacia Duster I",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q3011626",
+    "label": "Dacia Logan I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q126083830",
+    "label": "Dacia Dokker II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q126085521",
+    "label": "Dacia Sandero Stepway I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q81656534",
+    "label": "Dacia Sandero III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q126085460",
+    "label": "Dacia Sandero Stepway II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q126085442",
+    "label": "Dacia Sandero Stepway III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q108328699",
+    "label": "Dacia Jogger",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q39075664",
+    "label": "Dacia Duster II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q15966358",
+    "label": "Volkswagen T-Roc",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q464786",
+    "label": "Volkswagen Touran",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q2007788",
+    "label": "Volkswagen Passat B6",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q15305557",
+    "label": "Volkswagen Golf Sportsvan",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q1468621",
+    "label": "Volkswagen Polo Mk4",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q1140232",
+    "label": "Volkswagen Passat B7",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q1428988",
+    "label": "Volkswagen Golf Mk5",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q2063072",
+    "label": "Volkswagen Polo Mk5",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q62362",
+    "label": "Volkswagen Golf Mk7",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q1417956",
+    "label": "Volkswagen Golf Mk6",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q1886304",
+    "label": "Volkswagen Golf Plus",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q6164698",
+    "label": "Volkswagen Passat Lingyu",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q282455",
+    "label": "Volkswagen Jetta II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q12072923",
+    "label": "Volkswagen Golf R32",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q27903023",
+    "label": "Volkswagen Tiguan II",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q56403002",
+    "label": "Volkswagen Golf Mk8",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1386561",
+    "label": "Volkswagen Jetta König",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1537473",
+    "label": "Volkswagen Jetta VI",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q13389960",
+    "label": "Volkswagen Jetta Pionier",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2506880",
+    "label": "Volkswagen Passat NMS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q12072922",
+    "label": "Volkswagen Golf R",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q15305561",
+    "label": "Volkswagen Passat B8",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q2506848",
+    "label": "Volkswagen Jetta V",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q14516278",
+    "label": "Volkswagen Polo Super 2000",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2506811",
+    "label": "Volkswagen Jetta I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q30349121",
+    "label": "Volkswagen Polo VI",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q7940332",
+    "label": "Volkswagen Polo Playa",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q15229553",
+    "label": "Volkswagen Touran II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q15229546",
+    "label": "Volkswagen Touran I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q13415255",
+    "label": "Volkswagen Passat Variant",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q13386136",
+    "label": "Volkswagen Jetta Night",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2506929",
+    "label": "Volkswagen Sharan I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2506933",
+    "label": "Volkswagen Sharan II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q15989126",
+    "label": "Volkswagen Polo sedan",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q106488554",
+    "label": "Volkswagen Tiguan X",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q122145519",
+    "label": "Volkswagen Passat B9",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1779716",
+    "label": "Volkswagen Golf Variant",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2506900",
+    "label": "Volkswagen Polo Variant",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3562808",
+    "label": "Volkswagen Jetta City",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q12072924",
+    "label": "Volkswagen Passat Alltrack",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q7221174",
+    "label": "Volkswagen Polo G40",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3562806",
+    "label": "Volkswagen Golf City",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q56218637",
+    "label": "Volkswagen Jetta VII",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q122382000",
+    "label": "Volkswagen Tiguan III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q60748228",
+    "label": "Volkswagen Polo GTI R5",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q97773470",
+    "label": "Volkswagen Polo Sedan",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q11832265",
+    "label": "Škoda Kodiaq",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q392036",
+    "label": "Škoda Rapid (India)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q29584097",
+    "label": "Škoda Karoq",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q392060",
+    "label": "Škoda Superb",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q392038",
+    "label": "Škoda Rapid",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q392018",
+    "label": "Škoda Octavia II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q23661383",
+    "label": "Škoda Rapid Spaceback",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q391971",
+    "label": "Škoda Fabia II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q392067",
+    "label": "Škoda Superb II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q392029",
+    "label": "Škoda Rapid",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q391966",
+    "label": "Škoda Fabia I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q19758190",
+    "label": "Škoda Superb III",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (ambiguous: break/sedan)"
+    ]
+  },
+  {
+    "id": "Q1609671",
+    "label": "Škoda Octavia III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q18410434",
+    "label": "Škoda Fabia III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q392017",
+    "label": "Škoda Octavia I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q392040",
+    "label": "Škoda Rapid 2200",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q392063",
+    "label": "Škoda Superb I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q65246931",
+    "label": "Škoda Kamiq (China)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q392047",
+    "label": "Škoda Rapid Six",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q223696",
+    "label": "Škoda Octavia",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q180270",
+    "label": "Škoda Rapid",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q57340128",
+    "label": "Škoda Scala",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q392083",
+    "label": "Škoda Superb",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q392105",
+    "label": "Škoda Yeti",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q2439814",
+    "label": "Škoda Octavia (1959)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q52054487",
+    "label": "Škoda Kamiq",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q20354830",
+    "label": "Škoda Fabia R5",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q59572019",
+    "label": "Škoda Kodiaq GT",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q65042038",
+    "label": "Škoda Fabia Rally2 evo",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q75030046",
+    "label": "Škoda Octavia IV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90883266",
+    "label": "Škoda Octavia Super",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90882055",
+    "label": "Škoda Octavia Combi (1961 - 1971)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90701141",
+    "label": "Škoda Rapid Sport",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90700853",
+    "label": "Škoda Kodiaq RS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90883477",
+    "label": "Škoda Octavia Touring Sport (1960 - 1964)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90701134",
+    "label": "Škoda Rapid (China)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16689282",
+    "label": "Škoda Octavia RS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q10396630",
+    "label": "Škoda Octavia Scout",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q16595571",
+    "label": "Renault Laguna II",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q16595579",
+    "label": "Renault Mégane I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16595566",
+    "label": "Renault Laguna I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2085581",
+    "label": "Renault Clio III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16041093",
+    "label": "Renault Scénic I",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q16595583",
+    "label": "Renault Mégane II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5114820",
+    "label": "Renault Clio II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3425021",
+    "label": "Renault Clio IV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q20899924",
+    "label": "Renault Mégane IV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q25158719",
+    "label": "Renault Talisman",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q3425081",
+    "label": "Renault Scénic II",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q3425018",
+    "label": "Renault Clio I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2366830",
+    "label": "Renault Scénic III",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q18913449",
+    "label": "Renault Kadjar",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q48756503",
+    "label": "Renault Clio V",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16595586",
+    "label": "Renault Mégane III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q25393136",
+    "label": "Renault Talisman",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q16595574",
+    "label": "Renault Laguna III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3425019",
+    "label": "Renault Clio III RS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q29993764",
+    "label": "Renault Scénic IV",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q3503489",
+    "label": "Renault Clio V6 Renault Sport",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q9068006",
+    "label": "Renault Megane III RS Trophy",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2702123",
+    "label": "Renault Symbol",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q65147399",
+    "label": "Renault Captur II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q27148489",
+    "label": "Renault Mégane IV RS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q108380585",
+    "label": "Renault Mégane E-Tech Electric",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90885183",
+    "label": "Renault Mégane IV RS Trophy",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q122167780",
+    "label": "Renault Scénic E-Tech",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q119575950",
+    "label": "Renault Symbol II",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q112112071",
+    "label": "Renault Scénic Vision",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90921972",
+    "label": "Renault Mégane II RS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q126083756",
+    "label": "Renault Symbol III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90921904",
+    "label": "Renault Clio RS III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q126083679",
+    "label": "Renault Symbol IV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q668293",
+    "label": "Ford Kuga",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q5467775",
+    "label": "Ford Fiesta third generation",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q31837516",
+    "label": "Ford Fiesta (2002)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q19481225",
+    "label": "Ford Fiesta Mk2",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q19481222",
+    "label": "Ford Fiesta Mk1",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q31837520",
+    "label": "Ford Fiesta (2017)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q12063185",
+    "label": "Ford Fiesta MK6",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1436829",
+    "label": "Ford Focus FCV Hybrid",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q106576911",
+    "label": "Ford Mondeo Sport",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q914079",
+    "label": "Ford C-Max",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q123084062",
+    "label": "Ford Kuga Titanium WP 2013",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q4038895",
+    "label": "Ford Focus Mk III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5467780",
+    "label": "Ford Focus Mk I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5467778",
+    "label": "Ford Focus 2nd generation",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q18355800",
+    "label": "Ford Mondeo 2nd generation",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5467779",
+    "label": "Ford Focus Mk II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q525684",
+    "label": "Ford Puma",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q31837515",
+    "label": "Ford Fiesta (1995)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q4180769",
+    "label": "Ford Focus RS",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2991815",
+    "label": "Ford Focus (North American)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q11698416",
+    "label": "Ford Focus ST",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5467783",
+    "label": "Ford Focus Electric",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90020578",
+    "label": "Ford Focus Active Mk IV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90924138",
+    "label": "Ford Fiesta ST MK6",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90702622",
+    "label": "Ford Fiesta MK7 Hybrid",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90924033",
+    "label": "Ford Focus ST Mk III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q138645532",
+    "label": "Ford Focus Mk III (Facelift)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2545532",
+    "label": "Ford Focus CC",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90702637",
+    "label": "Ford Fiesta ST MK7",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q967959",
+    "label": "Ford C-Max Energi",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90702584",
+    "label": "Ford EcoSport (2nd generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90702597",
+    "label": "Ford Kuga (second generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90702639",
+    "label": "Ford Fiesta Active MK7",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2554248",
+    "label": "Ford Fiesta S2000",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90919706",
+    "label": "Ford Focus RS Mk III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90919712",
+    "label": "Ford Focus RS Mk I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1333038",
+    "label": "Opel Astra G",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1777731",
+    "label": "Opel Astra H",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q898479",
+    "label": "Opel Astra F",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2068639",
+    "label": "Opel Astra J",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q17433343",
+    "label": "Opel Corsa E",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q21387421",
+    "label": "Opel Astra K",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q96638978",
+    "label": "Opel Insignia B",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q840279",
+    "label": "Opel Corsa D",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q3882868",
+    "label": "Opel Zafira B",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q64864080",
+    "label": "Opel Corsa F",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2623139",
+    "label": "Opel Corsa C",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q2025195",
+    "label": "Opel Meriva B",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3882869",
+    "label": "Opel Zafira C",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1805731",
+    "label": "Opel Mokka",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q3882867",
+    "label": "Opel Zafira A",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2025198",
+    "label": "Opel Meriva A",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q108273102",
+    "label": "Opel Astra L",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q28555429",
+    "label": "Opel Grandland",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q28537847",
+    "label": "Opel Crossland",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q7095661",
+    "label": "Opel Astra 200t S",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q125574658",
+    "label": "Opel Grandland X",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q31837345",
+    "label": "Opel Insignia B Grand Sport",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q64414857",
+    "label": "Opel Corsa Electric",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q97705167",
+    "label": "Opel Mokka B",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q107481355",
+    "label": "Opel Corsa R5",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q111285641",
+    "label": "Opel Insignia Sports Tourer",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q125574608",
+    "label": "Opel Grandland B",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q90921548",
+    "label": "Opel Corsa OPC",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q97730969",
+    "label": "Opel Mokka A",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q112222244",
+    "label": "BMW X1 (U11)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q796778",
+    "label": "BMW X5",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q756792",
+    "label": "BMW 3 Series (E46)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q730915",
+    "label": "BMW 3 Series",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q796780",
+    "label": "BMW X3",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q626846",
+    "label": "BMW 3 Series (F30)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q56856213",
+    "label": "BMW 3 Series (G20)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q796490",
+    "label": "BMW 1 Series",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q796465",
+    "label": "BMW X5",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1860725",
+    "label": "BMW X3 (F25)",
+    "missing": ["year_to (P582)"]
+  },
+  {
+    "id": "Q746980",
+    "label": "BMW X1",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q796458",
+    "label": "BMW X5",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q64085785",
+    "label": "BMW 1 Series (F40)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q387566",
+    "label": "BMW 5 Series Gran Turismo",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2647299",
+    "label": "BMW X3 (E83)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q125509400",
+    "label": "BMW X5 M Competition",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q4311136",
+    "label": "BMW 3 Series Gran Turismo",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q56290342",
+    "label": "BMW X5",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q758746",
+    "label": "Audi A4 allroad quattro",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q758806",
+    "label": "Audi A6 allroad quattro",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q758742",
+    "label": "Audi A4 B6",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q758740",
+    "label": "Audi A3 8P",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q758749",
+    "label": "Audi A6 C5",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q758743",
+    "label": "Audi A4 B7",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q106793330",
+    "label": "Audi A6 e-tron",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q27670168",
+    "label": "Audi Q5 FY",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q28225771",
+    "label": "Audi Q5 8R",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q25381838",
+    "label": "Audi Q7 4M",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q100326648",
+    "label": "Audi Q5 Sportback",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q60849762",
+    "label": "Audi Q3 Sportback",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q132129018",
+    "label": "Audi A6 C9",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q124964066",
+    "label": "Audi A4 allroad",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q118840",
+    "label": "Audi Q7",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q758751",
+    "label": "Audi A6 C7",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q758738",
+    "label": "Audi A3 8V",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q758748",
+    "label": "Audi A6 C4",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q289369",
+    "label": "Audi A4 B8",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q758750",
+    "label": "Audi A6 C6",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q56301637",
+    "label": "Audi Q3 F3",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q86849539",
+    "label": "Audi A3 8Y",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q473441",
+    "label": "Audi A3 8L",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q20760348",
+    "label": "Audi A4 B9",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q17310393",
+    "label": "Audi A3 e-tron",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q109649502",
+    "label": "Audi Q5 e-tron",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q131514007",
+    "label": "Audi Q5 III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q131343421",
+    "label": "Mercedes-Benz GLC Coupe",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q108131612",
+    "label": "Mercedes-Benz C-Class All-Terrain",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (ambiguous: break/suv)"
+    ]
+  },
+  {
+    "id": "Q6902966",
+    "label": "Toyota Yaris",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q55533476",
+    "label": "Toyota Corolla (E210)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q818614",
+    "label": "Toyota Auris",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q3536054",
+    "label": "Toyota Corolla E140",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2726227",
+    "label": "Toyota Corolla E120",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q820031",
+    "label": "Toyota Avensis",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1977620",
+    "label": "Toyota Corolla E90",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q106244191",
+    "label": "Toyota Yaris (XP210)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16879264",
+    "label": "Toyota Corolla (E170/E180)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q921838",
+    "label": "Toyota Corolla E110",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q60740801",
+    "label": "Toyota Yaris (XP150)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q106612215",
+    "label": "Toyota Yaris (XP90)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q85872501",
+    "label": "Toyota Corolla Touring",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q10383914",
+    "label": "Toyota Corolla Fielder",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2064620",
+    "label": "Toyota Yaris Verso",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q14517244",
+    "label": "Toyota Corolla (E160)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q110903182",
+    "label": "Toyota Yaris (XP130)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q4051648",
+    "label": "Toyota Corolla Spacio",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q97495845",
+    "label": "Toyota Corolla (eleventh generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q24576578",
+    "label": "Toyota Auris Touring Sports",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q819982",
+    "label": "Toyota RAV4",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q97094785",
+    "label": "Toyota Corolla Cross",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q91621558",
+    "label": "Toyota Yaris Cross",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q20826097",
+    "label": "Toyota Corolla Altis",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q92314244",
+    "label": "Toyota Corolla EX",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2447082",
+    "label": "Toyota Corolla Axio",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q11321636",
+    "label": "Toyota Corolla Levin",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q14552566",
+    "label": "Toyota Avensis Verso",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2655621",
+    "label": "Toyota RAV4 EV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q24732059",
+    "label": "Toyota C-HR",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1538045",
+    "label": "Toyota Corolla Rumion",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q133261543",
+    "label": "Toyota C-HR (AX10/AX50)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q124672626",
+    "label": "Toyota C-HR (AX20)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q90013778",
+    "label": "Toyota Corolla E50",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q116149159",
+    "label": "Toyota Corolla Quest",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q11321631",
+    "label": "Toyota Corolla II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q482604",
+    "label": "Hyundai i30",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q494384",
+    "label": "Hyundai i10",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1807564",
+    "label": "Hyundai ix35",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q22754238",
+    "label": "Kia Niro",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q493781",
+    "label": "Kia Rio",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q489836",
+    "label": "Kia Sorento",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1740747",
+    "label": "Kia cee'd (ED)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q145527",
+    "label": "Kia Sportage",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q55380616",
+    "label": "Kia Picanto (TA)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q55380620",
+    "label": "Kia Picanto (SA)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q55380613",
+    "label": "Kia Picanto (JA)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q62098509",
+    "label": "Kia Niro EV",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q109735634",
+    "label": "Kia Niro (SG2)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q2006832",
+    "label": "Peugeot 207 S2000",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q6166410",
+    "label": "Peugeot 207 Compact",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3377742",
+    "label": "Peugeot 308 II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q28919318",
+    "label": "Peugeot 5008 II",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q16589840",
+    "label": "Peugeot 308",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1867409",
+    "label": "Peugeot 308 RC Z",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q60846030",
+    "label": "Peugeot 208 B",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q497858",
+    "label": "Peugeot 308",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q222775",
+    "label": "Peugeot 207",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1141318",
+    "label": "Citroën C4 Picasso",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q898017",
+    "label": "Peugeot 508",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q215227",
+    "label": "Peugeot 307",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1164784",
+    "label": "Peugeot 208",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1165454",
+    "label": "Peugeot 5008",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1130819",
+    "label": "Peugeot 3008",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q822665",
+    "label": "Citroën C5",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q756741",
+    "label": "Citroën Berlingo",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q2081398",
+    "label": "Peugeot 2008",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q64901292",
+    "label": "Peugeot 2008 B",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1630402",
+    "label": "Citroën C3 Picasso",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q48751594",
+    "label": "Peugeot 508 B",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q47537801",
+    "label": "Peugeot 508 A",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q25377650",
+    "label": "Peugeot 3008 B",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q48833535",
+    "label": "Peugeot 5008",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q15993852",
+    "label": "Peugeot 208 T16",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5122855",
+    "label": "Citroën Berlingo électrique",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q122167461",
+    "label": "Peugeot 3008 C",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q71425148",
+    "label": "Peugeot 2008 A",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q6023973",
+    "label": "Peugeot 307 Sw black 2015",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q97190015",
+    "label": "Peugeot 308 III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90921854",
+    "label": "Peugeot 308 B GTi",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5122860",
+    "label": "Citroën C3 Aircross",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q86670161",
+    "label": "Citroën C4 (2020)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q1637418",
+    "label": "Citroën C4 Aircross",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q2443038",
+    "label": "Citroën C4 Cactus",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q108760254",
+    "label": "Citroën C3 (CC21)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q30750112",
+    "label": "Citroën C5 X",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q2140125",
+    "label": "Citroën C3 Pluriel",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q29402168",
+    "label": "Citroën C5 Aircross",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q54556027",
+    "label": "Citroën C5",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q118237449",
+    "label": "Citroën Berlingo III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16039942",
+    "label": "Citroën C3 I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q18745497",
+    "label": "Citroën C5 II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q112806529",
+    "label": "Citroën C4 X",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q113147169",
+    "label": "Citroën C4 Picasso (1st generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q10337976",
+    "label": "Citroën C4",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q39076504",
+    "label": "Citroën C3 Aircross (2017)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q2974494",
+    "label": "Citroën C3 II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q18589891",
+    "label": "Citroën C5 I",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q20724366",
+    "label": "Citroën C3 III",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q18610895",
+    "label": "Citroën C4",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q125574525",
+    "label": "Citroën C3 Aircross (CC24)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q123113826",
+    "label": "Citroën C3 IV",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q776328",
+    "label": "Nissan Note",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q11509846",
+    "label": "Nissan Note (E12)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q131339943",
+    "label": "Nissan Micra (K10)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q120752349",
+    "label": "Nissan Micra (K12)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q131339964",
+    "label": "Nissan Micra (K11)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q107471625",
+    "label": "Nissan Note Aura",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q114566698",
+    "label": "Nissan Note (E13)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q1415815",
+    "label": "Nissan Juke",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q113648974",
+    "label": "Nissan Note (E11)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q11086837",
+    "label": "Nissan Micra C+C",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q116256985",
+    "label": "Nissan Qashqai (J10)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q10337031",
+    "label": "Nissan Qashqai +2",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q126424490",
+    "label": "Nissan X-Trail I",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q750528",
+    "label": "Fiat Tipo",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q927839",
+    "label": "Fiat 500",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q934197",
+    "label": "Fiat Doblò",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q21207436",
+    "label": "Fiat Tipo",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q3071164",
+    "label": "Fiat 500 Moretti Coupé",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q467767",
+    "label": "Fiat 500",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q636082",
+    "label": "Fiat 500 Topolino",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q542298",
+    "label": "Fiat Tipo 6",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q3071163",
+    "label": "Fiat 500 Giannini",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q118236623",
+    "label": "Fiat Doblò Mk1",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q16555927",
+    "label": "Fiat Punto Abarth",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q118236629",
+    "label": "Fiat Doblò Mk3",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90670742",
+    "label": "Fiat Doblò Mk2",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q751540",
+    "label": "Suzuki SX4",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q932329",
+    "label": "Suzuki Ignis",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q30860163",
+    "label": "Suzuki S-Cross",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q18413302",
+    "label": "Suzuki Vitara (2015)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q17371581",
+    "label": "Suzuki Swift 2004",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1130587",
+    "label": "Suzuki Vitara",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q29948505",
+    "label": "Suzuki Ignis",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1426415",
+    "label": "Honda HR-V",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q27061986",
+    "label": "Honda Civic 10th generation",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q27576500",
+    "label": "Honda Accord (ninth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1268524",
+    "label": "Honda Civic (fourth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1506812",
+    "label": "Honda Civic (eighth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1518795",
+    "label": "Honda Civic (fifth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626573",
+    "label": "Honda Civic (ninth generation)",
+    "missing": ["body (P279)"]
+  },
+  {
+    "id": "Q1519939",
+    "label": "Honda Civic 7th generation",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626569",
+    "label": "Honda Civic (sixth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q8214024",
+    "label": "Honda Civic Si",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626472",
+    "label": "Honda Accord (fifth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626468",
+    "label": "Honda Accord (fourth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q255461",
+    "label": "Honda CR-V",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q844767",
+    "label": "Honda Civic",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q844774",
+    "label": "Honda Civic (second generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626473",
+    "label": "Honda Accord (1997)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q107002471",
+    "label": "Honda Civic 11th generation",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626467",
+    "label": "Honda Accord (third generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1515648",
+    "label": "Honda Accord (second generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q107336578",
+    "label": "Honda Civic Type R FL5",
+    "missing": ["year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q10860903",
+    "label": "Honda Accord (North America seventh generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1319709",
+    "label": "Honda Accord (first generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q1626577",
+    "label": "Honda Civic Hybrid",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5892130",
+    "label": "Honda Accord",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q844777",
+    "label": "Honda Civic (first generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q27279006",
+    "label": "Honda CR-V (third generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q27247515",
+    "label": "Honda CR-V (fourth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q5892415",
+    "label": "Honda Civic GX",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q11338232",
+    "label": "Honda Accord Euro R",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q1406171",
+    "label": "Honda Accord",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1626476",
+    "label": "Honda Accord",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q55525531",
+    "label": "Honda Accord (tenth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q91026636",
+    "label": "Honda Accord Aero Deck",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q127433070",
+    "label": "Honda CR-V",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q91026638",
+    "label": "Honda Accord (1976)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q112702286",
+    "label": "Honda CR-V (fifth generation)",
+    "missing": ["year_from (P580)", "year_to (P582)"]
+  },
+  {
+    "id": "Q28127228",
+    "label": "Volvo XC40",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1123538",
+    "label": "Volvo S60",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q956861",
+    "label": "Volvo XC60",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q933275",
+    "label": "Volvo XC90",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1574600",
+    "label": "Volvo V40",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q9369131",
+    "label": "Volvo V40",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q1511293",
+    "label": "Volvo V60",
+    "missing": [
+      "year_from (P580)",
+      "year_to (P582)",
+      "body (P279)",
+      "generation (label has no generation)"
+    ]
+  },
+  {
+    "id": "Q90920784",
+    "label": "Volvo XC90 II",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90920794",
+    "label": "Volvo XC90 II Plug-in Hybrid",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  },
+  {
+    "id": "Q90997805",
+    "label": "Volvo S60 (2nd generation)",
+    "missing": ["year_from (P580)", "year_to (P582)", "body (P279)"]
+  }
+]

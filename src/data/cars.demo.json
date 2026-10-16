@@ -2,14 +2,354 @@
   "updated": "2026-10-16",
   "models": [
     {
-      "id": "dacia-logan-1",
+      "id": "audi-a4-b8",
       "verified": false,
       "is_demo": true,
-      "brand": "Dacia",
-      "model": "Logan",
-      "generation": "I",
+      "brand": "Audi",
+      "model": "A4",
+      "generation": "B8",
       "years": {
-        "from": 2004,
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 3500,
+        "high": 4700,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Audi A4 B8 – Wikipedia (de), revizia 269362488 (ani); caroserie: ADAC Autokatalog: Audi A4 1.8 TFSI Attraction (02/08 - 10/08)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A4_B8&oldid=269362488",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "audi-a6-c7",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Audi",
+      "model": "A6",
+      "generation": "C7",
+      "years": {
+        "from": 2010,
+        "to": 2018
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 4600,
+        "high": 6200,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Audi A6 C7 – Wikipedia (de), revizia 267560005 (ani); caroserie: ADAC Autokatalog: Audi A6 2.0 TFSI (10/11 - 09/14)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A6_C7&oldid=267560005",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "audi-q5-sportback",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Audi",
+      "model": "Q5",
+      "generation": "Sportback",
+      "years": {
+        "from": 2008,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 8400,
+        "high": 11400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q100326648 (identitate, CC0) + Wikipedia „Audi Q5” rev. 1373497931 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Audi_Q5&oldid=1373497931",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "bmw-3-series-gran-turismo",
+      "verified": false,
+      "is_demo": true,
+      "brand": "BMW",
+      "model": "3 Series",
+      "generation": "Gran Turismo",
+      "years": {
+        "from": 2011,
+        "to": 2018
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 5500,
+        "high": 7400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q4311136 (identitate, CC0) + Wikipedia „BMW 3 Series (F30)” rev. 1378800940 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=BMW_3_Series_(F30)&oldid=1378800940",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "bmw-5-series-gran-turismo",
+      "verified": false,
+      "is_demo": true,
+      "brand": "BMW",
+      "model": "5 Series",
+      "generation": "Gran Turismo",
+      "years": {
+        "from": 2009,
+        "to": 2016
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 4700,
+        "high": 6400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q387566 (identitate, CC0) + Wikipedia „BMW 5 Series (F10)” rev. 1379943137 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=BMW_5_Series_(F10)&oldid=1379943137",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "bmw-seria-3-e90",
+      "verified": false,
+      "is_demo": true,
+      "brand": "BMW",
+      "model": "Seria 3",
+      "generation": "E90",
+      "years": {
+        "from": 2005,
         "to": 2013
       },
       "body": "sedan",
@@ -38,8 +378,8 @@
       "seats": 5,
       "trunk_l": 480,
       "price_eur": {
-        "low": 2800,
-        "high": 3900,
+        "low": 2600,
+        "high": 3500,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -53,10 +393,10 @@
       },
       "sources": [
         {
-          "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
+          "source_title": "BMW E90 – Wikipedia (de), revizia 270836317 (ani); caroserie: ADAC Autokatalog: BMW 318i (09/05 - 10/07)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_E90&oldid=270836317",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -70,24 +410,24 @@
       "known_issues": []
     },
     {
-      "id": "dacia-logan-mcv-2",
+      "id": "bmw-seria-3-f30",
       "verified": false,
       "is_demo": true,
-      "brand": "Dacia",
-      "model": "Logan MCV",
-      "generation": "II",
+      "brand": "BMW",
+      "model": "Seria 3",
+      "generation": "F30",
       "years": {
-        "from": 2012,
-        "to": 2020
+        "from": 2011,
+        "to": 2019
       },
-      "body": "break",
+      "body": "sedan",
       "engines": [
         {
           "energy": "benzina",
           "cc": 1400,
           "hp": 100,
           "consumption": {
-            "value": 6.5,
+            "value": 6.3,
             "unit": "l/100km",
             "cycle": "WLTP"
           }
@@ -97,27 +437,17 @@
           "cc": 1600,
           "hp": 110,
           "consumption": {
-            "value": 5.1,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        },
-        {
-          "energy": "gpl",
-          "cc": 1400,
-          "hp": 95,
-          "consumption": {
-            "value": 8.1,
+            "value": 4.9,
             "unit": "l/100km",
             "cycle": "WLTP"
           }
         }
       ],
       "seats": 5,
-      "trunk_l": 560,
+      "trunk_l": 480,
       "price_eur": {
-        "low": 6600,
-        "high": 9000,
+        "low": 5700,
+        "high": 7800,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -131,10 +461,10 @@
       },
       "sources": [
         {
-          "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
+          "source_title": "BMW F30 – Wikipedia (de), revizia 268218194 (ani); caroserie: ADAC Autokatalog: BMW 316i (11/12 - 03/13)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_F30&oldid=268218194",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -148,15 +478,93 @@
       "known_issues": []
     },
     {
-      "id": "dacia-sandero-2",
+      "id": "citroen-c3-aircross",
       "verified": false,
       "is_demo": true,
-      "brand": "Dacia",
-      "model": "Sandero",
-      "generation": "II",
+      "brand": "Citroën",
+      "model": "C3",
+      "generation": "Aircross",
       "years": {
-        "from": 2012,
-        "to": 2022
+        "from": 2010,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 115,
+          "consumption": {
+            "value": 9,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 7900,
+        "high": 10700,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q5122860 (identitate, CC0) + Wikipedia „Citroën C3 Aircross” rev. 1378432869 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C3_Aircross&oldid=1378432869",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "citroen-c3-picasso",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Citroën",
+      "model": "C3",
+      "generation": "Picasso",
+      "years": {
+        "from": 2008,
+        "to": 2017
       },
       "body": "hatchback",
       "engines": [
@@ -167,7 +575,7 @@
           "consumption": {
             "value": 5.8,
             "unit": "l/100km",
-            "cycle": "WLTP"
+            "cycle": "NEDC"
           }
         },
         {
@@ -177,15 +585,25 @@
           "consumption": {
             "value": 4.4,
             "unit": "l/100km",
-            "cycle": "WLTP"
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
           }
         }
       ],
       "seats": 5,
       "trunk_l": 340,
       "price_eur": {
-        "low": 4600,
-        "high": 6200,
+        "low": 3000,
+        "high": 4000,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -199,10 +617,10 @@
       },
       "sources": [
         {
-          "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
+          "source_title": "Wikidata Q1630402 (identitate, CC0) + Wikipedia „Citroën C3 Picasso” rev. 1362918984 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C3_Picasso&oldid=1362918984",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -216,14 +634,14 @@
       "known_issues": []
     },
     {
-      "id": "dacia-sandero-3",
+      "id": "citroen-c3-pluriel",
       "verified": false,
       "is_demo": true,
-      "brand": "Dacia",
-      "model": "Sandero",
-      "generation": "III",
+      "brand": "Citroën",
+      "model": "C3",
+      "generation": "Pluriel",
       "years": {
-        "from": 2021,
+        "from": 2002,
         "to": 2026
       },
       "body": "hatchback",
@@ -247,13 +665,23 @@
             "unit": "l/100km",
             "cycle": "WLTP"
           }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
         }
       ],
       "seats": 5,
       "trunk_l": 340,
       "price_eur": {
-        "low": 11600,
-        "high": 15700,
+        "low": 3600,
+        "high": 4900,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -267,10 +695,292 @@
       },
       "sources": [
         {
-          "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
+          "source_title": "Wikidata Q2140125 (identitate, CC0) + Wikipedia „Citroën C3” rev. 1380202046 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C3&oldid=1380202046",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "citroen-c4-aircross",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Citroën",
+      "model": "C4",
+      "generation": "Aircross",
+      "years": {
+        "from": 2012,
+        "to": 2017
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 115,
+          "consumption": {
+            "value": 9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 5600,
+        "high": 7600,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q1637418 (identitate, CC0) + Wikipedia „Citroën C4 Aircross” rev. 1368009358 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C4_Aircross&oldid=1368009358",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "citroen-c4-cactus",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Citroën",
+      "model": "C4",
+      "generation": "Cactus",
+      "years": {
+        "from": 2014,
+        "to": 2024
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 10600,
+        "high": 14400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q2443038 (identitate, CC0) + Wikipedia „Citroën C4 Cactus” rev. 1373885895 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C4_Cactus&oldid=1373885895",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "citroen-c5-aircross",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Citroën",
+      "model": "C5",
+      "generation": "Aircross",
+      "years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 15600,
+        "high": 21100,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q29402168 (identitate, CC0) + Wikipedia „Citroën C5 Aircross” rev. 1379938130 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C5_Aircross&oldid=1379938130",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "citroen-c5-x",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Citroën",
+      "model": "C5",
+      "generation": "X",
+      "years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 18500,
+        "high": 25000,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q30750112 (identitate, CC0) + Wikipedia „Citroën C5 X” rev. 1377989982 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C5_X&oldid=1377989982",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -335,10 +1045,10 @@
       },
       "sources": [
         {
-          "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743",
+          "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743 (ani); caroserie: ADAC Autokatalog: Dacia Duster 1.6 16V 4x2 (04/10 - 09/10)",
           "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -413,10 +1123,10 @@
       },
       "sources": [
         {
-          "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743",
+          "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743 (ani); caroserie: ADAC Autokatalog: Dacia Duster TCe 90 Access 2WD (09/20 - 07/21)",
           "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -430,362 +1140,12 @@
       "known_issues": []
     },
     {
-      "id": "vw-golf-6",
+      "id": "dacia-logan-1",
       "verified": false,
       "is_demo": true,
-      "brand": "Volkswagen",
-      "model": "Golf",
-      "generation": "VI",
-      "years": {
-        "from": 2008,
-        "to": 2012
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 2000,
-        "high": 2800,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "VW Golf VI – Wikipedia (de), revizia 271026396",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VI&oldid=271026396",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "vw-golf-7",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Volkswagen",
-      "model": "Golf",
-      "generation": "VII",
-      "years": {
-        "from": 2012,
-        "to": 2021
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 5400,
-        "high": 7300,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "VW Golf VII – Wikipedia (de), revizia 269776737",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VII&oldid=269776737",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "vw-passat-b7",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Volkswagen",
-      "model": "Passat Variant",
-      "generation": "B7",
-      "years": {
-        "from": 2010,
-        "to": 2015
-      },
-      "body": "break",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.5,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 5.1,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 560,
-      "price_eur": {
-        "low": 4200,
-        "high": 5700,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "VW Passat B7 – Wikipedia (de), revizia 270469671",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B7&oldid=270469671",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "vw-passat-b8",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Volkswagen",
-      "model": "Passat Variant",
-      "generation": "B8",
-      "years": {
-        "from": 2014,
-        "to": 2023
-      },
-      "body": "break",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.5,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 5.1,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 560,
-      "price_eur": {
-        "low": 8800,
-        "high": 11900,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "VW Passat B8 – Wikipedia (de), revizia 271369885",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B8&oldid=271369885",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "vw-polo-5",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Volkswagen",
-      "model": "Polo",
-      "generation": "V",
-      "years": {
-        "from": 2009,
-        "to": 2017
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "gpl",
-          "cc": 1400,
-          "hp": 95,
-          "consumption": {
-            "value": 7.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 2700,
-        "high": 3600,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "VW Polo V – Wikipedia (de), revizia 270680387",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Polo_V&oldid=270680387",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "skoda-octavia-2",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Škoda",
-      "model": "Octavia",
-      "generation": "II",
+      "brand": "Dacia",
+      "model": "Logan",
+      "generation": "I",
       "years": {
         "from": 2004,
         "to": 2013
@@ -817,7 +1177,7 @@
       "trunk_l": 480,
       "price_eur": {
         "low": 2800,
-        "high": 3800,
+        "high": 3900,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -831,10 +1191,10 @@
       },
       "sources": [
         {
-          "source_title": "Škoda Octavia II – Wikipedia (de), revizia 269171513",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_II&oldid=269171513",
+          "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507 (ani); caroserie: ADAC Autokatalog: Dacia Logan 1.4 (06/05 - 07/08)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -848,24 +1208,24 @@
       "known_issues": []
     },
     {
-      "id": "skoda-octavia-3",
+      "id": "dacia-logan-mcv-2",
       "verified": false,
       "is_demo": true,
-      "brand": "Škoda",
-      "model": "Octavia",
-      "generation": "III",
+      "brand": "Dacia",
+      "model": "Logan MCV",
+      "generation": "II",
       "years": {
         "from": 2012,
         "to": 2020
       },
-      "body": "sedan",
+      "body": "break",
       "engines": [
         {
           "energy": "benzina",
           "cc": 1400,
           "hp": 100,
           "consumption": {
-            "value": 6.3,
+            "value": 6.5,
             "unit": "l/100km",
             "cycle": "WLTP"
           }
@@ -875,17 +1235,27 @@
           "cc": 1600,
           "hp": 110,
           "consumption": {
-            "value": 4.9,
+            "value": 5.1,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 8.1,
             "unit": "l/100km",
             "cycle": "WLTP"
           }
         }
       ],
       "seats": 5,
-      "trunk_l": 480,
+      "trunk_l": 560,
       "price_eur": {
-        "low": 6300,
-        "high": 8500,
+        "low": 6600,
+        "high": 9000,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -899,10 +1269,10 @@
       },
       "sources": [
         {
-          "source_title": "Škoda Octavia III – Wikipedia (de), revizia 270816297",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_III&oldid=270816297",
+          "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507 (ani); caroserie: ADAC Autokatalog: Dacia Logan MCV 1.2 16V 75 Essentiel (07/15 - 11/16)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -916,82 +1286,14 @@
       "known_issues": []
     },
     {
-      "id": "skoda-fabia-2",
+      "id": "dacia-sandero-2",
       "verified": false,
       "is_demo": true,
-      "brand": "Škoda",
-      "model": "Fabia",
+      "brand": "Dacia",
+      "model": "Sandero",
       "generation": "II",
       "years": {
-        "from": 2007,
-        "to": 2014
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 2200,
-        "high": 3000,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Škoda Fabia II – Wikipedia (de), revizia 271026261",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_II&oldid=271026261",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "skoda-fabia-3",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Škoda",
-      "model": "Fabia",
-      "generation": "III",
-      "years": {
-        "from": 2014,
+        "from": 2012,
         "to": 2022
       },
       "body": "hatchback",
@@ -1020,8 +1322,8 @@
       "seats": 5,
       "trunk_l": 340,
       "price_eur": {
-        "low": 5800,
-        "high": 7800,
+        "low": 4600,
+        "high": 6200,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -1035,10 +1337,10 @@
       },
       "sources": [
         {
-          "source_title": "Škoda Fabia III – Wikipedia (de), revizia 266321658",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_III&oldid=266321658",
+          "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456 (ani); caroserie: ADAC Autokatalog: Dacia Sandero 1.2 16V 75 Essentiel (07/15 - 11/16)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -1052,171 +1354,15 @@
       "known_issues": []
     },
     {
-      "id": "skoda-superb-2",
+      "id": "dacia-sandero-3",
       "verified": false,
       "is_demo": true,
-      "brand": "Škoda",
-      "model": "Superb",
-      "generation": "II",
+      "brand": "Dacia",
+      "model": "Sandero",
+      "generation": "III",
       "years": {
-        "from": 2008,
-        "to": 2015
-      },
-      "body": "sedan",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.9,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "gpl",
-          "cc": 1400,
-          "hp": 95,
-          "consumption": {
-            "value": 7.9,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 480,
-      "price_eur": {
-        "low": 4000,
-        "high": 5400,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Škoda Superb II – Wikipedia (de), revizia 270798955",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Superb_II&oldid=270798955",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "opel-astra-j",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Opel",
-      "model": "Astra",
-      "generation": "J",
-      "years": {
-        "from": 2009,
-        "to": 2018
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "gpl",
-          "cc": 1400,
-          "hp": 95,
-          "consumption": {
-            "value": 7.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 3300,
-        "high": 4400,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Opel Astra J – Wikipedia (de), revizia 264784765",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_J&oldid=264784765",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "opel-astra-k",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Opel",
-      "model": "Astra",
-      "generation": "K",
-      "years": {
-        "from": 2015,
-        "to": 2021
+        "from": 2021,
+        "to": 2026
       },
       "body": "hatchback",
       "engines": [
@@ -1244,8 +1390,8 @@
       "seats": 5,
       "trunk_l": 340,
       "price_eur": {
-        "low": 5800,
-        "high": 7900,
+        "low": 11600,
+        "high": 15700,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -1259,10 +1405,10 @@
       },
       "sources": [
         {
-          "source_title": "Opel Astra K – Wikipedia (de), revizia 269808467",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_K&oldid=269808467",
+          "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456 (ani); caroserie: ADAC Autokatalog: Dacia Sandero SCe 65 Access (01/21 - 12/22)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -1276,26 +1422,26 @@
       "known_issues": []
     },
     {
-      "id": "opel-corsa-d",
+      "id": "ford-c-max-energi",
       "verified": false,
       "is_demo": true,
-      "brand": "Opel",
-      "model": "Corsa",
-      "generation": "D",
+      "brand": "Ford",
+      "model": "C-Max",
+      "generation": "Energi",
       "years": {
-        "from": 2006,
-        "to": 2014
+        "from": 2003,
+        "to": 2019
       },
-      "body": "hatchback",
+      "body": "mpv",
       "engines": [
         {
           "energy": "benzina",
           "cc": 1400,
           "hp": 100,
           "consumption": {
-            "value": 5.8,
+            "value": 7,
             "unit": "l/100km",
-            "cycle": "NEDC"
+            "cycle": "WLTP"
           }
         },
         {
@@ -1303,17 +1449,17 @@
           "cc": 1600,
           "hp": 110,
           "consumption": {
-            "value": 4.4,
+            "value": 5.6,
             "unit": "l/100km",
-            "cycle": "NEDC"
+            "cycle": "WLTP"
           }
         }
       ],
-      "seats": 5,
-      "trunk_l": 340,
+      "seats": 7,
+      "trunk_l": 620,
       "price_eur": {
-        "low": 2000,
-        "high": 2700,
+        "low": 3200,
+        "high": 4300,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -1327,10 +1473,10 @@
       },
       "sources": [
         {
-          "source_title": "Opel Corsa D – Wikipedia (de), revizia 266069531",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Corsa_D&oldid=266069531",
+          "source_title": "Wikidata Q967959 (identitate, CC0) + Wikipedia „Ford C-Max” rev. 1374263961 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Ford_C-Max&oldid=1374263961",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -1395,10 +1541,10 @@
       },
       "sources": [
         {
-          "source_title": "Ford Focus – Wikipedia (de), revizia 269020316",
+          "source_title": "Ford Focus – Wikipedia (de), revizia 269020316 (ani); caroserie: ADAC Autokatalog: Ford Focus 1.6 Ti-VCT Ambiente (09/11 - 09/14)",
           "source_url": "https://de.wikipedia.org/w/index.php?title=Ford_Focus&oldid=269020316",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -1412,54 +1558,44 @@
       "known_issues": []
     },
     {
-      "id": "renault-clio-4",
+      "id": "ford-mondeo-sport",
       "verified": false,
       "is_demo": true,
-      "brand": "Renault",
-      "model": "Clio",
-      "generation": "IV",
+      "brand": "Ford",
+      "model": "Mondeo",
+      "generation": "Sport",
       "years": {
-        "from": 2012,
-        "to": 2020
+        "from": 2021,
+        "to": 2026
       },
-      "body": "hatchback",
+      "body": "suv",
       "engines": [
         {
           "energy": "benzina",
           "cc": 1400,
-          "hp": 100,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
           "consumption": {
             "value": 5.8,
             "unit": "l/100km",
             "cycle": "WLTP"
           }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        },
-        {
-          "energy": "gpl",
-          "cc": 1400,
-          "hp": 95,
-          "consumption": {
-            "value": 7.3,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
         }
       ],
       "seats": 5,
-      "trunk_l": 340,
+      "trunk_l": 450,
       "price_eur": {
-        "low": 4000,
-        "high": 5400,
+        "low": 18500,
+        "high": 25000,
         "n_listings": null,
         "collected_on": "2026-10-16",
         "kind": "synthetic",
@@ -1473,486 +1609,10 @@
       },
       "sources": [
         {
-          "source_title": "Renault Clio IV – Wikipedia (de), revizia 270039434",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_Clio_IV&oldid=270039434",
+          "source_title": "Wikidata Q106576911 (identitate, CC0) + Wikipedia „Ford Mondeo Sport” rev. 1336010544 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Ford_Mondeo_Sport&oldid=1336010544",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "renault-megane-3",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Renault",
-      "model": "Mégane",
-      "generation": "III",
-      "years": {
-        "from": 2008,
-        "to": 2016
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 2800,
-        "high": 3800,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Renault Mégane III – Wikipedia (de), revizia 262018085",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_M%C3%A9gane_III&oldid=262018085",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "bmw-seria-3-e90",
-      "verified": false,
-      "is_demo": true,
-      "brand": "BMW",
-      "model": "Seria 3",
-      "generation": "E90",
-      "years": {
-        "from": 2005,
-        "to": 2013
-      },
-      "body": "sedan",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.9,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 480,
-      "price_eur": {
-        "low": 2600,
-        "high": 3500,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "BMW E90 – Wikipedia (de), revizia 270836317",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_E90&oldid=270836317",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "bmw-seria-3-f30",
-      "verified": false,
-      "is_demo": true,
-      "brand": "BMW",
-      "model": "Seria 3",
-      "generation": "F30",
-      "years": {
-        "from": 2011,
-        "to": 2019
-      },
-      "body": "sedan",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.3,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.9,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 480,
-      "price_eur": {
-        "low": 5700,
-        "high": 7800,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "BMW F30 – Wikipedia (de), revizia 268218194",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_F30&oldid=268218194",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "audi-a4-b8",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Audi",
-      "model": "A4",
-      "generation": "B8",
-      "years": {
-        "from": 2007,
-        "to": 2015
-      },
-      "body": "sedan",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.9,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 480,
-      "price_eur": {
-        "low": 3500,
-        "high": 4700,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Audi A4 B8 – Wikipedia (de), revizia 269362488",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A4_B8&oldid=269362488",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "audi-a6-c7",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Audi",
-      "model": "A6",
-      "generation": "C7",
-      "years": {
-        "from": 2010,
-        "to": 2018
-      },
-      "body": "sedan",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.9,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 480,
-      "price_eur": {
-        "low": 4600,
-        "high": 6200,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Audi A6 C7 – Wikipedia (de), revizia 267560005",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A6_C7&oldid=267560005",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "mercedes-c-w204",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Mercedes-Benz",
-      "model": "Clasa C",
-      "generation": "W204",
-      "years": {
-        "from": 2007,
-        "to": 2015
-      },
-      "body": "sedan",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 6.3,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.9,
-            "unit": "l/100km",
-            "cycle": "NEDC"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 480,
-      "price_eur": {
-        "low": 3100,
-        "high": 4200,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Mercedes-Benz Baureihe 204 – Wikipedia (de), revizia 270547703",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Mercedes-Benz_Baureihe_204&oldid=270547703",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-          "retrieved_on": "2026-10-16",
-          "license": "synthetic"
-        }
-      ],
-      "pros": [],
-      "cons": [],
-      "known_issues": []
-    },
-    {
-      "id": "toyota-auris-2",
-      "verified": false,
-      "is_demo": true,
-      "brand": "Toyota",
-      "model": "Auris",
-      "generation": "II (E18)",
-      "years": {
-        "from": 2012,
-        "to": 2019
-      },
-      "body": "hatchback",
-      "engines": [
-        {
-          "energy": "benzina",
-          "cc": 1400,
-          "hp": 100,
-          "consumption": {
-            "value": 5.8,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        },
-        {
-          "energy": "motorina",
-          "cc": 1600,
-          "hp": 110,
-          "consumption": {
-            "value": 4.4,
-            "unit": "l/100km",
-            "cycle": "WLTP"
-          }
-        }
-      ],
-      "seats": 5,
-      "trunk_l": 340,
-      "price_eur": {
-        "low": 4200,
-        "high": 5600,
-        "n_listings": null,
-        "collected_on": "2026-10-16",
-        "kind": "synthetic",
-        "notes": "preț sintetic DEMO, nu provine din anunțuri",
-        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
-        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
-        "retrieved_on": "2026-10-16",
-        "license": "synthetic",
-        "verified": false,
-        "is_demo": true
-      },
-      "sources": [
-        {
-          "source_title": "Toyota Auris – Wikipedia (de), revizia 266280695",
-          "source_url": "https://de.wikipedia.org/w/index.php?title=Toyota_Auris&oldid=266280695",
-          "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -2017,10 +1677,10 @@
       },
       "sources": [
         {
-          "source_title": "Hyundai i30 (GD) – Wikipedia (de), revizia 257738254",
+          "source_title": "Hyundai i30 (GD) – Wikipedia (de), revizia 257738254 (ani); caroserie: ADAC Autokatalog: Hyundai i30 1.4 Classic (03/12 - 05/15)",
           "source_url": "https://de.wikipedia.org/w/index.php?title=Hyundai_i30_(GD)&oldid=257738254",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
@@ -2095,10 +1755,2062 @@
       },
       "sources": [
         {
-          "source_title": "Kia cee’d (JD) – Wikipedia (de), revizia 270963496",
+          "source_title": "Kia cee’d (JD) – Wikipedia (de), revizia 270963496 (ani); caroserie: ADAC Autokatalog: Kia cee´d 1.4 (01/13 - 06/13)",
           "source_url": "https://de.wikipedia.org/w/index.php?title=Kia_cee%E2%80%99d_%28JD%29&oldid=270963496",
           "retrieved_on": "2026-10-16",
-          "license": "CC BY-SA 4.0"
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "mercedes-c-w204",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Mercedes-Benz",
+      "model": "Clasa C",
+      "generation": "W204",
+      "years": {
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 3100,
+        "high": 4200,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Mercedes-Benz Baureihe 204 – Wikipedia (de), revizia 270547703 (ani); caroserie: ADAC Autokatalog: Mercedes-Benz C 180 Kompressor Classic (08/07 - 01/09)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Mercedes-Benz_Baureihe_204&oldid=270547703",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "opel-astra-j",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Opel",
+      "model": "Astra",
+      "generation": "J",
+      "years": {
+        "from": 2009,
+        "to": 2018
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 3300,
+        "high": 4400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Opel Astra J – Wikipedia (de), revizia 264784765 (ani); caroserie: ADAC Autokatalog: Opel Astra 1.4 ecoFlex Edition (12/09 - 12/10)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_J&oldid=264784765",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "opel-astra-k",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Opel",
+      "model": "Astra",
+      "generation": "K",
+      "years": {
+        "from": 2015,
+        "to": 2021
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 5800,
+        "high": 7900,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Opel Astra K – Wikipedia (de), revizia 269808467 (ani); caroserie: ADAC Autokatalog: Opel Astra 1.0 ECOTEC DI Turbo Start&Stop Selection (06/18 - 08/19)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_K&oldid=269808467",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "opel-corsa-d",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Opel",
+      "model": "Corsa",
+      "generation": "D",
+      "years": {
+        "from": 2006,
+        "to": 2014
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 2000,
+        "high": 2700,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Opel Corsa D – Wikipedia (de), revizia 266069531 (ani); caroserie: ADAC Autokatalog: Opel Corsa 1.0 Twinport (5-Türer) (10/06 - 07/08)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Corsa_D&oldid=266069531",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "opel-insignia-a-sedan",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Opel",
+      "model": "Insignia",
+      "generation": "A Sedan",
+      "years": {
+        "from": 2008,
+        "to": 2017
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 4100,
+        "high": 5500,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q29561480: Opel Insignia A Sedan",
+          "source_url": "https://www.wikidata.org/wiki/Q29561480",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "renault-clio-4",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Renault",
+      "model": "Clio",
+      "generation": "IV",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 4000,
+        "high": 5400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Renault Clio IV – Wikipedia (de), revizia 270039434 (ani); caroserie: ADAC Autokatalog: Renault Clio 1.2 16V 65 Authentique (05/14 - 01/15)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_Clio_IV&oldid=270039434",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "renault-clio-v6-renault-sport",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Renault",
+      "model": "Clio",
+      "generation": "V6 Renault Sport",
+      "years": {
+        "from": 2001,
+        "to": 2005
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 800,
+        "high": 1100,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q3503489 (identitate, CC0) + Wikipedia „Renault Clio V6 RS” rev. 1339662764 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Renault_Clio_V6_RS&oldid=1339662764",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "renault-megane-3",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Renault",
+      "model": "Mégane",
+      "generation": "III",
+      "years": {
+        "from": 2008,
+        "to": 2016
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 2800,
+        "high": 3800,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Renault Mégane III – Wikipedia (de), revizia 262018085 (ani); caroserie: ADAC Autokatalog: Renault Mégane 1.6 16V 100 Authentique (01/10 - 08/10)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_M%C3%A9gane_III&oldid=262018085",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "renault-scenic-e-tech",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Renault",
+      "model": "Scénic",
+      "generation": "E-Tech",
+      "years": {
+        "from": 2024,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 115,
+          "consumption": {
+            "value": 9,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 20700,
+        "high": 28000,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q122167780 (identitate, CC0) + Wikipedia „Renault Scenic E-Tech” rev. 1377406284 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Renault_Scenic_E-Tech&oldid=1377406284",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "skoda-fabia-2",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Škoda",
+      "model": "Fabia",
+      "generation": "II",
+      "years": {
+        "from": 2007,
+        "to": 2014
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 2200,
+        "high": 3000,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Škoda Fabia II – Wikipedia (de), revizia 271026261 (ani); caroserie: ADAC Autokatalog: Skoda Fabia 1.2 HTP (03/07 - 04/10)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_II&oldid=271026261",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "skoda-fabia-3",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Škoda",
+      "model": "Fabia",
+      "generation": "III",
+      "years": {
+        "from": 2014,
+        "to": 2022
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 5800,
+        "high": 7800,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Škoda Fabia III – Wikipedia (de), revizia 266321658 (ani); caroserie: ADAC Autokatalog: Skoda Fabia 1.0 MPI Active (11/14 - 08/18)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_III&oldid=266321658",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "skoda-octavia-2",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Škoda",
+      "model": "Octavia",
+      "generation": "II",
+      "years": {
+        "from": 2004,
+        "to": 2013
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 2800,
+        "high": 3800,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Škoda Octavia II – Wikipedia (de), revizia 269171513 (ani); caroserie: ADAC Autokatalog: Skoda Octavia 1.4 Classic (06/04 - 05/06)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_II&oldid=269171513",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "skoda-octavia-3",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Škoda",
+      "model": "Octavia",
+      "generation": "III",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 6300,
+        "high": 8500,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Škoda Octavia III – Wikipedia (de), revizia 270816297 (ani); caroserie: ADAC Autokatalog: Skoda Octavia 1.2 TSI Active (02/13 - 04/15)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_III&oldid=270816297",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "skoda-superb-2",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Škoda",
+      "model": "Superb",
+      "generation": "II",
+      "years": {
+        "from": 2008,
+        "to": 2015
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 4000,
+        "high": 5400,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Škoda Superb II – Wikipedia (de), revizia 270798955 (ani); caroserie: ADAC Autokatalog: Skoda Superb 1.4 TSI Comfort (07/08 - 04/09)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Superb_II&oldid=270798955",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "toyota-auris-2",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Toyota",
+      "model": "Auris",
+      "generation": "II (E18)",
+      "years": {
+        "from": 2012,
+        "to": 2019
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 4200,
+        "high": 5600,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Toyota Auris – Wikipedia (de), revizia 266280695 (ani); caroserie: ADAC Autokatalog: Toyota Auris 1.33 (01/13 - 08/15)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=Toyota_Auris&oldid=266280695",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "toyota-corolla-cross",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Toyota",
+      "model": "Corolla",
+      "generation": "Cross",
+      "years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 15400,
+        "high": 20800,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q97094785 (identitate, CC0) + Wikipedia „Toyota Corolla Cross” rev. 1377994559 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Toyota_Corolla_Cross&oldid=1377994559",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "toyota-corolla-rumion",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Toyota",
+      "model": "Corolla",
+      "generation": "Rumion",
+      "years": {
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 2400,
+        "high": 3300,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q1538045 (identitate, CC0) + Wikipedia „Toyota Corolla Rumion” rev. 1370052928 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Toyota_Corolla_Rumion&oldid=1370052928",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "toyota-yaris-cross",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Toyota",
+      "model": "Yaris",
+      "generation": "Cross",
+      "years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 15400,
+        "high": 20800,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q91621558 (identitate, CC0) + Wikipedia „Toyota Yaris Cross” rev. 1377659374 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Toyota_Yaris_Cross&oldid=1377659374",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "volkswagen-golf-mk8",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "Mk8",
+      "years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 10400,
+        "high": 14000,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q56403002 (identitate, CC0) + Wikipedia „Volkswagen Golf Mk8” rev. 1379442061 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Golf_Mk8&oldid=1379442061",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "volkswagen-golf-sportsvan",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "Sportsvan",
+      "years": {
+        "from": 2014,
+        "to": 2020
+      },
+      "body": "mpv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 7,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 5.6,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 7,
+      "trunk_l": 620,
+      "price_eur": {
+        "low": 6800,
+        "high": 9200,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q15305557 (identitate, CC0) + Wikipedia „Volkswagen Golf Sportsvan” rev. 1347884516 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Golf_Sportsvan&oldid=1347884516",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "volkswagen-passat-lingyu",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Passat",
+      "generation": "Lingyu",
+      "years": {
+        "from": 2005,
+        "to": 2011
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_eur": {
+        "low": 2100,
+        "high": 2900,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q6164698 (identitate, CC0) + Wikipedia „Volkswagen Passat Lingyu” rev. 1380538776 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Passat_Lingyu&oldid=1380538776",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "volkswagen-polo-mk4",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "Mk4",
+      "years": {
+        "from": 2001,
+        "to": 2009
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 1100,
+        "high": 1500,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q1468621 (identitate, CC0) + Wikipedia „Volkswagen Polo Mk4” rev. 1362922193 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Polo_Mk4&oldid=1362922193",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "volkswagen-polo-vi",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "VI",
+      "years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 9500,
+        "high": 12900,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q30349121 (identitate, CC0) + Wikipedia „Volkswagen Polo Mk6” rev. 1377291965 (ani, caroserie)",
+          "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Polo_Mk6&oldid=1377291965",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "volkswagen-tiguan-i",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Tiguan",
+      "generation": "I",
+      "years": {
+        "from": 2007,
+        "to": 2018
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 120,
+          "consumption": {
+            "value": 7.2,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 130,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 115,
+          "consumption": {
+            "value": 9,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_eur": {
+        "low": 4600,
+        "high": 6300,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "Wikidata Q66723843: Volkswagen Tiguan I",
+          "source_url": "https://www.wikidata.org/wiki/Q66723843",
+          "retrieved_on": "2026-10-16",
+          "license": "CC0 1.0"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "vw-golf-6",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "VI",
+      "years": {
+        "from": 2008,
+        "to": 2012
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 2000,
+        "high": 2800,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "VW Golf VI – Wikipedia (de), revizia 271026396 (ani); caroserie: ADAC Autokatalog: VW Golf 1.4 Trendline (5-Türer) (10/08 - 09/12)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VI&oldid=271026396",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "vw-golf-7",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "VII",
+      "years": {
+        "from": 2012,
+        "to": 2021
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 5400,
+        "high": 7300,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "VW Golf VII – Wikipedia (de), revizia 269776737 (ani); caroserie: ADAC Autokatalog: VW Golf 1.2 TSI BMT Trendline (5-Türer) (11/12 - 05/14)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VII&oldid=269776737",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "vw-passat-b7",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Passat Variant",
+      "generation": "B7",
+      "years": {
+        "from": 2010,
+        "to": 2015
+      },
+      "body": "break",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.5,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 5.1,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 560,
+      "price_eur": {
+        "low": 4200,
+        "high": 5700,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "VW Passat B7 – Wikipedia (de), revizia 270469671 (ani); caroserie: ADAC Autokatalog: VW Passat Variant 1.4 TSI Trendline (11/10 - 09/14)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B7&oldid=270469671",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "vw-passat-b8",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Passat Variant",
+      "generation": "B8",
+      "years": {
+        "from": 2014,
+        "to": 2023
+      },
+      "body": "break",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 6.5,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 5.1,
+            "unit": "l/100km",
+            "cycle": "WLTP"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 560,
+      "price_eur": {
+        "low": 8800,
+        "high": 11900,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "VW Passat B8 – Wikipedia (de), revizia 271369885 (ani); caroserie: ADAC Autokatalog: VW Passat Variant 1.4 TSI BMT Trendline (10/14 - 07/18)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B8&oldid=271369885",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+        },
+        {
+          "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+          "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+          "retrieved_on": "2026-10-16",
+          "license": "synthetic"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "vw-polo-5",
+      "verified": false,
+      "is_demo": true,
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "V",
+      "years": {
+        "from": 2009,
+        "to": 2017
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 100,
+          "consumption": {
+            "value": 5.8,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 110,
+          "consumption": {
+            "value": 4.4,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1400,
+          "hp": 95,
+          "consumption": {
+            "value": 7.3,
+            "unit": "l/100km",
+            "cycle": "NEDC"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 340,
+      "price_eur": {
+        "low": 2700,
+        "high": 3600,
+        "n_listings": null,
+        "collected_on": "2026-10-16",
+        "kind": "synthetic",
+        "notes": "preț sintetic DEMO, nu provine din anunțuri",
+        "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",
+        "source_url": "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md",
+        "retrieved_on": "2026-10-16",
+        "license": "synthetic",
+        "verified": false,
+        "is_demo": true
+      },
+      "sources": [
+        {
+          "source_title": "VW Polo V – Wikipedia (de), revizia 270680387 (ani); caroserie: ADAC Autokatalog: VW Polo 1.2 Trendline (5-Türer) (06/09 - 01/14)",
+          "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Polo_V&oldid=270680387",
+          "retrieved_on": "2026-10-16",
+          "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
         },
         {
           "source_title": "Valori sintetice DEMO (formulă deterministă, docs/DEMO_DATA.md)",

@@ -1,0 +1,3340 @@
+[
+  {
+    "qid": "Q473441",
+    "label": "Audi A3 8L",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758740",
+    "label": "Audi A3 8P",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758738",
+    "label": "Audi A3 8V",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q86849539",
+    "label": "Audi A3 8Y",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q17310393",
+    "label": "Audi A3 e-tron",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q124964066",
+    "label": "Audi A4 allroad",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758746",
+    "label": "Audi A4 allroad quattro",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758742",
+    "label": "Audi A4 B6",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2000,
+      "to": 2006
+    },
+    "body": null
+  },
+  {
+    "qid": "Q758743",
+    "label": "Audi A4 B7",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2004,
+      "to": 2008
+    },
+    "body": null
+  },
+  {
+    "qid": "Q289369",
+    "label": "Audi A4 B8",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2007,
+      "to": 2015
+    },
+    "body": null
+  },
+  {
+    "qid": "Q20760348",
+    "label": "Audi A4 B9",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758806",
+    "label": "Audi A6 allroad quattro",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Audi allroad quattro",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758748",
+    "label": "Audi A6 C4",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758749",
+    "label": "Audi A6 C5",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758750",
+    "label": "Audi A6 C6",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q758751",
+    "label": "Audi A6 C7",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1994–present; 2000–present (China)\": year_to = retrieval year",
+    "enwiki": "Audi A6 C7",
+    "years": {
+      "from": 1994,
+      "to": 2026
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q132129018",
+    "label": "Audi A6 C9",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q106793330",
+    "label": "Audi A6 e-tron",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q56301637",
+    "label": "Audi Q3 F3",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q60849762",
+    "label": "Audi Q3 Sportback",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"2011–present\": year_to = retrieval year",
+    "enwiki": "Audi Q3 Sportback",
+    "years": {
+      "from": 2011,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q28225771",
+    "label": "Audi Q5 8R",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q109649502",
+    "label": "Audi Q5 e-tron",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q27670168",
+    "label": "Audi Q5 FY",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q131514007",
+    "label": "Audi Q5 III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q100326648",
+    "label": "Audi Q5 Sportback",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"2008–present\": year_to = retrieval year",
+    "enwiki": "Audi Q5 Sportback",
+    "years": {
+      "from": 2008,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q25381838",
+    "label": "Audi Q7 4M",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q64085785",
+    "label": "BMW 1 Series (F40)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „BMW 1 Series (F40)” covers the whole model line; infobox not used",
+    "enwiki": "BMW 1 Series (F40)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q756792",
+    "label": "BMW 3 Series (E46)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „BMW 3 Series (E46)” covers the whole model line; infobox not used",
+    "enwiki": "BMW 3 Series (E46)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q626846",
+    "label": "BMW 3 Series (F30)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „BMW 3 Series (F30)” covers the whole model line; infobox not used",
+    "enwiki": "BMW 3 Series (F30)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q56856213",
+    "label": "BMW 3 Series (G20)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „BMW 3 Series (G20)” covers the whole model line; infobox not used",
+    "enwiki": "BMW 3 Series (G20)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q4311136",
+    "label": "BMW 3 Series Gran Turismo",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "BMW 3 Series Gran Turismo",
+    "years": {
+      "from": 2011,
+      "to": 2018
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q387566",
+    "label": "BMW 5 Series Gran Turismo",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "BMW 5 Series Gran Turismo",
+    "years": {
+      "from": 2009,
+      "to": 2016
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q112222244",
+    "label": "BMW X1 (U11)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "Wikipedia „BMW X1 (U11)” covers the whole model line; infobox not used",
+    "enwiki": "BMW X1 (U11)",
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q2647299",
+    "label": "BMW X3 (E83)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „BMW X3 (E83)” covers the whole model line; infobox not used",
+    "enwiki": "BMW X3 (E83)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1860725",
+    "label": "BMW X3 (F25)",
+    "wikidata_years": true,
+    "wikidata_body": "suv",
+    "note": "Wikipedia „BMW X3 (F25)” covers the whole model line; infobox not used",
+    "enwiki": "BMW X3 (F25)",
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q125509400",
+    "label": "BMW X5 M Competition",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5122855",
+    "label": "Citroën Berlingo électrique",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Citroën Berlingo électrique",
+    "years": {
+      "from": 1998,
+      "to": 2005
+    },
+    "body": null
+  },
+  {
+    "qid": "Q118237449",
+    "label": "Citroën Berlingo III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q108760254",
+    "label": "Citroën C3 (CC21)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Citroën C3 (CC21)” covers the whole model line; infobox not used",
+    "enwiki": "Citroën C3 (CC21)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5122860",
+    "label": "Citroën C3 Aircross",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"2010–2020 (Latin America); 2017–present (Europe)\": year_to = retrieval year",
+    "enwiki": "Citroën C3 Aircross",
+    "years": {
+      "from": 2010,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q39076504",
+    "label": "Citroën C3 Aircross (2017)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q125574525",
+    "label": "Citroën C3 Aircross (CC24)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q16039942",
+    "label": "Citroën C3 I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2974494",
+    "label": "Citroën C3 II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q20724366",
+    "label": "Citroën C3 III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q123113826",
+    "label": "Citroën C3 IV",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q1630402",
+    "label": "Citroën C3 Picasso",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Citroën C3 Picasso",
+    "years": {
+      "from": 2008,
+      "to": 2017
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q2140125",
+    "label": "Citroën C3 Pluriel",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"April 2002 – present\": year_to = retrieval year",
+    "enwiki": "Citroën C3 Pluriel",
+    "years": {
+      "from": 2002,
+      "to": 2026
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q86670161",
+    "label": "Citroën C4 (2020)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q1637418",
+    "label": "Citroën C4 Aircross",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": "Citroën C4 Aircross",
+    "years": {
+      "from": 2012,
+      "to": 2017
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q2443038",
+    "label": "Citroën C4 Cactus",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": "Citroën C4 Cactus",
+    "years": {
+      "from": 2014,
+      "to": 2024
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q1141318",
+    "label": "Citroën C4 Picasso",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Citroën C4 Picasso",
+    "years": {
+      "from": 2006,
+      "to": 2022
+    },
+    "body": null
+  },
+  {
+    "qid": "Q113147169",
+    "label": "Citroën C4 Picasso (1st generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q112806529",
+    "label": "Citroën C4 X",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q29402168",
+    "label": "Citroën C5 Aircross",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "production \"2017–present\": year_to = retrieval year",
+    "enwiki": "Citroën C5 Aircross",
+    "years": {
+      "from": 2017,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q18589891",
+    "label": "Citroën C5 I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q18745497",
+    "label": "Citroën C5 II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q30750112",
+    "label": "Citroën C5 X",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "production \"ubl June 2021 – present (China) 2022–2025 (United Kingdom and Ireland) 2022–2026 (Europe)\": year_to = retrieval year",
+    "enwiki": "Citroën C5 X",
+    "years": {
+      "from": 2021,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q82263266",
+    "label": "Dacia Dokker I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q126083830",
+    "label": "Dacia Dokker II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q48746330",
+    "label": "Dacia Duster I",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q39075664",
+    "label": "Dacia Duster II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3011626",
+    "label": "Dacia Logan I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"2004–present\": year_to = retrieval year",
+    "enwiki": "Dacia Logan I",
+    "years": {
+      "from": 2004,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q48746437",
+    "label": "Dacia Logan II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q85980648",
+    "label": "Dacia Logan Pick-Up",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q20965598",
+    "label": "Dacia Sandero I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q20965597",
+    "label": "Dacia Sandero II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q81656534",
+    "label": "Dacia Sandero III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"2008–present\": year_to = retrieval year",
+    "enwiki": "Dacia Sandero III",
+    "years": {
+      "from": 2008,
+      "to": 2026
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q126085521",
+    "label": "Dacia Sandero Stepway I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q126085460",
+    "label": "Dacia Sandero Stepway II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q126085442",
+    "label": "Dacia Sandero Stepway III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3071163",
+    "label": "Fiat 500 Giannini",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3071164",
+    "label": "Fiat 500 Moretti Coupé",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Fiat 500 Moretti Coupe",
+    "years": {
+      "from": 1961,
+      "to": 1969
+    },
+    "body": null
+  },
+  {
+    "qid": "Q636082",
+    "label": "Fiat 500 Topolino",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Fiat 500 \"Topolino\"",
+    "years": {
+      "from": 1936,
+      "to": 1955
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q118236623",
+    "label": "Fiat Doblò Mk1",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90670742",
+    "label": "Fiat Doblò Mk2",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q118236629",
+    "label": "Fiat Doblò Mk3",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q16555927",
+    "label": "Fiat Punto Abarth",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q542298",
+    "label": "Fiat Tipo 6",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q967959",
+    "label": "Ford C-Max Energi",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Ford C-Max Energi",
+    "years": {
+      "from": 2003,
+      "to": 2019
+    },
+    "body": "mpv"
+  },
+  {
+    "qid": "Q90702584",
+    "label": "Ford EcoSport (2nd generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q31837515",
+    "label": "Ford Fiesta (1995)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (fourth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (fourth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q31837516",
+    "label": "Ford Fiesta (2002)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (fifth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (fifth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q31837520",
+    "label": "Ford Fiesta (2017)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (seventh generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (seventh generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90702639",
+    "label": "Ford Fiesta Active MK7",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q19481222",
+    "label": "Ford Fiesta Mk1",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (first generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (first generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q19481225",
+    "label": "Ford Fiesta Mk2",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (second generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (second generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q12063185",
+    "label": "Ford Fiesta MK6",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (sixth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (sixth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90702622",
+    "label": "Ford Fiesta MK7 Hybrid",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q2554248",
+    "label": "Ford Fiesta S2000",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Ford Fiesta S2000",
+    "years": {
+      "from": 2009,
+      "to": 2009
+    },
+    "body": null
+  },
+  {
+    "qid": "Q90924138",
+    "label": "Ford Fiesta ST MK6",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90702637",
+    "label": "Ford Fiesta ST MK7",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5467775",
+    "label": "Ford Fiesta third generation",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Fiesta (third generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Fiesta (third generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2991815",
+    "label": "Ford Focus (North American)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Focus (North America)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Focus (North America)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5467778",
+    "label": "Ford Focus 2nd generation",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Focus (second generation, North America)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Focus (second generation, North America)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90020578",
+    "label": "Ford Focus Active Mk IV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2545532",
+    "label": "Ford Focus CC",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5467783",
+    "label": "Ford Focus Electric",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q1436829",
+    "label": "Ford Focus FCV Hybrid",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q5467780",
+    "label": "Ford Focus Mk I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Focus (first generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Focus (first generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5467779",
+    "label": "Ford Focus Mk II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Focus (second generation, Europe)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Focus (second generation, Europe)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q4038895",
+    "label": "Ford Focus Mk III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Focus (third generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Focus (third generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q138645532",
+    "label": "Ford Focus Mk III (Facelift)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q4180769",
+    "label": "Ford Focus RS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90919712",
+    "label": "Ford Focus RS Mk I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90919706",
+    "label": "Ford Focus RS Mk III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q11698416",
+    "label": "Ford Focus ST",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90924033",
+    "label": "Ford Focus ST Mk III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90702597",
+    "label": "Ford Kuga (second generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q123084062",
+    "label": "Ford Kuga Titanium WP 2013",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q18355800",
+    "label": "Ford Mondeo 2nd generation",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Ford Mondeo (second generation)” covers the whole model line; infobox not used",
+    "enwiki": "Ford Mondeo (second generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q106576911",
+    "label": "Ford Mondeo Sport",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "production \"2021–present\": year_to = retrieval year",
+    "enwiki": "Ford Mondeo Sport",
+    "years": {
+      "from": 2021,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q91026638",
+    "label": "Honda Accord (1976)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1626473",
+    "label": "Honda Accord (1997)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1626472",
+    "label": "Honda Accord (fifth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1319709",
+    "label": "Honda Accord (first generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1626468",
+    "label": "Honda Accord (fourth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q27576500",
+    "label": "Honda Accord (ninth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Accord (ninth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Accord (ninth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q10860903",
+    "label": "Honda Accord (North America seventh generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Accord (North America seventh generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Accord (North America seventh generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1515648",
+    "label": "Honda Accord (second generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q55525531",
+    "label": "Honda Accord (tenth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1626467",
+    "label": "Honda Accord (third generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q91026636",
+    "label": "Honda Accord Aero Deck",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q11338232",
+    "label": "Honda Accord Euro R",
+    "wikidata_years": false,
+    "wikidata_body": "sedan",
+    "enwiki": null,
+    "years": null,
+    "body": "sedan"
+  },
+  {
+    "qid": "Q1506812",
+    "label": "Honda Civic (eighth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (eighth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (eighth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1518795",
+    "label": "Honda Civic (fifth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (fifth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (fifth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q844777",
+    "label": "Honda Civic (first generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (first generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (first generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1268524",
+    "label": "Honda Civic (fourth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (fourth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (fourth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1626573",
+    "label": "Honda Civic (ninth generation)",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (ninth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (ninth generation)",
+    "years": {
+      "from": 2011,
+      "to": 2016
+    },
+    "body": null
+  },
+  {
+    "qid": "Q844774",
+    "label": "Honda Civic (second generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (second generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (second generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1626569",
+    "label": "Honda Civic (sixth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (sixth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (sixth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q27061986",
+    "label": "Honda Civic 10th generation",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (tenth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (tenth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q107002471",
+    "label": "Honda Civic 11th generation",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (eleventh generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (eleventh generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1519939",
+    "label": "Honda Civic 7th generation",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda Civic (seventh generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda Civic (seventh generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5892415",
+    "label": "Honda Civic GX",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Honda Civic GX",
+    "years": {
+      "from": 1998,
+      "to": 2015
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q1626577",
+    "label": "Honda Civic Hybrid",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q8214024",
+    "label": "Honda Civic Si",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1972–present\": year_to = retrieval year",
+    "enwiki": "Honda Civic Si",
+    "years": {
+      "from": 1972,
+      "to": 2026
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q107336578",
+    "label": "Honda Civic Type R FL5",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q112702286",
+    "label": "Honda CR-V (fifth generation)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "Wikipedia „Honda CR-V (fifth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda CR-V (fifth generation)",
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q27247515",
+    "label": "Honda CR-V (fourth generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda CR-V (fourth generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda CR-V (fourth generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q27279006",
+    "label": "Honda CR-V (third generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Honda CR-V (third generation)” covers the whole model line; infobox not used",
+    "enwiki": "Honda CR-V (third generation)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1740747",
+    "label": "Kia cee'd (ED)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q109735634",
+    "label": "Kia Niro (SG2)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q62098509",
+    "label": "Kia Niro EV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q55380613",
+    "label": "Kia Picanto (JA)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q55380620",
+    "label": "Kia Picanto (SA)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q55380616",
+    "label": "Kia Picanto (TA)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q108131612",
+    "label": "Mercedes-Benz C-Class All-Terrain",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q131343421",
+    "label": "Mercedes-Benz GLC Coupe",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q131339943",
+    "label": "Nissan Micra (K10)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q131339964",
+    "label": "Nissan Micra (K11)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q120752349",
+    "label": "Nissan Micra (K12)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q11086837",
+    "label": "Nissan Micra C+C",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q113648974",
+    "label": "Nissan Note (E11)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q11509846",
+    "label": "Nissan Note (E12)",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q114566698",
+    "label": "Nissan Note (E13)",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q107471625",
+    "label": "Nissan Note Aura",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q116256985",
+    "label": "Nissan Qashqai (J10)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "Wikipedia „Nissan Qashqai (first generation)” covers the whole model line; infobox not used",
+    "enwiki": "Nissan Qashqai (first generation)",
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q10337031",
+    "label": "Nissan Qashqai +2",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q126424490",
+    "label": "Nissan X-Trail I",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q7095661",
+    "label": "Opel Astra 200t S",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra 200t S",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q898479",
+    "label": "Opel Astra F",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra F",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q1333038",
+    "label": "Opel Astra G",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra G",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q1777731",
+    "label": "Opel Astra H",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra H",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q2068639",
+    "label": "Opel Astra J",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra J",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q21387421",
+    "label": "Opel Astra K",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra K",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q108273102",
+    "label": "Opel Astra L",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "production \"1991–present\": year_to = retrieval year",
+    "enwiki": "Opel Astra L",
+    "years": {
+      "from": 1991,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q2623139",
+    "label": "Opel Corsa C",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2000,
+      "to": 2006
+    },
+    "body": null
+  },
+  {
+    "qid": "Q840279",
+    "label": "Opel Corsa D",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2006,
+      "to": 2014
+    },
+    "body": null
+  },
+  {
+    "qid": "Q17433343",
+    "label": "Opel Corsa E",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2014,
+      "to": 2019
+    },
+    "body": null
+  },
+  {
+    "qid": "Q64414857",
+    "label": "Opel Corsa Electric",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q64864080",
+    "label": "Opel Corsa F",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90921548",
+    "label": "Opel Corsa OPC",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q107481355",
+    "label": "Opel Corsa R5",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"plainlist *1982–present (Europe) *1993–present (Vauxhall brand)\": year_to = retrieval year",
+    "enwiki": "Opel Corsa R5",
+    "years": {
+      "from": 1982,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q125574608",
+    "label": "Opel Grandland B",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q125574658",
+    "label": "Opel Grandland X",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q29561480",
+    "label": "Opel Insignia A Sedan",
+    "wikidata_years": true,
+    "wikidata_body": "sedan",
+    "enwiki": null,
+    "years": {
+      "from": 2008,
+      "to": 2017
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q96638978",
+    "label": "Opel Insignia B",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q31837345",
+    "label": "Opel Insignia B Grand Sport",
+    "wikidata_years": false,
+    "wikidata_body": "hatchback",
+    "enwiki": null,
+    "years": null,
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q111285641",
+    "label": "Opel Insignia Sports Tourer",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2025198",
+    "label": "Opel Meriva A",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2025195",
+    "label": "Opel Meriva B",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q97730969",
+    "label": "Opel Mokka A",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q97705167",
+    "label": "Opel Mokka B",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3882867",
+    "label": "Opel Zafira A",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3882868",
+    "label": "Opel Zafira B",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3882869",
+    "label": "Opel Zafira C",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q71425148",
+    "label": "Peugeot 2008 A",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q64901292",
+    "label": "Peugeot 2008 B",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q6166410",
+    "label": "Peugeot 207 Compact",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2006832",
+    "label": "Peugeot 207 S2000",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Peugeot 207 S2000",
+    "years": {
+      "from": 2007,
+      "to": 2007
+    },
+    "body": null
+  },
+  {
+    "qid": "Q60846030",
+    "label": "Peugeot 208 B",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q15993852",
+    "label": "Peugeot 208 T16",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Peugeot 208 T16",
+    "years": {
+      "from": 2014,
+      "to": 2014
+    },
+    "body": null
+  },
+  {
+    "qid": "Q25377650",
+    "label": "Peugeot 3008 B",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q122167461",
+    "label": "Peugeot 3008 C",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q6023973",
+    "label": "Peugeot 307 Sw black 2015",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90921854",
+    "label": "Peugeot 308 B GTi",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3377742",
+    "label": "Peugeot 308 II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q97190015",
+    "label": "Peugeot 308 III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1867409",
+    "label": "Peugeot 308 RC Z",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q28919318",
+    "label": "Peugeot 5008 II",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q47537801",
+    "label": "Peugeot 508 A",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q48751594",
+    "label": "Peugeot 508 B",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q65147399",
+    "label": "Renault Captur II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3425018",
+    "label": "Renault Clio I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q5114820",
+    "label": "Renault Clio II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2085581",
+    "label": "Renault Clio III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3425019",
+    "label": "Renault Clio III RS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3425021",
+    "label": "Renault Clio IV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90921904",
+    "label": "Renault Clio RS III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q48756503",
+    "label": "Renault Clio V",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3503489",
+    "label": "Renault Clio V6 Renault Sport",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Renault Clio V6 RS",
+    "years": {
+      "from": 2001,
+      "to": 2005
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q16595566",
+    "label": "Renault Laguna I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q16595571",
+    "label": "Renault Laguna II",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": {
+      "from": 2001,
+      "to": 2007
+    },
+    "body": null
+  },
+  {
+    "qid": "Q16595574",
+    "label": "Renault Laguna III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q108380585",
+    "label": "Renault Mégane E-Tech Electric",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q16595579",
+    "label": "Renault Mégane I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q16595583",
+    "label": "Renault Mégane II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90921972",
+    "label": "Renault Mégane II RS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q16595586",
+    "label": "Renault Mégane III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q9068006",
+    "label": "Renault Megane III RS Trophy",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q20899924",
+    "label": "Renault Mégane IV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q27148489",
+    "label": "Renault Mégane IV RS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90885183",
+    "label": "Renault Mégane IV RS Trophy",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q122167780",
+    "label": "Renault Scénic E-Tech",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"2024–present\": year_to = retrieval year",
+    "enwiki": "Renault Scenic E-Tech",
+    "years": {
+      "from": 2024,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q16041093",
+    "label": "Renault Scénic I",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q3425081",
+    "label": "Renault Scénic II",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q2366830",
+    "label": "Renault Scénic III",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q29993764",
+    "label": "Renault Scénic IV",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": null,
+    "years": null,
+    "body": "mpv"
+  },
+  {
+    "qid": "Q112112071",
+    "label": "Renault Scénic Vision",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q119575950",
+    "label": "Renault Symbol II",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q126083756",
+    "label": "Renault Symbol III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q126083679",
+    "label": "Renault Symbol IV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q391966",
+    "label": "Škoda Fabia I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q391971",
+    "label": "Škoda Fabia II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q18410434",
+    "label": "Škoda Fabia III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q20354830",
+    "label": "Škoda Fabia R5",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Škoda Fabia R5",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q65042038",
+    "label": "Škoda Fabia Rally2 evo",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Škoda Fabia R5/Rally2 evo",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q65246931",
+    "label": "Škoda Kamiq (China)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "Wikipedia „Škoda Kamiq (China)” covers the whole model line; infobox not used",
+    "enwiki": "Škoda Kamiq (China)",
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q59572019",
+    "label": "Škoda Kodiaq GT",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q90700853",
+    "label": "Škoda Kodiaq RS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2439814",
+    "label": "Škoda Octavia (1959)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Škoda Octavia (1959)” covers the whole model line; infobox not used",
+    "enwiki": "Škoda Octavia (1959)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90882055",
+    "label": "Škoda Octavia Combi (1961 - 1971)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392017",
+    "label": "Škoda Octavia I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392018",
+    "label": "Škoda Octavia II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1609671",
+    "label": "Škoda Octavia III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q75030046",
+    "label": "Škoda Octavia IV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q16689282",
+    "label": "Škoda Octavia RS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q10396630",
+    "label": "Škoda Octavia Scout",
+    "wikidata_years": false,
+    "wikidata_body": "break",
+    "enwiki": null,
+    "years": null,
+    "body": "break"
+  },
+  {
+    "qid": "Q90883266",
+    "label": "Škoda Octavia Super",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90883477",
+    "label": "Škoda Octavia Touring Sport (1960 - 1964)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90701134",
+    "label": "Škoda Rapid (China)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392036",
+    "label": "Škoda Rapid (India)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Škoda Rapid (India)” covers the whole model line; infobox not used",
+    "enwiki": "Škoda Rapid (India)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392040",
+    "label": "Škoda Rapid 2200",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392047",
+    "label": "Škoda Rapid Six",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Škoda Rapid Six",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q23661383",
+    "label": "Škoda Rapid Spaceback",
+    "wikidata_years": false,
+    "wikidata_body": "hatchback",
+    "enwiki": null,
+    "years": null,
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q90701141",
+    "label": "Škoda Rapid Sport",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392063",
+    "label": "Škoda Superb I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q392067",
+    "label": "Škoda Superb II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q19758190",
+    "label": "Škoda Superb III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q17371581",
+    "label": "Suzuki Swift 2004",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q18413302",
+    "label": "Suzuki Vitara (2015)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q24576578",
+    "label": "Toyota Auris Touring Sports",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q14552566",
+    "label": "Toyota Avensis Verso",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Toyota Avensis Verso",
+    "years": {
+      "from": 1995,
+      "to": 2010
+    },
+    "body": null
+  },
+  {
+    "qid": "Q133261543",
+    "label": "Toyota C-HR (AX10/AX50)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q124672626",
+    "label": "Toyota C-HR (AX20)",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q14517244",
+    "label": "Toyota Corolla (E160)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E160)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E160)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q16879264",
+    "label": "Toyota Corolla (E170/E180)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E170)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E170)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q55533476",
+    "label": "Toyota Corolla (E210)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E210)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E210)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q97495845",
+    "label": "Toyota Corolla (eleventh generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q20826097",
+    "label": "Toyota Corolla Altis",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2447082",
+    "label": "Toyota Corolla Axio",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q97094785",
+    "label": "Toyota Corolla Cross",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "production \"July 2020 – present\": year_to = retrieval year",
+    "enwiki": "Toyota Corolla Cross",
+    "years": {
+      "from": 2020,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q921838",
+    "label": "Toyota Corolla E110",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E110)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E110)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2726227",
+    "label": "Toyota Corolla E120",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E120)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E120)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3536054",
+    "label": "Toyota Corolla E140",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E140)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E140)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90013778",
+    "label": "Toyota Corolla E50",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1977620",
+    "label": "Toyota Corolla E90",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Corolla (E90)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Corolla (E90)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q92314244",
+    "label": "Toyota Corolla EX",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q10383914",
+    "label": "Toyota Corolla Fielder",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q11321631",
+    "label": "Toyota Corolla II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q11321636",
+    "label": "Toyota Corolla Levin",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Toyota Corolla Levin",
+    "years": {
+      "from": 1972,
+      "to": 2000
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q116149159",
+    "label": "Toyota Corolla Quest",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1538045",
+    "label": "Toyota Corolla Rumion",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": "Toyota Corolla Rumion",
+    "years": {
+      "from": 2007,
+      "to": 2015
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q4051648",
+    "label": "Toyota Corolla Spacio",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Toyota Corolla Spacio",
+    "years": {
+      "from": 1997,
+      "to": 2007
+    },
+    "body": "break"
+  },
+  {
+    "qid": "Q85872501",
+    "label": "Toyota Corolla Touring",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2655621",
+    "label": "Toyota RAV4 EV",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  },
+  {
+    "qid": "Q110903182",
+    "label": "Toyota Yaris (XP130)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q60740801",
+    "label": "Toyota Yaris (XP150)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Yaris (XP150)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Yaris (XP150)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q106244191",
+    "label": "Toyota Yaris (XP210)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Toyota Yaris (XP210)” covers the whole model line; infobox not used",
+    "enwiki": "Toyota Yaris (XP210)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q106612215",
+    "label": "Toyota Yaris (XP90)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q91621558",
+    "label": "Toyota Yaris Cross",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "note": "production \"unbulleted list 2020–present (XP210) 2023–present (AC200)\": year_to = retrieval year",
+    "enwiki": "Toyota Yaris Cross",
+    "years": {
+      "from": 2020,
+      "to": 2026
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q2064620",
+    "label": "Toyota Yaris Verso",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": "Toyota Yaris Verso",
+    "years": {
+      "from": 1999,
+      "to": 2005
+    },
+    "body": "mpv"
+  },
+  {
+    "qid": "Q3562806",
+    "label": "Volkswagen Golf City",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1428988",
+    "label": "Volkswagen Golf Mk5",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Golf Mk5",
+    "years": {
+      "from": 2003,
+      "to": 2009
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q1417956",
+    "label": "Volkswagen Golf Mk6",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Golf Mk6",
+    "years": {
+      "from": 2008,
+      "to": 2012
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q62362",
+    "label": "Volkswagen Golf Mk7",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Golf Mk7",
+    "years": {
+      "from": 2012,
+      "to": 2021
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q56403002",
+    "label": "Volkswagen Golf Mk8",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "production \"2019–present\": year_to = retrieval year",
+    "enwiki": "Volkswagen Golf Mk8",
+    "years": {
+      "from": 2019,
+      "to": 2026
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q1886304",
+    "label": "Volkswagen Golf Plus",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": "Volkswagen Golf Plus",
+    "years": {
+      "from": 2004,
+      "to": 2014
+    },
+    "body": "mpv"
+  },
+  {
+    "qid": "Q12072922",
+    "label": "Volkswagen Golf R",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q12072923",
+    "label": "Volkswagen Golf R32",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q15305557",
+    "label": "Volkswagen Golf Sportsvan",
+    "wikidata_years": false,
+    "wikidata_body": "mpv",
+    "enwiki": "Volkswagen Golf Sportsvan",
+    "years": {
+      "from": 2014,
+      "to": 2020
+    },
+    "body": "mpv"
+  },
+  {
+    "qid": "Q1779716",
+    "label": "Volkswagen Golf Variant",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q3562808",
+    "label": "Volkswagen Jetta City",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2506811",
+    "label": "Volkswagen Jetta I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Jetta (A1)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Jetta (A1)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q282455",
+    "label": "Volkswagen Jetta II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Jetta (A2)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Jetta (A2)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1386561",
+    "label": "Volkswagen Jetta König",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Jetta (China)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Jetta (China)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q13386136",
+    "label": "Volkswagen Jetta Night",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Jetta Night",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q13389960",
+    "label": "Volkswagen Jetta Pionier",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Jetta Pioneer",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2506848",
+    "label": "Volkswagen Jetta V",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Jetta (A5)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Jetta (A5)",
+    "years": {
+      "from": 2005,
+      "to": 2010
+    },
+    "body": null
+  },
+  {
+    "qid": "Q1537473",
+    "label": "Volkswagen Jetta VI",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Jetta (A6)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Jetta (A6)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q56218637",
+    "label": "Volkswagen Jetta VII",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Jetta (A7)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Jetta (A7)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q12072924",
+    "label": "Volkswagen Passat Alltrack",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2007788",
+    "label": "Volkswagen Passat B6",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Passat (B6)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Passat (B6)",
+    "years": {
+      "from": 2005,
+      "to": 2010
+    },
+    "body": null
+  },
+  {
+    "qid": "Q1140232",
+    "label": "Volkswagen Passat B7",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Passat (B7)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Passat (B7)",
+    "years": {
+      "from": 2010,
+      "to": 2015
+    },
+    "body": null
+  },
+  {
+    "qid": "Q15305561",
+    "label": "Volkswagen Passat B8",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Passat (B8)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Passat (B8)",
+    "years": {
+      "from": 2014,
+      "to": 2024
+    },
+    "body": null
+  },
+  {
+    "qid": "Q122145519",
+    "label": "Volkswagen Passat B9",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Passat (B9)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Passat (B9)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q6164698",
+    "label": "Volkswagen Passat Lingyu",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Passat Lingyu",
+    "years": {
+      "from": 2005,
+      "to": 2011
+    },
+    "body": "sedan"
+  },
+  {
+    "qid": "Q2506880",
+    "label": "Volkswagen Passat NMS",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Passat (North America and China)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Passat (North America and China)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q13415255",
+    "label": "Volkswagen Passat Variant",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "production \"1973–present\": year_to = retrieval year",
+    "enwiki": "Volkswagen Passat Variant",
+    "years": {
+      "from": 1973,
+      "to": 2026
+    },
+    "body": null
+  },
+  {
+    "qid": "Q7221174",
+    "label": "Volkswagen Polo G40",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Polo G40",
+    "years": {
+      "from": 1987,
+      "to": 1994
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q60748228",
+    "label": "Volkswagen Polo GTI R5",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Polo GTI R5",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q1468621",
+    "label": "Volkswagen Polo Mk4",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Polo Mk4",
+    "years": {
+      "from": 2001,
+      "to": 2009
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q2063072",
+    "label": "Volkswagen Polo Mk5",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "note": "production \"indented plainlist * 2009–2017 * 2010–2020 (Russia) * 2010–2022 (India) * 2018–present (Polo Vivo, South Africa and Kenya)\": year_to = retrieval year",
+    "enwiki": "Volkswagen Polo Mk5",
+    "years": {
+      "from": 2009,
+      "to": 2026
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q7940332",
+    "label": "Volkswagen Polo Playa",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Polo Playa",
+    "years": {
+      "from": 1998,
+      "to": 2002
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q15989126",
+    "label": "Volkswagen Polo sedan",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q97773470",
+    "label": "Volkswagen Polo Sedan",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "note": "Wikipedia „Volkswagen Polo (CK)” covers the whole model line; infobox not used",
+    "enwiki": "Volkswagen Polo (CK)",
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q14516278",
+    "label": "Volkswagen Polo Super 2000",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2506900",
+    "label": "Volkswagen Polo Variant",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q30349121",
+    "label": "Volkswagen Polo VI",
+    "wikidata_years": true,
+    "wikidata_body": null,
+    "enwiki": "Volkswagen Polo Mk6",
+    "years": {
+      "from": 2017,
+      "to": 2026
+    },
+    "body": "hatchback"
+  },
+  {
+    "qid": "Q2506929",
+    "label": "Volkswagen Sharan I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q2506933",
+    "label": "Volkswagen Sharan II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q66723843",
+    "label": "Volkswagen Tiguan I",
+    "wikidata_years": true,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": {
+      "from": 2007,
+      "to": 2018
+    },
+    "body": "suv"
+  },
+  {
+    "qid": "Q27903023",
+    "label": "Volkswagen Tiguan II",
+    "wikidata_years": false,
+    "wikidata_body": "suv",
+    "enwiki": null,
+    "years": null,
+    "body": "suv"
+  },
+  {
+    "qid": "Q122382000",
+    "label": "Volkswagen Tiguan III",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q106488554",
+    "label": "Volkswagen Tiguan X",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q15229546",
+    "label": "Volkswagen Touran I",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q15229553",
+    "label": "Volkswagen Touran II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90997805",
+    "label": "Volvo S60 (2nd generation)",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90920784",
+    "label": "Volvo XC90 II",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "enwiki": null,
+    "years": null,
+    "body": null
+  },
+  {
+    "qid": "Q90920794",
+    "label": "Volvo XC90 II Plug-in Hybrid",
+    "wikidata_years": false,
+    "wikidata_body": null,
+    "excluded": "electric/hybrid (not in V1)"
+  }
+]

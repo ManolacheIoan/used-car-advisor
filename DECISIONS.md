@@ -1,0 +1,8 @@
+# Decizii (format: decizie — alternative — motiv)
+
+- 2026-10-16 · API-ul public MediaWiki în loc de SPARQL pentru Wikidata — alternative: SPARQL (interzis de robots.txt pe query.wikidata.org), doar pagini /wiki/Q (fără căutare) — confirmat de utilizator; respectă regulile Wikimedia pentru API (User-Agent, ≤ 1 cerere/s).
+- 2026-10-16 · Anii de producție și caroseria pentru catalogul demo vin din infobox-ul articolului Wikipedia (en) legat de elementul Wikidata — alternative: doar Wikidata (≈ 5 % au ani, aproape niciunul caroseria), rânduri fără ani/caroserie — Wikidata nu are aceste câmpuri; Wikipedia e o sursă deschisă (CC BY-SA 4.0), cu revizie fixă pe câmp.
+- 2026-10-16 · Licența datelor ADAC rămâne „unknown” — alternative: „manufacturer facts” — termenii de reutilizare ADAC nu au fost citiți; auditul public le respinge până la confirmare.
+- 2026-10-16 · Catalogul demo are 54 de modele, sub ținta 60–80 — alternative: completare din memorie (interzis), articole generale Wikipedia (anii întregii linii, greșit) — Wikidata/Wikipedia nu au ani/caroserie per generație pentru restul; nu ghicesc.
+- 2026-10-16 · Demo include și cele 30 de modele din CSV (ani din Wikipedia de; caroserie din ADAC, licență neconfirmată) — alternative: doar Wikidata (27 modele) — catalogul demo nu se publică niciodată; auditul public blochează datele fără licență.
+- 2026-10-16 · Modelele electrice/hibride excluse din demo — alternative: includere cu energie hibrid/electric — V1 acoperă doar benzină/motorină/GPL; schema rămâne pregătită (ROADMAP V2).

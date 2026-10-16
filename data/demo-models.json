@@ -2,414 +2,6 @@
   "generated_on": "2026-10-16",
   "models": [
     {
-      "id": "dacia-logan-1",
-      "brand": "Dacia",
-      "model": "Logan",
-      "generation": "I",
-      "years": {
-        "from": 2004,
-        "to": 2013
-      },
-      "body": "sedan",
-      "source": {
-        "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "dacia-logan-mcv-2",
-      "brand": "Dacia",
-      "model": "Logan MCV",
-      "generation": "II",
-      "years": {
-        "from": 2012,
-        "to": 2020
-      },
-      "body": "break",
-      "source": {
-        "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "dacia-sandero-2",
-      "brand": "Dacia",
-      "model": "Sandero",
-      "generation": "II",
-      "years": {
-        "from": 2012,
-        "to": 2022
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "dacia-sandero-3",
-      "brand": "Dacia",
-      "model": "Sandero",
-      "generation": "III",
-      "years": {
-        "from": 2021,
-        "to": 2026
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "dacia-duster-1",
-      "brand": "Dacia",
-      "model": "Duster",
-      "generation": "I",
-      "years": {
-        "from": 2010,
-        "to": 2018
-      },
-      "body": "suv",
-      "source": {
-        "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "dacia-duster-2",
-      "brand": "Dacia",
-      "model": "Duster",
-      "generation": "II",
-      "years": {
-        "from": 2018,
-        "to": 2024
-      },
-      "body": "suv",
-      "source": {
-        "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "vw-golf-6",
-      "brand": "Volkswagen",
-      "model": "Golf",
-      "generation": "VI",
-      "years": {
-        "from": 2008,
-        "to": 2012
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "VW Golf VI – Wikipedia (de), revizia 271026396",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VI&oldid=271026396",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "vw-golf-7",
-      "brand": "Volkswagen",
-      "model": "Golf",
-      "generation": "VII",
-      "years": {
-        "from": 2012,
-        "to": 2021
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "VW Golf VII – Wikipedia (de), revizia 269776737",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VII&oldid=269776737",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "vw-passat-b7",
-      "brand": "Volkswagen",
-      "model": "Passat Variant",
-      "generation": "B7",
-      "years": {
-        "from": 2010,
-        "to": 2015
-      },
-      "body": "break",
-      "source": {
-        "source_title": "VW Passat B7 – Wikipedia (de), revizia 270469671",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B7&oldid=270469671",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "vw-passat-b8",
-      "brand": "Volkswagen",
-      "model": "Passat Variant",
-      "generation": "B8",
-      "years": {
-        "from": 2014,
-        "to": 2023
-      },
-      "body": "break",
-      "source": {
-        "source_title": "VW Passat B8 – Wikipedia (de), revizia 271369885",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B8&oldid=271369885",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "vw-polo-5",
-      "brand": "Volkswagen",
-      "model": "Polo",
-      "generation": "V",
-      "years": {
-        "from": 2009,
-        "to": 2017
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "VW Polo V – Wikipedia (de), revizia 270680387",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Polo_V&oldid=270680387",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "skoda-octavia-2",
-      "brand": "Škoda",
-      "model": "Octavia",
-      "generation": "II",
-      "years": {
-        "from": 2004,
-        "to": 2013
-      },
-      "body": "sedan",
-      "source": {
-        "source_title": "Škoda Octavia II – Wikipedia (de), revizia 269171513",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_II&oldid=269171513",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "skoda-octavia-3",
-      "brand": "Škoda",
-      "model": "Octavia",
-      "generation": "III",
-      "years": {
-        "from": 2012,
-        "to": 2020
-      },
-      "body": "sedan",
-      "source": {
-        "source_title": "Škoda Octavia III – Wikipedia (de), revizia 270816297",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_III&oldid=270816297",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "skoda-fabia-2",
-      "brand": "Škoda",
-      "model": "Fabia",
-      "generation": "II",
-      "years": {
-        "from": 2007,
-        "to": 2014
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Škoda Fabia II – Wikipedia (de), revizia 271026261",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_II&oldid=271026261",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "skoda-fabia-3",
-      "brand": "Škoda",
-      "model": "Fabia",
-      "generation": "III",
-      "years": {
-        "from": 2014,
-        "to": 2022
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Škoda Fabia III – Wikipedia (de), revizia 266321658",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_III&oldid=266321658",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "skoda-superb-2",
-      "brand": "Škoda",
-      "model": "Superb",
-      "generation": "II",
-      "years": {
-        "from": 2008,
-        "to": 2015
-      },
-      "body": "sedan",
-      "source": {
-        "source_title": "Škoda Superb II – Wikipedia (de), revizia 270798955",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Superb_II&oldid=270798955",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "opel-astra-j",
-      "brand": "Opel",
-      "model": "Astra",
-      "generation": "J",
-      "years": {
-        "from": 2009,
-        "to": 2018
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Opel Astra J – Wikipedia (de), revizia 264784765",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_J&oldid=264784765",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "opel-astra-k",
-      "brand": "Opel",
-      "model": "Astra",
-      "generation": "K",
-      "years": {
-        "from": 2015,
-        "to": 2021
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Opel Astra K – Wikipedia (de), revizia 269808467",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_K&oldid=269808467",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "opel-corsa-d",
-      "brand": "Opel",
-      "model": "Corsa",
-      "generation": "D",
-      "years": {
-        "from": 2006,
-        "to": 2014
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Opel Corsa D – Wikipedia (de), revizia 266069531",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Corsa_D&oldid=266069531",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "ford-focus-3",
-      "brand": "Ford",
-      "model": "Focus",
-      "generation": "III",
-      "years": {
-        "from": 2010,
-        "to": 2018
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Ford Focus – Wikipedia (de), revizia 269020316",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Ford_Focus&oldid=269020316",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "renault-clio-4",
-      "brand": "Renault",
-      "model": "Clio",
-      "generation": "IV",
-      "years": {
-        "from": 2012,
-        "to": 2020
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Renault Clio IV – Wikipedia (de), revizia 270039434",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_Clio_IV&oldid=270039434",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "renault-megane-3",
-      "brand": "Renault",
-      "model": "Mégane",
-      "generation": "III",
-      "years": {
-        "from": 2008,
-        "to": 2016
-      },
-      "body": "hatchback",
-      "source": {
-        "source_title": "Renault Mégane III – Wikipedia (de), revizia 262018085",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_M%C3%A9gane_III&oldid=262018085",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "bmw-seria-3-e90",
-      "brand": "BMW",
-      "model": "Seria 3",
-      "generation": "E90",
-      "years": {
-        "from": 2005,
-        "to": 2013
-      },
-      "body": "sedan",
-      "source": {
-        "source_title": "BMW E90 – Wikipedia (de), revizia 270836317",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_E90&oldid=270836317",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
-      "id": "bmw-seria-3-f30",
-      "brand": "BMW",
-      "model": "Seria 3",
-      "generation": "F30",
-      "years": {
-        "from": 2011,
-        "to": 2019
-      },
-      "body": "sedan",
-      "source": {
-        "source_title": "BMW F30 – Wikipedia (de), revizia 268218194",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_F30&oldid=268218194",
-        "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
-      }
-    },
-    {
       "id": "audi-a4-b8",
       "brand": "Audi",
       "model": "A4",
@@ -420,10 +12,10 @@
       },
       "body": "sedan",
       "source": {
-        "source_title": "Audi A4 B8 – Wikipedia (de), revizia 269362488",
+        "source_title": "Audi A4 B8 – Wikipedia (de), revizia 269362488 (ani); caroserie: ADAC Autokatalog: Audi A4 1.8 TFSI Attraction (02/08 - 10/08)",
         "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A4_B8&oldid=269362488",
         "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
       }
     },
     {
@@ -437,45 +29,380 @@
       },
       "body": "sedan",
       "source": {
-        "source_title": "Audi A6 C7 – Wikipedia (de), revizia 267560005",
+        "source_title": "Audi A6 C7 – Wikipedia (de), revizia 267560005 (ani); caroserie: ADAC Autokatalog: Audi A6 2.0 TFSI (10/11 - 09/14)",
         "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A6_C7&oldid=267560005",
         "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
       }
     },
     {
-      "id": "mercedes-c-w204",
-      "brand": "Mercedes-Benz",
-      "model": "Clasa C",
-      "generation": "W204",
+      "id": "audi-q5-sportback",
+      "brand": "Audi",
+      "model": "Q5",
+      "generation": "Sportback",
       "years": {
-        "from": 2007,
-        "to": 2015
+        "from": 2008,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q100326648 (identitate, CC0) + Wikipedia „Audi Q5” rev. 1373497931 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Audi_Q5&oldid=1373497931",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q100326648"
+    },
+    {
+      "id": "bmw-3-series-gran-turismo",
+      "brand": "BMW",
+      "model": "3 Series",
+      "generation": "Gran Turismo",
+      "years": {
+        "from": 2011,
+        "to": 2018
       },
       "body": "sedan",
       "source": {
-        "source_title": "Mercedes-Benz Baureihe 204 – Wikipedia (de), revizia 270547703",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Mercedes-Benz_Baureihe_204&oldid=270547703",
+        "source_title": "Wikidata Q4311136 (identitate, CC0) + Wikipedia „BMW 3 Series (F30)” rev. 1378800940 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=BMW_3_Series_(F30)&oldid=1378800940",
         "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q4311136"
+    },
+    {
+      "id": "bmw-5-series-gran-turismo",
+      "brand": "BMW",
+      "model": "5 Series",
+      "generation": "Gran Turismo",
+      "years": {
+        "from": 2009,
+        "to": 2016
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Wikidata Q387566 (identitate, CC0) + Wikipedia „BMW 5 Series (F10)” rev. 1379943137 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=BMW_5_Series_(F10)&oldid=1379943137",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q387566"
+    },
+    {
+      "id": "bmw-seria-3-e90",
+      "brand": "BMW",
+      "model": "Seria 3",
+      "generation": "E90",
+      "years": {
+        "from": 2005,
+        "to": 2013
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "BMW E90 – Wikipedia (de), revizia 270836317 (ani); caroserie: ADAC Autokatalog: BMW 318i (09/05 - 10/07)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_E90&oldid=270836317",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
       }
     },
     {
-      "id": "toyota-auris-2",
-      "brand": "Toyota",
-      "model": "Auris",
-      "generation": "II (E18)",
+      "id": "bmw-seria-3-f30",
+      "brand": "BMW",
+      "model": "Seria 3",
+      "generation": "F30",
       "years": {
-        "from": 2012,
+        "from": 2011,
         "to": 2019
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "BMW F30 – Wikipedia (de), revizia 268218194 (ani); caroserie: ADAC Autokatalog: BMW 316i (11/12 - 03/13)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_F30&oldid=268218194",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "citroen-c3-aircross",
+      "brand": "Citroën",
+      "model": "C3",
+      "generation": "Aircross",
+      "years": {
+        "from": 2010,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q5122860 (identitate, CC0) + Wikipedia „Citroën C3 Aircross” rev. 1378432869 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C3_Aircross&oldid=1378432869",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q5122860"
+    },
+    {
+      "id": "citroen-c3-picasso",
+      "brand": "Citroën",
+      "model": "C3",
+      "generation": "Picasso",
+      "years": {
+        "from": 2008,
+        "to": 2017
       },
       "body": "hatchback",
       "source": {
-        "source_title": "Toyota Auris – Wikipedia (de), revizia 266280695",
-        "source_url": "https://de.wikipedia.org/w/index.php?title=Toyota_Auris&oldid=266280695",
+        "source_title": "Wikidata Q1630402 (identitate, CC0) + Wikipedia „Citroën C3 Picasso” rev. 1362918984 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C3_Picasso&oldid=1362918984",
         "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q1630402"
+    },
+    {
+      "id": "citroen-c3-pluriel",
+      "brand": "Citroën",
+      "model": "C3",
+      "generation": "Pluriel",
+      "years": {
+        "from": 2002,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Wikidata Q2140125 (identitate, CC0) + Wikipedia „Citroën C3” rev. 1380202046 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C3&oldid=1380202046",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q2140125"
+    },
+    {
+      "id": "citroen-c4-aircross",
+      "brand": "Citroën",
+      "model": "C4",
+      "generation": "Aircross",
+      "years": {
+        "from": 2012,
+        "to": 2017
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q1637418 (identitate, CC0) + Wikipedia „Citroën C4 Aircross” rev. 1368009358 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C4_Aircross&oldid=1368009358",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q1637418"
+    },
+    {
+      "id": "citroen-c4-cactus",
+      "brand": "Citroën",
+      "model": "C4",
+      "generation": "Cactus",
+      "years": {
+        "from": 2014,
+        "to": 2024
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q2443038 (identitate, CC0) + Wikipedia „Citroën C4 Cactus” rev. 1373885895 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C4_Cactus&oldid=1373885895",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q2443038"
+    },
+    {
+      "id": "citroen-c5-aircross",
+      "brand": "Citroën",
+      "model": "C5",
+      "generation": "Aircross",
+      "years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q29402168 (identitate, CC0) + Wikipedia „Citroën C5 Aircross” rev. 1379938130 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C5_Aircross&oldid=1379938130",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q29402168"
+    },
+    {
+      "id": "citroen-c5-x",
+      "brand": "Citroën",
+      "model": "C5",
+      "generation": "X",
+      "years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q30750112 (identitate, CC0) + Wikipedia „Citroën C5 X” rev. 1377989982 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Citro%C3%ABn_C5_X&oldid=1377989982",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q30750112"
+    },
+    {
+      "id": "dacia-duster-1",
+      "brand": "Dacia",
+      "model": "Duster",
+      "generation": "I",
+      "years": {
+        "from": 2010,
+        "to": 2018
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743 (ani); caroserie: ADAC Autokatalog: Dacia Duster 1.6 16V 4x2 (04/10 - 09/10)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
       }
+    },
+    {
+      "id": "dacia-duster-2",
+      "brand": "Dacia",
+      "model": "Duster",
+      "generation": "II",
+      "years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743 (ani); caroserie: ADAC Autokatalog: Dacia Duster TCe 90 Access 2WD (09/20 - 07/21)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "dacia-logan-1",
+      "brand": "Dacia",
+      "model": "Logan",
+      "generation": "I",
+      "years": {
+        "from": 2004,
+        "to": 2013
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507 (ani); caroserie: ADAC Autokatalog: Dacia Logan 1.4 (06/05 - 07/08)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "dacia-logan-mcv-2",
+      "brand": "Dacia",
+      "model": "Logan MCV",
+      "generation": "II",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "break",
+      "source": {
+        "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507 (ani); caroserie: ADAC Autokatalog: Dacia Logan MCV 1.2 16V 75 Essentiel (07/15 - 11/16)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "dacia-sandero-2",
+      "brand": "Dacia",
+      "model": "Sandero",
+      "generation": "II",
+      "years": {
+        "from": 2012,
+        "to": 2022
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456 (ani); caroserie: ADAC Autokatalog: Dacia Sandero 1.2 16V 75 Essentiel (07/15 - 11/16)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "dacia-sandero-3",
+      "brand": "Dacia",
+      "model": "Sandero",
+      "generation": "III",
+      "years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456 (ani); caroserie: ADAC Autokatalog: Dacia Sandero SCe 65 Access (01/21 - 12/22)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "ford-c-max-energi",
+      "brand": "Ford",
+      "model": "C-Max",
+      "generation": "Energi",
+      "years": {
+        "from": 2003,
+        "to": 2019
+      },
+      "body": "mpv",
+      "source": {
+        "source_title": "Wikidata Q967959 (identitate, CC0) + Wikipedia „Ford C-Max” rev. 1374263961 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Ford_C-Max&oldid=1374263961",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q967959"
+    },
+    {
+      "id": "ford-focus-3",
+      "brand": "Ford",
+      "model": "Focus",
+      "generation": "III",
+      "years": {
+        "from": 2010,
+        "to": 2018
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Ford Focus – Wikipedia (de), revizia 269020316 (ani); caroserie: ADAC Autokatalog: Ford Focus 1.6 Ti-VCT Ambiente (09/11 - 09/14)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Ford_Focus&oldid=269020316",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "ford-mondeo-sport",
+      "brand": "Ford",
+      "model": "Mondeo",
+      "generation": "Sport",
+      "years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q106576911 (identitate, CC0) + Wikipedia „Ford Mondeo Sport” rev. 1336010544 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Ford_Mondeo_Sport&oldid=1336010544",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q106576911"
     },
     {
       "id": "hyundai-i30-gd",
@@ -488,10 +415,10 @@
       },
       "body": "hatchback",
       "source": {
-        "source_title": "Hyundai i30 (GD) – Wikipedia (de), revizia 257738254",
+        "source_title": "Hyundai i30 (GD) – Wikipedia (de), revizia 257738254 (ani); caroserie: ADAC Autokatalog: Hyundai i30 1.4 Classic (03/12 - 05/15)",
         "source_url": "https://de.wikipedia.org/w/index.php?title=Hyundai_i30_(GD)&oldid=257738254",
         "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
       }
     },
     {
@@ -505,10 +432,515 @@
       },
       "body": "hatchback",
       "source": {
-        "source_title": "Kia cee’d (JD) – Wikipedia (de), revizia 270963496",
+        "source_title": "Kia cee’d (JD) – Wikipedia (de), revizia 270963496 (ani); caroserie: ADAC Autokatalog: Kia cee´d 1.4 (01/13 - 06/13)",
         "source_url": "https://de.wikipedia.org/w/index.php?title=Kia_cee%E2%80%99d_%28JD%29&oldid=270963496",
         "retrieved_on": "2026-10-16",
-        "license": "CC BY-SA 4.0"
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "mercedes-c-w204",
+      "brand": "Mercedes-Benz",
+      "model": "Clasa C",
+      "generation": "W204",
+      "years": {
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Mercedes-Benz Baureihe 204 – Wikipedia (de), revizia 270547703 (ani); caroserie: ADAC Autokatalog: Mercedes-Benz C 180 Kompressor Classic (08/07 - 01/09)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Mercedes-Benz_Baureihe_204&oldid=270547703",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "opel-astra-j",
+      "brand": "Opel",
+      "model": "Astra",
+      "generation": "J",
+      "years": {
+        "from": 2009,
+        "to": 2018
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Opel Astra J – Wikipedia (de), revizia 264784765 (ani); caroserie: ADAC Autokatalog: Opel Astra 1.4 ecoFlex Edition (12/09 - 12/10)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_J&oldid=264784765",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "opel-astra-k",
+      "brand": "Opel",
+      "model": "Astra",
+      "generation": "K",
+      "years": {
+        "from": 2015,
+        "to": 2021
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Opel Astra K – Wikipedia (de), revizia 269808467 (ani); caroserie: ADAC Autokatalog: Opel Astra 1.0 ECOTEC DI Turbo Start&Stop Selection (06/18 - 08/19)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_K&oldid=269808467",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "opel-corsa-d",
+      "brand": "Opel",
+      "model": "Corsa",
+      "generation": "D",
+      "years": {
+        "from": 2006,
+        "to": 2014
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Opel Corsa D – Wikipedia (de), revizia 266069531 (ani); caroserie: ADAC Autokatalog: Opel Corsa 1.0 Twinport (5-Türer) (10/06 - 07/08)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Corsa_D&oldid=266069531",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "opel-insignia-a-sedan",
+      "brand": "Opel",
+      "model": "Insignia",
+      "generation": "A Sedan",
+      "years": {
+        "from": 2008,
+        "to": 2017
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Wikidata Q29561480: Opel Insignia A Sedan",
+        "source_url": "https://www.wikidata.org/wiki/Q29561480",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0"
+      },
+      "wikidata": "Q29561480"
+    },
+    {
+      "id": "renault-clio-4",
+      "brand": "Renault",
+      "model": "Clio",
+      "generation": "IV",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Renault Clio IV – Wikipedia (de), revizia 270039434 (ani); caroserie: ADAC Autokatalog: Renault Clio 1.2 16V 65 Authentique (05/14 - 01/15)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_Clio_IV&oldid=270039434",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "renault-clio-v6-renault-sport",
+      "brand": "Renault",
+      "model": "Clio",
+      "generation": "V6 Renault Sport",
+      "years": {
+        "from": 2001,
+        "to": 2005
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Wikidata Q3503489 (identitate, CC0) + Wikipedia „Renault Clio V6 RS” rev. 1339662764 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Renault_Clio_V6_RS&oldid=1339662764",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q3503489"
+    },
+    {
+      "id": "renault-megane-3",
+      "brand": "Renault",
+      "model": "Mégane",
+      "generation": "III",
+      "years": {
+        "from": 2008,
+        "to": 2016
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Renault Mégane III – Wikipedia (de), revizia 262018085 (ani); caroserie: ADAC Autokatalog: Renault Mégane 1.6 16V 100 Authentique (01/10 - 08/10)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_M%C3%A9gane_III&oldid=262018085",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "renault-scenic-e-tech",
+      "brand": "Renault",
+      "model": "Scénic",
+      "generation": "E-Tech",
+      "years": {
+        "from": 2024,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q122167780 (identitate, CC0) + Wikipedia „Renault Scenic E-Tech” rev. 1377406284 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Renault_Scenic_E-Tech&oldid=1377406284",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q122167780"
+    },
+    {
+      "id": "skoda-fabia-2",
+      "brand": "Škoda",
+      "model": "Fabia",
+      "generation": "II",
+      "years": {
+        "from": 2007,
+        "to": 2014
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Škoda Fabia II – Wikipedia (de), revizia 271026261 (ani); caroserie: ADAC Autokatalog: Skoda Fabia 1.2 HTP (03/07 - 04/10)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_II&oldid=271026261",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "skoda-fabia-3",
+      "brand": "Škoda",
+      "model": "Fabia",
+      "generation": "III",
+      "years": {
+        "from": 2014,
+        "to": 2022
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Škoda Fabia III – Wikipedia (de), revizia 266321658 (ani); caroserie: ADAC Autokatalog: Skoda Fabia 1.0 MPI Active (11/14 - 08/18)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_III&oldid=266321658",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "skoda-octavia-2",
+      "brand": "Škoda",
+      "model": "Octavia",
+      "generation": "II",
+      "years": {
+        "from": 2004,
+        "to": 2013
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Škoda Octavia II – Wikipedia (de), revizia 269171513 (ani); caroserie: ADAC Autokatalog: Skoda Octavia 1.4 Classic (06/04 - 05/06)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_II&oldid=269171513",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "skoda-octavia-3",
+      "brand": "Škoda",
+      "model": "Octavia",
+      "generation": "III",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Škoda Octavia III – Wikipedia (de), revizia 270816297 (ani); caroserie: ADAC Autokatalog: Skoda Octavia 1.2 TSI Active (02/13 - 04/15)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_III&oldid=270816297",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "skoda-superb-2",
+      "brand": "Škoda",
+      "model": "Superb",
+      "generation": "II",
+      "years": {
+        "from": 2008,
+        "to": 2015
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Škoda Superb II – Wikipedia (de), revizia 270798955 (ani); caroserie: ADAC Autokatalog: Skoda Superb 1.4 TSI Comfort (07/08 - 04/09)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Superb_II&oldid=270798955",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "toyota-auris-2",
+      "brand": "Toyota",
+      "model": "Auris",
+      "generation": "II (E18)",
+      "years": {
+        "from": 2012,
+        "to": 2019
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Toyota Auris – Wikipedia (de), revizia 266280695 (ani); caroserie: ADAC Autokatalog: Toyota Auris 1.33 (01/13 - 08/15)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Toyota_Auris&oldid=266280695",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "toyota-corolla-cross",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "generation": "Cross",
+      "years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q97094785 (identitate, CC0) + Wikipedia „Toyota Corolla Cross” rev. 1377994559 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Toyota_Corolla_Cross&oldid=1377994559",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q97094785"
+    },
+    {
+      "id": "toyota-corolla-rumion",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "generation": "Rumion",
+      "years": {
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Wikidata Q1538045 (identitate, CC0) + Wikipedia „Toyota Corolla Rumion” rev. 1370052928 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Toyota_Corolla_Rumion&oldid=1370052928",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q1538045"
+    },
+    {
+      "id": "toyota-yaris-cross",
+      "brand": "Toyota",
+      "model": "Yaris",
+      "generation": "Cross",
+      "years": {
+        "from": 2020,
+        "to": 2026
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q91621558 (identitate, CC0) + Wikipedia „Toyota Yaris Cross” rev. 1377659374 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Toyota_Yaris_Cross&oldid=1377659374",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q91621558"
+    },
+    {
+      "id": "volkswagen-golf-mk8",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "Mk8",
+      "years": {
+        "from": 2019,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Wikidata Q56403002 (identitate, CC0) + Wikipedia „Volkswagen Golf Mk8” rev. 1379442061 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Golf_Mk8&oldid=1379442061",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q56403002"
+    },
+    {
+      "id": "volkswagen-golf-sportsvan",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "Sportsvan",
+      "years": {
+        "from": 2014,
+        "to": 2020
+      },
+      "body": "mpv",
+      "source": {
+        "source_title": "Wikidata Q15305557 (identitate, CC0) + Wikipedia „Volkswagen Golf Sportsvan” rev. 1347884516 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Golf_Sportsvan&oldid=1347884516",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q15305557"
+    },
+    {
+      "id": "volkswagen-passat-lingyu",
+      "brand": "Volkswagen",
+      "model": "Passat",
+      "generation": "Lingyu",
+      "years": {
+        "from": 2005,
+        "to": 2011
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Wikidata Q6164698 (identitate, CC0) + Wikipedia „Volkswagen Passat Lingyu” rev. 1380538776 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Passat_Lingyu&oldid=1380538776",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q6164698"
+    },
+    {
+      "id": "volkswagen-polo-mk4",
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "Mk4",
+      "years": {
+        "from": 2001,
+        "to": 2009
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Wikidata Q1468621 (identitate, CC0) + Wikipedia „Volkswagen Polo Mk4” rev. 1362922193 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Polo_Mk4&oldid=1362922193",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q1468621"
+    },
+    {
+      "id": "volkswagen-polo-vi",
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "VI",
+      "years": {
+        "from": 2017,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Wikidata Q30349121 (identitate, CC0) + Wikipedia „Volkswagen Polo Mk6” rev. 1377291965 (ani, caroserie)",
+        "source_url": "https://en.wikipedia.org/w/index.php?title=Volkswagen_Polo_Mk6&oldid=1377291965",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0 (Wikidata) + CC BY-SA 4.0 (Wikipedia)"
+      },
+      "wikidata": "Q30349121"
+    },
+    {
+      "id": "volkswagen-tiguan-i",
+      "brand": "Volkswagen",
+      "model": "Tiguan",
+      "generation": "I",
+      "years": {
+        "from": 2007,
+        "to": 2018
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Wikidata Q66723843: Volkswagen Tiguan I",
+        "source_url": "https://www.wikidata.org/wiki/Q66723843",
+        "retrieved_on": "2026-10-16",
+        "license": "CC0 1.0"
+      },
+      "wikidata": "Q66723843"
+    },
+    {
+      "id": "vw-golf-6",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "VI",
+      "years": {
+        "from": 2008,
+        "to": 2012
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "VW Golf VI – Wikipedia (de), revizia 271026396 (ani); caroserie: ADAC Autokatalog: VW Golf 1.4 Trendline (5-Türer) (10/08 - 09/12)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VI&oldid=271026396",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "vw-golf-7",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "VII",
+      "years": {
+        "from": 2012,
+        "to": 2021
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "VW Golf VII – Wikipedia (de), revizia 269776737 (ani); caroserie: ADAC Autokatalog: VW Golf 1.2 TSI BMT Trendline (5-Türer) (11/12 - 05/14)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VII&oldid=269776737",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "vw-passat-b7",
+      "brand": "Volkswagen",
+      "model": "Passat Variant",
+      "generation": "B7",
+      "years": {
+        "from": 2010,
+        "to": 2015
+      },
+      "body": "break",
+      "source": {
+        "source_title": "VW Passat B7 – Wikipedia (de), revizia 270469671 (ani); caroserie: ADAC Autokatalog: VW Passat Variant 1.4 TSI Trendline (11/10 - 09/14)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B7&oldid=270469671",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "vw-passat-b8",
+      "brand": "Volkswagen",
+      "model": "Passat Variant",
+      "generation": "B8",
+      "years": {
+        "from": 2014,
+        "to": 2023
+      },
+      "body": "break",
+      "source": {
+        "source_title": "VW Passat B8 – Wikipedia (de), revizia 271369885 (ani); caroserie: ADAC Autokatalog: VW Passat Variant 1.4 TSI BMT Trendline (10/14 - 07/18)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B8&oldid=271369885",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
+      }
+    },
+    {
+      "id": "vw-polo-5",
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "V",
+      "years": {
+        "from": 2009,
+        "to": 2017
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "VW Polo V – Wikipedia (de), revizia 270680387 (ani); caroserie: ADAC Autokatalog: VW Polo 1.2 Trendline (5-Türer) (06/09 - 01/14)",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Polo_V&oldid=270680387",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0 (ani); caroserie: licență neconfirmată (doar DEMO)"
       }
     }
   ]

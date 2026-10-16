@@ -17,7 +17,9 @@
     "prebuild": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/brand-assets.ts",
     "build:demo-data": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-demo.ts",
     "build:demo": "DATA_MODE=demo next build",
-    "serve:demo": "serve out-demo -l 3000"
+    "serve:demo": "serve out-demo -l 3000",
+    "fetch:wikidata": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/fetch-wikidata.ts",
+    "build:demo-identities": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-demo-identities.ts"
   },
   "dependencies": {
     "next": "16.4.2",
