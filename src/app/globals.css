@@ -246,3 +246,40 @@ h3 {
     transition: none !important;
   }
 }
+
+/* Long-form content (guides, legal pages). */
+.prose {
+  line-height: 1.7;
+}
+.prose > * + * {
+  margin-top: 0.9em;
+}
+.prose h2 {
+  margin-top: 1.6em;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.prose ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prose li + li {
+  margin-top: 0.35em;
+}
+.prose li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.25rem;
+}
+.prose input[type="checkbox"] {
+  margin-right: 0.5em;
+  accent-color: var(--accent);
+}
+.prose a {
+  color: var(--accent-text);
+  text-decoration: underline;
+}
+.prose blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+}
