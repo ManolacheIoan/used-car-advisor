@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { SCENARIOS } from "@/config/scenarios";
 import { scenarioResults, SCENARIO_TOP } from "@/lib/scenarios";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
+import type { CarModel } from "@/lib/types";
 import { car, engine } from "./fixtures";
 
 const l = (value: number) => ({ value, unit: "l/100km" as const });
@@ -12,7 +13,7 @@ const price = (min: number, max: number) => ({
 });
 
 /** Fixed catalog so the expected rankings below never drift with real data. */
-const catalog = [
+const catalog: CarModel[] = [
   car({
     id: "city-hatch",
     body: "hatchback",
@@ -56,16 +57,28 @@ const catalog = [
 const pick = (id: string) =>
   scenarioResults(catalog).find((s) => s.id === id)!.results;
 
+catalog.push(
+  car({
+    id: "unverified-cheap",
+    verified: false,
+    price_eur: price(4000, 6000),
+    engines: [engine({ consumption: l(4) })],
+  }),
+);
+
 describe("example scenarios", () => {
   it("have valid, shareable criteria", () => {
     for (const s of SCENARIOS)
       expect(prefsFromQuery(prefsToQuery(s.prefs)).prefs).toEqual(s.prefs);
   });
 
-  it(`show at most ${SCENARIO_TOP} results and never example models`, () => {
+  it(`show at most ${SCENARIO_TOP} results and never example or unverified models`, () => {
     for (const s of scenarioResults(catalog)) {
       expect(s.results.length).toBeLessThanOrEqual(SCENARIO_TOP);
       expect(s.results.map((r) => r.model.id)).not.toContain("example-cheap");
+      expect(s.results.map((r) => r.model.id)).not.toContain(
+        "unverified-cheap",
+      );
     }
   });
 
@@ -94,7 +107,9 @@ describe("example scenarios", () => {
   });
 
   it("are empty when no real model is published", () => {
-    for (const s of scenarioResults(catalog.filter((m) => m.example)))
+    for (const s of scenarioResults(
+      catalog.filter((m) => m.example || m.verified === false),
+    ))
       expect(s.results).toEqual([]);
   });
 });

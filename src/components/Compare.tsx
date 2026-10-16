@@ -4,7 +4,14 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { COST_NOTE } from "@/lib/cost";
 import { getModel, models } from "@/lib/data";
-import { BODY_LABEL, ENERGY_LABEL, eur, lei } from "@/lib/labels";
+import {
+  BODY_LABEL,
+  ENERGY_LABEL,
+  engineSummary,
+  eur,
+  generationLabel,
+  lei,
+} from "@/lib/labels";
 import { pickEngine, rank } from "@/lib/scoring";
 import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
@@ -60,11 +67,9 @@ export function Compare() {
 
   const rows: [string, (c: (typeof cols)[number]) => ReactNode][] = [
     ["Scor", (c) => (c.score !== undefined ? `${c.score}/100` : "—")],
-    [
-      "Generație",
-      (c) => `${c.m.generation} (${c.m.years.from}–${c.m.years.to})`,
-    ],
+    ["Generație", (c) => generationLabel(c.m)],
     ["Caroserie", (c) => BODY_LABEL[c.m.body]],
+    ["Motorizări", (c) => engineSummary(c.m)],
     ["Locuri", (c) => c.m.seats],
     ["Portbagaj", (c) => `${c.m.trunk_l} l`],
     [

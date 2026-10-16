@@ -2,8 +2,8 @@ import { BODY_LABEL, ENERGY_LABEL } from "./labels";
 import { SITE } from "./site";
 import type { CarModel } from "./types";
 
-/** Pages for EXAMPLE models exist (for the demo flow) but are not indexed or listed in the sitemap. */
-export const isIndexable = (m: CarModel) => !m.example;
+/** Example and not-yet-verified models have pages but are not indexed or listed in the sitemap. */
+export const isIndexable = (m: CarModel) => !m.example && m.verified !== false;
 
 export const modelTitle = (m: CarModel) =>
   `${m.brand} ${m.model} ${m.generation} (${m.years.from}–${m.years.to})`;

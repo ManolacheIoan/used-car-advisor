@@ -83,11 +83,12 @@ describe("csvToCatalog: publishing", () => {
     expect(m.price_eur).toEqual({ min: 4000, max: 6000, set_on: D });
   });
 
-  it("does not publish models that need verification", () => {
+  it("publishes complete models that need verification, flagged verified: false", () => {
     const r = run(csv(row({ verification: "needs verification" })));
     expect(r.errors).toEqual([]);
-    expect(r.catalog!.models).toEqual([]);
+    expect(r.catalog!.models[0].verified).toBe(false);
     expect(r.unverified).toEqual(["m-1"]);
+    expect(run(csv(row())).catalog!.models[0].verified).toBe(true);
   });
 
   it("publishes example models without verification", () => {
@@ -201,7 +202,7 @@ describe("csvToCatalog: invalid values are errors", () => {
 });
 
 describe("repository data", () => {
-  const files = ["data/cars.template.csv", "data/examples.csv"].map((name) => ({
+  const files = ["data/cars.template.csv"].map((name) => ({
     name,
     text: readFileSync(name, "utf8"),
   }));
@@ -211,10 +212,10 @@ describe("repository data", () => {
     expect(r.errors).toEqual([]);
   });
 
-  it("never publishes a real model that is incomplete or unverified", () => {
-    const published = new Set(r.catalog!.models.map((m) => m.id));
-    for (const m of r.incomplete) expect(published.has(m.id)).toBe(false);
-    for (const id of r.unverified) expect(published.has(id)).toBe(false);
+  it("never publishes an incomplete model; unverified ones are flagged", () => {
+    const byId = new Map(r.catalog!.models.map((m) => [m.id, m]));
+    for (const m of r.incomplete) expect(byId.has(m.id)).toBe(false);
+    for (const id of r.unverified) expect(byId.get(id)?.verified).toBe(false);
   });
 
   it("matches the committed cars.json", () => {

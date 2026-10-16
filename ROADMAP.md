@@ -2,10 +2,8 @@
 
 ## Înainte de lansare
 
-- Completează prețurile second-hand (`price_min_eur`, `price_max_eur` și sursa lor) pentru cele 30 de modele din
-  `data/cars.template.csv`.
-- Verifică fiecare rând față de sursa lui, apoi marchează-l `verified` și rulează `npm run import:cars`.
-- Șterge exemplele din `data/examples.csv` după ce există modele reale publicate.
+- Verifică fiecare rând față de sursa lui, apoi marchează-l `verified` și
+  rulează `npm run import:cars`. Abia atunci modelul e indexat și apare în scenarii.
 - Adaugă sigle oficiale în `public/brands/` doar după ce verifici termenii de utilizare. Opțional.
 - Pune domeniul final în `SITE.url` și conectează repo-ul la Netlify.
 - Înlocuiește sursa prețurilor la carburanți cu URL-ul exact al articolului.

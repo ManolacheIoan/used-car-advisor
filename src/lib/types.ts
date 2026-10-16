@@ -18,6 +18,8 @@ export interface Engine {
 export interface CarModel {
   id: string;
   example?: boolean;
+  /** false = published from public sources but not yet confirmed by the site owner. */
+  verified?: boolean;
   brand: string;
   model: string;
   generation: string;

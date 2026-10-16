@@ -5,10 +5,17 @@ import { Suspense } from "react";
 import { BodyIcon } from "@/components/BodyIcon";
 import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
+import { VerificationBadge } from "@/components/VerificationBadge";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { card, Morph } from "@/components/ui";
 import { getModel, models } from "@/lib/data";
-import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
+import {
+  BODY_LABEL,
+  consumptionRange,
+  ENERGY_LABEL,
+  eur,
+  generationLabel,
+} from "@/lib/labels";
 import {
   isIndexable,
   modelDescription,
@@ -75,9 +82,8 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
               </span>
             </Morph>
           </h1>
-          <p className="text-muted">
-            {m.generation} · {m.years.from}–{m.years.to}
-          </p>
+          <p className="text-lg font-medium">{generationLabel(m)}</p>
+          <VerificationBadge m={m} />
         </div>
         <div className="flex shrink-0 flex-col items-end gap-2">
           <Morph name={`body-${m.id}`}>
@@ -92,9 +98,13 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
 
       <dl className={`${card} grid grid-cols-2 gap-3 text-sm sm:grid-cols-4`}>
         {[
+          ["Generație", m.generation],
+          ["Ani de producție", `${m.years.from}–${m.years.to}`],
           ["Caroserie", BODY_LABEL[m.body]],
           ["Locuri", m.seats],
           ["Portbagaj", `${m.trunk_l} l`],
+          ["Consum declarat", consumptionRange(m)],
+          ["Motorizări în date", m.engines.length],
           [
             "Preț orientativ",
             `${eur(m.price_eur.min)} – ${eur(m.price_eur.max)}`,
@@ -107,9 +117,10 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         ))}
       </dl>
       <p className="text-muted text-sm">
-        Prețul este un interval aproximativ pentru piața second-hand, stabilit
-        la <time dateTime={m.price_eur.set_on}>{m.price_eur.set_on}</time>.
-        Verifică întotdeauna cu vânzătorul.
+        Prețul este un interval aproximativ pentru piața second-hand (percentila
+        10–90 a anunțurilor active), stabilit la{" "}
+        <time dateTime={m.price_eur.set_on}>{m.price_eur.set_on}</time>. Sursa
+        este listată mai jos. Verifică întotdeauna cu vânzătorul.
       </p>
 
       <section aria-labelledby="eng-h" className="space-y-2">

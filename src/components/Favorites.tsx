@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { getModel } from "@/lib/data";
-import { BODY_LABEL, eur } from "@/lib/labels";
+import { BODY_LABEL, eur, generationLabel } from "@/lib/labels";
 import type { CarModel } from "@/lib/types";
 import { BodyIcon } from "./BodyIcon";
 import { BrandBadge } from "./BrandBadge";
@@ -48,10 +48,10 @@ export function Favorites() {
                 href={`/masini/${m.id}/`}
                 className="block font-semibold underline"
               >
-                {m.brand} {m.model} {m.generation}
+                {m.brand} {m.model}
               </Link>
               <p className="text-muted text-sm">
-                {BODY_LABEL[m.body]} · {m.years.from}–{m.years.to} ·{" "}
+                {generationLabel(m)} · {BODY_LABEL[m.body]} ·{" "}
                 {eur(m.price_eur.min)} – {eur(m.price_eur.max)}
               </p>
             </div>

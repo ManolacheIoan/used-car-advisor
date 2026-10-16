@@ -5,8 +5,8 @@
  * Every group of fields has its own source title, URL and retrieval date. Outcome per model:
  * - invalid value (bad number, URL, date, enum, inverted range, duplicate id, conflict) → error, nothing is written;
  * - missing value or missing source → "incomplete", not published, listed in the report;
- * - complete but `verification` is not "verified" → not published, listed in the report;
- * - complete and verified (or an `example` model) → published.
+ * - complete → published; if `verification` is not "verified" it is published with `verified: false`
+ *   (shown as "în curs de verificare", not indexed) and listed in the report.
  * Runs in Node via type stripping, so runtime imports use explicit .ts extensions.
  */
 import { semanticErrors, V1_ENERGIES } from "./dataChecks.ts";
@@ -46,7 +46,7 @@ export interface RowIssue {
 }
 
 export interface ImportResult {
-  /** Present when there are no errors. Contains only publishable models. */
+  /** Present when there are no errors. Contains only complete models. */
   catalog?: Catalog;
   errors: RowIssue[];
   incomplete: { id: string; file: string; line: number; missing: string[] }[];
@@ -285,10 +285,8 @@ export function csvToCatalog(
       continue;
     }
     const example = head.example === "true";
-    if (!example && head.verification !== VERIFIED) {
-      unverified.push(head.id);
-      continue;
-    }
+    const verified = example || head.verification === VERIFIED;
+    if (!verified) unverified.push(head.id);
 
     // One source entry per URL, with the most recent retrieval date.
     const sources = new Map<string, Source>();
@@ -305,6 +303,7 @@ export function csvToCatalog(
     models.push({
       id: head.id,
       ...(example ? { example: true } : {}),
+      verified,
       brand: head.brand,
       model: head.model,
       generation: head.generation,
@@ -350,7 +349,7 @@ export function formatReport(r: ImportResult, date: string): string {
     `# Raport import date (${date})`,
     "",
     `Publicate: ${published.filter((m) => !m.example).length} modele reale, ${published.filter((m) => m.example).length} exemple.`,
-    `Incomplete (nepublicate): ${r.incomplete.length}. De verificat (complete, nepublicate): ${r.unverified.length}.`,
+    `Incomplete (nepublicate): ${r.incomplete.length}. Publicate, încă neverificate: ${r.unverified.length}.`,
     "",
     "## Incomplete — câmpuri lipsă",
     "",
@@ -360,7 +359,7 @@ export function formatReport(r: ImportResult, date: string): string {
         )
       : ["- niciunul"]),
     "",
-    "## Complete, dar marcate „needs verification”",
+    "## Publicate, dar marcate „needs verification” (afișate ca „în curs de verificare”, neindexate)",
     "",
     ...(r.unverified.length
       ? r.unverified.map((id) => `- \`${id}\``)

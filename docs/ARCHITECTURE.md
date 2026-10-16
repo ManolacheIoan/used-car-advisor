@@ -7,7 +7,6 @@ calculează în browser din `cars.json`, care este inclus în build. Tema și fa
 
 ```
 data/cars.template.csv     30 de modele reale (un rând pe motorizare), toate marcate „needs verification”
-data/examples.csv          modelele EXEMPLU (fictive, neindexate)
 data/SOURCES.md            metoda de colectare, regula de alegere a motorizărilor, valorile negăsite
 data/import-report.md      generat la import: modele incomplete sau neverificate
 scripts/import-cars.ts     CSV → src/data/cars.json (doar modele complete și verificate)
@@ -24,18 +23,18 @@ tests/e2e/                 Playwright: flux principal, relaxare criteriu, favori
 
 ## Fluxul datelor (CSV → pagini)
 
-1. **Colectare.** Valorile vin din pagini publice descărcate efectiv: anii din Wikipedia (revizie fixă), restul din
-   ADAC Autokatalog. Fiecare grup de câmpuri are titlul sursei, URL-ul și data. Prețurile second-hand se completează
-   manual, din anunțuri reale.
-2. **Import.** `npm run import:cars` citește `cars.template.csv` și `examples.csv`. Pentru fiecare model:
+1. **Colectare.** Valorile vin din pagini publice descărcate efectiv: anii din Wikipedia (revizie fixă), datele
+   tehnice din ADAC Autokatalog. Prețurile second-hand se completează manual. Fiecare grup de câmpuri are titlul sursei, URL-ul și data.
+2. **Import.** `npm run import:cars` citește `cars.template.csv`. Pentru fiecare model:
    - valoare invalidă (număr, URL, dată, interval inversat, id duplicat, conflict) → eroare, nu se scrie nimic;
    - valoare sau sursă lipsă → incomplet, nu se publică, apare în raport;
-   - complet, dar `needs verification` → nu se publică, apare în raport;
-   - complet și `verified` (sau exemplu) → intră în `cars.json`.
+   - complet → intră în `cars.json`; dacă e încă `needs verification`, primește `verified: false`, apare cu eticheta
+     „Date în curs de verificare”, nu e indexat și nu intră în scenarii.
 3. **Teste.** Schema JSON și `dataChecks` validează `cars.json`. Un test verifică și că acesta corespunde exact
    CSV-urilor, așa că nu poate fi editat manual pe ascuns.
-4. **Build.** Se generează câte o pagină statică pe model, cu JSON-LD și Open Graph. Exemplele primesc `noindex` și
-   nu apar în sitemap. Scenariile de pe prima pagină se calculează tot la build, doar din modelele reale publicate.
+4. **Build.** Se generează câte o pagină statică pe model, cu JSON-LD și Open Graph. Modelele neverificate primesc
+   `noindex` și nu apar în sitemap. Scenariile de pe prima pagină se calculează tot la build, doar din modelele
+   verificate.
 5. **Browser.** Formularul scrie criteriile în URL. `Results` le validează și rulează `rank()`. Ipotezele de cost
    modificate intră tot în URL, deci linkul copiat reproduce exact rezultatul.
 

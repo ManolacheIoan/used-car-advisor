@@ -4,7 +4,14 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FUEL_PRICES } from "@/config/fuelPrices";
 import { models } from "@/lib/data";
-import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
+import {
+  BODY_LABEL,
+  consumptionRange,
+  ENERGY_LABEL,
+  engineSummary,
+  eur,
+  generationLabel,
+} from "@/lib/labels";
 import { rank, relaxOptions, type RelaxKey, type Result } from "@/lib/scoring";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
@@ -15,6 +22,7 @@ import { CostLine } from "./CostLine";
 import { ReasonChips } from "./ReasonChips";
 import { ScoreBar } from "./ScoreBar";
 import { ShareButton } from "./ShareButton";
+import { VerificationBadge } from "./VerificationBadge";
 import { BackToForm, btnGhost, btnPrimary, card, Morph, Notice } from "./ui";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
@@ -181,9 +189,9 @@ function ResultCard(p: {
               </span>
             </Morph>
           </h2>
+          <p className="text-sm font-medium">{generationLabel(m)}</p>
           <p className="text-muted text-sm">
-            {m.generation} · {m.years.from}–{m.years.to} · {BODY_LABEL[m.body]}{" "}
-            · {m.seats} locuri
+            {BODY_LABEL[m.body]} · {m.seats} locuri · portbagaj {m.trunk_l} l
           </p>
         </div>
         <div className="flex flex-col items-end gap-1">
@@ -195,10 +203,14 @@ function ResultCard(p: {
               EXEMPLU
             </span>
           )}
+          <VerificationBadge m={m} />
         </div>
       </div>
       <ScoreBar score={p.r.score} />
       <ReasonChips reasons={p.r.reasons} />
+      <p className="text-muted text-sm">
+        Motorizări: {engineSummary(m)}. Consum declarat {consumptionRange(m)}.
+      </p>
       <p className="text-sm">
         Preț orientativ:{" "}
         <span className="font-semibold">
@@ -206,8 +218,7 @@ function ResultCard(p: {
         </span>
       </p>
       <p className="text-muted text-sm">
-        Estimare pentru {ENERGY_LABEL[e.energy]}{" "}
-        {e.cc ? `${(e.cc / 1000).toFixed(1)} ` : ""}
+        Estimare pentru {ENERGY_LABEL[e.energy]} {e.cc ? `${e.cc} cm³, ` : ""}
         {e.hp} CP, {e.consumption.value} l/100 km (declarat)
       </p>
       <CostLine cost={p.r.cost} />

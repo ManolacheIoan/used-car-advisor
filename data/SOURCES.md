@@ -10,7 +10,7 @@ URL-ul complet și data accesării. Toate rândurile sunt marcate `needs verific
   indică revizia exactă (`oldid`) folosită.
 - **Caroserie, locuri, portbagaj, motorizări** (cilindree, putere, consum mixt): ADAC Autokatalog. Pentru fiecare
   câmp este folosită pagina variantei respective.
-- **Prețuri second-hand:** lipsesc intenționat. Le completezi tu din anunțuri reale (`price_*`).
+- **Prețuri second-hand:** goale. Se completează manual.
 
 ## Regula de alegere a motorizărilor (fixă, nu după memorie)
 
@@ -43,7 +43,7 @@ primei variante alese. Puterea de pe pagina variantei a fost verificată automat
 - `opel-astra-k` — consumption: Opel Astra 1.0 ECOTEC DI Turbo Start&Stop Selection (06/18 - 08/19): only WLTP value found, recorded WLTP
 - `opel-astra-k` — consumption: Opel Astra 1.5 Diesel (09/19 - 11/20): only WLTP value found, recorded WLTP
 
-## Lipsesc la toate cele 30 de modele
+## De făcut
 
-- `price_min_eur`, `price_max_eur` și sursa prețului (de completat de tine).
-- Marcajul `verified` (după ce verifici fiecare rând).
+- Marcajul `verified` pentru fiecare model, după verificare. Până atunci modelele apar cu eticheta „Date în curs de
+  verificare” și nu sunt indexate de motoarele de căutare.

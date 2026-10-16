@@ -5,9 +5,9 @@ import type { CarModel } from "./types";
 
 export const SCENARIO_TOP = 3;
 
-/** Only real models: the catalog publishes real models only when complete and verified; examples are excluded. */
+/** Only real, verified models; examples and models still awaiting verification are excluded. */
 export function scenarioResults(models: CarModel[], scenarios = SCENARIOS) {
-  const verified = models.filter((m) => !m.example);
+  const verified = models.filter((m) => !m.example && m.verified !== false);
   return scenarios.map((s) => ({
     ...s,
     results: rank(verified, s.prefs, DEFAULT_ASSUMPTIONS).slice(

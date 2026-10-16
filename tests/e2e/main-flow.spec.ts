@@ -40,7 +40,7 @@ test("form → results → compare → detail", async ({ page }) => {
 
 test("no match shows a relax option", async ({ page }) => {
   await page.goto(
-    "/rezultate/?bmin=20000&bmax=50000&u=mixt&f=gpl&c=mpv&s=7&km=12000",
+    "/rezultate/?bmin=3000&bmax=12000&u=mixt&f=gpl&c=sedan&s=5&km=12000",
   );
   await expect(page.getByText("Niciun model nu se potrivește")).toBeVisible();
   await page
