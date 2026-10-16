@@ -11,3 +11,4 @@
 - 2026-10-16 · Efectul de ridicare la hover scos de pe cardurile care conțin controale (rezultate, catalog) — alternative: păstrarea lui — mutarea cardului sub cursor deplasa ținta clicului; rămâne pe cardurile care sunt doar link.
 - 2026-10-16 · Link checker-ul nu rulează în CI (doar manual, cu --strict înainte de hostare) — alternative: pas în CI — rezultatul depinde de rețea și de site-uri externe (RAR timeout, ANPC 503), ar face CI instabil; raportul e în data/link-report.md.
 - 2026-10-16 · Linkurile Wikipedia cu revizie fixă (/w/index.php?oldid=) nu sunt verificate automat — alternative: ignorarea robots.txt — robots.txt interzice /w/; sunt raportate ca „nu verificat (robots.txt)”.
+- 2026-10-16 · CSP cu 'unsafe-inline' pentru scripturi și stiluri — alternative: nonce/hash — exportul static Next folosește scripturi inline și nu are server care să genereze nonce; restul politicii e strict (self, frame-ancestors none, object-src none).
