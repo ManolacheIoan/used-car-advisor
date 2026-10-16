@@ -37,6 +37,11 @@ tests/e2e/              fluxul principal: formular → rezultate → comparație
 apare oriunde se face o conversie; CI avertizează dacă e mai vechi de 30 de zile. **Înainte de hostare înlocuiește-l
 cu cursul oficial BNR din ziua respectivă, de pe bnr.ro.**
 
+## Notă pentru dezvoltare
+
+După orice `npm install <pachet>` pe macOS, regenerează lockfile-ul (`rm -rf node_modules package-lock.json && npm
+install`). Altfel `npm ci` din CI (Linux) pică, pentru că lipsesc dependențele opționale pentru Linux.
+
 ## Moduri de date (`DATA_MODE`)
 
 | Mod                                    | Catalog                                                                        | Folosire                                                      |
