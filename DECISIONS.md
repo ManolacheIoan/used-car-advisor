@@ -6,3 +6,4 @@
 - 2026-10-16 · Catalogul demo are 54 de modele, sub ținta 60–80 — alternative: completare din memorie (interzis), articole generale Wikipedia (anii întregii linii, greșit) — Wikidata/Wikipedia nu au ani/caroserie per generație pentru restul; nu ghicesc.
 - 2026-10-16 · Demo include și cele 30 de modele din CSV (ani din Wikipedia de; caroserie din ADAC, licență neconfirmată) — alternative: doar Wikidata (27 modele) — catalogul demo nu se publică niciodată; auditul public blochează datele fără licență.
 - 2026-10-16 · Modelele electrice/hibride excluse din demo — alternative: includere cu energie hibrid/electric — V1 acoperă doar benzină/motorină/GPL; schema rămâne pregătită (ROADMAP V2).
+- 2026-10-16 · „Mărci populare” pe prima pagină = mărcile cu cele mai multe generații în catalog — alternative: statistici de înmatriculări (nu am sursă importată), ordine alfabetică — nu inventăm popularitatea; regula e transparentă.

@@ -13,7 +13,10 @@ test("form → results → compare → detail", async ({ page }) => {
 
   await page.getByText("Familie", { exact: true }).click();
   await page.getByRole("button", { name: "Continuă" }).click();
-  await page.getByText("Dacia", { exact: true }).click(); // any fuel, any body, one brand
+  await page
+    .getByRole("group", { name: "Marcă" })
+    .getByText("Dacia", { exact: true })
+    .click(); // any fuel, any body, one brand
   await page.getByRole("button", { name: "Continuă" }).click();
   await page.getByRole("button", { name: "Vezi recomandările" }).click();
 

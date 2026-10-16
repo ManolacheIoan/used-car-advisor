@@ -2,13 +2,19 @@
 
 ## Făcut
 
-- d5bfff9…95d6870 · cicluri NEDC/WLTP, preț manual, raport surse (sesiunea anterioară)
-- bd0e… · DATA_MODE demo|public, proveniență pe rânduri și prețuri, date demo sintetice (vezi git log)
+- 238ab0e · DATA_MODE demo|public, proveniență pe rânduri/prețuri, date demo sintetice
+- 7ddd5f6 · catalog demo 54 generații (Wikidata + infobox Wikipedia + CSV), raport EEA
+- 2174acb · pagina Catalog (căutare, filtre în URL, sortare, paginare)
+- c6ad45c · pagini marcă / model / generație, breadcrumbs, FAQ, similare
+- (acest commit) · prima pagină: hero, finder, scenarii, mărci, ghiduri, „cum verificăm”
 
 ## În lucru
 
-- Faza 1 · catalog demo din Wikidata (+ ani/caroserie din infobox Wikipedia)
+- Faza 2 · instrumente de decizie (comparație 4, TCO, finanțare, buget, favorite/recente)
 
 ## Următorul
 
-- Faza 1 · catalog, pagini marcă/model/generație, home
+- Faza 3 · ghiduri (draft), glosar, FAQ, pagini legale
+- Faza 4 · polish, OG per pagină, axe, Lighthouse 4×90, PWA
+- Faza 5 · audit public extins, raport acoperire, link checker, e2e
+- Faza 6 · netlify.toml, checklist hostare
