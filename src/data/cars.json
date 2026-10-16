@@ -1,0 +1,232 @@
+{
+  "updated": "2026-10-16",
+  "models": [
+    {
+      "id": "exemplu-alfa",
+      "example": true,
+      "brand": "EXEMPLU",
+      "model": "Alfa (exemplu)",
+      "generation": "Gen. fictivă",
+      "years": {
+        "from": 2015,
+        "to": 2020
+      },
+      "body": "hatchback",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1200,
+          "hp": 75,
+          "consumption": {
+            "value": 5.5,
+            "unit": "l/100km"
+          }
+        },
+        {
+          "energy": "motorina",
+          "cc": 1500,
+          "hp": 90,
+          "consumption": {
+            "value": 4.2,
+            "unit": "l/100km"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 300,
+      "price_ron": {
+        "min": 25000,
+        "max": 40000,
+        "set_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "title": "EXEMPLU – sursă fictivă, de înlocuit",
+          "url": "https://example.com/sursa",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "exemplu-beta",
+      "example": true,
+      "brand": "EXEMPLU",
+      "model": "Beta (exemplu)",
+      "generation": "Gen. fictivă",
+      "years": {
+        "from": 2014,
+        "to": 2019
+      },
+      "body": "break",
+      "engines": [
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 115,
+          "consumption": {
+            "value": 4.6,
+            "unit": "l/100km"
+          }
+        },
+        {
+          "energy": "benzina",
+          "cc": 1400,
+          "hp": 125,
+          "consumption": {
+            "value": 6,
+            "unit": "l/100km"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 520,
+      "price_ron": {
+        "min": 40000,
+        "max": 65000,
+        "set_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "title": "EXEMPLU – sursă fictivă, de înlocuit",
+          "url": "https://example.com/sursa",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "exemplu-gama",
+      "example": true,
+      "brand": "EXEMPLU",
+      "model": "Gama (exemplu)",
+      "generation": "Gen. fictivă",
+      "years": {
+        "from": 2016,
+        "to": 2021
+      },
+      "body": "suv",
+      "engines": [
+        {
+          "energy": "benzina",
+          "cc": 1600,
+          "hp": 115,
+          "consumption": {
+            "value": 6.5,
+            "unit": "l/100km"
+          }
+        },
+        {
+          "energy": "gpl",
+          "cc": 1000,
+          "hp": 100,
+          "consumption": {
+            "value": 7.8,
+            "unit": "l/100km"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 450,
+      "price_ron": {
+        "min": 45000,
+        "max": 75000,
+        "set_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "title": "EXEMPLU – sursă fictivă, de înlocuit",
+          "url": "https://example.com/sursa",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "exemplu-delta",
+      "example": true,
+      "brand": "EXEMPLU",
+      "model": "Delta (exemplu)",
+      "generation": "Gen. fictivă",
+      "years": {
+        "from": 2013,
+        "to": 2018
+      },
+      "body": "sedan",
+      "engines": [
+        {
+          "energy": "motorina",
+          "cc": 2000,
+          "hp": 150,
+          "consumption": {
+            "value": 5,
+            "unit": "l/100km"
+          }
+        }
+      ],
+      "seats": 5,
+      "trunk_l": 480,
+      "price_ron": {
+        "min": 55000,
+        "max": 90000,
+        "set_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "title": "EXEMPLU – sursă fictivă, de înlocuit",
+          "url": "https://example.com/sursa",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    },
+    {
+      "id": "exemplu-epsilon",
+      "example": true,
+      "brand": "EXEMPLU",
+      "model": "Epsilon (exemplu)",
+      "generation": "Gen. fictivă",
+      "years": {
+        "from": 2012,
+        "to": 2018
+      },
+      "body": "mpv",
+      "engines": [
+        {
+          "energy": "motorina",
+          "cc": 1600,
+          "hp": 120,
+          "consumption": {
+            "value": 5.2,
+            "unit": "l/100km"
+          }
+        }
+      ],
+      "seats": 7,
+      "trunk_l": 650,
+      "price_ron": {
+        "min": 50000,
+        "max": 80000,
+        "set_on": "2026-10-16"
+      },
+      "sources": [
+        {
+          "title": "EXEMPLU – sursă fictivă, de înlocuit",
+          "url": "https://example.com/sursa",
+          "accessed": "2026-10-16"
+        }
+      ],
+      "pros": [],
+      "cons": [],
+      "known_issues": []
+    }
+  ]
+}

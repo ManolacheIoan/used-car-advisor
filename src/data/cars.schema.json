@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AlegeMasina catalog",
+  "type": "object",
+  "required": ["updated", "models"],
+  "additionalProperties": false,
+  "definitions": {
+    "date": { "type": "string", "format": "date" },
+    "yearRange": {
+      "type": "object",
+      "required": ["from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": "integer", "minimum": 1990, "maximum": 2100 },
+        "to": { "type": "integer", "minimum": 1990, "maximum": 2100 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["title", "url", "accessed"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+        "accessed": { "$ref": "#/definitions/date" }
+      }
+    },
+    "v2Sources": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/definitions/source" }
+    },
+    "opinion": {
+      "type": "object",
+      "required": ["text", "sources", "date"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "sources": { "$ref": "#/definitions/v2Sources" },
+        "date": { "$ref": "#/definitions/date" }
+      }
+    },
+    "engine": {
+      "type": "object",
+      "required": ["energy", "hp", "consumption"],
+      "additionalProperties": false,
+      "properties": {
+        "energy": {
+          "enum": ["benzina", "motorina", "gpl", "hibrid", "electric"]
+        },
+        "cc": { "type": "integer", "minimum": 500, "maximum": 8000 },
+        "hp": { "type": "integer", "minimum": 30, "maximum": 1000 },
+        "consumption": {
+          "type": "object",
+          "required": ["value", "unit"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "type": "number", "exclusiveMinimum": 0, "maximum": 40 },
+            "unit": { "enum": ["l/100km", "kWh/100km"] }
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "updated": { "$ref": "#/definitions/date" },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "brand",
+          "model",
+          "generation",
+          "years",
+          "body",
+          "engines",
+          "seats",
+          "trunk_l",
+          "price_ron",
+          "sources"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "example": { "type": "boolean" },
+          "brand": { "type": "string", "minLength": 1 },
+          "model": { "type": "string", "minLength": 1 },
+          "generation": { "type": "string", "minLength": 1 },
+          "years": { "$ref": "#/definitions/yearRange" },
+          "body": { "enum": ["hatchback", "sedan", "break", "suv", "mpv"] },
+          "engines": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/definitions/engine" }
+          },
+          "seats": { "type": "integer", "minimum": 2, "maximum": 9 },
+          "trunk_l": { "type": "integer", "minimum": 50, "maximum": 3000 },
+          "price_ron": {
+            "type": "object",
+            "required": ["min", "max", "set_on"],
+            "additionalProperties": false,
+            "properties": {
+              "min": { "type": "integer", "minimum": 1000 },
+              "max": { "type": "integer", "minimum": 1000 },
+              "set_on": { "$ref": "#/definitions/date" }
+            }
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#/definitions/source" }
+          },
+          "pros": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/opinion" }
+          },
+          "cons": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/opinion" }
+          },
+          "known_issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "text",
+                "engines",
+                "years",
+                "severity",
+                "sources",
+                "date",
+                "confidence"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "text": { "type": "string", "minLength": 1 },
+                "engines": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string" }
+                },
+                "years": { "$ref": "#/definitions/yearRange" },
+                "severity": { "enum": ["scazuta", "medie", "ridicata"] },
+                "sources": { "$ref": "#/definitions/v2Sources" },
+                "date": { "$ref": "#/definitions/date" },
+                "confidence": { "enum": ["scazuta", "medie", "ridicata"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
