@@ -15,8 +15,9 @@
     "import:cars": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/import-cars.ts",
     "predev": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/brand-assets.ts",
     "prebuild": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/brand-assets.ts",
-    "build:e2e": "CATALOG=e2e next build",
-    "serve:e2e": "serve out-e2e -l 3000"
+    "build:demo-data": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-demo.ts",
+    "build:demo": "DATA_MODE=demo next build",
+    "serve:demo": "serve out-demo -l 3000"
   },
   "dependencies": {
     "next": "16.4.2",

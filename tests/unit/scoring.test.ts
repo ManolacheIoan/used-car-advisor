@@ -10,7 +10,7 @@ import {
   WEIGHTS,
   type Prefs,
 } from "@/lib/scoring";
-import { car, engine } from "./fixtures";
+import { car, engine, price } from "./fixtures";
 
 const prefs: Prefs = {
   budgetMin: 30000,
@@ -166,23 +166,11 @@ describe("rank", () => {
   it("orders by score and keeps scores in 0–100", () => {
     const cheap = car({
       id: "cheap",
-      price_eur: {
-        low: 30000,
-        high: 40000,
-        n_listings: 12,
-        collected_on: "2026-01-01",
-        kind: "asking_price",
-      },
+      price_eur: price(30000, 40000),
     });
     const pricey = car({
       id: "pricey",
-      price_eur: {
-        low: 70000,
-        high: 90000,
-        n_listings: 12,
-        collected_on: "2026-01-01",
-        kind: "asking_price",
-      },
+      price_eur: price(70000, 90000),
     });
     const r = rank([pricey, cheap], prefs, DEFAULT_ASSUMPTIONS);
     expect(r.map((x) => x.model.id)).toEqual(["cheap", "pricey"]);

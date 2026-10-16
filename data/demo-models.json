@@ -1,0 +1,515 @@
+{
+  "generated_on": "2026-10-16",
+  "models": [
+    {
+      "id": "dacia-logan-1",
+      "brand": "Dacia",
+      "model": "Logan",
+      "generation": "I",
+      "years": {
+        "from": 2004,
+        "to": 2013
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "dacia-logan-mcv-2",
+      "brand": "Dacia",
+      "model": "Logan MCV",
+      "generation": "II",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "break",
+      "source": {
+        "source_title": "Dacia Logan – Wikipedia (de), revizia 269932507",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Logan&oldid=269932507",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "dacia-sandero-2",
+      "brand": "Dacia",
+      "model": "Sandero",
+      "generation": "II",
+      "years": {
+        "from": 2012,
+        "to": 2022
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "dacia-sandero-3",
+      "brand": "Dacia",
+      "model": "Sandero",
+      "generation": "III",
+      "years": {
+        "from": 2021,
+        "to": 2026
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Dacia Sandero – Wikipedia (de), revizia 271281456",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Sandero&oldid=271281456",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "dacia-duster-1",
+      "brand": "Dacia",
+      "model": "Duster",
+      "generation": "I",
+      "years": {
+        "from": 2010,
+        "to": 2018
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "dacia-duster-2",
+      "brand": "Dacia",
+      "model": "Duster",
+      "generation": "II",
+      "years": {
+        "from": 2018,
+        "to": 2024
+      },
+      "body": "suv",
+      "source": {
+        "source_title": "Dacia Duster – Wikipedia (de), revizia 269934743",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Dacia_Duster&oldid=269934743",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "vw-golf-6",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "VI",
+      "years": {
+        "from": 2008,
+        "to": 2012
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "VW Golf VI – Wikipedia (de), revizia 271026396",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VI&oldid=271026396",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "vw-golf-7",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "generation": "VII",
+      "years": {
+        "from": 2012,
+        "to": 2021
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "VW Golf VII – Wikipedia (de), revizia 269776737",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Golf_VII&oldid=269776737",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "vw-passat-b7",
+      "brand": "Volkswagen",
+      "model": "Passat Variant",
+      "generation": "B7",
+      "years": {
+        "from": 2010,
+        "to": 2015
+      },
+      "body": "break",
+      "source": {
+        "source_title": "VW Passat B7 – Wikipedia (de), revizia 270469671",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B7&oldid=270469671",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "vw-passat-b8",
+      "brand": "Volkswagen",
+      "model": "Passat Variant",
+      "generation": "B8",
+      "years": {
+        "from": 2014,
+        "to": 2023
+      },
+      "body": "break",
+      "source": {
+        "source_title": "VW Passat B8 – Wikipedia (de), revizia 271369885",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Passat_B8&oldid=271369885",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "vw-polo-5",
+      "brand": "Volkswagen",
+      "model": "Polo",
+      "generation": "V",
+      "years": {
+        "from": 2009,
+        "to": 2017
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "VW Polo V – Wikipedia (de), revizia 270680387",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=VW_Polo_V&oldid=270680387",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "skoda-octavia-2",
+      "brand": "Škoda",
+      "model": "Octavia",
+      "generation": "II",
+      "years": {
+        "from": 2004,
+        "to": 2013
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Škoda Octavia II – Wikipedia (de), revizia 269171513",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_II&oldid=269171513",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "skoda-octavia-3",
+      "brand": "Škoda",
+      "model": "Octavia",
+      "generation": "III",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Škoda Octavia III – Wikipedia (de), revizia 270816297",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Octavia_III&oldid=270816297",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "skoda-fabia-2",
+      "brand": "Škoda",
+      "model": "Fabia",
+      "generation": "II",
+      "years": {
+        "from": 2007,
+        "to": 2014
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Škoda Fabia II – Wikipedia (de), revizia 271026261",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_II&oldid=271026261",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "skoda-fabia-3",
+      "brand": "Škoda",
+      "model": "Fabia",
+      "generation": "III",
+      "years": {
+        "from": 2014,
+        "to": 2022
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Škoda Fabia III – Wikipedia (de), revizia 266321658",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Fabia_III&oldid=266321658",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "skoda-superb-2",
+      "brand": "Škoda",
+      "model": "Superb",
+      "generation": "II",
+      "years": {
+        "from": 2008,
+        "to": 2015
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Škoda Superb II – Wikipedia (de), revizia 270798955",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=%C5%A0koda_Superb_II&oldid=270798955",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "opel-astra-j",
+      "brand": "Opel",
+      "model": "Astra",
+      "generation": "J",
+      "years": {
+        "from": 2009,
+        "to": 2018
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Opel Astra J – Wikipedia (de), revizia 264784765",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_J&oldid=264784765",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "opel-astra-k",
+      "brand": "Opel",
+      "model": "Astra",
+      "generation": "K",
+      "years": {
+        "from": 2015,
+        "to": 2021
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Opel Astra K – Wikipedia (de), revizia 269808467",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Astra_K&oldid=269808467",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "opel-corsa-d",
+      "brand": "Opel",
+      "model": "Corsa",
+      "generation": "D",
+      "years": {
+        "from": 2006,
+        "to": 2014
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Opel Corsa D – Wikipedia (de), revizia 266069531",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Opel_Corsa_D&oldid=266069531",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "ford-focus-3",
+      "brand": "Ford",
+      "model": "Focus",
+      "generation": "III",
+      "years": {
+        "from": 2010,
+        "to": 2018
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Ford Focus – Wikipedia (de), revizia 269020316",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Ford_Focus&oldid=269020316",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "renault-clio-4",
+      "brand": "Renault",
+      "model": "Clio",
+      "generation": "IV",
+      "years": {
+        "from": 2012,
+        "to": 2020
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Renault Clio IV – Wikipedia (de), revizia 270039434",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_Clio_IV&oldid=270039434",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "renault-megane-3",
+      "brand": "Renault",
+      "model": "Mégane",
+      "generation": "III",
+      "years": {
+        "from": 2008,
+        "to": 2016
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Renault Mégane III – Wikipedia (de), revizia 262018085",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Renault_M%C3%A9gane_III&oldid=262018085",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "bmw-seria-3-e90",
+      "brand": "BMW",
+      "model": "Seria 3",
+      "generation": "E90",
+      "years": {
+        "from": 2005,
+        "to": 2013
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "BMW E90 – Wikipedia (de), revizia 270836317",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_E90&oldid=270836317",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "bmw-seria-3-f30",
+      "brand": "BMW",
+      "model": "Seria 3",
+      "generation": "F30",
+      "years": {
+        "from": 2011,
+        "to": 2019
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "BMW F30 – Wikipedia (de), revizia 268218194",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=BMW_F30&oldid=268218194",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "audi-a4-b8",
+      "brand": "Audi",
+      "model": "A4",
+      "generation": "B8",
+      "years": {
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Audi A4 B8 – Wikipedia (de), revizia 269362488",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A4_B8&oldid=269362488",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "audi-a6-c7",
+      "brand": "Audi",
+      "model": "A6",
+      "generation": "C7",
+      "years": {
+        "from": 2010,
+        "to": 2018
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Audi A6 C7 – Wikipedia (de), revizia 267560005",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Audi_A6_C7&oldid=267560005",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "mercedes-c-w204",
+      "brand": "Mercedes-Benz",
+      "model": "Clasa C",
+      "generation": "W204",
+      "years": {
+        "from": 2007,
+        "to": 2015
+      },
+      "body": "sedan",
+      "source": {
+        "source_title": "Mercedes-Benz Baureihe 204 – Wikipedia (de), revizia 270547703",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Mercedes-Benz_Baureihe_204&oldid=270547703",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "toyota-auris-2",
+      "brand": "Toyota",
+      "model": "Auris",
+      "generation": "II (E18)",
+      "years": {
+        "from": 2012,
+        "to": 2019
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Toyota Auris – Wikipedia (de), revizia 266280695",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Toyota_Auris&oldid=266280695",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "hyundai-i30-gd",
+      "brand": "Hyundai",
+      "model": "i30",
+      "generation": "GD",
+      "years": {
+        "from": 2011,
+        "to": 2017
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Hyundai i30 (GD) – Wikipedia (de), revizia 257738254",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Hyundai_i30_(GD)&oldid=257738254",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "id": "kia-ceed-jd",
+      "brand": "Kia",
+      "model": "Ceed",
+      "generation": "JD",
+      "years": {
+        "from": 2012,
+        "to": 2018
+      },
+      "body": "hatchback",
+      "source": {
+        "source_title": "Kia cee’d (JD) – Wikipedia (de), revizia 270963496",
+        "source_url": "https://de.wikipedia.org/w/index.php?title=Kia_cee%E2%80%99d_%28JD%29&oldid=270963496",
+        "retrieved_on": "2026-10-16",
+        "license": "CC BY-SA 4.0"
+      }
+    }
+  ]
+}

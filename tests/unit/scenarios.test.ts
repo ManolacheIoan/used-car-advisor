@@ -3,19 +3,12 @@ import { SCENARIOS } from "@/config/scenarios";
 import { scenarioResults, SCENARIO_TOP } from "@/lib/scenarios";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import type { CarModel } from "@/lib/types";
-import { car, engine } from "./fixtures";
+import { car, engine, price } from "./fixtures";
 
 const l = (value: number) => ({
   value,
   unit: "l/100km" as const,
   cycle: "NEDC" as const,
-});
-const price = (low: number, high: number) => ({
-  low,
-  high,
-  n_listings: 12,
-  collected_on: "2026-10-01",
-  kind: "asking_price" as const,
 });
 
 /** Fixed catalog so the expected rankings below never drift with real data. */
@@ -54,7 +47,7 @@ const catalog: CarModel[] = [
   }),
   car({
     id: "example-cheap",
-    example: true,
+    is_demo: true,
     price_eur: price(4000, 6000),
     engines: [engine({ consumption: l(4) })],
   }),
@@ -114,7 +107,7 @@ describe("example scenarios", () => {
 
   it("are empty when no real model is published", () => {
     for (const s of scenarioResults(
-      catalog.filter((m) => m.example || m.verified === false),
+      catalog.filter((m) => m.is_demo || m.verified === false),
     ))
       expect(s.results).toEqual([]);
   });

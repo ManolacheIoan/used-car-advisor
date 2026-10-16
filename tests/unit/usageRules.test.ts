@@ -3,7 +3,7 @@ import { USAGE_RULES } from "@/config/usageRules";
 import { DEFAULT_ASSUMPTIONS } from "@/lib/cost";
 import { rank, usageFit, type Prefs } from "@/lib/scoring";
 import type { Usage } from "@/lib/types";
-import { car, engine } from "./fixtures";
+import { car, engine, price } from "./fixtures";
 
 const usages = Object.keys(USAGE_RULES) as Usage[];
 const l = (value: number) => ({
@@ -92,13 +92,7 @@ describe("usage never filters", () => {
     const models = [
       car({
         id: "hatch",
-        price_eur: {
-          low: 60000,
-          high: 70000,
-          n_listings: 12,
-          collected_on: "2026-01-01",
-          kind: "asking_price",
-        },
+        price_eur: price(60000, 70000),
       }),
       car({ id: "suv", body: "suv" }),
     ];

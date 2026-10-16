@@ -1,4 +1,4 @@
-// Runs against the fictional test catalog (tests/fixtures/cars.e2e.json): npm run build:e2e && npm run test:e2e
+// Runs against the DEMO build (synthetic values): npm run build:demo && npm run test:e2e
 import { expect, test } from "@playwright/test";
 
 test("form → results → compare → detail", async ({ page }) => {
@@ -13,7 +13,7 @@ test("form → results → compare → detail", async ({ page }) => {
 
   await page.getByText("Familie", { exact: true }).click();
   await page.getByRole("button", { name: "Continuă" }).click();
-  await page.getByText("Testmarca", { exact: true }).click(); // any fuel, any body, one brand
+  await page.getByText("Dacia", { exact: true }).click(); // any fuel, any body, one brand
   await page.getByRole("button", { name: "Continuă" }).click();
   await page.getByRole("button", { name: "Vezi recomandările" }).click();
 
@@ -26,14 +26,13 @@ test("form → results → compare → detail", async ({ page }) => {
   for (const title of await cards
     .getByRole("heading", { level: 2 })
     .allInnerTexts())
-    expect(title).toContain("Testmarca");
+    expect(title).toContain("Dacia");
   await expect(page.getByText("orientativ").first()).toBeVisible();
   await expect(
-    page
-      .getByText(
-        "prețuri cerute în anunțuri, orientativ, în EUR, culese la 2026-10-01",
-      )
-      .first(),
+    page.getByText("preț sintetic DEMO, nu provine din anunțuri").first(),
+  ).toBeVisible();
+  await expect(
+    page.getByText("DEMO: valori fictive, nu pentru decizii reale"),
   ).toBeVisible();
 
   await cards.nth(0).getByLabel("Compară").check();
@@ -53,12 +52,10 @@ test("form → results → compare → detail", async ({ page }) => {
 
 test("no match shows a relax option", async ({ page }) => {
   await page.goto(
-    "/rezultate/?bmin=3000&bmax=12000&u=mixt&f=gpl&c=sedan&s=5&km=12000",
+    "/rezultate/?bmin=3000&bmax=12000&u=mixt&f=oricare&c=hatchback&m=bmw&s=5&km=12000",
   );
   await expect(page.getByText("Niciun model nu se potrivește")).toBeVisible();
-  await page
-    .getByRole("link", { name: /Relaxează: orice combustibil/ })
-    .click();
+  await page.getByRole("link", { name: /Relaxează: orice marcă/ }).click();
   await expect(page.getByRole("meter").first()).toBeVisible();
 });
 

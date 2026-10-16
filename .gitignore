@@ -52,4 +52,4 @@ next-env.d.ts
 /.lighthouseci/
 /.netlify/
 
-/out-e2e/
+/out-demo/

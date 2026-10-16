@@ -1,9 +1,11 @@
 import { BODY_LABEL, ENERGY_LABEL } from "./labels";
+import { IS_DEMO } from "./mode";
 import { SITE } from "./site";
 import type { CarModel } from "./types";
 
-/** Example and not-yet-verified models have pages but are not indexed or listed in the sitemap. */
-export const isIndexable = (m: CarModel) => !m.example && m.verified !== false;
+/** Only verified, non-demo models in a public build are indexed and listed in the sitemap. */
+export const isIndexable = (m: CarModel) =>
+  !IS_DEMO && !m.is_demo && m.verified;
 
 export const modelTitle = (m: CarModel) =>
   `${m.brand} ${m.model} ${m.generation} (${m.years.from}–${m.years.to})`;

@@ -31,14 +31,24 @@ tests/unit/             schema datelor, scor, cost, validare, SEO
 tests/e2e/              fluxul principal: formular → rezultate → comparație → detalii
 ```
 
+## Moduri de date (`DATA_MODE`)
+
+| Mod                                    | Catalog                                                                        | Folosire                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| `public` (implicit la `npm run build`) | `src/data/cars.public.json`: doar rânduri verificate, cu surse și licențe      | singurul publicat (`out/`)                                    |
+| `demo` (implicit la `npm run dev`)     | `src/data/cars.demo.json`: identitate reală din sursă, restul valori sintetice | doar local (`out-demo/`); banner DEMO, `noindex`, sitemap gol |
+
+Formula valorilor demo e descrisă în `docs/DEMO_DATA.md`.
+
 ## Comenzi
 
 ```
 npm run dev          server de dezvoltare
 npm test             teste unitare (Vitest)
 npm run build        export static în out/
-npm run build:e2e    build cu catalogul de test fictiv (tests/fixtures/cars.e2e.json) în out-e2e/
-npm run test:e2e     Playwright pe out-e2e/ (rulează mai întâi build:e2e)
+npm run build:demo   build DEMO în out-demo/ (doar local)
+npm run build:demo-data   regenerează src/data/cars.demo.json din data/demo-models.json
+npm run test:e2e     Playwright pe out-demo/ (rulează mai întâi build:demo)
 npm run import:cars -- fisier.csv   importă catalogul din CSV
 npm run lint | typecheck | format
 ```

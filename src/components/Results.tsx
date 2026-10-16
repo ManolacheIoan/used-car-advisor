@@ -234,9 +234,9 @@ function ResultCard(p: {
           <Morph name={`body-${m.id}`}>
             <BodyIcon body={m.body} className="text-muted h-8 w-20" />
           </Morph>
-          {m.example && (
+          {m.is_demo && (
             <span className="border-line text-muted rounded border px-1.5 py-0.5 text-xs">
-              EXEMPLU
+              DEMO
             </span>
           )}
           <VerificationBadge m={m} />

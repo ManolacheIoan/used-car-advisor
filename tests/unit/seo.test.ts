@@ -6,7 +6,7 @@ import { car } from "./fixtures";
 
 describe("seo", () => {
   it("example models are not indexable", () => {
-    expect(isIndexable(car({ example: true }))).toBe(false);
+    expect(isIndexable(car({ is_demo: true }))).toBe(false);
     expect(isIndexable(car({ verified: false }))).toBe(false);
     expect(isIndexable(car())).toBe(true);
   });

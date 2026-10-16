@@ -1,18 +1,28 @@
 import type { NextConfig } from "next";
 
-/** E2E builds use a fictional, priced test catalog and a separate output folder; never deployed. */
-const e2e = process.env.CATALOG === "e2e";
+/**
+ * DATA_MODE=public|demo. Default: demo for `next dev`, public for production builds.
+ * public → src/data/cars.public.json (verified rows only), output in out/ (the only folder ever deployed).
+ * demo   → src/data/cars.demo.json (synthetic values, banner, noindex), output in out-demo/; local use only.
+ */
+const mode =
+  process.env.DATA_MODE ??
+  (process.env.NODE_ENV === "production" ? "public" : "demo");
+if (mode !== "public" && mode !== "demo")
+  throw new Error(`DATA_MODE must be "public" or "demo", got "${mode}"`);
+const demo = mode === "demo";
 
 const nextConfig: NextConfig = {
   output: "export",
-  ...(e2e ? { distDir: "out-e2e" } : {}),
+  ...(demo ? { distDir: "out-demo" } : {}),
+  env: { NEXT_PUBLIC_DATA_MODE: mode },
   trailingSlash: true,
   images: { unoptimized: true },
   turbopack: {
-    ...(e2e
+    ...(demo
       ? {
           resolveAlias: {
-            "@/data/cars.json": "./tests/fixtures/cars.e2e.json",
+            "@/data/cars.public.json": "./src/data/cars.demo.json",
           },
         }
       : {}),

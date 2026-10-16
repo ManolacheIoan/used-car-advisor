@@ -5,17 +5,17 @@ import { COLUMNS, csvToCatalog, formatReport, parseCsv } from "@/lib/importCsv";
 const header = COLUMNS.join(",");
 const U = "https://example.com/a";
 const D = "2026-10-01";
-const src = (g: string, url = U) => ({
+const src = (g: string, license = "CC BY-SA 4.0") => ({
   [`${g}_source_title`]: "Sursa A",
-  [`${g}_source_url`]: url,
+  [`${g}_source_url`]: U,
   [`${g}_date`]: D,
+  [`${g}_license`]: license,
 });
 const base: Record<string, string> = {
   id: "m-1",
   brand: "B",
   model: "M",
   generation: "I",
-  example: "",
   verification: "verified",
   year_from: "2015",
   year_to: "2020",
@@ -38,6 +38,22 @@ const base: Record<string, string> = {
   collected_on: D,
   kind: "asking_price",
   notes: "",
+  price_source_title: "Prețuri culese manual",
+  price_source_url: "https://example.com/p",
+  price_license: "date culese manual (fapte)",
+  price_verification: "verified",
+};
+const NO_PRICE = {
+  price_low_eur: "",
+  price_high_eur: "",
+  n_listings: "",
+  collected_on: "",
+  kind: "",
+  notes: "",
+  price_source_title: "",
+  price_source_url: "",
+  price_license: "",
+  price_verification: "",
 };
 const quote = (v: string) => (v.includes(",") ? `"${v}"` : v);
 const row = (over: Record<string, string> = {}) =>
@@ -63,8 +79,8 @@ describe("parseCsv", () => {
   });
 });
 
-describe("csvToCatalog: publishing", () => {
-  it("publishes a complete, verified model with grouped engines and titled sources", () => {
+describe("public catalog", () => {
+  it("contains a complete, verified model with licensed sources and a verified price", () => {
     const r = run(
       csv(
         row({ consumption_l100km: "5,5" }),
@@ -79,28 +95,47 @@ describe("csvToCatalog: publishing", () => {
     );
     expect(r.errors).toEqual([]);
     const m = r.catalog!.models[0];
+    expect(m.verified && !m.is_demo).toBe(true);
     expect(m.engines.map((e) => e.consumption.value)).toEqual([5.5, 4.2]);
-    expect(m.sources).toEqual([{ title: "Sursa A", url: U, accessed: D }]);
-    expect(m.price_eur).toEqual({
+    expect(m.sources).toEqual([
+      {
+        source_title: "Sursa A",
+        source_url: U,
+        retrieved_on: D,
+        license: "CC BY-SA 4.0",
+      },
+    ]);
+    expect(m.price_eur).toMatchObject({
       low: 4000,
       high: 6000,
       n_listings: 12,
-      collected_on: D,
       kind: "asking_price",
+      source_url: "https://example.com/p",
+      license: "date culese manual (fapte)",
+      verified: true,
+      is_demo: false,
     });
   });
 
-  it("publishes complete models that need verification, flagged verified: false", () => {
+  it("excludes complete models that need verification", () => {
     const r = run(csv(row({ verification: "needs verification" })));
-    expect(r.errors).toEqual([]);
-    expect(r.catalog!.models[0].verified).toBe(false);
+    expect(r.catalog!.models).toEqual([]);
     expect(r.unverified).toEqual(["m-1"]);
-    expect(run(csv(row())).catalog!.models[0].verified).toBe(true);
   });
 
-  it("publishes example models without verification", () => {
-    const r = run(csv(row({ example: "true", verification: "" })));
-    expect(r.catalog!.models[0].example).toBe(true);
+  it("drops a price that is not verified yet", () => {
+    const r = run(csv(row({ price_verification: "needs verification" })));
+    expect(r.catalog!.models[0].price_eur).toBeUndefined();
+    expect(r.priceUnverified).toEqual(["m-1"]);
+  });
+
+  it("keeps a model without any price, listed as unpriced", () => {
+    const r = run(csv(row(NO_PRICE)));
+    expect(r.catalog!.models[0].price_eur).toBeUndefined();
+    expect(r.unpriced).toEqual(["m-1"]);
+    expect(formatReport(r, "2026-10-16")).toContain(
+      "Publice fără preț verificat",
+    );
   });
 
   it("keeps existing V2 fields from the previous catalog", () => {
@@ -110,14 +145,14 @@ describe("csvToCatalog: publishing", () => {
       models: [{ id: "m-1", known_issues: [issue] }],
     } as never;
     const r = csvToCatalog([{ name: "t.csv", text: csv(row()) }], {
-      updated: D,
+      updated: "2026-10-16",
       previous,
     });
     expect(r.catalog!.models[0].known_issues).toEqual([issue]);
   });
 });
 
-describe("csvToCatalog: incomplete models are skipped and reported", () => {
+describe("incomplete models are excluded and reported", () => {
   it("lists missing values and missing sources", () => {
     const r = run(
       csv(
@@ -138,19 +173,17 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
     ]);
   });
 
-  it("publishes a model without any price, but lists it as unpriced", () => {
-    const empty = {
-      price_low_eur: "",
-      price_high_eur: "",
-      n_listings: "",
-      collected_on: "",
-      kind: "",
-      notes: "",
-    };
-    const r = run(csv(row(empty)));
-    expect(r.catalog!.models[0].price_eur).toBeUndefined();
-    expect(r.unpriced).toEqual(["m-1"]);
-    expect(formatReport(r, "2026-10-16")).toContain("Fără preț verificat");
+  it("treats a missing or unknown license as incomplete", () => {
+    const r = run(
+      csv(
+        row({ body_license: "unknown" }),
+        row({ id: "m-2", trunk_license: "" }),
+      ),
+    );
+    expect(r.incomplete.map((m) => m.missing[0])).toEqual([
+      'body_license ("unknown" — licență neconfirmată)',
+      "trunk_license",
+    ]);
   });
 
   it("names the line of an incomplete engine row", () => {
@@ -161,14 +194,13 @@ describe("csvToCatalog: incomplete models are skipped and reported", () => {
   });
 
   it("writes a readable report", () => {
-    const r = run(csv(row({ price_low_eur: "" })));
-    const md = formatReport(r, "2026-10-16");
-    expect(md).toContain("Incomplete (nepublicate): 1");
+    const md = formatReport(run(csv(row({ price_low_eur: "" }))), "2026-10-16");
+    expect(md).toContain("Incomplete: 1");
     expect(md).toContain("`m-1` (t.csv:2): price_low_eur");
   });
 });
 
-describe("csvToCatalog: manual price entry", () => {
+describe("manual price entry", () => {
   it("requires at least 10 listings", () => {
     expect(messages(csv(row({ n_listings: "9" })))).toContain(
       "2: n_listings must be at least 10, got 9",
@@ -185,10 +217,20 @@ describe("csvToCatalog: manual price entry", () => {
     );
   });
 
-  it("only accepts asking prices", () => {
+  it("only accepts asking prices with a known verification state", () => {
     expect(messages(csv(row({ kind: "sold_price" })))).toContain(
       '2: kind must be "asking_price", got "sold_price"',
     );
+    expect(messages(csv(row({ price_verification: "ok" })))[0]).toMatch(
+      /price_verification must be/,
+    );
+  });
+
+  it("requires a price source and license", () => {
+    expect(
+      run(csv(row({ price_source_url: "", price_license: "" }))).incomplete[0]
+        .missing,
+    ).toEqual(["price_source_url", "price_license"]);
   });
 
   it("keeps notes", () => {
@@ -209,18 +251,23 @@ describe("report: fields without source", () => {
     ]);
   });
 
-  it("lists spec groups missing a value or a source, per engine line, and a missing price", () => {
+  it("lists groups missing a value, source or license, per engine line, and a missing price", () => {
     const r = run(
       csv(
-        row({ trunk_source_url: "", price_low_eur: "" }),
+        row({
+          trunk_source_url: "",
+          body_license: "unknown",
+          price_low_eur: "",
+        }),
         row({ brand: "", hp: "" }),
       ),
     );
     expect(r.unsourced![0].fields).toEqual([
       "brand, model, generation (fără coloană de sursă)",
+      "body: licență neconfirmată",
       "trunk_l",
       "energy, cc, hp, consumption_l100km, consumption_cycle (linia 3)",
-      "preț (price_low_eur, price_high_eur, n_listings, collected_on, kind)",
+      "preț (price_low_eur, price_high_eur, n_listings, collected_on, kind, sursă, licență)",
     ]);
     expect(formatReport(r, "2026-10-16")).toContain(
       "## Câmpuri fără sursă, pe model",
@@ -228,7 +275,7 @@ describe("report: fields without source", () => {
   });
 });
 
-describe("csvToCatalog: invalid values are errors", () => {
+describe("invalid values are errors", () => {
   it("reports missing columns", () => {
     expect(messages("id,brand\nx,y")[0]).toMatch(/^1: missing columns: model/);
   });
@@ -258,14 +305,14 @@ describe("csvToCatalog: invalid values are errors", () => {
         { name: "a.csv", text: csv(row()) },
         { name: "b.csv", text: csv(row()) },
       ],
-      { updated: D },
+      { updated: "2026-10-16" },
     );
     expect(r.errors[0].message).toBe(
       "duplicate id (first used on a.csv line 2)",
     );
   });
 
-  it("rejects values outside V1 and unknown verification states", () => {
+  it("rejects values outside V1 and unknown states", () => {
     const m = messages(
       csv(
         row({
@@ -287,24 +334,33 @@ describe("csvToCatalog: invalid values are errors", () => {
 });
 
 describe("repository data", () => {
-  const files = ["data/cars.template.csv"].map((name) => ({
-    name,
-    text: readFileSync(name, "utf8"),
-  }));
-  const r = csvToCatalog(files, { updated: "2026-10-16" });
+  const r = csvToCatalog(
+    [
+      {
+        name: "data/cars.template.csv",
+        text: readFileSync("data/cars.template.csv", "utf8"),
+      },
+    ],
+    {
+      updated: JSON.parse(readFileSync("src/data/cars.public.json", "utf8"))
+        .updated,
+    },
+  );
 
   it("imports without errors", () => {
     expect(r.errors).toEqual([]);
   });
 
-  it("never publishes an incomplete model; unverified ones are flagged", () => {
-    const byId = new Map(r.catalog!.models.map((m) => [m.id, m]));
-    for (const m of r.incomplete) expect(byId.has(m.id)).toBe(false);
-    for (const id of r.unverified) expect(byId.get(id)?.verified).toBe(false);
+  it("public catalog never contains incomplete or unverified models", () => {
+    const ids = new Set(r.catalog!.models.map((m) => m.id));
+    for (const m of r.incomplete) expect(ids.has(m.id)).toBe(false);
+    for (const id of r.unverified) expect(ids.has(id)).toBe(false);
   });
 
-  it("matches the committed cars.json", () => {
-    const committed = JSON.parse(readFileSync("src/data/cars.json", "utf8"));
+  it("matches the committed cars.public.json", () => {
+    const committed = JSON.parse(
+      readFileSync("src/data/cars.public.json", "utf8"),
+    );
     expect(r.catalog!.models.map((m) => m.id)).toEqual(
       committed.models.map((m: { id: string }) => m.id),
     );

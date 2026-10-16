@@ -30,8 +30,13 @@ import { OG_IMAGE, SITE } from "@/lib/site";
 
 export const dynamicParams = false;
 
+/** Placeholder route used only while the catalog is empty (static export needs ≥ 1 path); it renders 404. */
+const EMPTY_CATALOG_ID = "fara-modele";
+
 export function generateStaticParams() {
-  return models.map((m) => ({ id: m.id }));
+  return models.length
+    ? models.map((m) => ({ id: m.id }))
+    : [{ id: EMPTY_CATALOG_ID }];
 }
 
 export async function generateMetadata({
@@ -70,10 +75,11 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           dangerouslySetInnerHTML={{ __html: jsonLd }}
         />
       )}
-      {m.example && (
+      {m.is_demo && (
         <p role="note" className="border-accent rounded-lg border p-3 text-sm">
-          EXEMPLU: model fictiv folosit doar pentru demonstrație. Datele nu
-          descriu o mașină reală.
+          DEMO: specificațiile și prețul acestui model sunt valori sintetice,
+          generate pentru testare. Doar marca, modelul, generația, anii și
+          caroseria provin din sursa listată.
         </p>
       )}
       <header className="flex items-start justify-between gap-4">
@@ -183,11 +189,17 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         </h2>
         <ul className="list-disc space-y-1 pl-5">
           {m.sources.map((s) => (
-            <li key={s.url}>
-              <a href={s.url} rel="noopener nofollow" className="underline">
-                {s.title}
+            <li key={s.source_url}>
+              <a
+                href={s.source_url}
+                rel="noopener nofollow"
+                className="underline"
+              >
+                {s.source_title}
               </a>{" "}
-              <span className="text-muted">(accesat {s.accessed})</span>
+              <span className="text-muted">
+                (accesat {s.retrieved_on}; licență: {s.license})
+              </span>
             </li>
           ))}
         </ul>

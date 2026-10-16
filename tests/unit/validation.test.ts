@@ -1,4 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+// Brand validation depends on the catalog; use a fixed brand list independent of the data mode.
+vi.mock("@/lib/data", () => ({ BRANDS: [["dacia", "Dacia"]] }));
 import { DEFAULT_ASSUMPTIONS } from "@/lib/cost";
 import {
   assumptionsFromQuery,

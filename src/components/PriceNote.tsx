@@ -3,6 +3,8 @@ import type { CarModel } from "@/lib/types";
 
 /** Label required next to every price: asking prices from listings, approximate, EUR, collection date. */
 export function priceNote(p: NonNullable<CarModel["price_eur"]>): string {
+  if (p.kind === "synthetic")
+    return "preț sintetic DEMO, nu provine din anunțuri";
   return `prețuri cerute în anunțuri, orientativ, în EUR, culese la ${p.collected_on} (${p.n_listings} anunțuri)`;
 }
 

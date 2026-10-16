@@ -5,10 +5,12 @@ export type TestCycle = "NEDC" | "WLTP" | "unknown";
 export type Usage = "oras" | "autostrada" | "familie" | "mixt";
 export type Body = "hatchback" | "sedan" | "break" | "suv" | "mpv";
 
+/** Provenance of a group of facts. `license` e.g. "CC0 1.0", "CC BY-SA 4.0", "manufacturer facts", "synthetic". */
 export interface Source {
-  title: string;
-  url: string;
-  accessed: string;
+  source_title: string;
+  source_url: string;
+  retrieved_on: string;
+  license: string;
 }
 
 export interface Engine {
@@ -25,9 +27,10 @@ export interface Engine {
 
 export interface CarModel {
   id: string;
-  example?: boolean;
-  /** false = published from public sources but not yet confirmed by the site owner. */
-  verified?: boolean;
+  /** Confirmed by the site owner against its sources. Only verified, non-demo rows may be public. */
+  verified: boolean;
+  /** Demo catalog row (synthetic values, local testing only). */
+  is_demo: boolean;
   brand: string;
   model: string;
   generation: string;
@@ -36,21 +39,30 @@ export interface CarModel {
   engines: Engine[];
   seats: number;
   trunk_l: number;
-  /** Absent until a verified price is entered; such models are excluded from results. */
-  price_eur?: {
-    low: number;
-    high: number;
-    /** Number of listings the range is based on (≥ 10). */
-    n_listings: number;
-    collected_on: string;
-    kind: "asking_price";
-    notes?: string;
-  };
+  /** Absent until a price is entered; models without a price are excluded from results. */
+  price_eur?: Price;
   sources: Source[];
   // V2 fields: kept in data, not rendered in V1.
   pros?: unknown[];
   cons?: unknown[];
   known_issues?: unknown[];
+}
+
+/** Price range in EUR with its own provenance. Public: manual asking prices. Demo: synthetic formula. */
+export interface Price {
+  low: number;
+  high: number;
+  /** Listings the range is based on (≥ 10 for asking prices); null for synthetic demo prices. */
+  n_listings: number | null;
+  collected_on: string;
+  kind: "asking_price" | "synthetic";
+  notes?: string;
+  source_title: string;
+  source_url: string;
+  retrieved_on: string;
+  license: string;
+  verified: boolean;
+  is_demo: boolean;
 }
 
 export interface Catalog {

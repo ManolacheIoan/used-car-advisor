@@ -1,4 +1,5 @@
-import raw from "@/data/cars.json";
+// In demo mode next.config.ts aliases this import to cars.demo.json.
+import raw from "@/data/cars.public.json";
 import { brandId } from "./brand";
 import type { Catalog, CarModel } from "./types";
 
