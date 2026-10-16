@@ -25,7 +25,7 @@ test("form → results → compare → detail", async ({ page }) => {
 
   await cards.nth(0).getByLabel("Compară").check();
   await cards.nth(1).getByLabel("Compară").check();
-  await page.getByRole("link", { name: "Compară" }).click();
+  await page.getByRole("link", { name: "Compară", exact: true }).click();
 
   await expect(page).toHaveURL(/\/compara\/.*ids=/);
   await expect(page.getByRole("table")).toBeVisible();
@@ -43,6 +43,39 @@ test("no match shows a relax option", async ({ page }) => {
     "/rezultate/?bmin=20000&bmax=50000&u=mixt&f=gpl&c=mpv&s=7&km=12000",
   );
   await expect(page.getByText("Niciun model nu se potrivește")).toBeVisible();
-  await page.getByRole("link", { name: /Orice combustibil/ }).click();
+  await page
+    .getByRole("link", { name: /Relaxează: orice combustibil/ })
+    .click();
   await expect(page.getByRole("meter").first()).toBeVisible();
+});
+
+test("favorites, compare shortcut and reset", async ({ page }) => {
+  await page.goto(
+    "/rezultate/?bmin=4000&bmax=15000&u=familie&f=oricare&c=oricare&s=5&km=12000",
+  );
+  const first = page
+    .getByRole("listitem")
+    .filter({ has: page.getByRole("meter") })
+    .first();
+  await first.getByRole("button", { name: /Salvează .* la favorite/ }).click();
+  await expect(page.getByRole("link", { name: "Favorite (1)" })).toBeVisible();
+
+  await page.getByRole("link", { name: /Compară primele 3/ }).click();
+  await expect(page).toHaveURL(/\/compara\/.*ids=/);
+  await expect(page.getByRole("columnheader")).toHaveCount(4);
+  await expect(page.getByRole("button", { name: "Printează" })).toBeVisible();
+
+  await page.getByRole("link", { name: "Favorite (1)" }).click();
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Favorite" }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: /Scoate .* din favorite/ }).click();
+  await expect(page.getByText("Nu ai salvat încă niciun model")).toBeVisible();
+
+  await page.goto(
+    "/rezultate/?bmin=4000&bmax=15000&u=familie&f=oricare&c=oricare&s=5&km=12000",
+  );
+  await page.getByRole("link", { name: "Resetează filtrele" }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByLabel("Minim (€)")).toHaveValue("4000");
 });

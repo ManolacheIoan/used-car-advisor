@@ -82,8 +82,8 @@ export default function Page() {
       <h2>Confidențialitate</h2>
       <p>
         Nu avem cont, bază de date, cookies sau trackere. Răspunsurile tale
-        rămân în adresa paginii, în browser. Alegerea temei este păstrată local
-        în browser.
+        rămân în adresa paginii, în browser. Alegerea temei și lista de favorite
+        sunt păstrate doar local, în browser (localStorage).
       </p>
 
       <h2>Corecturi</h2>

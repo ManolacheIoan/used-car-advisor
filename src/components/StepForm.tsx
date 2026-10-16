@@ -201,7 +201,20 @@ export function StepForm({ initial = DEFAULTS }: { initial?: PrefsInput }) {
         >
           Înapoi
         </button>
-        <button type="submit" className={`${btnPrimary} ml-auto`}>
+        <button
+          type="button"
+          className="text-muted hover:text-fg ml-auto text-sm underline"
+          onClick={() => {
+            setValues(DEFAULTS);
+            setErrors({});
+            setDir("prev");
+            setStep(0);
+            router.replace("/", { scroll: false });
+          }}
+        >
+          Resetează
+        </button>
+        <button type="submit" className={btnPrimary}>
           {last ? "Vezi recomandările" : "Continuă"}
         </button>
       </div>

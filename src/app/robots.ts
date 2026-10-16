@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/rezultate/", "/compara/"],
+      disallow: ["/rezultate/", "/compara/", "/favorite/"],
     },
     sitemap: `${SITE.url}/sitemap.xml`,
   };

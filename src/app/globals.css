@@ -203,8 +203,42 @@ h3 {
   }
 }
 
+.print-only {
+  display: none;
+}
+
+/* Print: white page, no chrome or controls, full-width table. */
 @media print {
-  .scene {
-    display: none;
+  :root,
+  [data-theme="light"] {
+    --bg: #fff;
+    --surface: #fff;
+    --surface-2: #fff;
+    --border: #999;
+    --text: #000;
+    --muted: #333;
+    --accent-text: #000;
+    --shadow: none;
+  }
+  .scene,
+  .no-print,
+  footer a {
+    display: none !important;
+  }
+  .print-only {
+    display: block;
+  }
+  .print-table {
+    overflow: visible !important;
+  }
+  .print-table table {
+    min-width: 0 !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

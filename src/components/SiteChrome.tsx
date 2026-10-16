@@ -1,16 +1,26 @@
 import Link from "next/link";
 import { dataUpdated } from "@/lib/data";
 import { SITE } from "@/lib/site";
+import { FavoritesCount } from "./FavoriteButton";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function SiteHeader() {
   return (
-    <header className="border-line bg-surface border-b">
+    <header className="no-print border-line bg-surface border-b">
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="font-bold tracking-tight">
           <span className="text-accent-text">Alege</span>Masina
         </Link>
-        <ThemeToggle />
+        <nav className="flex items-center gap-2" aria-label="Principal">
+          <Link
+            href="/favorite/"
+            className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
+          >
+            Favorite
+            <FavoritesCount />
+          </Link>
+          <ThemeToggle />
+        </nav>
       </div>
     </header>
   );

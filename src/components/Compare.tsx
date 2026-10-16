@@ -10,9 +10,11 @@ import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
 import { CostEditor } from "./CostEditor";
+import { PrintButton } from "./PrintButton";
+import { ShareButton } from "./ShareButton";
 import { CountUp } from "./CountUp";
 import { MAX_COMPARE } from "./Results";
-import { BackToForm, card, Morph, Notice } from "./ui";
+import { BackToForm, btnGhost, card, Morph, Notice } from "./ui";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
 export const DEFAULT_KM = 12000;
@@ -99,12 +101,24 @@ export function Compare() {
         </p>
         <Link
           href={prefs ? `/rezultate/?${back}` : "/"}
-          className="text-sm underline"
+          className="no-print text-sm underline"
         >
           Înapoi la rezultate
         </Link>
       </div>
-      <div className={`${card} overflow-x-auto p-0`}>
+      <div className="no-print flex flex-wrap gap-2">
+        <PrintButton className={btnGhost} />
+        <ShareButton className={btnGhost} />
+      </div>
+      <p className="print-only text-sm">
+        Comparație AlegeMasina. Prețuri carburant (lei/l): benzină{" "}
+        {assumptions.fuelPrice.benzina}, motorină{" "}
+        {assumptions.fuelPrice.motorina}, GPL {assumptions.fuelPrice.gpl}; RCA{" "}
+        {assumptions.insuranceYear}, impozit {assumptions.roadTaxYear},
+        întreținere {assumptions.maintenanceYear} lei/an. Toate valorile sunt
+        orientative; verifică întotdeauna cu vânzătorul.
+      </p>
+      <div className={`${card} print-table overflow-x-auto p-0`}>
         <table className="w-full min-w-[32rem] text-left text-sm">
           <caption className="sr-only">Comparație modele</caption>
           <thead>
@@ -150,7 +164,9 @@ export function Compare() {
           </tbody>
         </table>
       </div>
-      <CostEditor value={assumptions} onChange={setAssumptions} />
+      <div className="no-print">
+        <CostEditor value={assumptions} onChange={setAssumptions} />
+      </div>
     </div>
   );
 }

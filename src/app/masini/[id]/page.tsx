@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { BodyIcon } from "@/components/BodyIcon";
 import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
+import { FavoriteButton } from "@/components/FavoriteButton";
 import { card, Morph } from "@/components/ui";
 import { getModel, models } from "@/lib/data";
 import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
@@ -78,12 +79,15 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
             {m.generation} · {m.years.from}–{m.years.to}
           </p>
         </div>
-        <Morph name={`body-${m.id}`}>
-          <BodyIcon
-            body={m.body}
-            className="text-accent-text h-14 w-36 shrink-0"
-          />
-        </Morph>
+        <div className="flex shrink-0 flex-col items-end gap-2">
+          <Morph name={`body-${m.id}`}>
+            <BodyIcon
+              body={m.body}
+              className="text-accent-text h-14 w-36 shrink-0"
+            />
+          </Morph>
+          <FavoriteButton id={m.id} label={`${m.brand} ${m.model}`} />
+        </div>
       </header>
 
       <dl className={`${card} grid grid-cols-2 gap-3 text-sm sm:grid-cols-4`}>

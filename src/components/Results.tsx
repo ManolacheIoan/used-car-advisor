@@ -10,10 +10,12 @@ import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
 import { BrandBadge } from "./BrandBadge";
 import { CostEditor } from "./CostEditor";
+import { FavoriteButton } from "./FavoriteButton";
 import { CostLine } from "./CostLine";
 import { ReasonChips } from "./ReasonChips";
 import { ScoreBar } from "./ScoreBar";
-import { BackToForm, btnPrimary, card, Morph, Notice } from "./ui";
+import { ShareButton } from "./ShareButton";
+import { BackToForm, btnGhost, btnPrimary, card, Morph, Notice } from "./ui";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
 export const MAX_COMPARE = 3;
@@ -47,7 +49,9 @@ export function Results() {
       <Notice title="Niciun model nu se potrivește tuturor criteriilor">
         <p className="text-muted">
           Combustibilul, caroseria și numărul de locuri sunt filtre stricte.
-          Relaxează unul dintre ele:
+          {options.length > 0
+            ? " Relaxează un criteriu:"
+            : " Nici relaxarea unui singur criteriu nu aduce rezultate; modifică mai multe criterii."}
         </p>
         <div className="flex flex-wrap justify-center gap-2">
           {options.map(({ key, count }) => (
@@ -56,11 +60,16 @@ export function Results() {
               className={btnPrimary}
               href={`/rezultate/?${prefsToQuery({ ...prefs, [key]: key === "seats" ? 2 : "oricare" }, new URLSearchParams(query))}`}
             >
-              {RELAX_LABEL[key]} ({count})
+              Relaxează: {RELAX_LABEL[key].toLowerCase()} ({count})
             </Link>
           ))}
         </div>
-        <BackToForm query={query.toString()} />
+        <div className="flex flex-wrap justify-center gap-2">
+          <BackToForm query={query.toString()} />
+          <Link href="/" className={btnGhost}>
+            Resetează filtrele
+          </Link>
+        </div>
       </Notice>
     );
   }
@@ -73,17 +82,28 @@ export function Results() {
           ? [...s, id]
           : s,
     );
-  const compareHref = `/compara/?${new URLSearchParams([...query, ["ids", selected.join(",")]])}`;
+  const compareHref = (ids: string[]) =>
+    `/compara/?${new URLSearchParams([...query.entries()].filter(([k]) => k !== "ids").concat([["ids", ids.join(",")]]))}`;
+  const top3 = results.slice(0, MAX_COMPARE).map((r) => r.model.id);
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-muted">
-          {results.length}{" "}
-          {results.length === 1 ? "model potrivit" : "modele potrivite"},
-          ordonate după scor
-        </p>
+      <p className="text-muted">
+        {results.length}{" "}
+        {results.length === 1 ? "model potrivit" : "modele potrivite"}, ordonate
+        după scor
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {results.length >= 2 && (
+          <Link href={compareHref(top3)} className={btnPrimary}>
+            Compară primele {top3.length}
+          </Link>
+        )}
         <BackToForm query={query.toString()} />
+        <Link href="/" className={btnGhost}>
+          Resetează filtrele
+        </Link>
+        <ShareButton className={btnGhost} />
       </div>
       <p className="text-muted text-sm">
         Prețuri medii carburant: benzină {FUEL_PRICES.prices.benzina}, motorină{" "}
@@ -122,7 +142,7 @@ export function Results() {
             {selected.length}/{MAX_COMPARE} selectate
           </span>
           <Link
-            href={compareHref}
+            href={compareHref(selected)}
             className={`${btnPrimary} ${selected.length < 2 ? "pointer-events-none opacity-50" : ""}`}
             aria-disabled={selected.length < 2}
           >
@@ -202,6 +222,7 @@ function ResultCard(p: {
           />
           Compară
         </label>
+        <FavoriteButton id={m.id} label={`${m.brand} ${m.model}`} />
         <Link
           href={`/masini/${m.id}/?${p.query}`}
           className="text-accent-text font-medium underline"
