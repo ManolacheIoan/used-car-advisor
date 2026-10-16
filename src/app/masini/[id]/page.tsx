@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { BodyIcon } from "@/components/BodyIcon";
 import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
-import { card } from "@/components/ui";
+import { card, Morph } from "@/components/ui";
 import { getModel, models } from "@/lib/data";
 import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
 import {
@@ -67,17 +67,23 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
       <header className="flex items-start justify-between gap-4">
         <div className="space-y-1">
           <BrandBadge brand={m.brand} size="lg" />
-          <h1 className="text-2xl font-bold tracking-tight">
-            {m.brand} {m.model}
+          <h1 className="text-3xl font-bold tracking-tight">
+            <Morph name={`title-${m.id}`}>
+              <span className="inline-block">
+                {m.brand} {m.model}
+              </span>
+            </Morph>
           </h1>
           <p className="text-muted">
             {m.generation} · {m.years.from}–{m.years.to}
           </p>
         </div>
-        <BodyIcon
-          body={m.body}
-          className="text-accent-text h-14 w-36 shrink-0"
-        />
+        <Morph name={`body-${m.id}`}>
+          <BodyIcon
+            body={m.body}
+            className="text-accent-text h-14 w-36 shrink-0"
+          />
+        </Morph>
       </header>
 
       <dl className={`${card} grid grid-cols-2 gap-3 text-sm sm:grid-cols-4`}>

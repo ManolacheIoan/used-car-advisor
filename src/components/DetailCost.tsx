@@ -5,6 +5,7 @@ import { ENERGY_LABEL, lei } from "@/lib/labels";
 import type { Engine } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
 import { CostEditor } from "./CostEditor";
+import { CountUp } from "./CountUp";
 import { DEFAULT_KM } from "./Compare";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
@@ -23,7 +24,14 @@ export function DetailCost({ engines }: { engines: Engine[] }) {
         {engines.map((e, i) => (
           <li key={i}>
             {ENERGY_LABEL[e.energy]} {e.hp} CP:{" "}
-            <strong>~{lei(monthlyCost(e, km, assumptions).total)}/lună</strong>{" "}
+            <strong>
+              ~
+              <CountUp
+                value={monthlyCost(e, km, assumptions).total}
+                format={lei}
+              />
+              /lună
+            </strong>{" "}
             <span className="text-muted">{COST_NOTE}</span>
           </li>
         ))}

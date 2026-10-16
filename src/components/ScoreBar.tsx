@@ -10,11 +10,11 @@ export function ScoreBar({ score }: { score: number }) {
         className="bg-surface-2 h-2.5 flex-1 overflow-hidden rounded-full"
       >
         <div
-          className="bg-accent h-full origin-left animate-[grow_0.6s_ease-out] rounded-full"
+          className="bg-accent animate-grow h-full rounded-full"
           style={{ width: `${score}%` }}
         />
       </div>
-      <span className="w-14 text-right font-semibold tabular-nums">
+      <span className="min-w-16 text-right font-semibold whitespace-nowrap tabular-nums">
         {score}/100
       </span>
     </div>

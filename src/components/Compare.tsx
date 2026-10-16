@@ -10,8 +10,9 @@ import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
 import { CostEditor } from "./CostEditor";
+import { CountUp } from "./CountUp";
 import { MAX_COMPARE } from "./Results";
-import { BackToForm, card, Notice } from "./ui";
+import { BackToForm, card, Morph, Notice } from "./ui";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
 export const DEFAULT_KM = 12000;
@@ -80,7 +81,9 @@ export function Compare() {
       "Cost lunar",
       (c) => (
         <>
-          <strong>~{lei(c.cost.total)}</strong>{" "}
+          <strong>
+            ~<CountUp value={c.cost.total} format={lei} />
+          </strong>{" "}
           <span className="text-muted text-xs">{COST_NOTE}</span>
         </>
       ),
@@ -111,15 +114,21 @@ export function Compare() {
               </th>
               {cols.map((c) => (
                 <th key={c.m.id} scope="col" className="p-3 align-top">
-                  <BodyIcon
-                    body={c.m.body}
-                    className="text-muted mb-1 h-7 w-16"
-                  />
+                  <Morph name={`body-${c.m.id}`}>
+                    <BodyIcon
+                      body={c.m.body}
+                      className="text-muted mb-1 h-7 w-16"
+                    />
+                  </Morph>
                   <Link
                     href={`/masini/${c.m.id}/?${query}`}
                     className="text-accent-text font-semibold underline"
                   >
-                    {c.m.brand} {c.m.model}
+                    <Morph name={`title-${c.m.id}`}>
+                      <span className="inline-block">
+                        {c.m.brand} {c.m.model}
+                      </span>
+                    </Morph>
                   </Link>
                 </th>
               ))}

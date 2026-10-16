@@ -1,7 +1,7 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { ViewTransition, type ReactNode } from "react";
 
-export const card = "rounded-xl border border-line bg-surface p-4";
+export const card = "card p-4";
 export const btnPrimary =
   "inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2.5 font-semibold text-on-accent transition hover:brightness-110 disabled:opacity-50";
 export const btnGhost =
@@ -43,5 +43,23 @@ export function BackToForm({ query = "" }: { query?: string }) {
     <Link href={`/${query ? `?${query}` : ""}`} className={btnGhost}>
       Modifică criteriile
     </Link>
+  );
+}
+
+/**
+ * Shared element across results, compare and detail (same `name` on each page).
+ * Uses the browser View Transitions API through React; no-op where unsupported or with reduced motion.
+ */
+export function Morph({
+  name,
+  children,
+}: {
+  name: string;
+  children: ReactNode;
+}) {
+  return (
+    <ViewTransition name={name} share="morph" default="none">
+      {children}
+    </ViewTransition>
   );
 }

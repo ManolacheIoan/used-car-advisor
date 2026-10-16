@@ -13,7 +13,7 @@ import { CostEditor } from "./CostEditor";
 import { CostLine } from "./CostLine";
 import { ReasonChips } from "./ReasonChips";
 import { ScoreBar } from "./ScoreBar";
-import { BackToForm, btnPrimary, card, Notice } from "./ui";
+import { BackToForm, btnPrimary, card, Morph, Notice } from "./ui";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
 export const MAX_COMPARE = 3;
@@ -145,7 +145,7 @@ function ResultCard(p: {
   const { model: m, engine: e } = p.r;
   return (
     <li
-      className={`${card} animate-rise space-y-3`}
+      className={`${card} card-hover animate-rise space-y-3`}
       style={{ animationDelay: `${p.position * 40}ms` }}
     >
       <div className="flex items-start justify-between gap-3">
@@ -153,9 +153,13 @@ function ResultCard(p: {
           <div className="mb-1 flex items-center gap-2">
             <BrandBadge brand={m.brand} />
           </div>
-          <h2 className="text-lg font-semibold">
+          <h2 className="text-xl font-bold">
             <span className="text-muted">{p.position}. </span>
-            {m.brand} {m.model}
+            <Morph name={`title-${m.id}`}>
+              <span className="inline-block">
+                {m.brand} {m.model}
+              </span>
+            </Morph>
           </h2>
           <p className="text-muted text-sm">
             {m.generation} · {m.years.from}–{m.years.to} · {BODY_LABEL[m.body]}{" "}
@@ -163,7 +167,9 @@ function ResultCard(p: {
           </p>
         </div>
         <div className="flex flex-col items-end gap-1">
-          <BodyIcon body={m.body} className="text-muted h-8 w-20" />
+          <Morph name={`body-${m.id}`}>
+            <BodyIcon body={m.body} className="text-muted h-8 w-20" />
+          </Morph>
           {m.example && (
             <span className="border-line text-muted rounded border px-1.5 py-0.5 text-xs">
               EXEMPLU

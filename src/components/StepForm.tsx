@@ -39,18 +39,23 @@ const USAGE_HINT = {
   mixt: "Puțin din toate",
 };
 
-export function StepForm() {
-  const router = useRouter();
+/** Reads pre-filled criteria from the URL (e.g. example scenarios, "Modifică criteriile"). */
+export function StepFormFromUrl() {
   const params = useSearchParams();
-  const [values, setValues] = useState<PrefsInput>(() => {
-    const v = { ...DEFAULTS };
-    for (const [k, short] of Object.entries(PREF_KEYS)) {
-      const q = params.get(short);
-      if (q) v[k as keyof Prefs] = q;
-    }
-    return v;
-  });
+  const initial = { ...DEFAULTS };
+  for (const [k, short] of Object.entries(PREF_KEYS)) {
+    const q = params.get(short);
+    if (q) initial[k as keyof Prefs] = q;
+  }
+  return <StepForm key={params.toString()} initial={initial} />;
+}
+
+/** Rendered statically with defaults (Suspense fallback), so the page has no layout shift while the URL is read. */
+export function StepForm({ initial = DEFAULTS }: { initial?: PrefsInput }) {
+  const router = useRouter();
+  const [values, setValues] = useState<PrefsInput>(initial);
   const [step, setStep] = useState(0);
+  const [dir, setDir] = useState<"next" | "prev">("next");
   const [errors, setErrors] = useState<FieldErrors>({});
   const last = step === STEPS.length - 1;
 
@@ -70,7 +75,10 @@ export function StepForm() {
       document.getElementById(`f-${Object.keys(stepErrors)[0]}`)?.focus();
       return;
     }
-    if (!last) return setStep(step + 1);
+    if (!last) {
+      setDir("next");
+      return setStep(step + 1);
+    }
     if (r.prefs) router.push(`/rezultate/?${prefsToQuery(r.prefs)}`);
   }
 
@@ -96,7 +104,7 @@ export function StepForm() {
         </h2>
       </div>
 
-      <div key={step} className="animate-rise space-y-5">
+      <div key={step} className={`step-${dir} space-y-5`}>
         {step === 0 && (
           <div className="grid grid-cols-2 gap-3">
             <NumberField
@@ -184,7 +192,10 @@ export function StepForm() {
         <button
           type="button"
           className={btnGhost}
-          onClick={() => setStep(step - 1)}
+          onClick={() => {
+            setDir("prev");
+            setStep(step - 1);
+          }}
           disabled={step === 0}
           hidden={step === 0}
         >
