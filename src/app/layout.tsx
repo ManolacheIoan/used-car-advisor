@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Barlow_Semi_Condensed } from "next/font/google";
 import "./globals.css";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
+import { SwRegister } from "@/components/SwRegister";
 import { THEME_SCRIPT } from "@/components/ThemeToggle";
 import { DEMO_BANNER, IS_DEMO } from "@/lib/mode";
 import { SITE } from "@/lib/site";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <SwRegister />
       </body>
     </html>
   );

@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/rezultate/", "/compara/", "/favorite/"],
+      disallow: ["/rezultate/", "/compara/", "/favorite/", "/offline/"],
     },
     sitemap: `${SITE.url}/sitemap.xml`,
   };
