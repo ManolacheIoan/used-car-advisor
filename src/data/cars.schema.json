@@ -78,7 +78,7 @@
           "engines",
           "seats",
           "trunk_l",
-          "price_ron",
+          "price_eur",
           "sources"
         ],
         "additionalProperties": false,
@@ -97,13 +97,13 @@
           },
           "seats": { "type": "integer", "minimum": 2, "maximum": 9 },
           "trunk_l": { "type": "integer", "minimum": 50, "maximum": 3000 },
-          "price_ron": {
+          "price_eur": {
             "type": "object",
             "required": ["min", "max", "set_on"],
             "additionalProperties": false,
             "properties": {
-              "min": { "type": "integer", "minimum": 1000 },
-              "max": { "type": "integer", "minimum": 1000 },
+              "min": { "type": "integer", "minimum": 100 },
+              "max": { "type": "integer", "minimum": 100 },
               "set_on": { "$ref": "#/definitions/date" }
             }
           },

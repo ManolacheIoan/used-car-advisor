@@ -42,6 +42,9 @@ tests/e2e/                 Playwright: formular → rezultate → comparație �
 5. În browser, formularul scrie criteriile în URL (`/rezultate/?bmin=…`). `Results` le citește, le validează și
    rulează `rank()`. Ipotezele de cost modificate se adaugă tot în URL, așa că linkul se poate distribui.
 
+**Monede:** prețul de achiziție și bugetul sunt în euro, cum apar în anunțurile din România. Costurile lunare sunt
+în lei. Nu se face conversie între ele.
+
 ## Scorul (`lib/scoring.ts`)
 
 1. **Filtre stricte:** combustibil, caroserie, locuri ≥ cerute. Un model nepotrivit este eliminat. Dacă nu rămâne

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FUEL_PRICES } from "@/config/fuelPrices";
 import { models } from "@/lib/data";
-import { BODY_LABEL, ENERGY_LABEL, lei } from "@/lib/labels";
+import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
 import { rank, relaxOptions, type RelaxKey, type Result } from "@/lib/scoring";
 import { prefsFromQuery, prefsToQuery } from "@/lib/validation";
 import { CostEditor } from "./CostEditor";
@@ -159,7 +159,7 @@ function ResultCard(p: {
       <p className="text-sm">
         Preț orientativ:{" "}
         <span className="font-semibold">
-          {lei(m.price_ron.min)} – {lei(m.price_ron.max)}
+          {eur(m.price_eur.min)} – {eur(m.price_eur.max)}
         </span>
       </p>
       <p className="text-muted text-sm">

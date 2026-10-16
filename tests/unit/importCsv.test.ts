@@ -30,8 +30,8 @@ const base: Record<string, string> = {
   consumption_l100km: "5,5",
   engine_source: U,
   engine_date: D,
-  price_min_ron: "20000",
-  price_max_ron: "30000",
+  price_min_eur: "20000",
+  price_max_eur: "30000",
   price_source: "https://example.com/p",
   price_date: D,
 };
@@ -76,7 +76,7 @@ describe("csvToCatalog", () => {
     const m = catalog!.models[0];
     expect(m.engines.map((e) => e.consumption.value)).toEqual([5.5, 4.2]);
     expect(m.sources.map((s) => s.url)).toEqual([U, "https://example.com/p"]);
-    expect(m.price_ron.set_on).toBe(D);
+    expect(m.price_eur.set_on).toBe(D);
     expect(m.known_issues).toEqual([]);
   });
 
@@ -100,7 +100,7 @@ describe("csvToCatalog", () => {
     );
     expect(m).toContain("3: missing seats");
     expect(m).toContain(
-      "3: missing price_source (source for price_min_ron, price_max_ron)",
+      "3: missing price_source (source for price_min_eur, price_max_eur)",
     );
   });
 
@@ -113,9 +113,9 @@ describe("csvToCatalog", () => {
   });
 
   it("reports invalid ranges", () => {
-    const m = messages(csv(row({ year_from: "2021", price_min_ron: "40000" })));
+    const m = messages(csv(row({ year_from: "2021", price_min_eur: "40000" })));
     expect(m).toContain("2: year_from 2021 > year_to 2020");
-    expect(m).toContain("2: price_min_ron 40000 > price_max_ron 30000");
+    expect(m).toContain("2: price_min_eur 40000 > price_max_eur 30000");
   });
 
   it("reports duplicate ids and conflicting model columns", () => {

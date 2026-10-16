@@ -4,10 +4,10 @@ test("form → results → compare → detail", async ({ page }) => {
   await page.goto("/");
 
   // Step 1: invalid budget is rejected, then fixed.
-  await page.getByLabel("Maxim (lei)").fill("1000");
+  await page.getByLabel("Maxim (€)").fill("1000");
   await page.getByRole("button", { name: "Continuă" }).click();
   await expect(page.getByText("cel puțin egal cu minimul")).toBeVisible();
-  await page.getByLabel("Maxim (lei)").fill("80000");
+  await page.getByLabel("Maxim (€)").fill("20000");
   await page.getByRole("button", { name: "Continuă" }).click();
 
   await page.getByText("Familie", { exact: true }).click();

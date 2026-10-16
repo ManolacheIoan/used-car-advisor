@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/despre-date/`, lastModified: dataUpdated },
     ...models.filter(isIndexable).map((m) => ({
       url: `${SITE.url}/masini/${m.id}/`,
-      lastModified: m.price_ron.set_on,
+      lastModified: m.price_eur.set_on,
     })),
   ];
 }

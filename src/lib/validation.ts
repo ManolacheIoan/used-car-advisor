@@ -2,7 +2,7 @@ import { DEFAULT_ASSUMPTIONS, type CostAssumptions } from "./cost";
 import type { Prefs } from "./scoring";
 
 export const LIMITS = {
-  budget: { min: 1000, max: 1_000_000 },
+  budget: { min: 500, max: 200_000 },
   km: { min: 1000, max: 100_000 },
   seats: [2, 4, 5, 7] as const,
 };
@@ -39,9 +39,9 @@ export function validatePrefs(raw: Partial<PrefsInput>): {
   const { budget } = LIMITS;
 
   if (!(bmin >= budget.min && bmin <= budget.max))
-    errors.budgetMin = `Introdu o sumă între ${budget.min.toLocaleString("ro-RO")} și ${budget.max.toLocaleString("ro-RO")} lei.`;
+    errors.budgetMin = `Introdu o sumă între ${budget.min.toLocaleString("ro-RO")} și ${budget.max.toLocaleString("ro-RO")} €.`;
   if (!(bmax >= budget.min && bmax <= budget.max))
-    errors.budgetMax = `Introdu o sumă între ${budget.min.toLocaleString("ro-RO")} și ${budget.max.toLocaleString("ro-RO")} lei.`;
+    errors.budgetMax = `Introdu o sumă între ${budget.min.toLocaleString("ro-RO")} și ${budget.max.toLocaleString("ro-RO")} €.`;
   else if (bmin > bmax)
     errors.budgetMax =
       "Bugetul maxim trebuie să fie cel puțin egal cu minimul.";

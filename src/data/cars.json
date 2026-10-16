@@ -34,9 +34,9 @@
       ],
       "seats": 5,
       "trunk_l": 300,
-      "price_ron": {
-        "min": 25000,
-        "max": 40000,
+      "price_eur": {
+        "min": 5000,
+        "max": 8000,
         "set_on": "2026-10-16"
       },
       "sources": [
@@ -83,9 +83,9 @@
       ],
       "seats": 5,
       "trunk_l": 520,
-      "price_ron": {
-        "min": 40000,
-        "max": 65000,
+      "price_eur": {
+        "min": 8000,
+        "max": 13000,
         "set_on": "2026-10-16"
       },
       "sources": [
@@ -132,9 +132,9 @@
       ],
       "seats": 5,
       "trunk_l": 450,
-      "price_ron": {
-        "min": 45000,
-        "max": 75000,
+      "price_eur": {
+        "min": 9000,
+        "max": 15000,
         "set_on": "2026-10-16"
       },
       "sources": [
@@ -172,9 +172,9 @@
       ],
       "seats": 5,
       "trunk_l": 480,
-      "price_ron": {
-        "min": 55000,
-        "max": 90000,
+      "price_eur": {
+        "min": 11000,
+        "max": 18000,
         "set_on": "2026-10-16"
       },
       "sources": [
@@ -212,9 +212,9 @@
       ],
       "seats": 7,
       "trunk_l": 650,
-      "price_ron": {
-        "min": 50000,
-        "max": 80000,
+      "price_eur": {
+        "min": 10000,
+        "max": 16000,
         "set_on": "2026-10-16"
       },
       "sources": [

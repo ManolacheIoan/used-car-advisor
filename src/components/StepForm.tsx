@@ -15,8 +15,8 @@ import {
 import { btnGhost, btnPrimary, card } from "./ui";
 
 const DEFAULTS: PrefsInput = {
-  budgetMin: "20000",
-  budgetMax: "50000",
+  budgetMin: "4000",
+  budgetMax: "10000",
   usage: "mixt",
   fuel: "oricare",
   body: "oricare",
@@ -101,20 +101,20 @@ export function StepForm() {
           <div className="grid grid-cols-2 gap-3">
             <NumberField
               id="budgetMin"
-              label="Minim (lei)"
+              label="Minim (€)"
               value={values.budgetMin}
               onChange={set("budgetMin")}
               error={errors.budgetMin}
-              step={1000}
+              step={500}
               min={LIMITS.budget.min}
             />
             <NumberField
               id="budgetMax"
-              label="Maxim (lei)"
+              label="Maxim (€)"
               value={values.budgetMax}
               onChange={set("budgetMax")}
               error={errors.budgetMax}
-              step={1000}
+              step={500}
               min={LIMITS.budget.min}
             />
           </div>

@@ -27,7 +27,7 @@ export default function Page() {
         Fiecare model este descris la nivel de model și generație, nu de anunț
         individual: ani de fabricație, caroserie, motorizări (cilindree, putere,
         consum declarat), locuri, volum portbagaj și un interval aproximativ de
-        preț second-hand în lei, cu data la care a fost stabilit. Fiecare model
+        preț second-hand în euro, cu data la care a fost stabilit. Fiecare model
         are cel puțin o sursă publică, afișată pe pagina lui. Nu copiem texte
         sau imagini de pe alte site-uri.
       </p>

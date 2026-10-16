@@ -48,7 +48,7 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 
 1. Adaugă un obiect în `models` din `src/data/cars.json`. Câmpurile obligatorii sunt în `cars.schema.json`: `id`
    (kebab-case, unic), `brand`, `model`, `generation`, `years`, `body`, `engines[]` (`energy`, `cc`, `hp`,
-   `consumption{value, unit}`), `seats`, `trunk_l`, `price_ron{min, max, set_on}` și `sources[]` (cel puțin una, cu
+   `consumption{value, unit}`), `seats`, `trunk_l`, `price_eur{min, max, set_on}` (în euro) și `sources[]` (cel puțin una, cu
    `title`, `url`, `accessed`).
 2. Lasă `pros`, `cons` și `known_issues` ca liste goale. Sunt pentru V2 și nu se afișează încă.
 3. Actualizează `updated` la data de azi.
@@ -65,7 +65,7 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
    - `years_*` pentru ani;
    - `body_*`, `seats_*`, `trunk_*` pentru caroserie, locuri și portbagaj;
    - `engine_*` pentru motorizare;
-   - `price_*` pentru preț (`price_date` devine data prețului).
+   - `price_*` pentru preț, în euro (`price_date` devine data prețului).
 4. `energy` poate fi `benzina`, `motorina` sau `gpl`. Consumul se scrie în l/100 km și acceptă virgulă zecimală.
    `example` este `true` doar pentru modelele fictive.
 5. Exportă din Sheets cu File → Download → CSV, apoi rulează `npm run import:cars -- ~/Downloads/fisier.csv`.

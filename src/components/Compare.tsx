@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { COST_NOTE } from "@/lib/cost";
 import { getModel, models } from "@/lib/data";
-import { BODY_LABEL, ENERGY_LABEL, lei } from "@/lib/labels";
+import { BODY_LABEL, ENERGY_LABEL, eur, lei } from "@/lib/labels";
 import { pickEngine, rank } from "@/lib/scoring";
 import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
@@ -65,7 +65,7 @@ export function Compare() {
     ["Portbagaj", (c) => `${c.m.trunk_l} l`],
     [
       "Preț orientativ",
-      (c) => `${lei(c.m.price_ron.min)} – ${lei(c.m.price_ron.max)}`,
+      (c) => `${eur(c.m.price_eur.min)} – ${eur(c.m.price_eur.max)}`,
     ],
     [
       "Motor estimat",

@@ -31,8 +31,8 @@ export const COLUMNS = [
   "consumption_l100km",
   "engine_source",
   "engine_date",
-  "price_min_ron",
-  "price_max_ron",
+  "price_min_eur",
+  "price_max_eur",
   "price_source",
   "price_date",
 ] as const;
@@ -66,7 +66,7 @@ const SOURCED: [Col, Col, Col[]][] = [
     "engine_date",
     ["energy", "cc", "hp", "consumption_l100km"],
   ],
-  ["price_source", "price_date", ["price_min_ron", "price_max_ron"]],
+  ["price_source", "price_date", ["price_min_eur", "price_max_eur"]],
 ];
 
 /** Minimal RFC 4180 parser: quoted fields, escaped quotes, commas and newlines inside quotes. */
@@ -215,11 +215,11 @@ export function csvToCatalog(
     const seats = int(head, "seats");
     const trunk = int(head, "trunk_l");
     const price = {
-      min: int(head, "price_min_ron"),
-      max: int(head, "price_max_ron"),
+      min: int(head, "price_min_eur"),
+      max: int(head, "price_max_eur"),
     };
     if (price.min > price.max)
-      err(head.line, `price_min_ron ${price.min} > price_max_ron ${price.max}`);
+      err(head.line, `price_min_eur ${price.min} > price_max_eur ${price.max}`);
 
     const engines: Engine[] = group.map((r) => {
       if (!(V1_ENERGIES as readonly string[]).includes(r.energy))
@@ -270,7 +270,7 @@ export function csvToCatalog(
       engines,
       seats,
       trunk_l: trunk,
-      price_ron: { ...price, set_on: head.price_date },
+      price_eur: { ...price, set_on: head.price_date },
       sources: [...sources.values()],
       // V2 fields are not in the CSV; keep what already exists.
       pros: old?.pros ?? [],

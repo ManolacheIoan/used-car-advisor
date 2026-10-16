@@ -87,7 +87,7 @@ describe("usage never filters", () => {
     const models = [
       car({
         id: "hatch",
-        price_ron: { min: 60000, max: 70000, set_on: "2026-01-01" },
+        price_eur: { min: 60000, max: 70000, set_on: "2026-01-01" },
       }),
       car({ id: "suv", body: "suv" }),
     ];

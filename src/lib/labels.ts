@@ -25,3 +25,6 @@ export const USAGE_LABEL: Record<Usage, string> = {
 
 export const lei = (n: number) =>
   `${Math.round(n).toLocaleString("ro-RO")} lei`;
+
+/** Purchase prices are in euro (how used cars are listed in Romania); running costs stay in lei. */
+export const eur = (n: number) => `${Math.round(n).toLocaleString("ro-RO")} €`;

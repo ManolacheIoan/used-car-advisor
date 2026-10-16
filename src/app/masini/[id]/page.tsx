@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { DetailCost } from "@/components/DetailCost";
 import { card } from "@/components/ui";
 import { getModel, models } from "@/lib/data";
-import { BODY_LABEL, ENERGY_LABEL, lei } from "@/lib/labels";
+import { BODY_LABEL, ENERGY_LABEL, eur } from "@/lib/labels";
 import {
   isIndexable,
   modelDescription,
@@ -78,7 +78,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           ["Portbagaj", `${m.trunk_l} l`],
           [
             "Preț orientativ",
-            `${lei(m.price_ron.min)} – ${lei(m.price_ron.max)}`,
+            `${eur(m.price_eur.min)} – ${eur(m.price_eur.max)}`,
           ],
         ].map(([k, v]) => (
           <div key={k}>
@@ -89,7 +89,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
       </dl>
       <p className="text-muted text-sm">
         Prețul este un interval aproximativ pentru piața second-hand, stabilit
-        la <time dateTime={m.price_ron.set_on}>{m.price_ron.set_on}</time>.
+        la <time dateTime={m.price_eur.set_on}>{m.price_eur.set_on}</time>.
         Verifică întotdeauna cu vânzătorul.
       </p>
 

@@ -138,7 +138,7 @@ export function rank(
 
   return candidates
     .map(({ m, engine, cost }): Result => {
-      const budget = budgetFit(m.price_ron, p.budgetMin, p.budgetMax);
+      const budget = budgetFit(m.price_eur, p.budgetMin, p.budgetMax);
       const costPart =
         cMax === cMin ? 1 : 1 - (cost.total - cMin) / (cMax - cMin);
       const usage = usageFit(m, engine, p.usage);
@@ -149,7 +149,7 @@ export function rank(
             WEIGHTS.usage * usage.score),
       );
       const reasons: Reason[] = [
-        budgetReason(m.price_ron, p),
+        budgetReason(m.price_eur, p),
         costReason(costPart),
         ...usage.reasons,
       ];
@@ -165,7 +165,7 @@ export function rank(
     .sort(
       (x, y) =>
         y.score - x.score ||
-        x.model.price_ron.min - y.model.price_ron.min ||
+        x.model.price_eur.min - y.model.price_eur.min ||
         x.model.id.localeCompare(y.model.id),
     )
     .slice(0, MAX_RESULTS);
