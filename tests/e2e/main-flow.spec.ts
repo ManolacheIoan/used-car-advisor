@@ -73,9 +73,11 @@ test("favorites, compare shortcut and reset", async ({ page }) => {
   await first.getByRole("button", { name: /Salvează .* la favorite/ }).click();
   await expect(page.getByRole("link", { name: "Favorite (1)" })).toBeVisible();
 
-  await page.getByRole("link", { name: /Compară primele 3/ }).click();
+  await page.getByRole("link", { name: /Compară primele \d/ }).click();
   await expect(page).toHaveURL(/\/compara\/.*ids=/);
-  await expect(page.getByRole("columnheader")).toHaveCount(4);
+  await expect(page.getByRole("columnheader")).toHaveCount(5);
+  await page.getByLabel("Arată doar diferențele").check();
+  await expect(page.getByText("cea mai bună valoare").first()).toBeVisible();
   await expect(page.getByRole("button", { name: "Printează" })).toBeVisible();
 
   await page.getByRole("link", { name: "Favorite (1)" }).click();

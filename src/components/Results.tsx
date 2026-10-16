@@ -36,7 +36,7 @@ import { VerificationBadge } from "./VerificationBadge";
 import { BackToForm, btnGhost, btnPrimary, card, Morph, Notice } from "./ui";
 import { useUrlAssumptions } from "./useUrlAssumptions";
 
-export const MAX_COMPARE = 3;
+export const MAX_COMPARE = 4;
 
 const RELAX_LABEL: Record<RelaxKey, string> = {
   fuel: "Orice combustibil",
@@ -116,7 +116,7 @@ export function Results() {
     );
   const compareHref = (ids: string[]) =>
     `/compara/?${new URLSearchParams([...query.entries()].filter(([k]) => k !== "ids").concat([["ids", ids.join(",")]]))}`;
-  const top3 = results.slice(0, MAX_COMPARE).map((r) => r.model.id);
+  const topN = results.slice(0, MAX_COMPARE).map((r) => r.model.id);
 
   return (
     <div className="space-y-4">
@@ -127,8 +127,8 @@ export function Results() {
       </p>
       <div className="flex flex-wrap gap-2">
         {results.length >= 2 && (
-          <Link href={compareHref(top3)} className={btnPrimary}>
-            Compară primele {top3.length}
+          <Link href={compareHref(topN)} className={btnPrimary}>
+            Compară primele {topN.length}
           </Link>
         )}
         <BackToForm query={query.toString()} />

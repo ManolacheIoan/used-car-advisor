@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import type { ReactNode } from "react";
+import { bestIndexes, differs } from "@/lib/compareHighlight";
 import { COST_NOTE } from "@/lib/cost";
 import { getModel, models } from "@/lib/data";
 import {
@@ -32,6 +34,7 @@ export const DEFAULT_KM = 12000;
 
 export function Compare() {
   const [assumptions, setAssumptions, query] = useUrlAssumptions();
+  const [onlyDiff, setOnlyDiff] = useState(false);
   const picked = (query.get("ids") ?? "")
     .split(",")
     .map((id) => getModel(id))
@@ -69,16 +72,54 @@ export function Compare() {
   const back = new URLSearchParams(query);
   back.delete("ids");
 
-  const rows: [string, (c: (typeof cols)[number]) => ReactNode][] = [
-    ["Scor", (c) => (c.score !== undefined ? `${c.score}/100` : "—")],
-    ["Generație", (c) => generationLabel(c.m)],
-    ["Caroserie", (c) => BODY_LABEL[c.m.body]],
-    ["Motorizări", (c) => engineSummary(c.m)],
-    ["Locuri", (c) => c.m.seats],
-    ["Portbagaj", (c) => `${c.m.trunk_l} l`],
-    [
-      "Preț",
-      (c) => (
+  type Col = (typeof cols)[number];
+  /** `metric` marks the best value; `text` is used to detect rows where the models differ. */
+  const rows: {
+    label: string;
+    cell: (c: Col) => ReactNode;
+    text: (c: Col) => string;
+    metric?: (c: Col) => number | null;
+    dir?: "min" | "max";
+  }[] = [
+    {
+      label: "Scor",
+      cell: (c) => (c.score !== undefined ? `${c.score}/100` : "—"),
+      text: (c) => String(c.score ?? ""),
+      metric: (c) => c.score ?? null,
+      dir: "max",
+    },
+    {
+      label: "Generație",
+      cell: (c) => generationLabel(c.m),
+      text: (c) => generationLabel(c.m),
+    },
+    {
+      label: "Caroserie",
+      cell: (c) => BODY_LABEL[c.m.body],
+      text: (c) => c.m.body,
+    },
+    {
+      label: "Motorizări",
+      cell: (c) => engineSummary(c.m),
+      text: (c) => engineSummary(c.m),
+    },
+    {
+      label: "Locuri",
+      cell: (c) => c.m.seats,
+      text: (c) => String(c.m.seats),
+      metric: (c) => c.m.seats,
+      dir: "max",
+    },
+    {
+      label: "Portbagaj",
+      cell: (c) => `${c.m.trunk_l} l`,
+      text: (c) => String(c.m.trunk_l),
+      metric: (c) => c.m.trunk_l,
+      dir: "max",
+    },
+    {
+      label: "Preț",
+      cell: (c) => (
         <>
           {priceRange(c.m)}
           {c.m.price_eur && (
@@ -88,15 +129,31 @@ export function Compare() {
           )}
         </>
       ),
-    ],
-    [
-      "Motor estimat",
-      (c) => `${ENERGY_LABEL[c.engine.energy]}, ${c.engine.hp} CP`,
-    ],
-    ["Consum declarat", (c) => consumptionText(c.engine)],
-    [
-      "Cost lunar",
-      (c) => (
+      text: (c) => priceRange(c.m),
+      metric: (c) => (c.m.price_eur?.verified ? c.m.price_eur.low : null),
+      dir: "min",
+    },
+    {
+      label: "Motor estimat",
+      cell: (c) => `${ENERGY_LABEL[c.engine.energy]}, ${c.engine.hp} CP`,
+      text: (c) => `${c.engine.energy}${c.engine.hp}`,
+      metric: (c) => c.engine.hp,
+      dir: "max",
+    },
+    {
+      label: "Consum declarat",
+      cell: (c) => consumptionText(c.engine),
+      text: (c) => consumptionText(c.engine),
+      // Best value only when every model uses the same test cycle.
+      metric: (c) =>
+        mixedCycles(cols.map((x) => x.engine))
+          ? null
+          : c.engine.consumption.value,
+      dir: "min",
+    },
+    {
+      label: "Cost lunar",
+      cell: (c) => (
         <>
           <strong>
             ~<CountUp value={c.cost.total} format={lei} />
@@ -104,8 +161,14 @@ export function Compare() {
           <span className="text-muted text-xs">{COST_NOTE}</span>
         </>
       ),
-    ],
+      text: (c) => String(Math.round(c.cost.total)),
+      metric: (c) => c.cost.total,
+      dir: "min",
+    },
   ];
+  const visibleRows = onlyDiff
+    ? rows.filter((r) => differs(cols.map(r.text)))
+    : rows;
 
   return (
     <div className="space-y-4">
@@ -121,7 +184,16 @@ export function Compare() {
           Înapoi la rezultate
         </Link>
       </div>
-      <div className="no-print flex flex-wrap gap-2">
+      <div className="no-print flex flex-wrap items-center gap-2">
+        <label className="mr-auto flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={onlyDiff}
+            onChange={(e) => setOnlyDiff(e.target.checked)}
+            className="size-4"
+          />
+          Arată doar diferențele
+        </label>
         <PrintButton className={btnGhost} />
         <ShareButton className={btnGhost} />
       </div>
@@ -172,18 +244,40 @@ export function Compare() {
             </tr>
           </thead>
           <tbody>
-            {rows.map(([label, cell]) => (
-              <tr key={label} className="border-line border-b last:border-0">
-                <th scope="row" className="text-muted p-3 font-medium">
-                  {label}
-                </th>
-                {cols.map((c) => (
-                  <td key={c.m.id} className="p-3">
-                    {cell(c)}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            {visibleRows.map((r) => {
+              const best = r.metric
+                ? bestIndexes(cols.map(r.metric), r.dir ?? "min")
+                : [];
+              const diff = differs(cols.map(r.text));
+              return (
+                <tr
+                  key={r.label}
+                  className="border-line border-b last:border-0"
+                >
+                  <th scope="row" className="text-muted p-3 font-medium">
+                    {r.label}
+                    {diff && (
+                      <span className="text-accent-text block text-xs font-normal">
+                        diferă
+                      </span>
+                    )}
+                  </th>
+                  {cols.map((c, i) => (
+                    <td
+                      key={c.m.id}
+                      className={`p-3 ${best.includes(i) ? "bg-accent/10 font-semibold" : ""}`}
+                    >
+                      {r.cell(c)}
+                      {best.includes(i) && (
+                        <span className="text-accent-text block text-xs font-normal">
+                          cea mai bună valoare
+                        </span>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
