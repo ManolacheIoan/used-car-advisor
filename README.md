@@ -88,7 +88,10 @@ Recomandat: prin import din CSV (vezi mai jos). Manual, direct în JSON:
 4. Pentru fiecare model se folosește motorizarea cea mai ieftină la utilizare care se potrivește combustibilului ales.
 
 **Costul lunar** (`src/lib/cost.ts`) = km/12 × consum declarat/100 × preț carburant + (RCA + impozit + întreținere)/12.
-Valorile implicite sunt aproximative și pot fi modificate de utilizator. Totul este etichetat „orientativ”.
+Valorile implicite sunt aproximative și pot fi modificate de utilizator. Lângă fiecare cost apare nota „orientativ, de
+obicei mai mare decât consumul declarat”. Prețurile implicite ale carburanților sunt în `src/config/fuelPrices.ts`,
+împreună cu data actualizării, afișată pe pagina de rezultate. **Un test pică dacă data este mai veche de 60 de zile**:
+actualizează prețurile și data, apoi fă commit.
 
 ## Politica privind sursele de date
 

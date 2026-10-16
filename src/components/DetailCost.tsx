@@ -1,6 +1,6 @@
 "use client";
 
-import { monthlyCost } from "@/lib/cost";
+import { COST_NOTE, monthlyCost } from "@/lib/cost";
 import { ENERGY_LABEL, lei } from "@/lib/labels";
 import type { Engine } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
@@ -23,7 +23,8 @@ export function DetailCost({ engines }: { engines: Engine[] }) {
         {engines.map((e, i) => (
           <li key={i}>
             {ENERGY_LABEL[e.energy]} {e.hp} CP:{" "}
-            <strong>~{lei(monthlyCost(e, km, assumptions).total)}/lună</strong>
+            <strong>~{lei(monthlyCost(e, km, assumptions).total)}/lună</strong>{" "}
+            <span className="text-muted">{COST_NOTE}</span>
           </li>
         ))}
       </ul>

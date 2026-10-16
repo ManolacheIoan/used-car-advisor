@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { COST_NOTE } from "@/lib/cost";
 import { getModel, models } from "@/lib/data";
 import { BODY_LABEL, ENERGY_LABEL, lei } from "@/lib/labels";
 import { pickEngine, rank } from "@/lib/scoring";
@@ -74,7 +75,15 @@ export function Compare() {
       "Consum declarat",
       (c) => `${c.engine.consumption.value} ${c.engine.consumption.unit}`,
     ],
-    ["Cost lunar (orientativ)", (c) => <strong>~{lei(c.cost.total)}</strong>],
+    [
+      "Cost lunar",
+      (c) => (
+        <>
+          <strong>~{lei(c.cost.total)}</strong>{" "}
+          <span className="text-muted text-xs">{COST_NOTE}</span>
+        </>
+      ),
+    ],
   ];
 
   return (

@@ -185,7 +185,7 @@ describe("rank", () => {
   it("explains budget and cost in reasons", () => {
     const [r] = rank([car()], prefs, DEFAULT_ASSUMPTIONS);
     expect(r.reasons[0].text).toBe("Integral în buget");
-    expect(r.reasons[1].text).toMatch(/lei\/lună/);
+    expect(r.reasons[1].text).toBe("Cost lunar printre cele mai mici");
   });
 });
 

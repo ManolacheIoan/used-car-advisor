@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { FUEL_PRICES } from "@/config/fuelPrices";
 import { models } from "@/lib/data";
 import { BODY_LABEL, ENERGY_LABEL, lei } from "@/lib/labels";
 import { rank, relaxOptions, type RelaxKey, type Result } from "@/lib/scoring";
@@ -82,6 +83,12 @@ export function Results() {
         </p>
         <BackToForm query={query.toString()} />
       </div>
+      <p className="text-muted text-sm">
+        Prețuri implicite carburant: benzină {FUEL_PRICES.prices.benzina},
+        motorină {FUEL_PRICES.prices.motorina}, GPL {FUEL_PRICES.prices.gpl}{" "}
+        lei/l, actualizate la{" "}
+        <time dateTime={FUEL_PRICES.updated}>{FUEL_PRICES.updated}</time>.
+      </p>
       <CostEditor value={assumptions} onChange={setAssumptions} />
       <ol className="space-y-3">
         {results.map((r, i) => (

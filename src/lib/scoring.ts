@@ -44,7 +44,12 @@ export interface Result {
   reasons: Reason[];
 }
 
-const fmt = (n: number) => Math.round(n).toLocaleString("ro-RO");
+function costReason(costPart: number): Reason {
+  if (costPart >= 0.75)
+    return { text: "Cost lunar printre cele mai mici", positive: true };
+  if (costPart >= 0.5) return { text: "Cost lunar mediu", positive: true };
+  return { text: "Cost lunar mai mare decât alternativele", positive: false };
+}
 
 export function budgetFit(
   price: { min: number; max: number },
@@ -145,10 +150,7 @@ export function rank(
       );
       const reasons: Reason[] = [
         budgetReason(m.price_ron, p),
-        {
-          text: `~${fmt(cost.total)} lei/lună${costPart >= 0.75 ? ", printre cele mai mici" : ""}`,
-          positive: costPart >= 0.5,
-        },
+        costReason(costPart),
         ...usage.reasons,
       ];
       return {

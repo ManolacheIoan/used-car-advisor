@@ -1,4 +1,9 @@
+import { FUEL_PRICES } from "@/config/fuelPrices";
 import type { Engine } from "./types";
+
+/** Shown next to every monthly cost figure. */
+export const COST_NOTE =
+  "orientativ, de obicei mai mare decât consumul declarat";
 
 /** Editable assumptions. All values in RON. Defaults are approximate placeholders. */
 export interface CostAssumptions {
@@ -9,7 +14,7 @@ export interface CostAssumptions {
 }
 
 export const DEFAULT_ASSUMPTIONS: CostAssumptions = {
-  fuelPrice: { benzina: 7.5, motorina: 7.6, gpl: 3.8 },
+  fuelPrice: { ...FUEL_PRICES.prices },
   insuranceYear: 1200,
   roadTaxYear: 300,
   maintenanceYear: 2000,
