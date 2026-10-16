@@ -19,9 +19,11 @@ export function ThemeToggle() {
       onClick={toggle}
       className="border-line text-muted hover:text-fg rounded-md border px-3 py-1.5 text-sm"
     >
-      <span className="in-data-[theme=light]:hidden">Temă luminoasă</span>
+      <span className="in-data-[theme=light]:hidden">
+        Temă<span className="max-sm:sr-only"> luminoasă</span>
+      </span>
       <span className="hidden in-data-[theme=light]:inline">
-        Temă întunecată
+        Temă<span className="max-sm:sr-only"> întunecată</span>
       </span>
     </button>
   );

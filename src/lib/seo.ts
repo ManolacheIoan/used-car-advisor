@@ -54,3 +54,11 @@ export function modelJsonLd(m: CarModel) {
     url: `${SITE.url}/masini/${m.id}/`,
   };
 }
+
+/** Short original overview generated from the data. */
+export function modelOverview(m: CarModel): string {
+  const fuels = [
+    ...new Set(m.engines.map((e) => ENERGY_LABEL[e.energy].toLowerCase())),
+  ].join(", ");
+  return `${m.brand} ${m.model} generația ${m.generation} este un ${BODY_LABEL[m.body].toLowerCase()} produs între ${m.years.from} și ${m.years.to}, cu ${m.seats} locuri și portbagaj de ${m.trunk_l} l. În catalog are ${m.engines.length} ${m.engines.length === 1 ? "motorizare" : "motorizări"} (${fuels}).`;
+}

@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { CompareButton } from "@/components/CompareButton";
+import { FaqBlock } from "@/components/FaqBlock";
+import { V2Sections } from "@/components/V2Sections";
+import { brandId } from "@/lib/brand";
+import { modelSlug } from "@/lib/catalog";
+import { modelFaq } from "@/lib/faq";
+import { similarModels } from "@/lib/similar";
+import { suitability } from "@/lib/suitability";
 import { BodyIcon } from "@/components/BodyIcon";
 import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
@@ -9,7 +18,7 @@ import { ExchangeRateNote, priceNote } from "@/components/PriceNote";
 import { VerificationBadge } from "@/components/VerificationBadge";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { card, Morph } from "@/components/ui";
-import { getModel, models } from "@/lib/data";
+import { dataUpdated, getModel, models } from "@/lib/data";
 import {
   BODY_LABEL,
   consumptionRange,
@@ -24,19 +33,18 @@ import {
   isIndexable,
   modelDescription,
   modelJsonLd,
+  modelOverview,
   modelTitle,
 } from "@/lib/seo";
 import { OG_IMAGE, SITE } from "@/lib/site";
+import { EMPTY_PARAM } from "@/lib/taxonomy";
 
 export const dynamicParams = false;
-
-/** Placeholder route used only while the catalog is empty (static export needs ≥ 1 path); it renders 404. */
-const EMPTY_CATALOG_ID = "fara-modele";
 
 export function generateStaticParams() {
   return models.length
     ? models.map((m) => ({ id: m.id }))
-    : [{ id: EMPTY_CATALOG_ID }];
+    : [{ id: EMPTY_PARAM }];
 }
 
 export async function generateMetadata({
@@ -66,9 +74,21 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
   const m = getModel((await params).id);
   if (!m) notFound();
   const jsonLd = JSON.stringify(modelJsonLd(m)).replace(/</g, "\\u003c");
+  const similar = similarModels(m, models);
 
   return (
     <article className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Mărci", href: "/marci/" },
+          { name: m.brand, href: `/marci/${brandId(m.brand)}/` },
+          {
+            name: m.model,
+            href: `/marci/${brandId(m.brand)}/${modelSlug(m.model)}/`,
+          },
+          { name: `Generația ${m.generation}`, href: `/masini/${m.id}/` },
+        ]}
+      />
       {isIndexable(m) && (
         <script
           type="application/ld+json"
@@ -105,6 +125,9 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           <FavoriteButton id={m.id} label={`${m.brand} ${m.model}`} />
         </div>
       </header>
+      <CompareButton id={m.id} />
+
+      <p className="text-muted">{modelOverview(m)}</p>
 
       <dl className={`${card} grid grid-cols-2 gap-3 text-sm sm:grid-cols-4`}>
         {[
@@ -183,10 +206,71 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         <DetailCost engines={m.engines} />
       </Suspense>
 
+      <section aria-labelledby="fit-h" className="space-y-2">
+        <h2 id="fit-h" className="text-lg font-semibold">
+          Cui i se potrivește
+        </h2>
+        <p className="text-muted text-sm">
+          După regulile transparente de utilizare (vezi{" "}
+          <Link href="/metodologie/" className="underline">
+            metodologia
+          </Link>
+          ), aplicate motorizării cu costul de utilizare cel mai mic.
+        </p>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {suitability(m).map((s) => (
+            <li key={s.usage} className="card p-3 text-sm">
+              <p className="font-semibold">
+                {s.label}: {s.suits ? "potrivit" : "mai puțin potrivit"}{" "}
+                <span className="text-muted font-normal">
+                  ({Math.round(s.score * 100)}/100)
+                </span>
+              </p>
+              <p className="text-muted">
+                {s.reasons
+                  .map((r) => (r.positive ? "✓ " : "– ") + r.text)
+                  .join(" · ")}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <V2Sections m={m} />
+
+      {similar.length > 0 && (
+        <section aria-labelledby="sim-h" className="space-y-2">
+          <h2 id="sim-h" className="text-lg font-semibold">
+            Modele similare
+          </h2>
+          <p className="text-muted text-sm">
+            Aceeași caroserie, perioadă de producție apropiată.
+          </p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {similar.map((x) => (
+              <li key={x.id} className="card card-hover p-3 text-sm">
+                <Link
+                  href={`/masini/${x.id}/`}
+                  className="font-semibold hover:underline"
+                >
+                  {x.brand} {x.model}
+                </Link>
+                <span className="text-muted block">{generationLabel(x)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <FaqBlock items={modelFaq(m)} indexable={isIndexable(m)} />
+
       <section aria-labelledby="src-h" className="space-y-2 text-sm">
         <h2 id="src-h" className="text-lg font-semibold">
           Surse
         </h2>
+        <p className="text-muted">
+          Date actualizate la <time dateTime={dataUpdated}>{dataUpdated}</time>.
+        </p>
         <ul className="list-disc space-y-1 pl-5">
           {m.sources.map((s) => (
             <li key={s.source_url}>
