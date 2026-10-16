@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const g = visibleGuides("glosar").find((x) => x.slug === SLUG);
   return (
-    <article className="space-y-5">
+    <article className="max-w-3xl space-y-5">
       <Breadcrumbs items={[{ name: "Glosar", href: "/glosar/" }]} />
       <h1 className="text-3xl font-bold tracking-tight">Glosar</h1>
       {g ? (

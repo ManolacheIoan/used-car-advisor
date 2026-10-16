@@ -1,130 +1,90 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { StaticPage } from "@/components/StaticPage";
+import { EXCHANGE_RATE } from "@/config/exchangeRate";
+import { FUEL_PRICES } from "@/config/fuelPrices";
 import { dataUpdated } from "@/lib/data";
-import { BUDGET_TOLERANCE, WEIGHTS } from "@/lib/scoring";
+import { IS_DEMO } from "@/lib/mode";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Despre date și limitări",
   description:
-    "De unde vin datele, cum se calculează scorul și costul lunar, și ce limitări are AlegeMasina.",
+    "De unde vin datele, ce înseamnă valorile orientative, prețurile cerute și ciclurile de test NEDC/WLTP.",
   alternates: { canonical: "/despre-date/" },
 };
 
-const pct = (n: number) => `${Math.round(n * 100)}%`;
-
 export default function Page() {
   return (
-    <article className="[&_p]:text-muted [&_ul]:text-muted max-w-none space-y-5 [&_h2]:text-lg [&_h2]:font-semibold [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
-      <h1 className="text-2xl font-bold tracking-tight">
-        Despre date și limitări
-      </h1>
+    <StaticPage
+      title="Despre date și limitări"
+      href="/despre-date/"
+      reviewed={dataUpdated}
+    >
       <p>
         Date actualizate la <time dateTime={dataUpdated}>{dataUpdated}</time>.
+        {IS_DEMO &&
+          " Aceasta este versiunea DEMO: specificațiile și prețurile sunt valori sintetice, doar pentru testare."}
       </p>
-
       <h2>Ce date folosim</h2>
       <p>
-        Fiecare model este descris la nivel de model și generație, nu de anunț
-        individual: ani de fabricație, caroserie, motorizări (cilindree, putere,
-        consum declarat), locuri, volum portbagaj și un interval aproximativ de
-        preț second-hand în euro, cu data la care a fost stabilit. Fiecare model
-        are cel puțin o sursă publică, afișată pe pagina lui. Nu copiem texte
-        sau imagini de pe alte site-uri.
+        Fiecare model este descris la nivel de model și generație: ani de
+        producție, caroserie, motorizări (cilindree, putere, consum declarat cu
+        ciclul de test), locuri și portbagaj. Fiecare grup de date are sursa,
+        data accesării și licența, afișate pe pagina modelului și în{" "}
+        <Link href="/surse/">Surse și atribuiri</Link>. Publicăm un model doar
+        după ce îl verificăm față de surse.
       </p>
-
-      <h2>Cum se calculează scorul</h2>
+      <h2>Valori orientative</h2>
       <ul>
         <li>
-          Combustibilul, caroseria, marca și numărul minim de locuri sunt filtre
-          stricte: modelele care nu se potrivesc nu apar.
+          Toate cifrele sunt orientative și pot conține erori; verifică
+          întotdeauna cu vânzătorul și cu surse oficiale.
         </li>
         <li>
-          Potrivire cu bugetul ({pct(WEIGHTS.budget)}): cât din intervalul de
-          preț se suprapune cu bugetul tău; peste sau sub buget, scorul scade
-          până la zero la o diferență de {pct(BUDGET_TOLERANCE)} din bugetul
-          maxim.
+          Prețurile sunt <strong>prețuri cerute în anunțuri</strong>, culese
+          manual (minimum 10 anunțuri, cel mult 60 de zile vechime), nu prețuri
+          de vânzare.
         </li>
         <li>
-          Cost lunar estimat ({pct(WEIGHTS.cost)}): comparat cu celelalte modele
-          potrivite.
+          Prețurile carburanților sunt medii naționale din {FUEL_PRICES.updated}{" "}
+          ({FUEL_PRICES.source.title}).
+          {EXCHANGE_RATE.eurRon !== null &&
+            ` Cursul folosit la conversii: 1 € = ${EXCHANGE_RATE.eurRon.toLocaleString("ro-RO")} lei (${EXCHANGE_RATE.source?.title}, ${EXCHANGE_RATE.date}).`}
         </li>
         <li>
-          Potrivire cu utilizarea ({pct(WEIGHTS.usage)}): reguli simple
-          (caroserie, consum, putere, portbagaj).
+          RCA, impozitul, ITP, rovinieta și întreținerea nu au valori implicite:
+          le introduci tu.
         </li>
-        <li>Nu evaluăm fiabilitatea sau calitatea modelelor.</li>
       </ul>
-
-      <h2>Costul lunar</h2>
+      <h2>Ciclurile de test (NEDC, WLTP)</h2>
       <p>
-        Carburant (km pe an × consum declarat × preț) plus RCA, impozit și
-        întreținere împărțite la 12. Toate ipotezele pot fi modificate pe pagina
-        de rezultate. Consumul real este de obicei mai mare decât cel declarat.
-        Rezultatul este orientativ.
+        Consumul declarat apare cu ciclul lui de test. Valorile NEDC și WLTP nu
+        se compară direct și nu le convertim; când compari modele cu cicluri
+        diferite afișăm o notă. Detalii în{" "}
+        <Link href="/ghiduri/nedc-vs-wltp/">NEDC vs WLTP</Link>.
       </p>
-
-      <h2>Prețuri</h2>
-      <p>
-        Prețurile sunt prețuri cerute în anunțuri (nu prețuri de vânzare),
-        culese manual, orientative, în EUR. Pentru fiecare model afișăm
-        intervalul, numărul de anunțuri consultate (minimum 10) și data
-        culegerii (cel mult 60 de zile în urmă la import). Modelele fără preț
-        verificat nu apar în recomandări. Cursul EUR/RON, când este afișat, are
-        data și sursa lui; nu convertim prețurile.
-      </p>
-
-      <h2>Consum: cicluri de test (NEDC, WLTP)</h2>
-      <p>
-        Consumul afișat este valoarea declarată de producător, exact cum apare
-        în sursă, împreună cu ciclul de test: NEDC (vechi, folosit până în jurul
-        anului 2018) sau WLTP (mai nou, de obicei cu valori mai mari pentru
-        aceeași mașină). Când ciclul nu e cunoscut, scrie „ciclu necunoscut”.
-      </p>
+      <h2>Ce nu facem</h2>
       <ul>
         <li>
-          Nu convertim valorile între cicluri și nu le „normalizăm” cu factori
-          estimați.
+          Nu evaluăm fiabilitatea și nu publicăm „probleme cunoscute” fără cel
+          puțin două surse independente.
         </li>
         <li>
-          Scorul și costul lunar folosesc valoarea declarată, așa cum este.
+          Nu preluăm date din site-uri de anunțuri și nu copiem texte sau
+          imagini.
         </li>
         <li>
-          Când modelele afișate sau comparate au consumuri din cicluri diferite,
-          pagina afișează o notă: valorile nu sunt direct comparabile.
+          Nu avem conturi, cookies sau trackere (vezi{" "}
+          <Link href="/confidentialitate/">Confidențialitate</Link>).
         </li>
       </ul>
-
-      <h2>Limitări</h2>
-      <ul>
-        <li>
-          Prețurile și costurile sunt aproximative. Verifică întotdeauna cu
-          vânzătorul.
-        </li>
-        <li>
-          Starea fiecărei mașini contează mai mult decât modelul. Fă o
-          verificare tehnică înainte de cumpărare.
-        </li>
-        <li>
-          Impozitul și asigurarea depind de localitate, cilindree și profilul
-          tău; valorile implicite sunt generice.
-        </li>
-      </ul>
-
-      <h2>Confidențialitate</h2>
-      <p>
-        Nu avem cont, bază de date, cookies sau trackere. Răspunsurile tale
-        rămân în adresa paginii, în browser. Alegerea temei și lista de favorite
-        sunt păstrate doar local, în browser (localStorage).
-      </p>
-
       <h2>Corecturi</h2>
       <p>
-        Ai găsit o greșeală? Scrie-ne la{" "}
-        <a className="text-fg underline" href={`mailto:${SITE.contactEmail}`}>
-          {SITE.contactEmail}
-        </a>
-        .
+        Scrie-ne la{" "}
+        <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> (detalii
+        în <Link href="/contact/">Contact</Link>).
       </p>
-    </article>
+    </StaticPage>
   );
 }

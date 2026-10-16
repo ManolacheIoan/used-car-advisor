@@ -31,7 +31,7 @@ export default async function Page({ params }: PageProps<"/ghiduri/[slug]">) {
   const g = find((await params).slug);
   if (!g) notFound();
   return (
-    <article className="space-y-5">
+    <article className="max-w-3xl space-y-5">
       <Breadcrumbs
         items={[
           { name: "Ghiduri", href: "/ghiduri/" },

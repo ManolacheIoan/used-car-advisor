@@ -59,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main
           id="main"
-          className="mx-auto min-h-svh w-full max-w-3xl flex-1 px-4 py-6"
+          className="mx-auto min-h-svh w-full max-w-5xl flex-1 px-4 py-6"
         >
           {children}
         </main>
