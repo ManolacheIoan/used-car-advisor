@@ -18,6 +18,8 @@
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
     0 18px 40px -16px rgba(0, 0, 0, 0.85);
   --speed-line: rgba(255, 255, 255, 0.035);
+  /* Chart bar (single series), validated vs surface: lightness band + contrast ≥ 3:1. */
+  --chart-bar: #d9690f;
   color-scheme: dark;
 }
 
@@ -37,6 +39,7 @@
   --shadow-hover:
     0 2px 4px rgba(16, 24, 40, 0.08), 0 18px 40px -16px rgba(16, 24, 40, 0.35);
   --speed-line: rgba(18, 24, 33, 0.045);
+  --chart-bar: #c65f0a;
   color-scheme: light;
 }
 
@@ -50,6 +53,7 @@
   --color-accent: var(--accent);
   --color-accent-text: var(--accent-text);
   --color-on-accent: var(--on-accent);
+  --color-chart-bar: var(--chart-bar);
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: var(--font-barlow), system-ui, sans-serif;
 }
