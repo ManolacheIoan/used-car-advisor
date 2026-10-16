@@ -129,7 +129,8 @@ obicei mai mare decât consumul declarat”. Prețurile implicite ale carburanț
 
 - Aplicația **nu desenează și nu imită sigle**. `BrandBadge` afișează o etichetă text originală cu numele mărcii.
 - Dacă ai dreptul să folosești sigla oficială (verifică întâi termenii de utilizare ai producătorului), pune
-  fișierul în `public/brands/<brand-id>.svg` sau `.png`. Exemple de nume: `dacia`, `volkswagen`, `skoda`,
+  fișierul în `public/brands/<brand-id>.svg` sau `.png` **și, lângă el, `<brand-id>.LICENSE.txt`** cu termenii sau
+  permisiunea. Fără fișierul de licență, sigla nu se afișează. Exemple de nume: `dacia`, `volkswagen`, `skoda`,
   `mercedes-benz`.
 - `npm run dev` și `npm run build` actualizează automat `src/data/brandAssets.json`.
 - Siluetele de caroserie din `BodyIcon` sunt originale și generice, nu reprezintă niciun model anume.

@@ -14,17 +14,19 @@ describe("brandId", () => {
 });
 
 describe("brand asset manifest", () => {
-  it("only accepts <brand-id>.svg|png, svg first", () => {
-    expect(
-      scanBrandFiles([
-        "skoda.png",
-        "skoda.svg",
-        ".gitkeep",
-        "Bad Name.svg",
-        "bmw.jpg",
-        "dacia.png",
-      ]),
-    ).toEqual({
+  it("only accepts <brand-id>.svg|png with a licence file next to it, svg first", () => {
+    const files = [
+      "skoda.png",
+      "skoda.svg",
+      "skoda.LICENSE.txt",
+      ".gitkeep",
+      "Bad Name.svg",
+      "bmw.jpg",
+      "dacia.png",
+      "dacia.LICENSE.txt",
+      "audi.svg",
+    ];
+    expect(scanBrandFiles(files)).toEqual({
       dacia: "/brands/dacia.png",
       skoda: "/brands/skoda.svg",
     });

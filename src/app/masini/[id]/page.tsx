@@ -37,7 +37,7 @@ import {
   modelOverview,
   modelTitle,
 } from "@/lib/seo";
-import { OG_IMAGE, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { EMPTY_PARAM } from "@/lib/taxonomy";
 
 export const dynamicParams = false;
@@ -65,7 +65,6 @@ export async function generateMetadata({
       description: modelDescription(m),
       locale: "ro_RO",
       siteName: SITE.name,
-      images: [OG_IMAGE],
     },
     robots: isIndexable(m) ? undefined : { index: false },
   };

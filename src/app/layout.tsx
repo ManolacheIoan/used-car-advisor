@@ -4,7 +4,7 @@ import "./globals.css";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { THEME_SCRIPT } from "@/components/ThemeToggle";
 import { DEMO_BANNER, IS_DEMO } from "@/lib/mode";
-import { OG_IMAGE, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 /** Display font for headings (OFL). Body text stays on the system font. */
 const display = Barlow_Semi_Condensed({
@@ -24,9 +24,8 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: SITE.title,
     description: SITE.description,
-    images: [OG_IMAGE],
   },
-  twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
+  twitter: { card: "summary_large_image" },
   // Demo builds: never indexed.
   ...(IS_DEMO ? { robots: { index: false, follow: false } } : {}),
 };
