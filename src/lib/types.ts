@@ -17,6 +17,9 @@ export interface Engine {
   energy: Energy;
   cc?: number;
   hp: number;
+  /** Optional until sourced data exists; catalog filters appear only when values are present. */
+  gearbox?: "manuala" | "automata";
+  drive?: "fata" | "spate" | "integrala";
   /** Declared consumption as published; `cycle` is the test cycle. Never converted between cycles. */
   consumption: {
     value: number;

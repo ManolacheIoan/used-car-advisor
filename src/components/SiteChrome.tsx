@@ -13,6 +13,12 @@ export function SiteHeader() {
         </Link>
         <nav className="flex items-center gap-2" aria-label="Principal">
           <Link
+            href="/catalog/"
+            className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
+          >
+            Catalog
+          </Link>
+          <Link
             href="/favorite/"
             className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
           >

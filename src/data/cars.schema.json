@@ -107,6 +107,12 @@
               "enum": ["NEDC", "WLTP", "unknown"]
             }
           }
+        },
+        "gearbox": {
+          "enum": ["manuala", "automata"]
+        },
+        "drive": {
+          "enum": ["fata", "spate", "integrala"]
         }
       }
     },
