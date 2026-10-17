@@ -2,7 +2,7 @@
  * Usage-fit rules (the "U" part of the score in src/lib/scoring.ts).
  *
  * For each usage: U = base + sum(points of rules met), so a model meeting every rule gets exactly 1.
- * Rules only change the score; they never remove a model (only fuel, body and seats are hard filters).
+ * Rules only change the score; they never remove a model (only fuel, body, brand and seats are hard filters).
  * `yes` / `no` are the "de ce" chips shown to the user; `reason` documents why the rule exists.
  * Thresholds are inclusive and use declared (manufacturer) values from the data.
  */

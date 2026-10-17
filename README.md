@@ -79,6 +79,10 @@ Sursele și metoda pentru cele 30 de modele din CSV sunt în `data/SOURCES.md`.
   - RCA, impozitul, ITP, rovinieta, întreținerea și deprecierea sunt goale, iar utilizatorul le completează.
 - **Prețuri carburanți:** `src/config/fuelPrices.ts`, medii din 2026-10-09.
 - **Curs EUR/RON:** `src/config/exchangeRate.ts`, 5,33 din 2026-10-16. Apare oriunde există o conversie.
+- **Lighthouse (CI):** rulează pe build-ul public (`out/`), care acum are catalogul gol (`cars.public.json` nu are
+  încă modele verificate). Scorurile nu reflectă paginile cu date. Rulare locală o singură dată pe build-ul demo
+  (2026-10-17, mediana a 3 rulări, 7 pagini, nepublicat): performanță 0,95–0,98, accesibilitate 1,00, bune practici
+  1,00, SEO 0,63–0,66 (demo are `noindex`, deci SEO e scăzut intenționat).
 - **Vechimea datelor:** CI avertizează (fără să pice) la prețuri de carburant mai vechi de 60 de zile și la un curs
   mai vechi de 30 de zile.
 

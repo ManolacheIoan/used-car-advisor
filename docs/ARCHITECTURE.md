@@ -92,7 +92,7 @@ tests/e2e/                     Playwright: proiect demo (fluxuri, axe, PWA) și 
 - **Accesibilitate:** axe (WCAG 2.1 AA) pe 15 pagini, în ambele teme; tabele derulabile focusabile; combobox
   accesibil în catalog.
 - **Lighthouse în CI:** performanță, accesibilitate și bune practici ≥ 0,9 pe toate paginile testate; SEO ≥ 0,9 pe
-  paginile indexabile.
+  paginile indexabile. Rulează pe build-ul public, care acum are catalogul gol (rezultatele demo sunt în README).
 - **PWA:** manifest, iconițe originale, service worker (pagini network-first, resurse cache-first, pagină offline).
 
 ## SEO
