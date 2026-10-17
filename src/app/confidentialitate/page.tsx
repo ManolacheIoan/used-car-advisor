@@ -14,7 +14,7 @@ export default function Page() {
     <StaticPage
       title="Confidențialitate"
       href="/confidentialitate/"
-      reviewed="2026-10-16"
+      reviewed="2026-10-17"
     >
       <p>
         Pe scurt: nu avem conturi, nu folosim cookies și nu folosim instrumente
@@ -31,6 +31,17 @@ export default function Page() {
         Acestea sunt păstrate doar local, în spațiul de stocare al browserului
         (localStorage), și nu ne sunt trimise. Le poți șterge din pagina
         Favorite sau din setările browserului.
+      </p>
+      <h2>Paginile salvate pentru folosire offline</h2>
+      <p>
+        Site-ul are un service worker care păstrează în browserul tău (Cache
+        Storage) paginile pe care le-ai vizitat și fișierele lor (stiluri,
+        scripturi, imagini), ca să se încarce mai repede și să funcționeze și
+        fără internet. Copiile rămân doar pe dispozitivul tău și nu ne sunt
+        trimise. Le poți șterge din setările browserului, ștergând datele
+        site-ului (de exemplu, în Chrome: Setări → Confidențialitate și
+        securitate → Setări pentru site-uri → Vezi permisiunile și datele
+        stocate pe site-uri). Astfel se șterg și preferințele de mai sus.
       </p>
       <h2>Ce intră în adresa paginii</h2>
       <p>
