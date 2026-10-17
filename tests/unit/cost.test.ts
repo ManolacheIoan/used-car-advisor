@@ -5,7 +5,8 @@ import {
   unsetNote,
   type CostAssumptions,
 } from "@/lib/cost";
-import { engine } from "./fixtures";
+import { pickEngine } from "@/lib/scoring";
+import { car, engine } from "./fixtures";
 
 const a: CostAssumptions = {
   fuelPrice: { benzina: 8, motorina: 7, gpl: 4 },
@@ -38,7 +39,13 @@ describe("monthlyCost", () => {
   });
 
   it("0 km means only fixed costs", () => {
-    expect(monthlyCost(engine(), 0, a).fuel).toBe(0);
+    const c = monthlyCost(engine(), 0, a);
+    expect(c.fuel).toBe(0);
+    expect(c.total).toBe(270); // (1200 + 240 + 1800) / 12
+  });
+
+  it("a model with no engines has no cost estimate (and does not throw)", () => {
+    expect(pickEngine(car({ engines: [] }), "oricare", 12000, a)).toBeNull();
   });
 
   it("all-zero assumptions give zero cost", () => {

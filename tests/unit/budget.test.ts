@@ -29,6 +29,12 @@ describe("modelsWithinBudget", () => {
       "thirsty",
     ]);
   });
+  it("keeps a model whose cost equals the budget exactly (0 left)", () => {
+    const r = modelsWithinBudget(ms, 600, 12000, a);
+    expect(r.map((x) => x.m.id)).toEqual(["eco"]);
+    expect(r[0].left).toBe(0);
+  });
+
   it("rejects a negative budget", () => {
     expect(() => modelsWithinBudget(ms, -1, 12000, a)).toThrow(RangeError);
   });

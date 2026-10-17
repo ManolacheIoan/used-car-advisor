@@ -38,6 +38,48 @@ describe("loanPayment (annuity)", () => {
     ).toBe(0);
   });
 
+  it("100 % yearly rate", () => {
+    const r = loanPayment({
+      price: 10000,
+      downPayment: 0,
+      annualRatePct: 100,
+      months: 12,
+    });
+    expect(r.payment).toBeCloseTo(1349.96, 2);
+    expect(r.totalInterest).toBeCloseTo(6199.49, 1);
+  });
+
+  it("120 months (the maximum)", () => {
+    const r = loanPayment({
+      price: 10000,
+      downPayment: 0,
+      annualRatePct: 6,
+      months: 120,
+    });
+    expect(r.payment).toBeCloseTo(111.02, 2);
+    expect(r.totalInterest).toBeCloseTo(3322.46, 1);
+    expect(
+      validateLoan({
+        price: 10000,
+        downPayment: 0,
+        annualRatePct: 6,
+        months: 121,
+      }),
+    ).toHaveLength(1);
+  });
+
+  it("1 month: principal plus one month of interest", () => {
+    const r = loanPayment({
+      price: 12000,
+      downPayment: 2000,
+      annualRatePct: 12,
+      months: 1,
+    });
+    expect(r.payment).toBeCloseTo(10100, 6);
+    expect(r.totalInterest).toBeCloseTo(100, 6);
+    expect(r.totalPaid).toBeCloseTo(12100, 6);
+  });
+
   it.each([
     [{ price: 0, downPayment: 0, annualRatePct: 5, months: 12 }, "Prețul"],
     [

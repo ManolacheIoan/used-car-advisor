@@ -240,6 +240,30 @@ describe("rank", () => {
     expect(r.map((x) => x.model.id)).toEqual(["a", "b"]);
   });
 
+  it("on equal scores, the lower starting price comes first, then the id", () => {
+    const r = rank(
+      [
+        car({ id: "a-dear", price_eur: price(30000, 40000) }),
+        car({ id: "z-cheap", price_eur: price(20000, 40000) }),
+        car({ id: "b-dear", price_eur: price(30000, 40000) }),
+      ],
+      prefs,
+      DEFAULT_ASSUMPTIONS,
+    );
+    expect(new Set(r.map((x) => x.score)).size).toBe(1);
+    expect(r.map((x) => x.model.id)).toEqual(["z-cheap", "a-dear", "b-dear"]);
+  });
+
+  it("equal monthly costs all get the full cost part", () => {
+    const r = rank(
+      [car({ id: "a" }), car({ id: "b", price_eur: price(45000, 55000) })],
+      prefs,
+      DEFAULT_ASSUMPTIONS,
+    );
+    expect(r.map((x) => x.parts.cost)).toEqual([1, 1]);
+    expect(r.map((x) => x.model.id)).toEqual(["a", "b"]);
+  });
+
   it(`returns at most ${MAX_RESULTS} results`, () => {
     const many = Array.from({ length: 15 }, (_, i) => car({ id: `m${i}` }));
     expect(rank(many, prefs, DEFAULT_ASSUMPTIONS)).toHaveLength(MAX_RESULTS);

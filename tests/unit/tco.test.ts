@@ -61,6 +61,30 @@ describe("computeTco", () => {
     expect(r.unset.sort()).toEqual(["depreciation", "itp", "rca", "vignette"]);
   });
 
+  it("100 % depreciation: the whole value is lost in year 1", () => {
+    const r = computeTco({ ...base, depreciationPctYear: 100 });
+    expect(r.perYear[0].depreciation).toBe(50000); // 10000 € × 5 lei
+    expect(r.perYear.slice(1).every((y) => y.depreciation === 0)).toBe(true);
+    expect(r.categoryTotals.depreciation).toBe(50000);
+  });
+
+  it("an ITP interval of 0 is treated as not set (no division by zero)", () => {
+    const r = computeTco({ ...base, itpIntervalYears: 0 });
+    expect(r.perYear[0].itp).toBe(0);
+    expect(r.unset).toEqual(["itp"]);
+    expect(Number.isFinite(r.total)).toBe(true);
+  });
+
+  it("more than 5 years", () => {
+    const r = computeTco({ ...base, years: 10 });
+    expect(r.perYear).toHaveLength(10);
+    expect(r.categoryTotals.fuel).toBe(72000);
+    expect(r.categoryTotals.depreciation).toBeCloseTo(
+      10000 * (1 - 0.9 ** 10) * 5,
+    );
+    expect(r.monthlyAverage).toBeCloseTo(r.total / 120);
+  });
+
   it("rejects invalid input", () => {
     expect(() => computeTco({ ...base, kmYear: -1 })).toThrow(RangeError);
     expect(() => computeTco({ ...base, years: 0 })).toThrow(RangeError);
