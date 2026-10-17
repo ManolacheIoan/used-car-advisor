@@ -12,8 +12,8 @@ import type { CarModel } from "./types";
 
 export function modelFaq(m: CarModel): { q: string; a: string }[] {
   const name = `${m.brand} ${m.model} ${m.generation}`;
-  const { engine, cost } = pickEngine(m, "oricare", 12000, DEFAULT_ASSUMPTIONS);
-  return [
+  const picked = pickEngine(m, "oricare", 12000, DEFAULT_ASSUMPTIONS);
+  const faq = [
     {
       q: `În ce ani s-a produs ${name}?`,
       a: `Conform sursei din catalog, între ${m.years.from} și ${m.years.to}.`,
@@ -34,9 +34,11 @@ export function modelFaq(m: CarModel): { q: string; a: string }[] {
       q: `Ce caroserie, câte locuri și ce portbagaj are?`,
       a: `${BODY_LABEL[m.body]}, ${m.seats} locuri, portbagaj de ${m.trunk_l} l (valoare declarată).`,
     },
-    {
-      q: `Cât costă lunar, orientativ?`,
-      a: `Cu motorizarea cea mai economică din catalog (${engine.hp} CP) și ipotezele implicite pentru 12.000 km/an, aproximativ ${lei(cost.total)} pe lună. Valoare orientativă; modific-o cu ipotezele tale în calculatorul de mai sus.`,
-    },
   ];
+  if (picked)
+    faq.push({
+      q: `Cât costă lunar, orientativ?`,
+      a: `Cu motorizarea cea mai economică din catalog (${picked.engine.hp} CP) și ipotezele implicite pentru 12.000 km/an, aproximativ ${lei(picked.cost.total)} pe lună. Valoare orientativă; modific-o cu ipotezele tale în calculatorul de mai sus.`,
+    });
+  return faq;
 }

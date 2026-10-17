@@ -6,8 +6,11 @@ import type { CarModel, Usage } from "./types";
 
 export const SUITS_THRESHOLD = 0.7;
 
+/** [] when the model has no engine the rules can be applied to (e.g. hybrid/electric only). */
 export function suitability(m: CarModel, kmYear = 12000) {
-  const { engine } = pickEngine(m, "oricare", kmYear, DEFAULT_ASSUMPTIONS);
+  const picked = pickEngine(m, "oricare", kmYear, DEFAULT_ASSUMPTIONS);
+  if (!picked) return [];
+  const { engine } = picked;
   return (Object.keys(USAGE_LABEL) as Usage[]).map((u) => {
     const fit = usageFit(m, engine, u);
     return {

@@ -17,7 +17,7 @@ import {
   mixedCycles,
   priceRange,
 } from "@/lib/labels";
-import { pickEngine, rank } from "@/lib/scoring";
+import { hasCostableEngine, pickEngine, rank } from "@/lib/scoring";
 import type { CarModel } from "@/lib/types";
 import { prefsFromQuery } from "@/lib/validation";
 import { BodyIcon } from "./BodyIcon";
@@ -38,7 +38,7 @@ export function Compare() {
   const picked = (query.get("ids") ?? "")
     .split(",")
     .map((id) => getModel(id))
-    .filter((m): m is CarModel => !!m)
+    .filter((m): m is CarModel => !!m && hasCostableEngine(m))
     .slice(0, MAX_COMPARE);
   const { prefs } = prefsFromQuery(query);
 
@@ -57,17 +57,17 @@ export function Compare() {
   );
   const cols = picked.map((m) => {
     const r = scores.get(m.id);
-    return {
-      m,
-      score: r?.score,
-      ...(r ??
-        pickEngine(
-          m,
-          prefs?.fuel ?? "oricare",
-          prefs?.kmYear ?? DEFAULT_KM,
-          assumptions,
-        )),
-    };
+    // A model ranked under other prefs may lack the chosen fuel; fall back to any costable engine.
+    const est =
+      r ??
+      pickEngine(
+        m,
+        prefs?.fuel ?? "oricare",
+        prefs?.kmYear ?? DEFAULT_KM,
+        assumptions,
+      ) ??
+      pickEngine(m, "oricare", prefs?.kmYear ?? DEFAULT_KM, assumptions)!;
+    return { m, score: r?.score, engine: est.engine, cost: est.cost };
   });
   const back = new URLSearchParams(query);
   back.delete("ids");

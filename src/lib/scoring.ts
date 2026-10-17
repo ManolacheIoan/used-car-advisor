@@ -115,21 +115,37 @@ export function matchesHard(
   );
 }
 
-/** Engine used for the estimate: cheapest to run among those matching the chosen fuel. */
+/** Engines the V1 cost model can estimate (petrol, diesel, LPG) that match the chosen fuel. */
+function costableEngines(m: CarModel, fuel: Prefs["fuel"]): Engine[] {
+  return m.engines.filter((e) =>
+    fuel === "oricare"
+      ? e.energy !== "hibrid" && e.energy !== "electric"
+      : e.energy === fuel,
+  );
+}
+
+/** True when the model has at least one engine whose running cost can be estimated. */
+export const hasCostableEngine = (
+  m: CarModel,
+  fuel: Prefs["fuel"] = "oricare",
+) => costableEngines(m, fuel).length > 0;
+
+/**
+ * Engine used for the estimate: cheapest to run among those matching the chosen fuel.
+ * null when the model has none (e.g. only hybrid/electric engines, or no engines); such models are skipped.
+ */
 export function pickEngine(
   m: CarModel,
   fuel: Prefs["fuel"],
   kmYear: number,
   a: CostAssumptions,
-): { engine: Engine; cost: MonthlyCost } {
-  return m.engines
-    .filter((e) =>
-      fuel === "oricare"
-        ? e.energy !== "hibrid" && e.energy !== "electric"
-        : e.energy === fuel,
-    )
-    .map((engine) => ({ engine, cost: monthlyCost(engine, kmYear, a) }))
-    .reduce((best, x) => (x.cost.total < best.cost.total ? x : best));
+): { engine: Engine; cost: MonthlyCost } | null {
+  let best: { engine: Engine; cost: MonthlyCost } | null = null;
+  for (const engine of costableEngines(m, fuel)) {
+    const cost = monthlyCost(engine, kmYear, a);
+    if (!best || cost.total < best.cost.total) best = { engine, cost };
+  }
+  return best;
 }
 
 export function rank(
@@ -140,7 +156,10 @@ export function rank(
   const candidates = models
     .filter(hasPrice)
     .filter((m) => matchesHard(m, p))
-    .map((m) => ({ m, ...pickEngine(m, p.fuel, p.kmYear, a) }));
+    .flatMap((m) => {
+      const picked = pickEngine(m, p.fuel, p.kmYear, a);
+      return picked ? [{ m, ...picked }] : [];
+    });
   if (candidates.length === 0) return [];
 
   const totals = candidates.map((c) => c.cost.total);

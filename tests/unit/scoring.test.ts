@@ -1,9 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { DEFAULT_ASSUMPTIONS } from "@/lib/cost";
+import { modelsWithinBudget } from "@/lib/budget";
+import { modelFaq } from "@/lib/faq";
+import { suitability } from "@/lib/suitability";
 import {
   budgetFit,
+  hasCostableEngine,
   matchesHard,
   MAX_RESULTS,
+  pickEngine,
   rank,
   relaxOptions,
   usageFit,
@@ -258,5 +263,53 @@ describe("models without a verified price", () => {
         (r) => r.model.id,
       ),
     ).toEqual(["priced"]);
+  });
+});
+
+describe("models without a costable engine", () => {
+  const hybrid = car({ id: "hyb", engines: [engine({ energy: "hibrid" })] });
+  const ev = car({
+    id: "ev",
+    engines: [
+      engine({
+        energy: "electric",
+        consumption: { value: 15, unit: "kWh/100km", cycle: "WLTP" },
+      }),
+    ],
+  });
+  const empty = car({ id: "empty", engines: [] });
+  const ok = car({ id: "ok" });
+
+  it("pickEngine returns null instead of throwing", () => {
+    for (const m of [hybrid, ev, empty])
+      expect(pickEngine(m, "oricare", 12000, DEFAULT_ASSUMPTIONS)).toBeNull();
+    expect(pickEngine(ok, "motorina", 12000, DEFAULT_ASSUMPTIONS)).toBeNull();
+    expect(hasCostableEngine(hybrid)).toBe(false);
+    expect(hasCostableEngine(ok)).toBe(true);
+  });
+  it("rank skips them", () => {
+    expect(
+      rank([hybrid, ev, empty, ok], prefs, DEFAULT_ASSUMPTIONS).map(
+        (r) => r.model.id,
+      ),
+    ).toEqual(["ok"]);
+    expect(rank([hybrid, ev, empty], prefs, DEFAULT_ASSUMPTIONS)).toEqual([]);
+  });
+  it("modelsWithinBudget skips them", () => {
+    expect(
+      modelsWithinBudget(
+        [hybrid, ev, empty, ok],
+        1e6,
+        12000,
+        DEFAULT_ASSUMPTIONS,
+      ).map((x) => x.m.id),
+    ).toEqual(["ok"]);
+  });
+  it("suitability and FAQ do not throw", () => {
+    for (const m of [hybrid, ev, empty]) {
+      expect(suitability(m)).toEqual([]);
+      expect(modelFaq(m).some((f) => f.q.startsWith("Cât costă"))).toBe(false);
+    }
+    expect(suitability(ok)).toHaveLength(4);
   });
 });

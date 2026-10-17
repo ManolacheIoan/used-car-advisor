@@ -75,6 +75,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
   if (!m) notFound();
   const jsonLd = JSON.stringify(modelJsonLd(m)).replace(/</g, "\\u003c");
   const similar = similarModels(m, models);
+  const fit = suitability(m);
 
   return (
     <article className="space-y-6">
@@ -212,35 +213,37 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         <DetailCost engines={m.engines} />
       </Suspense>
 
-      <section aria-labelledby="fit-h" className="space-y-2">
-        <h2 id="fit-h" className="text-lg font-semibold">
-          Cui i se potrivește
-        </h2>
-        <p className="text-muted text-sm">
-          După regulile transparente de utilizare (vezi{" "}
-          <Link href="/metodologie/" className="underline">
-            metodologia
-          </Link>
-          ), aplicate motorizării cu costul de utilizare cel mai mic.
-        </p>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {suitability(m).map((s) => (
-            <li key={s.usage} className="card p-3 text-sm">
-              <p className="font-semibold">
-                {s.label}: {s.suits ? "potrivit" : "mai puțin potrivit"}{" "}
-                <span className="text-muted font-normal">
-                  ({Math.round(s.score * 100)}/100)
-                </span>
-              </p>
-              <p className="text-muted">
-                {s.reasons
-                  .map((r) => (r.positive ? "✓ " : "– ") + r.text)
-                  .join(" · ")}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {fit.length > 0 && (
+        <section aria-labelledby="fit-h" className="space-y-2">
+          <h2 id="fit-h" className="text-lg font-semibold">
+            Cui i se potrivește
+          </h2>
+          <p className="text-muted text-sm">
+            După regulile transparente de utilizare (vezi{" "}
+            <Link href="/metodologie/" className="underline">
+              metodologia
+            </Link>
+            ), aplicate motorizării cu costul de utilizare cel mai mic.
+          </p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {fit.map((s) => (
+              <li key={s.usage} className="card p-3 text-sm">
+                <p className="font-semibold">
+                  {s.label}: {s.suits ? "potrivit" : "mai puțin potrivit"}{" "}
+                  <span className="text-muted font-normal">
+                    ({Math.round(s.score * 100)}/100)
+                  </span>
+                </p>
+                <p className="text-muted">
+                  {s.reasons
+                    .map((r) => (r.positive ? "✓ " : "– ") + r.text)
+                    .join(" · ")}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <V2Sections m={m} />
 

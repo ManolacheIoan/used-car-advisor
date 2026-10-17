@@ -12,7 +12,10 @@ export function modelsWithinBudget(
   if (!(Number.isFinite(budgetMonthLei) && budgetMonthLei >= 0))
     throw new RangeError("budget must be ≥ 0");
   return models
-    .map((m) => ({ m, ...pickEngine(m, "oricare", kmYear, a) }))
+    .flatMap((m) => {
+      const picked = pickEngine(m, "oricare", kmYear, a);
+      return picked ? [{ m, ...picked }] : [];
+    })
     .map((x) => ({ ...x, left: budgetMonthLei - x.cost.total }))
     .filter((x) => x.left >= 0)
     .sort(
