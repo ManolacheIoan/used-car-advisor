@@ -64,7 +64,8 @@ tests/e2e/                     Playwright: proiect demo (fluxuri, axe, PWA) și 
 
 - **Filtre stricte:** combustibil, caroserie, marcă, locuri.
 - **Scor** = 100 × (0,40·B + 0,30·C + 0,30·U):
-  - B (buget): suprapunerea dintre interval și buget, cu scădere liniară până la 20% în afara bugetului;
+  - B (buget): doar față de bugetul maxim; interval la sau sub maxim = 1 (o mașină mai ieftină nu e penalizată),
+    interval parțial peste maxim = 0,5–1 după partea de sub maxim, peste maxim scădere liniară până la 0 la +20%;
   - C (cost): costul lunar normalizat min–max între candidați;
   - U (utilizare): regulile din `config/usageRules.ts`, fiecare cu motivul ei.
 - Nu există scor de fiabilitate. Pagina Metodologie se generează din același cod.

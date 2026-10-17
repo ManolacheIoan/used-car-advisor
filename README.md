@@ -70,7 +70,8 @@ Sursele și metoda pentru cele 30 de modele din CSV sunt în `data/SOURCES.md`.
 ## Scorul și costurile
 
 - **Filtre stricte:** combustibil, caroserie, marcă, locuri.
-- **Scor** = 40% buget + 30% cost lunar + 30% utilizare. Regulile de utilizare, fiecare cu motivul ei, sunt în
+- **Scor** = 40% buget + 30% cost lunar + 30% utilizare. Bugetul se compară doar cu maximul: la sau sub maxim =
+  punctaj maxim; scorul scade doar peste buget. Regulile de utilizare, fiecare cu motivul ei, sunt în
   `src/config/usageRules.ts`. Detalii în pagina Metodologie.
 - **Cost lunar:** km × consum declarat × preț carburant, plus costurile fixe pe care le introduci tu.
 - **Valori implicite** (`src/config/costDefaults.ts`):

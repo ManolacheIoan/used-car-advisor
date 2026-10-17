@@ -26,9 +26,13 @@ export default function Page() {
       <h2>Scorul (0–100)</h2>
       <ul>
         <li>
-          Buget: {pct(WEIGHTS.budget)}. Cât din intervalul de preț se suprapune
-          cu bugetul tău; în afara bugetului, scorul scade liniar până la zero
-          la o diferență de {pct(BUDGET_TOLERANCE)} din bugetul maxim.
+          Buget: {pct(WEIGHTS.budget)}, comparat doar cu bugetul maxim. Un
+          interval de preț aflat integral la sau sub bugetul maxim primește
+          punctajul maxim, chiar dacă e sub minimul ales (o mașină mai ieftină
+          nu e penalizată). Dacă intervalul depășește parțial bugetul maxim,
+          punctajul scade proporțional cu partea de peste buget, până la
+          jumătate; peste buget, scade liniar până la zero la o diferență de{" "}
+          {pct(BUDGET_TOLERANCE)} din bugetul maxim.
         </li>
         <li>
           Cost lunar estimat: {pct(WEIGHTS.cost)}, comparat cu celelalte modele

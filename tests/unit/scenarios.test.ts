@@ -90,9 +90,10 @@ describe("example scenarios", () => {
 
   it("family, any fuel: the wagon wins", () => {
     expect(pick("familie").map((r) => [r.model.id, r.score])).toEqual([
+      // The cheap hatchback is under the budget max, so it keeps the full budget score.
       ["family-wagon", 100],
+      ["city-hatch", 80],
       ["diesel-sedan", 77],
-      ["family-suv", 67],
     ]);
   });
 
@@ -100,7 +101,7 @@ describe("example scenarios", () => {
     expect(
       pick("autostrada-motorina").map((r) => [r.model.id, r.score]),
     ).toEqual([
-      ["family-wagon", 96],
+      ["family-wagon", 100],
       ["diesel-sedan", 70],
     ]);
   });

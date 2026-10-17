@@ -34,44 +34,64 @@ describe("weights", () => {
   });
 });
 
-describe("budgetFit", () => {
-  it("is 1 when the price range is inside the budget", () => {
-    expect(budgetFit({ min: 35000, max: 45000 }, 30000, 50000)).toBe(1);
+describe("budgetFit (against the budget max only)", () => {
+  it("is 1 when the whole range is at or below the max", () => {
+    expect(budgetFit({ min: 35000, max: 45000 }, 50000)).toBe(1);
+    expect(budgetFit({ min: 40000, max: 50000 }, 50000)).toBe(1);
   });
-  it("is 1 when the budget is inside the price range", () => {
-    expect(budgetFit({ min: 20000, max: 80000 }, 30000, 50000)).toBe(1);
+  it("is 1 below the budget too (a cheaper car is never penalised)", () => {
+    expect(budgetFit({ min: 10000, max: 25000 }, 50000)).toBe(1);
   });
-  it("is 0.75 for half overlap", () => {
-    expect(budgetFit({ min: 40000, max: 60000 }, 30000, 50000)).toBeCloseTo(
-      0.75,
-    );
+  it("is 0.75 when half the range is above the max", () => {
+    expect(budgetFit({ min: 40000, max: 60000 }, 50000)).toBeCloseTo(0.75);
+    expect(budgetFit({ min: 20000, max: 80000 }, 50000)).toBeCloseTo(0.75);
   });
-  it("is 0.5 when ranges just touch", () => {
-    expect(budgetFit({ min: 50000, max: 60000 }, 30000, 50000)).toBe(0.5);
+  it("is 0.5 when the range starts exactly at the max", () => {
+    expect(budgetFit({ min: 50000, max: 60000 }, 50000)).toBe(0.5);
   });
-  it("decays to 0 at 20% above budget", () => {
-    expect(budgetFit({ min: 55000, max: 60000 }, 30000, 50000)).toBeCloseTo(
-      0.25,
-    );
-    expect(budgetFit({ min: 60000, max: 70000 }, 30000, 50000)).toBe(0);
-    expect(budgetFit({ min: 90000, max: 99000 }, 30000, 50000)).toBe(0);
-  });
-  it("handles below-budget models", () => {
-    expect(budgetFit({ min: 10000, max: 25000 }, 30000, 50000)).toBeCloseTo(
-      0.25,
-    );
+  it("decays to 0 at 20% above the max", () => {
+    expect(budgetFit({ min: 55000, max: 60000 }, 50000)).toBeCloseTo(0.25);
+    expect(budgetFit({ min: 60000, max: 70000 }, 50000)).toBe(0);
+    expect(budgetFit({ min: 90000, max: 99000 }, 50000)).toBe(0);
   });
   it("handles zero-width ranges", () => {
-    expect(budgetFit({ min: 40000, max: 40000 }, 40000, 40000)).toBe(1);
-    expect(budgetFit({ min: 40000, max: 40000 }, 30000, 50000)).toBe(1);
+    expect(budgetFit({ min: 40000, max: 40000 }, 40000)).toBe(1);
+    expect(budgetFit({ min: 55000, max: 55000 }, 50000)).toBeCloseTo(0.25);
   });
-  it("is within [0, 1]", () => {
-    for (const min of [0, 10000, 45000, 70000])
-      for (const w of [0, 5000, 50000]) {
-        const v = budgetFit({ min, max: min + w }, 30000, 50000);
-        expect(v).toBeGreaterThanOrEqual(0);
-        expect(v).toBeLessThanOrEqual(1);
-      }
+  it("is within [0, 1] and never increases with price", () => {
+    let prev = 1;
+    for (let min = 0; min <= 80000; min += 2500) {
+      const v = budgetFit({ min, max: min + 10000 }, 50000);
+      expect(v).toBeGreaterThanOrEqual(0);
+      expect(v).toBeLessThanOrEqual(prev);
+      prev = v;
+    }
+  });
+});
+
+describe("budget chips follow the score", () => {
+  const chip = (low: number, high: number) =>
+    rank([car({ price_eur: price(low, high) })], prefs, DEFAULT_ASSUMPTIONS)[0]
+      .reasons[0];
+  it("max score → positive chip", () => {
+    expect(chip(35000, 45000)).toEqual({
+      text: "Integral în buget",
+      positive: true,
+    });
+    expect(chip(10000, 20000)).toEqual({
+      text: "Sub bugetul maxim",
+      positive: true,
+    });
+  });
+  it("below max score → negative chip", () => {
+    expect(chip(45000, 55000)).toEqual({
+      text: "Parțial peste buget",
+      positive: false,
+    });
+    expect(chip(52000, 56000)).toEqual({
+      text: "Peste buget",
+      positive: false,
+    });
   });
 });
 

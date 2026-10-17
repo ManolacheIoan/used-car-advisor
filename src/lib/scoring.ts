@@ -3,8 +3,9 @@
  *
  * 1. Hard filters (a mismatch removes the model): fuel, body type, brand, seats (>= requested).
  * 2. Score 0–100 = 100 × (W.budget·B + W.cost·C + W.usage·U), each part in [0, 1]:
- *    B  budget fit: if the price range overlaps the budget, 0.5 + 0.5 × overlap / (narrower range);
- *       otherwise 0.5 × max(0, 1 − gap / (20% of budget max)). Continuous at the edge.
+ *    B  budget fit, against the budget max only (a cheaper car is never penalised):
+ *       whole range ≤ max → 1; range straddles max → 0.5 + 0.5 × (share of the range ≤ max);
+ *       range entirely above max → 0.5 × max(0, 1 − gap / (20% of max)). Continuous at every edge.
  *    C  monthly cost: min–max across the filtered candidates; cheapest = 1, dearest = 0.
  *    U  usage fit: additive rules per usage (see src/config/usageRules.ts), capped at 1.
  * No reliability or quality signal is used in V1.
@@ -62,26 +63,26 @@ function costReason(costPart: number): Reason {
 
 export function budgetFit(
   price: { min: number; max: number },
-  min: number,
-  max: number,
+  budgetMax: number,
 ): number {
-  const overlap = Math.min(price.max, max) - Math.max(price.min, min);
-  if (overlap >= 0) {
-    const narrower = Math.min(price.max - price.min, max - min);
-    return narrower === 0 ? 1 : 0.5 + (0.5 * overlap) / narrower;
-  }
-  const gap = price.min > max ? price.min - max : min - price.max;
-  const tolerance = BUDGET_TOLERANCE * max;
-  return tolerance === 0 ? 0 : 0.5 * Math.max(0, 1 - gap / tolerance);
+  if (price.max <= budgetMax) return 1;
+  if (price.min <= budgetMax)
+    return 0.5 + (0.5 * (budgetMax - price.min)) / (price.max - price.min);
+  const tolerance = BUDGET_TOLERANCE * budgetMax;
+  return tolerance === 0
+    ? 0
+    : 0.5 * Math.max(0, 1 - (price.min - budgetMax) / tolerance);
 }
 
+/** Chips follow the score: positive only when B = 1. */
 function budgetReason(price: { min: number; max: number }, p: Prefs): Reason {
-  if (price.min >= p.budgetMin && price.max <= p.budgetMax)
-    return { text: "Integral în buget", positive: true };
-  if (price.min <= p.budgetMax && price.max >= p.budgetMin)
-    return { text: "Parțial în buget", positive: true };
-  if (price.min > p.budgetMax) return { text: "Peste buget", positive: false };
-  return { text: "Sub bugetul ales", positive: true };
+  if (price.max <= p.budgetMax)
+    return price.min >= p.budgetMin
+      ? { text: "Integral în buget", positive: true }
+      : { text: "Sub bugetul maxim", positive: true };
+  if (price.min <= p.budgetMax)
+    return { text: "Parțial peste buget", positive: false };
+  return { text: "Peste buget", positive: false };
 }
 
 export function usageFit(
@@ -169,7 +170,7 @@ export function rank(
   return candidates
     .map(({ m, engine, cost }): Result => {
       const range = { min: m.price_eur.low, max: m.price_eur.high };
-      const budget = budgetFit(range, p.budgetMin, p.budgetMax);
+      const budget = budgetFit(range, p.budgetMax);
       const costPart =
         cMax === cMin ? 1 : 1 - (cost.total - cMin) / (cMax - cMin);
       const usage = usageFit(m, engine, p.usage);
