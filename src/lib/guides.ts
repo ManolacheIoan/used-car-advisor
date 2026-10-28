@@ -1,5 +1,5 @@
 /**
- * Guides: Markdown files in content/ghiduri/ with front matter. Read at build time only (server components).
+ * Guides: Markdown files in content/guides/ with front matter. Read at build time only (server components).
  * Every guide is "ghid orientativ"; `status: draft` guides are excluded from public builds (shown only in demo).
  */
 import { readdirSync, readFileSync } from "node:fs";
@@ -18,7 +18,7 @@ export interface Guide {
   body: string;
 }
 
-const DIR = path.join(process.cwd(), "content", "ghiduri");
+const DIR = path.join(process.cwd(), "content", "guides");
 
 /** Minimal front matter parser: `key: value` lines between --- markers. */
 export function parseGuide(slug: string, text: string): Guide {

@@ -35,8 +35,8 @@ for (const m of JSON.parse(readFileSync("data/demo-models.json", "utf8"))
   .models)
   add(m.source.source_url, "demo", false);
 // Guides
-for (const f of readdirSync("content/ghiduri"))
-  for (const [, u] of readFileSync(`content/ghiduri/${f}`, "utf8").matchAll(
+for (const f of readdirSync("content/guides"))
+  for (const [, u] of readFileSync(`content/guides/${f}`, "utf8").matchAll(
     /\]\((https?:\/\/[^)\s]+)\)/g,
   ))
     add(u, `ghid ${f}`, true);
