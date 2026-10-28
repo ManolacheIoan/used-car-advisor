@@ -1,6 +1,6 @@
 /**
  * Official institutions linked from guides. `checked` = last automated check (HTTP status) and its date.
- * The link checker (npm run check:links) re-tests them; failures are listed in NEEDS_FROM_ME.md.
+ * The link checker (npm run check:links) re-tests them; results are written to data/link-report.md.
  */
 export const OFFICIAL_LINKS = {
   rar: {
