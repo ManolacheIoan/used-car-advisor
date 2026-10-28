@@ -1,129 +1,140 @@
-# AlegeMasina — „Alege mașina potrivită”
+# Used Car Advisor — "AlegeMasina"
 
-Platformă statică, în română, pentru alegerea unei mașini second-hand în România. Ce conține:
+A static web app that helps people in Romania choose a used car. The user answers a short three-step form (budget,
+usage, preferences) and gets a ranked list of models with a transparent score, the reasons behind it and an estimated
+monthly running cost. I built it so that **every number on the page can be traced to a source or a formula**: nothing
+is filled in from memory, and unverified or unlicensed data never reaches the public build.
 
-- un formular de recomandări cu scor transparent;
-- un catalog cu filtre;
-- pagini pentru fiecare marcă, model și generație;
-- comparație pentru până la 4 modele;
-- calculatoare: cost total, rată, buget lunar;
-- favorite și modele văzute recent;
-- ghiduri și pagini despre date și surse.
+The site content is in Romanian, for a local audience.
 
-Nu are backend, conturi, cookies sau trackere. Proiect de portofoliu: încă nu e găzduit.
+**Tech stack:** Next.js 16 (App Router, static export) · React 19 · TypeScript · Tailwind CSS 4 · Vitest ·
+Playwright · axe-core · Lighthouse CI · GitHub Actions
 
-## Stack
+---
 
-Next.js 16 (App Router, `output: "export"`), TypeScript, Tailwind CSS v4, Vitest, Playwright (cu axe), ESLint,
-Prettier, Lighthouse CI, GitHub Actions. Biblioteci: `fuse.js` (căutare) și `marked` (Markdown, folosit doar la build).
-Găzduire țintă: Netlify (`netlify.toml`); folderul `out/` merge pe orice host static.
+## What I built
 
-## Moduri de date (`DATA_MODE`)
+- **Recommendation form and ranking:** hard filters (fuel, body type, brand, seats), then a 0–100 score from budget
+  fit, monthly cost and usage fit. Every result shows the reasons for its score as positive or negative chips. When
+  nothing matches, the page shows how many models each relaxed filter would bring back.
+- **Catalog** with filters and client-side fuzzy search (fuse.js), plus brand, model and generation pages generated
+  from the data.
+- **Side-by-side comparison** of up to 4 models, with the best value in each row highlighted only when it is
+  meaningful (never across different consumption test cycles).
+- **Calculators:** total cost of ownership over 5 years (fuel, insurance, road tax, inspection, vignette,
+  maintenance, depreciation) with a chart and a table, a loan calculator (annuity formula) and a monthly budget
+  helper.
+- **Shareable state:** cost assumptions live in the URL, so results, comparison and detail pages stay consistent and
+  can be shared. Favourites and recently viewed models are kept in `localStorage` and can be exported as JSON.
+- **Content:** guides, glossary and FAQ written in Markdown, with a `draft` / `published` status, and trust pages
+  (methodology, data, sources, privacy, terms).
+- **Data pipeline:** a CSV import with per-row validation and a report, a Wikidata/Wikipedia collector that follows
+  the Wikimedia API rules, a link checker that respects `robots.txt`, and a public-build audit.
+- **PWA:** web manifest, original icons, a service worker with an offline page.
+- **Original visuals:** body-type silhouettes and an animated hero car drawn in SVG, and Open Graph images generated
+  at build time. Brand logos are never drawn or imitated: a text badge is shown unless an official file is added together
+  with its licence file.
 
-| Mod                                    | Catalog                                                                               | Folosire                                                      |
-| -------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `public` (implicit la `npm run build`) | `src/data/cars.public.json`: doar rânduri complete, verificate, cu licențe confirmate | singurul publicat (`out/`)                                    |
-| `demo` (implicit la `npm run dev`)     | `src/data/cars.demo.json`: identitate din Wikidata/Wikipedia, restul valori sintetice | doar local (`out-demo/`): banner DEMO, `noindex`, sitemap gol |
+## Decisions and why
 
-Formula valorilor demo e în `docs/DEMO_DATA.md`.
+| Decision                                                               | Why                                                                                                                                                                                                                                           |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Static export, no backend**                                          | No accounts, cookies or trackers, near-zero hosting cost and a small attack surface. The `out/` folder runs on any static host.                                                                                                               |
+| **Transparent, rule-based score** (`src/lib/scoring.ts`)               | Users can see exactly why a car ranks where it does. Weights are fixed (40% budget, 30% monthly cost, 30% usage), usage rules live in one config file with a reason each, and the Methodology page is generated from the same code.           |
+| **Budget scored against the maximum only**                             | A car cheaper than the budget is never penalised. The score drops only above the maximum, linearly to zero at +20%, so it is continuous at every edge.                                                                                        |
+| **Two data modes** (`DATA_MODE=public` / `demo`)                       | The UI can be developed and tested against a full catalog while the public build accepts only complete, verified rows with a confirmed licence. The catalog is swapped at build time with a `resolveAlias` in `next.config.ts`.               |
+| **A public-build audit that fails the build** (`npm run audit:public`) | It checks the built `out/` folder for unverified or unlicensed rows, prices that break the rules (at least 10 listings, at most 60 days old), logos without a licence file, draft guides and listing-site data. It runs in CI and on Netlify. |
+| **Source, date and licence on every field group**                      | Each group of fields in the CSV (years, body, seats, boot, engine, price) carries its own source title, URL, retrieval date and licence. A value without a source stays empty and shows up in the import report.                              |
+| **No conversion between NEDC and WLTP**                                | There is no universal factor, so any conversion would be an invented estimate. Every consumption value shows its test cycle, and mixed cycles get a note.                                                                                     |
+| **Empty cost defaults instead of guesses**                             | Insurance, road tax, inspection and maintenance have no default unless an official source exists (`src/config/costDefaults.ts`). Empty fields count as 0 and are listed next to the result.                                                   |
+| **Wikidata through the MediaWiki API, not SPARQL**                     | `robots.txt` disallows the SPARQL endpoint. The collector uses a descriptive User-Agent and at most one request per second.                                                                                                                   |
+| **CSP with `'unsafe-inline'`, everything else strict**                 | The Next static export uses inline scripts and there is no server to generate a nonce. The rest of the policy (`netlify.toml`) is `self`-only, with `frame-ancestors 'none'` and `object-src 'none'`.                                         |
 
-**Vitrină (doar pentru screenshot-uri de portofoliu):** `npm run build:showcase && npm run serve:showcase` face un build
-demo fără banner și fără etichete DEMO, în `out-showcase/`. Datele rămân sintetice și paginile au `noindex`; build-ul
-pică dacă `SHOWCASE=1` e folosit fără `DATA_MODE=demo`, iar Netlify publică doar `out/`. Nu se publică. Ghidurile cu `status: draft` apar doar în demo.
+More decisions, with the alternatives I considered, are in [docs/DECISIONS.md](docs/DECISIONS.md).
 
-## Comenzi
+## Quality
+
+**Automated testing**
+
+- 227 unit tests (Vitest) on the pure logic: scoring, monthly cost, TCO, loan, budget, CSV import, audit, catalog
+  filters, SEO, URL validation, plus edge cases (loan at 0% and 100% interest, 1 and 120 months, 100% depreciation,
+  0 km, ranking ties).
+- 45 Playwright end-to-end tests on a mobile profile: the main flow, calculators, favourites, PWA, the axe audits,
+  and a separate project that checks the public build contains no generated or draft content.
+- The CI pipeline (GitHub Actions) runs formatting, lint, typecheck, unit tests, the public build and its audit,
+  end-to-end tests and Lighthouse CI. A separate step warns when fuel prices or the exchange rate are out of date.
+
+**Accessibility**
+
+- axe audit (WCAG 2.1 A/AA) on 15 pages, in both the dark and the light theme.
+- Animations use only `transform` and `opacity` and stop under `prefers-reduced-motion`.
+- Scrollable tables are focusable, and the catalog search is an accessible combobox.
+
+**Performance**
+
+- Lighthouse CI asserts a score of at least 0.9 for performance, accessibility and best practices on every tested
+  page, and for SEO on indexable pages.
+- Static HTML, fonts self-hosted at build time, the TCO chart loaded on demand, and no layout shift from the form,
+  catalog or count-up numbers.
+
+**Security and privacy**
+
+- Security headers in `netlify.toml`: CSP, HSTS, `X-Frame-Options: DENY`, `nosniff`, a strict `Referrer-Policy` and a
+  restrictive `Permissions-Policy`.
+- No third-party requests at runtime; user data stays in the browser.
+
+## Project structure
 
 ```
-npm run dev                 dezvoltare (demo)
-npm run build               build public în out/
-npm run build:demo          build DEMO în out-demo/ (doar local)
-npm run build:showcase      build vitrină (date demo fără etichete) în out-showcase/, pentru screenshot-uri; nu se publică
-npm test                    teste unitare (Vitest)
-npm run test:e2e            Playwright: demo (fluxuri, axe, PWA) + public (excluderi); necesită ambele build-uri
-npm run audit:public        poarta publică: pică la date demo/neverificate/fără licență, ciorne, site-uri de anunțuri
-npm run import:cars         CSV → src/data/cars.public.json + data/import-report.md
-npm run report:coverage     acoperirea datelor pe model → data/coverage-report.md
-npm run check:links [-- --strict]   verifică linkurile (robots.txt, ≤ 1 cerere/s) → data/link-report.md
-npm run fetch:wikidata && npm run build:demo-identities && npm run build:demo-data   reface catalogul demo
-npm run lint | typecheck | format
+src/app/                 pages (App Router; route folders use the Romanian URLs), sitemap, robots, manifest, OG images
+src/components/          form, results, catalog, compare, calculators, TCO chart, badges, PWA
+src/config/              usage rules, fuel prices, exchange rate, cost defaults, scenarios, official links
+src/lib/                 pure, tested logic: scoring, cost, tco, finance, budget, catalog, importCsv, audit, seo
+src/data/                public and local catalogs (JSON) and the catalog schema
+content/guides/          guides, glossary and FAQ in Markdown
+data/                    source CSV, sources and method, Wikidata collection, generated reports
+scripts/                 CSV import, catalog generation, Wikidata collector, audit, coverage, link checker
+tests/unit/              Vitest
+tests/e2e/               Playwright + axe
+docs/                    architecture, decisions, generated catalog formula
 ```
 
-**Notă:** după orice `npm install <pachet>` pe macOS, regenerează lockfile-ul
-(`rm -rf node_modules package-lock.json && npm install`). Altfel `npm ci` din CI (Linux) pică.
+## Running locally
 
-## Datele publice: din CSV în catalog
+```bash
+npm install
+npm run dev               # development: http://localhost:3000 (full local catalog)
+npm run build             # public static export to out/
+npm run serve             # serves out/ at http://localhost:3000
+npm run build:demo        # build with the full local catalog to out-demo/ (never deployed)
+npm run lint
+npm run typecheck
+npm test                  # unit tests (Vitest)
+npm run test:e2e          # Playwright + axe (run npm run build and npm run build:demo first)
+npm run audit:public      # public-build gate (run after npm run build)
+```
 
-1. `data/cars.template.csv` are un rând pe motorizare.
-2. Fiecare grup de câmpuri (`years`, `body`, `seats`, `trunk`, `engine`) are
-   `<grup>_source_title`, `_source_url`, `_date` și `_license`.
-3. `consumption_cycle` este `NEDC`, `WLTP` sau `unknown`; valorile nu se convertesc între cicluri.
-4. Prețul se introduce manual, ca preț cerut în anunțuri:
-   - `price_low_eur` și `price_high_eur`;
-   - `n_listings` (cel puțin 10);
-   - `collected_on` (cel mult 60 de zile înainte de import);
-   - `kind` = `asking_price`;
-   - `notes`, `price_source_title`, `price_source_url`, `price_license`, `price_verification`.
-5. Schimbă `verification` în `verified` doar după ce verifici rândul față de surse.
-6. Rulează `npm run import:cars`. Ce intră în `cars.public.json`:
-   - doar modelele complete, verificate și cu licență confirmată;
-   - prețul, doar dacă e verificat;
-   - restul apar în `data/import-report.md`, cu câmpurile fără sursă.
-7. `npm test` leagă `cars.public.json` de CSV, iar `npm run audit:public` verifică build-ul.
+## Configuration
 
-Sursele și metoda pentru cele 30 de modele din CSV sunt în `data/SOURCES.md`.
+- **Catalog data:** `data/cars.template.csv`, one row per engine. `npm run import:cars` writes
+  `src/data/cars.public.json` and `data/import-report.md`; only complete, verified and licensed models are imported.
+- **Score:** weights in `src/lib/scoring.ts`, usage rules in `src/config/usageRules.ts`.
+- **Running costs:** fuel prices in `src/config/fuelPrices.ts`, EUR/RON rate in `src/config/exchangeRate.ts`, fixed-cost
+  defaults in `src/config/costDefaults.ts`. Each value carries its source and date.
+- **Site name, URL and contact:** `src/lib/site.ts`.
+- **Data mode:** `DATA_MODE=public|demo` at build time (`next.config.ts`).
 
-## Scorul și costurile
+## Deployment
 
-- **Filtre stricte:** combustibil, caroserie, marcă, locuri.
-- **Scor** = 40% buget + 30% cost lunar + 30% utilizare. Bugetul se compară doar cu maximul: la sau sub maxim =
-  punctaj maxim; scorul scade doar peste buget. Regulile de utilizare, fiecare cu motivul ei, sunt în
-  `src/config/usageRules.ts`. Detalii în pagina Metodologie.
-- **Cost lunar:** km × consum declarat × preț carburant, plus costurile fixe pe care le introduci tu.
-- **Valori implicite** (`src/config/costDefaults.ts`):
-  - au valoare doar dacă există o sursă oficială citită;
-  - RCA, impozitul, ITP, rovinieta, întreținerea și deprecierea sunt goale, iar utilizatorul le completează.
-- **Prețuri carburanți:** `src/config/fuelPrices.ts`, medii din 2026-10-09.
-- **Curs EUR/RON:** `src/config/exchangeRate.ts`, 5,33 din 2026-10-16. Apare oriunde există o conversie.
-- **Lighthouse (CI):** rulează pe build-ul public (`out/`), care acum are catalogul gol (`cars.public.json` nu are
-  încă modele verificate). Scorurile nu reflectă paginile cu date. Rulare locală o singură dată pe build-ul demo
-  (2026-10-17, mediana a 3 rulări, 7 pagini, nepublicat): performanță 0,95–0,98, accesibilitate 1,00, bune practici
-  1,00, SEO 0,63–0,66 (demo are `noindex`, deci SEO e scăzut intenționat).
-- **Vechimea datelor:** CI avertizează (fără să pice) la prețuri de carburant mai vechi de 60 de zile și la un curs
-  mai vechi de 30 de zile.
+`netlify.toml` builds in public mode, runs the audit, publishes `out/` and sets the security and cache headers. For any
+other static host, run `npm run build` and publish `out/`.
 
-## Sigle și ilustrații
+## Fonts
 
-- Nu desenăm și nu imităm sigle. `BrandBadge` afișează o etichetă text originală.
-- Un fișier oficial `public/brands/<brand-id>.svg|png` se folosește doar dacă lângă el există
-  `<brand-id>.LICENSE.txt`, cu termenii sau permisiunea. Auditul pică pe orice siglă fără licență.
-- Siluetele de caroserie și iconițele PWA sunt originale.
-- Imaginile Open Graph se generează la build, doar cu text. Fontul este Barlow Semi Condensed (OFL,
-  `assets/fonts/OFL.txt`).
+Barlow Semi Condensed (headings), SIL Open Font License (`assets/fonts/OFL.txt`).
 
-## Politica privind sursele
+---
 
-- Doar surse publice, cu URL, dată și licență.
-- Nimic completat din memorie: o valoare fără sursă rămâne goală și apare în rapoarte.
-- Nu preluăm date de pe site-uri de anunțuri și nu copiem texte sau imagini.
-- Respectăm `robots.txt` și facem cereri rare.
-- Deciziile luate sunt în `DECISIONS.md`. Ce trebuie făcut de proprietar este în `NEEDS_FROM_ME.md`.
-
-## Înainte de hostare
-
-- [ ] Termenii de utilizare ai fiecărei surse sunt citiți (ADAC, Wikipedia/Wikidata, EEA dacă se importă).
-- [ ] Sursele sunt verificate, iar rândurile sunt marcate `verified`.
-- [ ] Cel puțin 3 modele sunt comparate manual cu pagini oficiale ale producătorilor.
-- [ ] Cursul din `src/config/exchangeRate.ts` este cursul oficial BNR din ziua respectivă, de pe bnr.ro.
-- [ ] În `cars.public.json` nu există rânduri demo.
-- [ ] Nu se publică ghiduri `draft`; doar cele revizuite au `status: published`.
-- [ ] `npm run audit:public` și `npm run check:links -- --strict` trec.
-- [ ] Siglele din `public/brands/` au fișier de licență.
-- [ ] Istoricul git e curat: datele de preț din anunțuri au fost eliminate (comenzile sunt în `NEEDS_FROM_ME.md`,
-      punctul 10).
-- [ ] Domeniul real e setat în `SITE.url`. Textele de confidențialitate și termeni au trecut printr-o revizuire
-      juridică.
-
-## Deploy (Netlify) — nu este făcut
-
-`netlify.toml` construiește în modul `public`, publică `out/` și setează antetele de securitate și de cache. Pe
-Netlify: „Import from Git”, apoi alegi repo-ul. Pentru alt host: `npm run build` și publici `out/`.
+_The public catalog accepts only verified, licensed rows and is currently empty. The local catalog (`npm run dev`)
+combines model identities from Wikidata and Wikipedia with generated specifications and prices, documented in
+[docs/DEMO_DATA.md](docs/DEMO_DATA.md)._
