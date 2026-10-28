@@ -231,12 +231,12 @@ export function Compare() {
                   <Morph name={`body-${c.m.id}`}>
                     <BodyIcon
                       body={c.m.body}
-                      className="text-muted mb-1 h-7 w-16"
+                      className="text-accent-text mb-2 h-12 w-28"
                     />
                   </Morph>
                   <Link
                     href={`/masini/${c.m.id}/?${query}`}
-                    className="text-accent-text font-semibold underline"
+                    className="font-display text-xl font-bold hover:underline"
                   >
                     <Morph name={`title-${c.m.id}`}>
                       <span className="inline-block">

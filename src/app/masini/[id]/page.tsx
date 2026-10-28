@@ -10,9 +10,10 @@ import { V2Sections } from "@/components/V2Sections";
 import { brandId } from "@/lib/brand";
 import { modelSlug } from "@/lib/catalog";
 import { modelFaq } from "@/lib/faq";
+import { IS_SHOWCASE, shownSourceTitle, shownText } from "@/lib/mode";
 import { similarModels } from "@/lib/similar";
 import { suitability } from "@/lib/suitability";
-import { BodyIcon } from "@/components/BodyIcon";
+import { HeroCar } from "@/components/HeroCar";
 import { BrandBadge } from "@/components/BrandBadge";
 import { DetailCost } from "@/components/DetailCost";
 import { ExchangeRateNote, priceNote } from "@/components/PriceNote";
@@ -96,34 +97,42 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           dangerouslySetInnerHTML={{ __html: jsonLd }}
         />
       )}
-      {m.is_demo && (
+      {m.is_demo && !IS_SHOWCASE && (
         <p role="note" className="border-accent rounded-lg border p-3 text-sm">
           DEMO: specificațiile și prețul acestui model sunt valori sintetice,
           generate pentru testare. Doar marca, modelul, generația, anii și
           caroseria provin din sursa listată.
         </p>
       )}
-      <header className="flex items-start justify-between gap-4">
-        <div className="space-y-1">
-          <BrandBadge brand={m.brand} size="lg" />
-          <h1 className="text-3xl font-bold tracking-tight">
-            <Morph name={`title-${m.id}`}>
-              <span className="inline-block">
-                {m.brand} {m.model}
-              </span>
-            </Morph>
-          </h1>
-          <p className="text-lg font-medium">{generationLabel(m)}</p>
-          <VerificationBadge m={m} />
-        </div>
-        <div className="flex shrink-0 flex-col items-end gap-2">
+      <header className="card relative overflow-hidden p-6 sm:p-8">
+        <div className="bg-accent/15 absolute -top-20 -right-10 -z-10 size-80 rounded-full blur-3xl" />
+        <div className="grid items-center gap-6 md:grid-cols-[1fr_1.1fr]">
+          <div className="space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <BrandBadge brand={m.brand} size="lg" />
+              <VerificationBadge m={m} />
+            </div>
+            <h1 className="page-title">
+              <Morph name={`title-${m.id}`}>
+                <span className="inline-block">
+                  {m.brand} {m.model}
+                </span>
+              </Morph>
+            </h1>
+            <p className="text-lg font-medium">{generationLabel(m)}</p>
+            {m.price_eur && (
+              <p className="font-display text-gradient text-3xl font-bold">
+                {priceRange(m)}
+              </p>
+            )}
+            <FavoriteButton id={m.id} label={`${m.brand} ${m.model}`} />
+          </div>
           <Morph name={`body-${m.id}`}>
-            <BodyIcon
-              body={m.body}
-              className="text-accent-text h-14 w-36 shrink-0"
-            />
+            <div className="text-accent-text">
+              <HeroCar body={m.body} />
+              <span className="sr-only">{BODY_LABEL[m.body]}</span>
+            </div>
           </Morph>
-          <FavoriteButton id={m.id} label={`${m.brand} ${m.model}`} />
         </div>
       </header>
       <CompareButton id={m.id} />
@@ -131,7 +140,7 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
 
       <p className="text-muted">{modelOverview(m)}</p>
 
-      <dl className={`${card} grid grid-cols-2 gap-3 text-sm sm:grid-cols-4`}>
+      <dl className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
         {[
           ["Generație", m.generation],
           ["Ani de producție", `${m.years.from}–${m.years.to}`],
@@ -142,9 +151,9 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
           ["Motorizări în date", m.engines.length],
           ["Preț orientativ", priceRange(m)],
         ].map(([k, v]) => (
-          <div key={k}>
-            <dt className="text-muted">{k}</dt>
-            <dd className="font-semibold">{v}</dd>
+          <div key={k} className="card p-4">
+            <dt className="text-muted text-xs">{k}</dt>
+            <dd className="font-display mt-0.5 text-lg font-bold">{v}</dd>
           </div>
         ))}
       </dl>
@@ -152,8 +161,11 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
         {m.price_eur ? (
           <>
             Preț: {priceNote(m.price_eur)}.
-            {m.price_eur.notes ? ` Notă: ${m.price_eur.notes}.` : ""} Verifică
-            întotdeauna cu vânzătorul. <ExchangeRateNote />
+            {m.price_eur.notes &&
+            !(IS_SHOWCASE && /DEMO/.test(m.price_eur.notes))
+              ? ` Notă: ${m.price_eur.notes}.`
+              : ""}{" "}
+            Verifică întotdeauna cu vânzătorul. <ExchangeRateNote />
           </>
         ) : (
           "Pentru acest model nu avem încă un preț verificat, așa că nu apare în recomandări."
@@ -288,10 +300,10 @@ export default async function Page({ params }: PageProps<"/masini/[id]">) {
                 rel="noopener nofollow"
                 className="underline"
               >
-                {s.source_title}
+                {shownSourceTitle(s.source_title)}
               </a>{" "}
               <span className="text-muted">
-                (accesat {s.retrieved_on}; licență: {s.license})
+                (accesat {s.retrieved_on}; licență: {shownText(s.license)})
               </span>
             </li>
           ))}

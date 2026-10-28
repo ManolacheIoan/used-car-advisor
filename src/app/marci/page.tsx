@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <div className="space-y-5">
       <Breadcrumbs items={[{ name: "Mărci", href: "/marci/" }]} />
-      <h1 className="text-3xl font-bold tracking-tight">Mărci</h1>
+      <h1 className="page-title">Mărci</h1>
       {brands.length === 0 ? (
         <Notice title="Încă nu există mărci cu modele verificate" />
       ) : (

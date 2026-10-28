@@ -15,7 +15,7 @@ export default function Page() {
       <Breadcrumbs
         items={[{ name: "Calculator rată", href: "/calculator-finantare/" }]}
       />
-      <h1 className="text-3xl font-bold tracking-tight">Calculator rată</h1>
+      <h1 className="page-title">Calculator rată</h1>
       <p className="text-muted max-w-2xl">
         Introdu valorile tale; nu avem valori implicite pentru dobândă și nu
         promovăm oferte.

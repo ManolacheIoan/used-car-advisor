@@ -17,7 +17,7 @@ export function StaticPage({
     <article className="max-w-3xl space-y-5">
       <Breadcrumbs items={[{ name: title, href }]} />
       <header className="space-y-1">
-        <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
+        <h1 className="page-title">{title}</h1>
         <p className="text-muted text-sm">
           Ultima revizuire: <time dateTime={reviewed}>{reviewed}</time>
         </p>

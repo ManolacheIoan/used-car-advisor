@@ -6,27 +6,41 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export function SiteHeader() {
   return (
-    <header className="no-print border-line bg-surface border-b">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3 px-4 py-3">
-        <Link href="/" className="font-bold tracking-tight">
-          <span className="text-accent-text">Alege</span>Masina
+    <header className="no-print border-line sticky top-0 z-40 border-b bg-[var(--glass)] backdrop-blur-xl">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3">
+        <Link
+          href="/"
+          className="font-display flex items-center gap-2 text-lg font-bold tracking-tight"
+        >
+          <span
+            aria-hidden
+            className="bg-accent text-on-accent glow grid size-7 place-items-center rounded-lg text-sm"
+          >
+            A
+          </span>
+          <span className="max-sm:sr-only">
+            <span className="text-accent-text">Alege</span>Masina
+          </span>
         </Link>
-        <nav className="flex items-center gap-2" aria-label="Principal">
+        <nav
+          className="flex items-center gap-1 sm:gap-2"
+          aria-label="Principal"
+        >
           <Link
             href="/catalog/"
-            className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
+            className="text-muted hover:text-fg hover:bg-surface-2 rounded-full px-2 py-1.5 text-sm font-medium transition-colors sm:px-3"
           >
             Catalog
           </Link>
           <Link
             href="/instrumente/"
-            className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
+            className="text-muted hover:text-fg hover:bg-surface-2 rounded-full px-2 py-1.5 text-sm font-medium transition-colors sm:px-3"
           >
             Instrumente
           </Link>
           <Link
             href="/favorite/"
-            className="text-muted hover:text-fg rounded-md px-2 py-1.5 text-sm"
+            className="text-muted hover:text-fg hover:bg-surface-2 rounded-full px-2 py-1.5 text-sm font-medium transition-colors sm:px-3"
           >
             Favorite
             <FavoritesCount />
@@ -63,7 +77,7 @@ const FOOTER_LINKS: [string, string][][] = [
 export function SiteFooter() {
   return (
     <footer className="border-line text-muted mt-auto border-t text-sm">
-      <div className="mx-auto w-full max-w-5xl space-y-4 px-4 py-8">
+      <div className="mx-auto w-full max-w-6xl space-y-4 px-4 py-10">
         <nav aria-label="Subsol" className="grid gap-4 sm:grid-cols-3">
           {FOOTER_LINKS.map((col, i) => (
             <ul key={i} className="space-y-1.5">

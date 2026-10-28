@@ -10,8 +10,10 @@ export function ReasonChips({ reasons }: { reasons: Reason[] }) {
         {reasons.map((r) => (
           <li
             key={r.text}
-            className={`rounded-full border px-2.5 py-1 text-xs ${
-              r.positive ? "border-accent/60 text-fg" : "border-line text-muted"
+            className={`rounded-full border px-3 py-1 text-xs font-medium ${
+              r.positive
+                ? "border-accent/50 bg-accent/10 text-fg"
+                : "border-line text-muted"
             }`}
           >
             <span aria-hidden className={r.positive ? "text-accent-text" : ""}>

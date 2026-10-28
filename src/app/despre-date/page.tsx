@@ -4,7 +4,7 @@ import { StaticPage } from "@/components/StaticPage";
 import { EXCHANGE_RATE } from "@/config/exchangeRate";
 import { FUEL_PRICES } from "@/config/fuelPrices";
 import { dataUpdated } from "@/lib/data";
-import { IS_DEMO } from "@/lib/mode";
+import { IS_DEMO, IS_SHOWCASE } from "@/lib/mode";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,6 +24,7 @@ export default function Page() {
       <p>
         Date actualizate la <time dateTime={dataUpdated}>{dataUpdated}</time>.
         {IS_DEMO &&
+          !IS_SHOWCASE &&
           " Aceasta este versiunea DEMO: specificațiile și prețurile sunt valori sintetice, doar pentru testare."}
       </p>
       <h2>Ce date folosim</h2>

@@ -25,7 +25,11 @@ Găzduire țintă: Netlify (`netlify.toml`); folderul `out/` merge pe orice host
 | `public` (implicit la `npm run build`) | `src/data/cars.public.json`: doar rânduri complete, verificate, cu licențe confirmate | singurul publicat (`out/`)                                    |
 | `demo` (implicit la `npm run dev`)     | `src/data/cars.demo.json`: identitate din Wikidata/Wikipedia, restul valori sintetice | doar local (`out-demo/`): banner DEMO, `noindex`, sitemap gol |
 
-Formula valorilor demo e în `docs/DEMO_DATA.md`. Ghidurile cu `status: draft` apar doar în demo.
+Formula valorilor demo e în `docs/DEMO_DATA.md`.
+
+**Vitrină (doar pentru screenshot-uri de portofoliu):** `npm run build:showcase && npm run serve:showcase` face un build
+demo fără banner și fără etichete DEMO, în `out-showcase/`. Datele rămân sintetice și paginile au `noindex`; build-ul
+pică dacă `SHOWCASE=1` e folosit fără `DATA_MODE=demo`, iar Netlify publică doar `out/`. Nu se publică. Ghidurile cu `status: draft` apar doar în demo.
 
 ## Comenzi
 
@@ -33,6 +37,7 @@ Formula valorilor demo e în `docs/DEMO_DATA.md`. Ghidurile cu `status: draft` a
 npm run dev                 dezvoltare (demo)
 npm run build               build public în out/
 npm run build:demo          build DEMO în out-demo/ (doar local)
+npm run build:showcase      build vitrină (date demo fără etichete) în out-showcase/, pentru screenshot-uri; nu se publică
 npm test                    teste unitare (Vitest)
 npm run test:e2e            Playwright: demo (fluxuri, axe, PWA) + public (excluderi); necesită ambele build-uri
 npm run audit:public        poarta publică: pică la date demo/neverificate/fără licență, ciorne, site-uri de anunțuri

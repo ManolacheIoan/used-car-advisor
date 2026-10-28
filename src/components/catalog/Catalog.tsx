@@ -246,7 +246,7 @@ export function Catalog({
             <select
               value={filters.sort}
               onChange={(e) => update({ sort: e.target.value as Sort })}
-              className="border-line bg-surface-2 ml-1 rounded-lg border px-2 py-1.5"
+              className="border-line bg-surface-2 ml-1 rounded-full border px-3 py-1.5"
             >
               {Object.entries(SORTS).map(([k, v]) => (
                 <option key={k} value={k}>
@@ -314,20 +314,23 @@ export function Catalog({
 function CatalogCard({ m, index }: { m: CarModel; index: number }) {
   return (
     <li
-      className={`${card} animate-rise flex flex-col gap-2`}
+      className={`${card} card-hover animate-rise relative flex flex-col gap-3 overflow-hidden p-5`}
       style={{ animationDelay: `${index * 30}ms` }}
     >
-      <div className="flex items-start justify-between gap-2">
-        <div className="min-w-0 space-y-1">
-          <BrandBadge brand={m.brand} />
-          <h2 className="text-lg leading-tight font-bold">
-            <Link href={`/masini/${m.id}/`} className="hover:underline">
-              {m.brand} {m.model}
-            </Link>
-          </h2>
-          <p className="text-sm font-medium">{generationLabel(m)}</p>
-        </div>
-        <BodyIcon body={m.body} className="text-muted h-8 w-20 shrink-0" />
+      <div className="bg-surface-2/60 -mx-5 -mt-5 mb-1 flex items-end justify-between gap-2 px-5 pt-4 pb-2">
+        <BrandBadge brand={m.brand} />
+        <BodyIcon
+          body={m.body}
+          className="text-accent-text h-14 w-36 shrink-0 drop-shadow-[0_6px_14px_var(--accent-glow)]"
+        />
+      </div>
+      <div className="min-w-0 space-y-0.5">
+        <h2 className="font-display text-2xl leading-tight font-bold">
+          <Link href={`/masini/${m.id}/`} className="hover:underline">
+            {m.brand} {m.model}
+          </Link>
+        </h2>
+        <p className="text-sm font-medium">{generationLabel(m)}</p>
       </div>
       <p className="text-muted text-sm">
         {BODY_LABEL[m.body]} · {m.seats} locuri · portbagaj {m.trunk_l} l
@@ -336,19 +339,22 @@ function CatalogCard({ m, index }: { m: CarModel; index: number }) {
         {engineSummary(m)} · consum declarat {consumptionRange(m)}
       </p>
       <p className="text-sm">
-        Preț: <span className="font-semibold">{priceRange(m)}</span>
+        <span className="text-muted">Preț: </span>
+        <span className="font-display text-accent-text text-lg font-bold">
+          {priceRange(m)}
+        </span>
         {m.price_eur && (
           <span className="text-muted block text-xs">
             {priceNote(m.price_eur)}
           </span>
         )}
       </p>
-      <div className="mt-auto flex items-center justify-between gap-2 pt-1">
+      <div className="border-line mt-auto flex items-center justify-between gap-2 border-t pt-3">
         <Link
           href={`/masini/${m.id}/`}
-          className="text-accent-text text-sm font-medium underline"
+          className="text-accent-text text-sm font-semibold hover:underline"
         >
-          Detalii
+          Detalii <span aria-hidden>→</span>
         </Link>
         <FavoriteButton
           id={m.id}
@@ -371,7 +377,7 @@ function Select(p: {
       <select
         value={p.value}
         onChange={(e) => p.onChange(e.target.value)}
-        className="border-line bg-surface-2 mt-1 w-full rounded-lg border px-2 py-2"
+        className="border-line bg-surface-2 mt-1 w-full rounded-xl border px-3 py-2"
       >
         <option value="">Oricare</option>
         {p.options.map(([v, l]) => (
@@ -403,7 +409,7 @@ function NumberInput(p: {
         step={p.step}
         value={p.value ?? ""}
         onChange={(e) => p.onChange(toNum(e.target.value))}
-        className="border-line bg-surface-2 mt-1 w-full rounded-lg border px-2 py-2"
+        className="border-line bg-surface-2 mt-1 w-full rounded-xl border px-3 py-2"
       />
     </label>
   );
@@ -426,7 +432,7 @@ function Range(p: {
           placeholder={p.placeholder?.[0] ?? "minim"}
           value={p.min ?? ""}
           onChange={(e) => p.onChange(toNum(e.target.value), p.max)}
-          className="border-line bg-surface-2 w-full rounded-lg border px-2 py-2"
+          className="border-line bg-surface-2 w-full rounded-xl border px-3 py-2"
         />
         <input
           type="number"
@@ -434,7 +440,7 @@ function Range(p: {
           placeholder={p.placeholder?.[1] ?? "maxim"}
           value={p.max ?? ""}
           onChange={(e) => p.onChange(p.min, toNum(e.target.value))}
-          className="border-line bg-surface-2 w-full rounded-lg border px-2 py-2"
+          className="border-line bg-surface-2 w-full rounded-xl border px-3 py-2"
         />
       </div>
     </fieldset>

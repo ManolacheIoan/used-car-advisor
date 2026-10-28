@@ -17,7 +17,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="border-line text-muted hover:text-fg rounded-md border px-3 py-1.5 text-sm"
+      className="border-line text-muted hover:text-fg hover:border-accent/60 rounded-full border px-3 py-1.5 text-sm transition-colors"
     >
       <span className="in-data-[theme=light]:hidden">
         Temă<span className="max-sm:sr-only"> luminoasă</span>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FUEL_PRICES } from "@/config/fuelPrices";
 import { BRANDS, models } from "@/lib/data";
+import { IS_SHOWCASE } from "@/lib/mode";
 import {
   BODY_LABEL,
   consumptionRange,
@@ -13,6 +14,7 @@ import {
   generationLabel,
   MIXED_CYCLES_NOTE,
   mixedCycles,
+  lei,
   priceRange,
 } from "@/lib/labels";
 import {
@@ -31,7 +33,7 @@ import { CostEditor } from "./CostEditor";
 import { FavoriteButton } from "./FavoriteButton";
 import { CostLine } from "./CostLine";
 import { ReasonChips } from "./ReasonChips";
-import { ScoreBar } from "./ScoreBar";
+import { ScoreRing } from "./ScoreRing";
 import { ExchangeRateNote, priceNote } from "./PriceNote";
 import { ShareButton } from "./ShareButton";
 import { VerificationBadge } from "./VerificationBadge";
@@ -147,25 +149,6 @@ export function Results() {
         </Link>
         <ShareButton className={btnGhost} />
       </div>
-      <p className="text-muted text-sm">
-        Prețuri medii carburant: benzină {FUEL_PRICES.prices.benzina}, motorină{" "}
-        {FUEL_PRICES.prices.motorina}, GPL {FUEL_PRICES.prices.gpl} lei/l,
-        actualizate la{" "}
-        <time dateTime={FUEL_PRICES.updated}>{FUEL_PRICES.updated}</time>.
-        Sursa:{" "}
-        <a
-          href={FUEL_PRICES.source.url}
-          rel="noopener nofollow"
-          className="underline"
-        >
-          {FUEL_PRICES.source.title}
-        </a>
-        .
-      </p>
-      <p className="text-muted text-sm">
-        Prețurile mașinilor sunt prețuri cerute în anunțuri, orientativ, în EUR.{" "}
-        <ExchangeRateNote />
-      </p>
       <CostEditor value={assumptions} onChange={setAssumptions} />
       {mixedCycles(results.map((r) => r.engine)) && (
         <p
@@ -190,6 +173,25 @@ export function Results() {
           />
         ))}
       </ol>
+      <p className="text-muted text-sm">
+        Prețuri medii carburant: benzină {FUEL_PRICES.prices.benzina}, motorină{" "}
+        {FUEL_PRICES.prices.motorina}, GPL {FUEL_PRICES.prices.gpl} lei/l,
+        actualizate la{" "}
+        <time dateTime={FUEL_PRICES.updated}>{FUEL_PRICES.updated}</time>.
+        Sursa:{" "}
+        <a
+          href={FUEL_PRICES.source.url}
+          rel="noopener nofollow"
+          className="underline"
+        >
+          {FUEL_PRICES.source.title}
+        </a>
+        .
+      </p>
+      <p className="text-muted text-sm">
+        Prețurile mașinilor sunt prețuri cerute în anunțuri, orientativ, în EUR.{" "}
+        <ExchangeRateNote />
+      </p>
       {selected.length > 0 && (
         <div className="border-line bg-surface-2 sticky bottom-3 flex items-center justify-between gap-3 rounded-xl border p-3 shadow-lg">
           <span className="text-sm">
@@ -217,18 +219,35 @@ function ResultCard(p: {
   onToggle: () => void;
 }) {
   const { model: m, engine: e } = p.r;
+  const top = p.position === 1;
   return (
     <li
-      className={`${card} animate-rise space-y-3`}
-      style={{ animationDelay: `${p.position * 40}ms` }}
+      className={`${card} card-hover animate-rise relative space-y-4 overflow-hidden ${top ? "border-accent/60" : ""}`}
+      style={{ animationDelay: `${p.position * 50}ms` }}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <div className="mb-1 flex items-center gap-2">
+      <BodyIcon
+        body={m.body}
+        decorative
+        className="text-accent-text pointer-events-none absolute -right-6 -bottom-3 h-32 w-80 opacity-[0.07]"
+      />
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0 space-y-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <span
+              className={`font-display rounded-full px-2.5 py-0.5 text-xs font-bold tracking-wider ${top ? "bg-accent text-on-accent" : "bg-surface-2 text-muted"}`}
+            >
+              {top ? "TOP 1" : `#${p.position}`}
+            </span>
             <BrandBadge brand={m.brand} />
+            {m.is_demo && !IS_SHOWCASE && (
+              <span className="border-line text-muted rounded border px-1.5 py-0.5 text-xs">
+                DEMO
+              </span>
+            )}
+            <VerificationBadge m={m} />
           </div>
-          <h2 className="text-xl font-bold">
-            <span className="text-muted">{p.position}. </span>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            <span className="sr-only">{p.position}. </span>
             <Morph name={`title-${m.id}`}>
               <span className="inline-block">
                 {m.brand} {m.model}
@@ -236,53 +255,63 @@ function ResultCard(p: {
             </Morph>
           </h2>
           <p className="text-sm font-medium">{generationLabel(m)}</p>
-          <p className="text-muted text-sm">
+          <p className="text-muted flex items-center gap-2 text-sm">
+            <Morph name={`body-${m.id}`}>
+              <BodyIcon body={m.body} className="text-muted h-5 w-12" />
+            </Morph>
             {BODY_LABEL[m.body]} · {m.seats} locuri · portbagaj {m.trunk_l} l
           </p>
         </div>
-        <div className="flex flex-col items-end gap-1">
-          <Morph name={`body-${m.id}`}>
-            <BodyIcon body={m.body} className="text-muted h-8 w-20" />
-          </Morph>
-          {m.is_demo && (
-            <span className="border-line text-muted rounded border px-1.5 py-0.5 text-xs">
-              DEMO
-            </span>
-          )}
-          <VerificationBadge m={m} />
-        </div>
+        <ScoreRing score={p.r.score} />
       </div>
-      <ScoreBar score={p.r.score} />
+
+      <dl className="grid grid-cols-2 gap-2 text-sm sm:grid-cols-3">
+        <div className="bg-surface-2/70 rounded-xl p-3">
+          <dt className="text-muted text-xs">Preț</dt>
+          <dd className="font-display text-base font-bold sm:text-lg">
+            {priceRange(m)}
+          </dd>
+        </div>
+        <div className="bg-surface-2/70 rounded-xl p-3">
+          <dt className="text-muted text-xs">Cost lunar</dt>
+          <dd className="font-display text-accent-text text-base font-bold sm:text-lg">
+            ~{lei(p.r.cost.total)}
+          </dd>
+        </div>
+        <div className="bg-surface-2/70 col-span-2 rounded-xl p-3 sm:col-span-1">
+          <dt className="text-muted text-xs">Consum declarat</dt>
+          <dd className="font-display text-base font-bold sm:text-lg">
+            {consumptionRange(m)}
+          </dd>
+        </div>
+      </dl>
+
       <ReasonChips reasons={p.r.reasons} />
       <p className="text-muted text-sm">
-        Motorizări: {engineSummary(m)}. Consum declarat {consumptionRange(m)}.
-      </p>
-      <p className="text-sm">
-        Preț: <span className="font-semibold">{priceRange(m)}</span>{" "}
-        <span className="text-muted">({priceNote(m.price_eur)})</span>
+        Motorizări: {engineSummary(m)}. <span>({priceNote(m.price_eur)})</span>
       </p>
       <p className="text-muted text-sm">
         Estimare pentru {ENERGY_LABEL[e.energy]} {e.cc ? `${e.cc} cm³, ` : ""}
         {e.hp} CP, {consumptionText(e)}, declarat
       </p>
       <CostLine cost={p.r.cost} />
-      <div className="flex items-center justify-between gap-3">
+      <div className="border-line flex flex-wrap items-center justify-between gap-3 border-t pt-3">
         <label className="flex items-center gap-2 text-sm">
           <input
             type="checkbox"
             checked={p.checked}
             disabled={p.disabled}
             onChange={p.onToggle}
-            className="size-4 accent-[var(--accent)]"
+            className="size-4 accent-[var(--accent-text)]"
           />
           Compară
         </label>
         <FavoriteButton id={m.id} label={`${m.brand} ${m.model}`} />
         <Link
           href={`/masini/${m.id}/?${p.query}`}
-          className="text-accent-text font-medium underline"
+          className="text-accent-text inline-flex items-center gap-1 font-semibold hover:underline"
         >
-          Detalii {m.brand} {m.model}
+          Detalii {m.brand} {m.model} <span aria-hidden>→</span>
         </Link>
       </div>
     </li>

@@ -3,9 +3,9 @@ import { ViewTransition, type ReactNode } from "react";
 
 export const card = "card p-4";
 export const btnPrimary =
-  "inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2.5 font-semibold text-on-accent transition hover:brightness-110 disabled:opacity-50";
+  "glow inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-2.5 font-semibold text-on-accent transition hover:-translate-y-px hover:brightness-110 active:translate-y-0 disabled:opacity-50";
 export const btnGhost =
-  "inline-flex items-center justify-center rounded-lg border border-line px-4 py-2.5 font-medium hover:bg-surface-2";
+  "inline-flex items-center justify-center gap-2 rounded-full border border-line bg-[var(--glass)] px-5 py-2.5 font-medium backdrop-blur transition hover:border-accent/60 hover:bg-surface-2";
 
 export function Loading({ label = "Se încarcă…" }: { label?: string }) {
   return (

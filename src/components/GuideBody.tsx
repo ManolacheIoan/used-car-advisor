@@ -1,3 +1,4 @@
+import { IS_SHOWCASE } from "@/lib/mode";
 import type { Guide } from "@/lib/guides";
 import { renderMarkdown } from "@/lib/guides";
 
@@ -20,7 +21,7 @@ export function GuideMeta({ guide }: { guide: Guide }) {
       <span className="text-muted">
         revizuit la <time dateTime={guide.reviewed}>{guide.reviewed}</time>
       </span>
-      {guide.status === "draft" && (
+      {guide.status === "draft" && !IS_SHOWCASE && (
         <span className="border-accent text-accent-text rounded-full border px-2 py-0.5 font-semibold">
           CIORNĂ (vizibilă doar în DEMO)
         </span>

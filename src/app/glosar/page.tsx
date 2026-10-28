@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <article className="max-w-3xl space-y-5">
       <Breadcrumbs items={[{ name: "Glosar", href: "/glosar/" }]} />
-      <h1 className="text-3xl font-bold tracking-tight">Glosar</h1>
+      <h1 className="page-title">Glosar</h1>
       {g ? (
         <>
           <GuideMeta guide={g} />

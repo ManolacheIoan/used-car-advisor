@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { StaticPage } from "@/components/StaticPage";
 import { collectAttributions, needsShareAlike } from "@/lib/attributions";
 import { dataUpdated, models } from "@/lib/data";
-import { IS_DEMO } from "@/lib/mode";
+import { IS_DEMO, IS_SHOWCASE, shownSourceTitle, shownText } from "@/lib/mode";
 
 export const metadata: Metadata = {
   title: "Surse și atribuiri",
@@ -21,9 +21,13 @@ export default function Page() {
     >
       <p>
         Lista este generată automat din datele{" "}
-        {IS_DEMO ? "catalogului DEMO" : "publicate"} ({models.length} modele) și
-        din fișierele de configurare. Pentru fiecare sursă afișăm licența și
-        data accesării.
+        {IS_SHOWCASE
+          ? "catalogului"
+          : IS_DEMO
+            ? "catalogului DEMO"
+            : "publicate"}{" "}
+        ({models.length} modele) și din fișierele de configurare. Pentru fiecare
+        sursă afișăm licența și data accesării.
       </p>
       {needsShareAlike(list) && (
         <p>
@@ -43,9 +47,10 @@ export default function Page() {
         {list.map((a) => (
           <li key={a.url + a.license}>
             <a href={a.url} rel="noopener nofollow">
-              {a.title}
+              {shownSourceTitle(a.title)}
             </a>{" "}
-            — {a.usedFor}; licență: {a.license}; accesat la {a.retrieved_on}
+            — {a.usedFor}; licență: {shownText(a.license)}; accesat la{" "}
+            {a.retrieved_on}
             {a.models > 0
               ? `; ${a.models} ${a.models === 1 ? "model" : "modele"}`
               : ""}

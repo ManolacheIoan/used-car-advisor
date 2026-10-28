@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <div className="space-y-5">
       <Breadcrumbs items={[{ name: "Catalog", href: "/catalog/" }]} />
-      <h1 className="text-3xl font-bold tracking-tight">Catalog modele</h1>
+      <h1 className="page-title">Catalog modele</h1>
       <Suspense fallback={<Catalog filters={EMPTY_FILTERS} />}>
         <CatalogFromUrl />
       </Suspense>

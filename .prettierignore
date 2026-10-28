@@ -6,3 +6,4 @@ playwright-report
 test-results
 .lighthouseci
 out-demo
+out-showcase

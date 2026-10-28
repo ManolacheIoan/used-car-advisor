@@ -20,7 +20,7 @@ export default function Page() {
       <Breadcrumbs
         items={[{ name: "Întrebări frecvente", href: "/intrebari-frecvente/" }]}
       />
-      <h1 className="text-3xl font-bold tracking-tight">Întrebări frecvente</h1>
+      <h1 className="page-title">Întrebări frecvente</h1>
       {g ? (
         <>
           {g.status === "published" && (

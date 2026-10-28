@@ -12,8 +12,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold tracking-tight">Recomandări</h1>
+    <div className="space-y-6">
+      <div>
+        <p className="eyebrow">Rezultatele tale</p>
+        <h1 className="page-title">Recomandări</h1>
+      </div>
       <Suspense fallback={<Loading label="Se calculează recomandările…" />}>
         <Results />
       </Suspense>

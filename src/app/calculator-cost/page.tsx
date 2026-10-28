@@ -15,9 +15,7 @@ export default function Page() {
       <Breadcrumbs
         items={[{ name: "Calculator cost total", href: "/calculator-cost/" }]}
       />
-      <h1 className="text-3xl font-bold tracking-tight">
-        Calculator cost total
-      </h1>
+      <h1 className="page-title">Calculator cost total</h1>
       <p className="text-muted max-w-2xl">
         Toate valorile sunt orientative și editabile. Unde nu avem o sursă
         oficială pentru o valoare implicită, câmpul rămâne gol: completează-l

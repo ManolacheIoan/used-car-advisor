@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold tracking-tight">Comparație</h1>
+      <h1 className="page-title">Comparație</h1>
       <Suspense fallback={<Loading />}>
         <Compare />
       </Suspense>

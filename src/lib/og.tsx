@@ -33,14 +33,14 @@ export async function ogImage({
         flexDirection: "column",
         justifyContent: "center",
         padding: "0 90px",
-        background: "#0a0d12",
-        color: "#e8eef4",
+        background: "#03060c",
+        color: "#eef3fb",
         fontFamily: "Barlow",
         position: "relative",
       }}
     >
       <div style={{ display: "flex", fontSize: 40, fontWeight: 700 }}>
-        <span style={{ color: "#ff8a1f" }}>Alege</span>
+        <span style={{ color: "#3b82f6" }}>Alege</span>
         <span>Masina</span>
       </div>
       {kicker && (
@@ -49,7 +49,7 @@ export async function ogImage({
             display: "flex",
             marginTop: 34,
             fontSize: 32,
-            color: "#ffa552",
+            color: "#7cb2ff",
             fontWeight: 500,
           }}
         >
@@ -73,7 +73,7 @@ export async function ogImage({
             display: "flex",
             marginTop: 24,
             fontSize: 34,
-            color: "#a3b0be",
+            color: "#9fb0c8",
             fontWeight: 500,
           }}
         >
@@ -87,7 +87,7 @@ export async function ogImage({
           bottom: 0,
           width: "100%",
           height: 16,
-          background: "#ff8a1f",
+          background: "#2563eb",
           display: "flex",
         }}
       />

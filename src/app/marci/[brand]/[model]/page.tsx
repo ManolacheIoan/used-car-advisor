@@ -57,7 +57,7 @@ export default async function Page({
           { name: l.name, href: `/marci/${b.id}/${l.slug}/` },
         ]}
       />
-      <h1 className="text-3xl font-bold tracking-tight">
+      <h1 className="page-title">
         {b.name} {l.name}
       </h1>
       <p className="text-muted">

@@ -39,7 +39,7 @@ export default async function Page({ params }: PageProps<"/ghiduri/[slug]">) {
         ]}
       />
       <header className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">{g.title}</h1>
+        <h1 className="page-title">{g.title}</h1>
         <p className="text-muted">{g.description}</p>
         <GuideMeta guide={g} />
       </header>

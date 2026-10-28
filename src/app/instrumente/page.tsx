@@ -43,7 +43,7 @@ export default function Page() {
   return (
     <div className="space-y-5">
       <Breadcrumbs items={[{ name: "Instrumente", href: "/instrumente/" }]} />
-      <h1 className="text-3xl font-bold tracking-tight">Instrumente</h1>
+      <h1 className="page-title">Instrumente</h1>
       <ul className="grid gap-3 sm:grid-cols-2">
         {TOOLS.map(([href, title, d]) => (
           <li key={href}>

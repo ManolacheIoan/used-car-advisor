@@ -13,9 +13,7 @@ export default function Page() {
   return (
     <div className="space-y-5">
       <Breadcrumbs items={[{ name: "Buget lunar", href: "/buget/" }]} />
-      <h1 className="text-3xl font-bold tracking-tight">
-        Ce mașină îmi permit lunar
-      </h1>
+      <h1 className="page-title">Ce mașină îmi permit lunar</h1>
       <BudgetHelper />
     </div>
   );

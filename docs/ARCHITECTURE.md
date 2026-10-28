@@ -11,6 +11,8 @@ stă doar în `localStorage`.
 - **demo**: `npm run dev` sau `build:demo`, `out-demo/`, doar local. Folosește `cars.demo.json`: identitatea modelelor
   vine din surse deschise, iar specificațiile și prețurile sunt sintetice. Fiecare pagină are banner DEMO și
   `noindex`; sitemap-ul e gol, iar ghidurile `draft` sunt vizibile.
+- **vitrină** (`SHOWCASE=1`, doar împreună cu demo): același catalog demo fără etichete DEMO, în `out-showcase/`,
+  pentru screenshot-uri locale. Rămâne `noindex` și nu se publică.
 - Selecția catalogului se face în `next.config.ts`, cu `resolveAlias` pe `@/data/cars.public.json`.
 
 ## Structura

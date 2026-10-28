@@ -49,3 +49,8 @@ export function CountUp({
     </span>
   );
 }
+
+/** Whole-number count-up, usable from server components (no function props). */
+export function CountInt({ value }: { value: number }) {
+  return <CountUp value={value} format={(n) => String(Math.round(n))} />;
+}

@@ -4,7 +4,7 @@ import "./globals.css";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { SwRegister } from "@/components/SwRegister";
 import { THEME_SCRIPT } from "@/components/ThemeToggle";
-import { DEMO_BANNER, IS_DEMO } from "@/lib/mode";
+import { DEMO_BANNER, IS_DEMO, IS_SHOWCASE } from "@/lib/mode";
 import { SITE } from "@/lib/site";
 
 /** Display font for headings (OFL). Body text stays on the system font. */
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ...(IS_DEMO ? { robots: { index: false, follow: false } } : {}),
 };
 
-export const viewport: Viewport = { themeColor: "#0a0d12" };
+export const viewport: Viewport = { themeColor: "#03060c" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="sr-only focus:not-sr-only focus:p-2">
           Sari la conținut
         </a>
-        {IS_DEMO && (
+        {IS_DEMO && !IS_SHOWCASE && (
           <div
             role="note"
             className="bg-accent text-on-accent px-4 py-2 text-center text-sm font-bold"
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main
           id="main"
-          className="mx-auto min-h-svh w-full max-w-5xl flex-1 px-4 py-6"
+          className="mx-auto min-h-svh w-full max-w-6xl flex-1 px-4 py-8"
         >
           {children}
         </main>

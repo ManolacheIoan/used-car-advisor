@@ -1,3 +1,4 @@
+import { IS_SHOWCASE } from "@/lib/mode";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -16,7 +17,7 @@ export default function Page() {
   return (
     <div className="space-y-5">
       <Breadcrumbs items={[{ name: "Ghiduri", href: "/ghiduri/" }]} />
-      <h1 className="text-3xl font-bold tracking-tight">Ghiduri</h1>
+      <h1 className="page-title">Ghiduri</h1>
       {guides.length === 0 ? (
         <Notice title="Ghidurile sunt în pregătire">
           <p className="text-muted">Le publicăm după revizuire.</p>
@@ -33,7 +34,7 @@ export default function Page() {
                 <span className="text-muted mt-1 block text-sm">
                   {g.description}
                 </span>
-                {g.status === "draft" && (
+                {g.status === "draft" && !IS_SHOWCASE && (
                   <span className="text-accent-text mt-2 block text-xs font-semibold">
                     CIORNĂ
                   </span>

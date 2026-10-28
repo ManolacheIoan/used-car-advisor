@@ -5,7 +5,9 @@ import type { CarModel } from "@/lib/types";
 export function priceNote(p: NonNullable<CarModel["price_eur"]>): string {
   // Inlined at build time: in public builds this branch (and its text) is removed by the minifier.
   if (process.env.NEXT_PUBLIC_DATA_MODE === "demo" && p.kind === "synthetic")
-    return "preț sintetic DEMO, nu provine din anunțuri";
+    return process.env.NEXT_PUBLIC_SHOWCASE === "1"
+      ? "preț orientativ, în EUR"
+      : "preț sintetic DEMO, nu provine din anunțuri";
   return `prețuri cerute în anunțuri, orientativ, în EUR, culese la ${p.collected_on} (${p.n_listings} anunțuri)`;
 }
 

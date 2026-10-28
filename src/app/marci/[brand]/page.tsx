@@ -43,7 +43,7 @@ export default async function Page({ params }: PageProps<"/marci/[brand]">) {
       />
       <header className="space-y-2">
         <BrandBadge brand={b.name} size="lg" />
-        <h1 className="text-3xl font-bold tracking-tight">{b.name}</h1>
+        <h1 className="page-title">{b.name}</h1>
         {/* Original intro generated only from catalog data (no marketing claims). */}
         <p className="text-muted">
           În catalog sunt {b.lines.length}{" "}

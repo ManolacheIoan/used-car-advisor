@@ -106,6 +106,14 @@ describe("example scenarios", () => {
     ]);
   });
 
+  it("include demo rows only when asked (demo builds), never unverified ones", () => {
+    const ids = scenarioResults(catalog, undefined, { includeDemo: true })
+      .flatMap((s) => s.results)
+      .map((r) => r.model.id);
+    expect(ids).toContain("example-cheap");
+    expect(ids).not.toContain("unverified-cheap");
+  });
+
   it("are empty when no real model is published", () => {
     for (const s of scenarioResults(
       catalog.filter((m) => m.is_demo || m.verified === false),
