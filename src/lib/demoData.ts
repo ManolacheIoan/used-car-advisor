@@ -8,7 +8,7 @@ import type { Body, CarModel, Catalog, Energy, Engine, Source } from "./types";
 export const DEMO_SEED = 20261016;
 export const DEMO_REF_YEAR = 2026;
 export const DEMO_SOURCE_URL =
-  "https://github.com/ManolacheIoan/alegemasina/blob/main/docs/DEMO_DATA.md";
+  "https://github.com/ManolacheIoan/used-car-advisor/blob/main/docs/DEMO_DATA.md";
 
 /** One entry of data/demo-models.json: identity only, with its source. */
 export interface DemoIdentity {

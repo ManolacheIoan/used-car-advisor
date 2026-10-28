@@ -1,129 +1,108 @@
-# Arhitectură — AlegeMasina
+# Architecture — AlegeMasina
 
-Site static (Next.js 16, App Router, `output: "export"`), fără server, conturi, cookies sau trackere. Datele sunt
-fișiere JSON incluse la build. Starea utilizatorului (tema, favoritele, lista de comparație, modelele văzute recent)
-stă doar în `localStorage`.
+Static site (Next.js 16, App Router, `output: "export"`) with no server, accounts, cookies or trackers. Data is JSON
+bundled at build time. User state (theme, favourites, compare list, recently viewed models) lives only in
+`localStorage`.
 
-## Două moduri de date
+## Two data modes
 
-- **public**: build-ul implicit, `out/`, singurul care se publică. Folosește `cars.public.json`, care conține doar
-  rânduri complete, verificate și cu licență confirmată. `npm run audit:public` pică la orice abatere.
-- **demo**: `npm run dev` sau `build:demo`, `out-demo/`, doar local. Folosește `cars.demo.json`: identitatea modelelor
-  vine din surse deschise, iar specificațiile și prețurile sunt sintetice. Fiecare pagină are banner DEMO și
-  `noindex`; sitemap-ul e gol, iar ghidurile `draft` sunt vizibile.
-- **vitrină** (`SHOWCASE=1`, doar împreună cu demo): același catalog demo fără etichete DEMO, în `out-showcase/`,
-  pentru screenshot-uri locale. Rămâne `noindex` și nu se publică.
-- Selecția catalogului se face în `next.config.ts`, cu `resolveAlias` pe `@/data/cars.public.json`.
+- **public**: the default build, `out/`, the only one that is ever deployed. Uses `cars.public.json`, which holds only
+  complete, verified rows with a confirmed licence. `npm run audit:public` fails on any deviation.
+- **demo**: `npm run dev` or `build:demo`, `out-demo/`, local only. Uses `cars.demo.json`: model identities come from
+  open sources, specs and prices are synthetic. Every page shows a DEMO banner and is `noindex`; the sitemap is empty
+  and `draft` guides are visible.
+- **showcase** (`SHOWCASE=1`, only together with demo): the same catalog without DEMO labels, in `out-showcase/`, for
+  local screenshots. Still `noindex`, never deployed.
+- The catalog is selected in `next.config.ts`, with a `resolveAlias` on `@/data/cars.public.json`.
 
-## Structura
+## Structure
 
 ```
-content/ghiduri/*.md           ghiduri, glosar, întrebări frecvente (front matter: status draft|published, reviewed)
-data/cars.template.csv         sursa catalogului public (un rând pe motorizare, sursă și licență pe grup)
-data/demo-models.json          identități demo (Wikidata + Wikipedia + CSV), cu sursă pe rând
-data/wikidata/                 rezultatul colectării Wikidata, jurnalul de cereri, acoperirea
-data/*-report.md               rapoarte: import, acoperire, linkuri
-scripts/                       import CSV, date demo, colectare Wikidata, audit, acoperire, linkuri, sigle, date config
-src/app/                       pagini: /, catalog, mărci/model/generație, rezultate, comparație, calculatoare,
-                               favorite, ghiduri, pagini de încredere, sitemap, robots, manifest, imagini OG
-src/components/                UI (catalog, tco, formular, carduri, grafice, badge-uri, PWA)
+content/guides/*.md            guides, glossary, FAQ (front matter: status draft|published, reviewed)
+data/cars.template.csv         source of the public catalog (one row per engine, source and licence per field group)
+data/demo-models.json          demo identities (Wikidata + Wikipedia + CSV), with a source per row
+data/wikidata/                 Wikidata collection output, request log, coverage
+data/*-report.md               generated reports: import, coverage, links
+scripts/                       CSV import, demo data, Wikidata collection, audit, coverage, links, logos, config dates
+src/app/                       pages: home, catalog, brand/model/generation, results, compare, calculators,
+                               favourites, guides, trust pages, sitemap, robots, manifest, OG images
+src/components/                UI (catalog, TCO, form, cards, charts, badges, PWA)
 src/config/                    usageRules, fuelPrices, exchangeRate, costDefaults, officialLinks, scenarios
-src/lib/                       logica pură, testată: scoring, cost, tco, finance, budget, catalog, taxonomy,
+src/lib/                       pure, tested logic: scoring, cost, tco, finance, budget, catalog, taxonomy,
                                importCsv, audit, attributions, guides, demoData, seo, faq, similar, suitability
-tests/unit/                    Vitest (peste 200 de teste)
-tests/e2e/                     Playwright: proiect demo (fluxuri, axe, PWA) și proiect public (excluderi)
+tests/unit/                    Vitest
+tests/e2e/                     Playwright: demo project (flows, axe, PWA) and public project (exclusions)
 ```
 
-## Fluxul datelor publice
+Route folders under `src/app/` keep their Romanian names because they are the site's URLs.
 
-1. Faptele se adună manual sau din surse deschise în `cars.template.csv`, cu titlu, URL, dată și licență pe
-   fiecare grup.
-2. `npm run import:cars` validează fiecare rând:
-   - erori de format → nu scrie nimic;
-   - câmpuri, surse sau licențe lipsă → model incomplet;
-   - `verification` diferit de `verified` → model exclus;
-   - preț neverificat → prețul nu se publică.
-     Raportul listează pe model câmpurile fără sursă.
-3. Testele leagă `cars.public.json` de CSV. Build-ul generează pagini doar pentru modelele din catalog.
-   Recomandările, scenariile și sitemap-ul folosesc doar modele cu preț verificat.
-4. `audit:public` rulează pe `out/` și pică la:
-   - rânduri demo sau neverificate;
-   - surse fără URL, dată sau licență confirmată;
-   - prețuri în afara regulilor (cel puțin 10 anunțuri, cel mult 60 de zile);
-   - sigle fără licență;
-   - ghiduri draft;
-   - nume de site-uri de anunțuri sau marcaje DEMO.
+## Public data flow
 
-## Catalogul demo
+1. Facts are collected by hand or from open sources into `cars.template.csv`, with title, URL, date and licence for
+   each field group.
+2. `npm run import:cars` validates every row:
+   - format errors → nothing is written;
+   - missing fields, sources or licences → model is incomplete;
+   - `verification` other than `verified` → model is excluded;
+   - unverified price → the price is not published.
+     The report lists, per model, the fields without a source.
+3. Tests tie `cars.public.json` to the CSV. The build generates pages only for models in the catalog.
+   Recommendations, scenarios and the sitemap use only models with a verified price.
+4. `audit:public` runs on `out/` and fails on:
+   - demo or unverified rows;
+   - sources without a URL, date or confirmed licence;
+   - prices outside the rules (at least 10 listings, at most 60 days old);
+   - logos without a licence file;
+   - draft guides;
+   - listing-site names or DEMO markers.
 
-- Identitatea modelelor (marcă, model, generație) vine din Wikidata, prin API-ul public MediaWiki: User-Agent
-  descriptiv, maximum o cerere pe secundă. SPARQL e interzis de `robots.txt`.
-- Anii și caroseria vin din infobox-ul articolului Wikipedia legat de același element, cu revizie fixă, doar dacă
-  articolul e specific generației.
-- Specificațiile și prețurile sunt generate cu o formulă deterministă, cu seed fix (`docs/DEMO_DATA.md`).
+## Demo catalog
 
-## Scorul (`lib/scoring.ts`)
+- Model identity (brand, model, generation) comes from Wikidata through the public MediaWiki API: descriptive
+  User-Agent, at most one request per second. SPARQL is disallowed by `robots.txt`.
+- Production years and body type come from the infobox of the Wikipedia article linked to the same item, at a pinned
+  revision, and only when the article is specific to that generation.
+- Specs and prices are generated by a deterministic formula with a fixed seed (`docs/DEMO_DATA.md`).
 
-- **Filtre stricte:** combustibil, caroserie, marcă, locuri.
-- **Scor** = 100 × (0,40·B + 0,30·C + 0,30·U):
-  - B (buget): doar față de bugetul maxim; interval la sau sub maxim = 1 (o mașină mai ieftină nu e penalizată),
-    interval parțial peste maxim = 0,5–1 după partea de sub maxim, peste maxim scădere liniară până la 0 la +20%;
-  - C (cost): costul lunar normalizat min–max între candidați;
-  - U (utilizare): regulile din `config/usageRules.ts`, fiecare cu motivul ei.
-- Nu există scor de fiabilitate. Pagina Metodologie se generează din același cod.
+## Score (`lib/scoring.ts`)
 
-## Costuri
+- **Hard filters:** fuel, body type, brand, seats.
+- **Score** = 100 × (0.40·B + 0.30·C + 0.30·U):
+  - B (budget): against the budget maximum only; a range at or below the maximum = 1 (a cheaper car is never
+    penalised), a range straddling the maximum = 0.5–1 by the share below it, above the maximum a linear drop to 0
+    at +20%;
+  - C (cost): monthly cost, min–max normalised across the candidates;
+  - U (usage): the rules in `config/usageRules.ts`, each with its own reason.
+- There is no reliability score. The Methodology page is generated from the same code.
 
-- **Lunar** (`lib/cost.ts`): carburant + RCA + impozit + întreținere. Costurile fixe fără sursă oficială sunt `null`
-  („necompletat”), calculate cu 0 și semnalate.
-- **TCO** (`lib/tco.ts`, pe 5 ani):
-  - adaugă ITP (tarif / interval), rovinietă și depreciere (EUR → lei, cu cursul afișat);
-  - vederi lunar, anual și 5 ani;
-  - grafic cu o singură serie, încărcat la cerere, plus tabel.
-- **Finanțare** (`lib/finance.ts`): formula anuității, doar calcul, cu disclaimer.
-- **Buget** (`lib/budget.ts`): modelele al căror cost de utilizare intră în bugetul lunar.
-- **Consum:** lângă fiecare valoare apare ciclul de test (NEDC, WLTP sau „necunoscut”). Nu se fac conversii; la
-  cicluri amestecate apare o notă, iar „cea mai bună valoare” nu se marchează.
+## Costs
 
-## UI, accesibilitate, performanță
+- **Monthly** (`lib/cost.ts`): fuel + RCA (mandatory insurance) + road tax + maintenance. Fixed costs without an
+  official source are `null` ("not filled in"), counted as 0 and flagged.
+- **TCO** (`lib/tco.ts`, over 5 years):
+  - adds ITP (inspection fee / interval), road vignette and depreciation (EUR → RON, with the displayed rate);
+  - monthly, yearly and 5-year views;
+  - a single-series chart loaded on demand, plus a table.
+- **Financing** (`lib/finance.ts`): the annuity formula, calculation only, with a disclaimer.
+- **Budget** (`lib/budget.ts`): models whose running cost fits a monthly budget.
+- **Consumption:** every value shows its test cycle (NEDC, WLTP or "unknown"). Values are never converted; mixed
+  cycles get a note and no "best value" is highlighted.
 
-- **Stil:** temă întunecată implicit, un singur accent, font de titluri Barlow Semi Condensed (OFL).
-- **Animații:** doar `transform` și `opacity`; sunt oprite la `prefers-reduced-motion`.
-- **Fără layout shift:** formularul și catalogul se randează static, iar count-up-ul își rezervă lățimea.
-- **Tranziții partajate** între rezultate, comparație și detalii, cu `<ViewTransition>` din React.
-- **Accesibilitate:** axe (WCAG 2.1 AA) pe 15 pagini, în ambele teme; tabele derulabile focusabile; combobox
-  accesibil în catalog.
-- **Lighthouse în CI:** performanță, accesibilitate și bune practici ≥ 0,9 pe toate paginile testate; SEO ≥ 0,9 pe
-  paginile indexabile. Rulează pe build-ul public, care acum are catalogul gol (rezultatele demo sunt în README).
-- **PWA:** manifest, iconițe originale, service worker (pagini network-first, resurse cache-first, pagină offline).
+## UI, accessibility, performance
+
+- **Style:** dark theme by default, a single accent colour, Barlow Semi Condensed for headings (OFL).
+- **Animation:** `transform` and `opacity` only; disabled under `prefers-reduced-motion`.
+- **No layout shift:** the form and the catalog render statically, and the count-up reserves its width.
+- **Shared transitions** between results, compare and details, with React `<ViewTransition>`.
+- **Accessibility:** axe (WCAG 2.1 AA) on 15 pages, in both themes; focusable scrollable tables; an accessible
+  combobox in the catalog.
+- **Lighthouse in CI:** performance, accessibility and best practices ≥ 0.9 on every tested page; SEO ≥ 0.9 on
+  indexable pages. It runs on the public build.
+- **PWA:** manifest, original icons, service worker (network-first pages, cache-first assets, offline page).
 
 ## SEO
 
-- Titluri și descrieri unice, URL canonic peste tot.
-- Date structurate: BreadcrumbList; FAQPage pe paginile de model și de întrebări frecvente. Fără ratinguri.
-- Imagini OG originale, generate la build pentru fiecare tip de pagină.
-- Sitemap: doar pagini indexabile (modele verificate cu preț, ghiduri publicate). Demo: gol și `noindex`.
-
-## Întrebări probabile la interviu
-
-1. **De ce două moduri de date?**
-   Ca să poți testa interfața cu un catalog larg fără riscul ca date sintetice sau neverificate să ajungă publice.
-   Auditul blochează asta automat.
-2. **Cum garantezi proveniența?**
-   Sursă, dată și licență pe fiecare grup de câmpuri și pe preț. Importul refuză licențele necunoscute, testele
-   leagă JSON-ul de CSV, iar auditul verifică build-ul final.
-3. **De ce nu Wikidata prin SPARQL?**
-   `robots.txt` interzice `/sparql`. Am folosit API-ul public cu User-Agent descriptiv și o limită de rată.
-4. **De ce nu convertești NEDC în WLTP?**
-   Nu există un factor universal; orice conversie ar fi o estimare inventată. Afișăm ciclul și avertizăm.
-5. **De ce unele costuri sunt goale?**
-   Nu am o sursă oficială pentru RCA, impozit, ITP sau rovinietă. Câmpul rămâne gol și utilizatorul îl completează.
-6. **Cum ai evitat layout shift-ul și testele instabile?**
-   Fallback-uri statice identice, lățime rezervată pentru count-up, fără ridicare la hover pe cardurile cu controale.
-   În teste, bifarea se face din tastatură acolo unde bara fixă poate acoperi ținta.
-7. **Cum testezi?**
-   Funcții pure cu cazuri limită (Vitest); fluxuri, axe, PWA și excluderi publice (Playwright); Lighthouse și audit
-   în CI.
-8. **Ce urmează?**
-   Hibride și electrice, avantaje și dezavantaje din cel puțin două surse, date tehnice din seturi deschise (EEA)
-   după confirmarea licenței.
+- Unique titles and descriptions, canonical URL everywhere.
+- Structured data: BreadcrumbList; FAQPage on model and FAQ pages. No ratings.
+- Original OG images, generated at build time for each page type.
+- Sitemap: indexable pages only (verified models with a price, published guides). Demo: empty and `noindex`.

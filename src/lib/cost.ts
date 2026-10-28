@@ -14,7 +14,7 @@ export interface CostAssumptions {
   fuelPrice: { benzina: number; motorina: number; gpl: number }; // RON / litre
   insuranceYear: number | null; // RCA, RON / year
   roadTaxYear: number | null; // impozit auto, RON / year
-  maintenanceYear: number | null; // revizii + uzură, RON / year
+  maintenanceYear: number | null; // servicing + wear, RON / year
 }
 
 export const DEFAULT_ASSUMPTIONS: CostAssumptions = {

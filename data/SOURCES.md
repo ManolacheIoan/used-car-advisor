@@ -1,40 +1,41 @@
-# Surse și metodă — date tehnice (colectate 2026-10-16)
+# Sources and method — technical data (collected 2026-10-16)
 
-Toate valorile din `data/cars.template.csv` au fost preluate din pagini publice descărcate efectiv.
-S-au înregistrat **doar fapte** (cifre, tipuri), fără text copiat. Fiecare grup de câmpuri are titlul sursei,
-URL-ul complet și data accesării. Toate rândurile sunt marcate `needs verification`.
+Every value in `data/cars.template.csv` was taken from public pages that were actually downloaded. Only **facts**
+(numbers, types) were recorded, with no copied text. Each field group has the source title, the full URL and the
+retrieval date. All rows are marked `needs verification`.
 
-## Surse
+## Sources
 
-- **Ani de producție:** infobox-ul generației de pe Wikipedia în germană („Produktionszeitraum”). Linkul
-  indică revizia exactă (`oldid`) folosită.
-- **Caroserie, locuri, portbagaj, motorizări** (cilindree, putere, consum mixt): ADAC Autokatalog. Pentru fiecare
-  câmp este folosită pagina variantei respective.
-- **Prețuri second-hand:** goale. Se introduc manual ca prețuri cerute în anunțuri (`price_low_eur`, `price_high_eur`,
-  `n_listings` ≥ 10, `collected_on`, `kind` = `asking_price`, `notes`). Fără preț, modelul e exclus din rezultate.
+- **Production years:** the generation infobox on German Wikipedia ("Produktionszeitraum"). The link points to the
+  exact revision (`oldid`) used.
+- **Body type, seats, boot volume, engines** (displacement, power, combined consumption): ADAC Autokatalog. Each field
+  uses the page of the specific variant.
+- **Used-car prices:** empty. They are entered by hand as asking prices from listings (`price_low_eur`,
+  `price_high_eur`, `n_listings` ≥ 10, `collected_on`, `kind` = `asking_price`, `notes`). Without a price, the model is
+  left out of the results.
 
-## Regula de alegere a motorizărilor (fixă, nu după memorie)
+## Engine selection rule (fixed, not from memory)
 
-Din variantele ADAC ale generației (pagina de bază și facelift-ul), filtrate pe caroseria principală, se aleg:
+From the ADAC variants of the generation (base page and facelift), filtered on the main body type, the selection is:
 
-- maximum 2 motoare pe benzină, cu cele mai mici puteri distincte;
-- maximum 2 motoare diesel, la fel;
-- un motor GPL, dacă există.
+- at most 2 petrol engines, with the lowest distinct power outputs;
+- at most 2 diesel engines, same rule;
+- one LPG engine, if there is one.
 
-Nu sunt incluse versiunile sport, 4x4, CNG, hibride și electrice. Caroseria, locurile și portbagajul sunt cele ale
-primei variante alese. Puterea de pe pagina variantei a fost verificată automat față de lista ADAC.
+Sport, 4x4, CNG, hybrid and electric versions are not included. Body type, seats and boot volume are those of the
+first selected variant. The power on each variant page was checked automatically against the ADAC list.
 
-## Atenție la verificare
+## Notes for verification
 
-- **Logan II** apare ca **Logan MCV (break)**, pentru că ADAC listează doar versiunea MCV pentru generația a doua.
-- **Passat B7/B8** sunt înregistrate ca **Variant (break)**.
-- **Octavia și Superb** apar ca „sedan”: ADAC le clasifică „Stufenheck”, deși sunt liftback.
-- Consumul este cel declarat, cu ciclul de test în coloana `consumption_cycle`: **NEDC** (valoarea NEFZ din
-  ADAC) sau **WLTP**, acolo unde ADAC nu are NEDC (6 rânduri, listate mai jos). Valorile nu se convertesc între cicluri.
-- Anii vin de pe Wikipedia (toată generația, inclusiv facelift-ul). Motorizările pot acoperi doar o parte din acești
-  ani.
+- **Logan II** is recorded as **Logan MCV (estate)**, because ADAC lists only the MCV version for the second
+  generation.
+- **Passat B7/B8** are recorded as **Variant (estate)**.
+- **Octavia and Superb** are recorded as "sedan": ADAC classifies them as "Stufenheck", although they are liftbacks.
+- Consumption is the declared value, with the test cycle in the `consumption_cycle` column: **NEDC** (the NEFZ value
+  in ADAC) or **WLTP** where ADAC has no NEDC value (6 rows, listed below). Values are never converted between cycles.
+- Years come from Wikipedia (the whole generation, facelift included). The engines may cover only part of those years.
 
-## Valori negăsite sau cu observații
+## Missing values and remarks
 
 - `dacia-sandero-3` — years: source says "seit 2021" (still in production); year_to set to retrieval year
 - `dacia-sandero-3` — consumption: Dacia Sandero SCe 65 Access (01/21 - 12/22): only WLTP value found, recorded WLTP
@@ -44,7 +45,7 @@ primei variante alese. Puterea de pe pagina variantei a fost verificată automat
 - `opel-astra-k` — consumption: Opel Astra 1.0 ECOTEC DI Turbo Start&Stop Selection (06/18 - 08/19): only WLTP value found, recorded WLTP
 - `opel-astra-k` — consumption: Opel Astra 1.5 Diesel (09/19 - 11/20): only WLTP value found, recorded WLTP
 
-## De făcut
+## Verification status
 
-- Marcajul `verified` pentru fiecare model, după verificare. Până atunci modelele apar cu eticheta „Date în curs de
-  verificare” și nu sunt indexate de motoarele de căutare.
+Each model is marked `verified` only after it has been checked against its sources. Until then it is shown with the
+label "Date în curs de verificare" and is not indexed by search engines.

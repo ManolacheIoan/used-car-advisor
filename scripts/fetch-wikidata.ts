@@ -17,7 +17,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const API = "https://www.wikidata.org/w/api.php";
 const UA =
-  "AlegeMasina/1.0 (portfolio project; https://github.com/ManolacheIoan/alegemasina; contact@manotek.ro)";
+  "AlegeMasina/1.0 (portfolio project; https://github.com/ManolacheIoan/used-car-advisor; contact@manotek.ro)";
 const RETRIEVED_ON = new Date().toISOString().slice(0, 10);
 const CAR_MODEL = "Q3231690";
 const MIN_START_YEAR = 2000;

@@ -13,7 +13,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import type { Body } from "../src/lib/types";
 
 const UA =
-  "AlegeMasina/1.0 (portfolio project; https://github.com/ManolacheIoan/alegemasina; contact@manotek.ro)";
+  "AlegeMasina/1.0 (portfolio project; https://github.com/ManolacheIoan/used-car-advisor; contact@manotek.ro)";
 const RETRIEVED_ON = new Date().toISOString().slice(0, 10);
 const MAX_ROWS = 80;
 const MAX_PER_LINE = 4;
