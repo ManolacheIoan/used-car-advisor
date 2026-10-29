@@ -53,7 +53,7 @@ function heroPick() {
     : null;
 }
 
-/** Featured model card: demo/showcase builds only (no real search data exists; see src/config/featured.ts). */
+/** Featured model card (editorial pick): local-catalog builds only; see src/config/featured.ts. */
 function featuredPick() {
   if (!IS_DEMO) return null;
   const m = getModel(FEATURED.modelId);

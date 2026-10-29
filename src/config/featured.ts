@@ -1,8 +1,8 @@
 /**
- * "Cel mai căutat model" card on the home page. We have no search or traffic data, so the claim is shown only in
- * demo/showcase builds (synthetic catalog, never deployed); public builds hide the card until a real source exists.
+ * Featured model card on the home page: an editorial pick, not a statistic (there is no search or traffic data).
+ * Shown only in builds that use the local catalog; public builds hide it.
  */
 export const FEATURED = {
   modelId: "bmw-seria-3-f30",
-  label: "Cel mai căutat model",
+  label: "Model în prim-plan",
 } as const;
