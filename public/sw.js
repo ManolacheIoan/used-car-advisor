@@ -1,5 +1,7 @@
 /* AlegeMasina service worker: offline support for static pages. No analytics, no third-party requests. */
-const VERSION = "am-v1";
+const VERSION = "am-v2";
+// Scope path without the trailing slash: "" at the domain root, "/used-car-advisor" on GitHub Pages.
+const BASE = new URL(self.registration.scope).pathname.replace(/\/$/, "");
 const PRECACHE = [
   "/",
   "/offline/",
@@ -10,7 +12,7 @@ const PRECACHE = [
   "/despre-date/",
   "/metodologie/",
   "/manifest.webmanifest",
-];
+].map((p) => BASE + p);
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -51,7 +53,7 @@ self.addEventListener("fetch", (event) => {
         .catch(() =>
           caches
             .match(req, { ignoreSearch: true })
-            .then((r) => r || caches.match("/offline/")),
+            .then((r) => r || caches.match(BASE + "/offline/")),
         ),
     );
     return;
@@ -59,8 +61,8 @@ self.addEventListener("fetch", (event) => {
 
   // Build assets are immutable: cache first.
   if (
-    url.pathname.startsWith("/_next/static/") ||
-    url.pathname.startsWith("/icons/")
+    url.pathname.startsWith(BASE + "/_next/static/") ||
+    url.pathname.startsWith(BASE + "/icons/")
   ) {
     event.respondWith(
       caches.match(req).then(

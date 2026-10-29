@@ -1,6 +1,7 @@
 import Image from "next/image";
 import assets from "@/data/brandAssets.json";
 import { brandId } from "@/lib/brand";
+import { withBase } from "@/lib/site";
 
 const FILES = assets as Record<string, string>;
 
@@ -20,7 +21,7 @@ export function BrandBadge({
   if (file)
     return (
       <Image
-        src={file}
+        src={withBase(file)}
         alt={brand}
         className={`${h} w-auto max-w-24 object-contain`}
         height={32}

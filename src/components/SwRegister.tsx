@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { withBase } from "@/lib/site";
 
 /** Registers the offline service worker in production builds only. */
 export function SwRegister() {
@@ -10,7 +11,9 @@ export function SwRegister() {
       !("serviceWorker" in navigator)
     )
       return;
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker
+      .register(withBase("/sw.js"), { scope: withBase("/") })
+      .catch(() => {});
   }, []);
   return null;
 }
