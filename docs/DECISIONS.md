@@ -15,8 +15,9 @@ Format: decision — alternatives considered — reason.
   general Wikipedia articles (years of the whole model line, which is wrong) — Wikidata and Wikipedia have no
   per-generation years or body type for the rest; values are not guessed.
 - **The demo also includes the 30 models from the CSV** (years from German Wikipedia, body type from ADAC with an
-  unconfirmed licence) — alternative: Wikidata only (27 models) — the demo catalog is never published, and the public
-  audit blocks unlicensed data.
+  unconfirmed licence) — alternative: Wikidata only (27 models) — the demo catalog never reaches the public build, and the
+  public audit blocks unlicensed data. The GitHub Pages preview shows it with the DEMO banner and `noindex`; the body
+  type is the only ADAC-derived value it displays (specs and prices are synthetic).
 - **Electric and hybrid models are left out** — alternative: including them with a hybrid/electric energy type — V1
   covers only petrol, diesel and LPG; the schema already supports the other types.
 - **"Popular brands" on the home page = the brands with the most generations in the catalog** — alternatives:

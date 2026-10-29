@@ -1,4 +1,4 @@
-# Public build only. Demo builds (DATA_MODE=demo, out-demo/) are never deployed.
+# Public build only. Demo builds (DATA_MODE=demo, out-demo/) never go to Netlify; GitHub Pages hosts the preview.
 [build]
   command = "npm run build && npm run audit:public"
   publish = "out"

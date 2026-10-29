@@ -7,6 +7,8 @@ is filled in from memory, and unverified or unlicensed data never reaches the pu
 
 The site content is in Romanian, for a local audience.
 
+**Live preview:** https://manolacheioan.github.io/used-car-advisor/
+
 **Tech stack:** Next.js 16 (App Router, static export) · React 19 · TypeScript · Tailwind CSS 4 · Vitest ·
 Playwright · axe-core · Lighthouse CI · GitHub Actions
 
@@ -56,13 +58,14 @@ More decisions, with the alternatives I considered, are in [docs/DECISIONS.md](d
 
 **Automated testing**
 
-- 227 unit tests (Vitest) on the pure logic: scoring, monthly cost, TCO, loan, budget, CSV import, audit, catalog
+- 234 unit tests (Vitest) on the pure logic: scoring, monthly cost, TCO, loan, budget, CSV import, audit, catalog
   filters, SEO, URL validation, plus edge cases (loan at 0% and 100% interest, 1 and 120 months, 100% depreciation,
   0 km, ranking ties).
 - 45 Playwright end-to-end tests on a mobile profile: the main flow, calculators, favourites, PWA, the axe audits,
   and a separate project that checks the public build contains no generated or draft content.
 - The CI pipeline (GitHub Actions) runs formatting, lint, typecheck, unit tests, the public build and its audit,
-  end-to-end tests and Lighthouse CI. A separate step warns when fuel prices or the exchange rate are out of date.
+  end-to-end tests and Lighthouse CI. A separate step warns when fuel prices or the exchange rate are out of date. A
+  second workflow runs the unit tests and publishes the preview to GitHub Pages.
 
 **Accessibility**
 
@@ -106,7 +109,7 @@ npm install
 npm run dev               # development: http://localhost:3000 (full local catalog)
 npm run build             # public static export to out/
 npm run serve             # serves out/ at http://localhost:3000
-npm run build:demo        # build with the full local catalog to out-demo/ (never deployed)
+npm run build:demo        # build with the full local catalog to out-demo/ (used for the GitHub Pages preview)
 npm run lint
 npm run typecheck
 npm test                  # unit tests (Vitest)
@@ -123,11 +126,17 @@ npm run audit:public      # public-build gate (run after npm run build)
   defaults in `src/config/costDefaults.ts`. Each value carries its source and date.
 - **Site name, URL and contact:** `src/lib/site.ts`.
 - **Data mode:** `DATA_MODE=public|demo` at build time (`next.config.ts`).
+- **Sub-path hosting:** `BASE_PATH` (for example `/used-car-advisor`) and `SITE_URL` (the absolute URL, including the
+  sub-path) at build time. Links, assets, the manifest, the service worker and canonical URLs follow them.
 
 ## Deployment
 
-`netlify.toml` builds in public mode, runs the audit, publishes `out/` and sets the security and cache headers. For any
-other static host, run `npm run build` and publish `out/`.
+- **GitHub Pages (preview):** `.github/workflows/pages.yml` builds the local catalog under `/used-car-advisor/` on
+  every push to `main` and publishes it. Every page keeps the banner that marks the values as illustrative, and
+  `noindex`. GitHub Pages does not support
+  custom HTTP headers, so the security headers from `netlify.toml` do not apply there.
+- **Netlify (public build):** `netlify.toml` builds in public mode, runs the audit, publishes `out/` and sets the
+  security and cache headers. For any other static host, run `npm run build` and publish `out/`.
 
 ## Fonts
 
@@ -135,6 +144,6 @@ Barlow Semi Condensed (headings), SIL Open Font License (`assets/fonts/OFL.txt`)
 
 ---
 
-_The public catalog accepts only verified, licensed rows and is currently empty. The local catalog (`npm run dev`)
-combines model identities from Wikidata and Wikipedia with generated specifications and prices, documented in
-[docs/DEMO_DATA.md](docs/DEMO_DATA.md)._
+_The public catalog accepts only verified, licensed rows and is currently empty. The live preview and the local
+catalog (`npm run dev`) combine model identities from Wikidata and Wikipedia with generated specifications and prices,
+documented in [docs/DEMO_DATA.md](docs/DEMO_DATA.md); they are not real market prices._

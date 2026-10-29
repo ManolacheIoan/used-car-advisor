@@ -223,7 +223,8 @@ async function main() {
   }
 
   // Second identity source: the models of data/cars.template.csv (years from German Wikipedia, pinned revisions;
-  // body from ADAC, licence unconfirmed — acceptable only because the demo catalog is never published).
+  // body from ADAC, licence unconfirmed — acceptable because the demo catalog never reaches the public build; the
+  // GitHub Pages preview shows it under the DEMO banner, with noindex).
   const { parseCsv } = await import("../src/lib/importCsv.ts");
   const t = parseCsv(readFileSync("data/cars.template.csv", "utf8"));
   const h = t[0];

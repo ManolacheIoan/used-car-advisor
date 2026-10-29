@@ -1,7 +1,8 @@
-# Demo data (local testing only)
+# Demo data
 
-The demo catalog (`src/data/cars.demo.json`) is used only with `DATA_MODE=demo` and is never published. Every page
-shows the banner "DEMO: valori fictive, nu pentru decizii reale" and is marked `noindex`; the sitemap is empty.
+The demo catalog (`src/data/cars.demo.json`) is used only with `DATA_MODE=demo`: locally and for the GitHub Pages
+preview, never for the public (Netlify) build. Every page shows the banner "DEMO: valori fictive, nu pentru decizii
+reale" and is marked `noindex`; the sitemap is empty.
 
 ## What is real and what is synthetic
 

@@ -8,12 +8,16 @@ bundled at build time. User state (theme, favourites, compare list, recently vie
 
 - **public**: the default build, `out/`, the only one that is ever deployed. Uses `cars.public.json`, which holds only
   complete, verified rows with a confirmed licence. `npm run audit:public` fails on any deviation.
-- **demo**: `npm run dev` or `build:demo`, `out-demo/`, local only. Uses `cars.demo.json`: model identities come from
+- **demo**: `npm run dev` or `build:demo`, `out-demo/`, used locally and for the GitHub Pages preview. Uses `cars.demo.json`: model identities come from
   open sources, specs and prices are synthetic. Every page shows a DEMO banner and is `noindex`; the sitemap is empty
   and `draft` guides are visible.
 - **showcase** (`SHOWCASE=1`, only together with demo): the same catalog without DEMO labels, in `out-showcase/`, for
   local screenshots. Still `noindex`, never deployed.
 - The catalog is selected in `next.config.ts`, with a `resolveAlias` on `@/data/cars.public.json`.
+- **Sub-path hosting:** `BASE_PATH` sets Next's `basePath` (links and `_next` assets) and is exposed to the client;
+  `withBase()` in `lib/site.ts` prefixes what Next does not handle (manifest, service worker, brand images). The
+  service worker derives its paths from its own scope. `SITE_URL` sets `metadataBase`, so canonical, sitemap and OG
+  URLs include the sub-path.
 
 ## Structure
 

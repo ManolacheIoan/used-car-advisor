@@ -7,7 +7,7 @@ export const SCENARIO_TOP = 3;
 
 /**
  * Only verified, non-demo models; demo rows and unverified rows are never used, except with `includeDemo`
- * (set only in demo builds, which are never deployed).
+ * (set only in demo builds: local and the GitHub Pages preview, never the public build).
  */
 export function scenarioResults(
   models: CarModel[],
