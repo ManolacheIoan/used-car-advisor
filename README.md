@@ -14,6 +14,8 @@ Playwright · axe-core · Lighthouse CI · GitHub Actions
 
 ---
 
+![AlegeMasina home page: the short questionnaire and recommended models with their scores](docs/screenshot.webp)
+
 ## What I built
 
 - **Recommendation form and ranking:** hard filters (fuel, body type, brand, seats), then a 0–100 score from budget
