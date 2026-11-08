@@ -1,5 +1,7 @@
 # Used Car Advisor — "AlegeMasina"
 
+[![CI](https://github.com/ManolacheIoan/used-car-advisor/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ManolacheIoan/used-car-advisor/actions/workflows/ci.yml)
+
 A static web app that helps people in Romania choose a used car. The user answers a short three-step form (budget,
 usage, preferences) and gets a ranked list of models with a transparent score, the reasons behind it and an estimated
 monthly running cost. I built it so that **every number on the page can be traced to a source or a formula**: nothing
